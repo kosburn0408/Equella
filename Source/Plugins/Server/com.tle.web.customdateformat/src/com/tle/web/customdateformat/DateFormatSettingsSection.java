@@ -48,9 +48,9 @@ import com.tle.web.userdetails.EditUserSection;
 @SuppressWarnings("nls")
 public class DateFormatSettingsSection extends OneColumnLayout<DateFormatSettingsSection.DateFormatSettingsModel>
 {
-	@PlugKey("settings.page.title")
+	@PlugKey("dates.settings.page.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.save.receipt")
+	@PlugKey("dates.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 	@PlugKey("settings.dateformat.exact")
 	private static String USE_EXACT;

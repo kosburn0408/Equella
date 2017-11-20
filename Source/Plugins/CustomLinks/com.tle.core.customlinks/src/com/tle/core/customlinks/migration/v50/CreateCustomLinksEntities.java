@@ -29,12 +29,14 @@ import com.tle.core.hibernate.impl.HibernateMigrationHelper;
 import com.tle.core.hibernate.impl.TablesOnlyFilter;
 import com.tle.core.migration.AbstractCreateMigration;
 import com.tle.core.migration.MigrationInfo;
+import com.tle.core.plugins.AbstractPluginService;
 
 @Bind
 @Singleton
 @SuppressWarnings("nls")
 public class CreateCustomLinksEntities extends AbstractCreateMigration
 {
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(CreateCustomLinksEntities.class)+".";
 	@Override
 	protected HibernateCreationFilter getFilter(HibernateMigrationHelper helper)
 	{
@@ -51,7 +53,7 @@ public class CreateCustomLinksEntities extends AbstractCreateMigration
 	@Override
 	public MigrationInfo createMigrationInfo()
 	{
-		return new MigrationInfo("com.tle.core.customlinks.migration.title");
+		return new MigrationInfo(KEY_PFX+"customlinks.migration.title");
 	}
 
 }

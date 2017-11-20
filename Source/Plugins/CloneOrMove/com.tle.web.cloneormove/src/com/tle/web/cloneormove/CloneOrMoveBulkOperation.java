@@ -57,6 +57,10 @@ public class CloneOrMoveBulkOperation extends CloneOrMoveSection implements Bulk
 	private static String KEY_CLONE;
 	@PlugKey("bulkop.move")
 	private static String KEY_MOVE;
+	@PlugKey("bulk.move.title")
+	private static String KEY_MOVE_TITLE;
+	@PlugKey("bulk.clone.title")
+	private static String KEY_CLONE_TITLE;
 
 	@Override
 	public void registered(String id, SectionTree tree)
@@ -192,9 +196,9 @@ public class CloneOrMoveBulkOperation extends CloneOrMoveSection implements Bulk
 		{
 			if( cloneOption == CloneOption.MOVE )
 			{
-				return "com.tle.web.cloneormove.bulk.move.title";
+				return KEY_MOVE_TITLE;
 			}
-			return "com.tle.web.cloneormove.bulk.clone.title";
+			return KEY_CLONE_TITLE;
 		}
 	}
 

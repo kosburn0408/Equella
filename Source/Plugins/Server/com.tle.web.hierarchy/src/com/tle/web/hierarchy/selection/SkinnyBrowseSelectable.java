@@ -38,7 +38,7 @@ public class SkinnyBrowseSelectable implements SelectionNavAction
 {
 	private static final String FORWARD_PATH = "/access/skinny/hierarchy.do";
 
-	@PlugKey("selection.navaction")
+	@PlugKey("hier.selection.navaction")
 	private static Label NAV_ACTION_LABEL;
 
 	@Override

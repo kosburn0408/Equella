@@ -34,6 +34,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import com.tle.core.plugins.AbstractPluginService;
 import org.apache.log4j.Logger;
 
 import com.dytech.devlib.Base64;
@@ -129,6 +130,7 @@ public class BrightspaceConnectorServiceImpl extends AbstractIntegrationConnecto
 	private static final String UUID_REGEX = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
 	private static final Pattern UUID_VERSION_REGEX = Pattern.compile(
 		".*/(" + UUID_REGEX + ")/([0-9])+/?(?:\\?attachment\\.uuid=(" + UUID_REGEX + "))?", Pattern.CASE_INSENSITIVE);
+	private static final String KEY_PFX = AbstractPluginService.getMyPluginId(BrightspaceConnectorServiceImpl.class)+".";
 
 	private String leApi;
 	private String lpApi;
@@ -563,8 +565,8 @@ public class BrightspaceConnectorServiceImpl extends AbstractIntegrationConnecto
 				}
 			}
 		}
-		usage.setAttribute("contentAvailable", getKey("finduses.label.visible"),
-			CurrentLocale.get(getKey("finduses.value.visible." + (link.getVisible() ? "yes" : "no"))));
+		usage.setAttribute("contentAvailable", getKey("bspace.finduses.label.visible"),
+			CurrentLocale.get(getKey("bspace.finduses.value.visible." + (link.getVisible() ? "yes" : "no"))));
 
 		return usage;
 	}
@@ -643,17 +645,17 @@ public class BrightspaceConnectorServiceImpl extends AbstractIntegrationConnecto
 
 	private String getKey(String partKey)
 	{
-		return "com.tle.core.connectors.brightspace." + partKey;
+		return KEY_PFX + partKey;
 	}
 
 	@Override
 	public ConnectorTerminology getConnectorTerminology()
 	{
 		final ConnectorTerminology terms = new ConnectorTerminology();
-		terms.setShowArchived(getKey("finduses.showarchived"));
-		terms.setShowArchivedLocations(getKey("finduses.showarchived.courses"));
-		terms.setCourseHeading(getKey("finduses.course"));
-		terms.setLocationHeading(getKey("finduses.location"));
+		terms.setShowArchived(getKey("bspace.finduses.showarchived"));
+		terms.setShowArchivedLocations(getKey("bspace.finduses.showarchived.courses"));
+		terms.setCourseHeading(getKey("bspace.finduses.course"));
+		terms.setLocationHeading(getKey("bspace.finduses.location"));
 		return terms;
 	}
 

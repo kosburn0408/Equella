@@ -58,6 +58,7 @@ import com.tle.core.freetext.service.FreeTextService;
 import com.tle.core.guice.Bind;
 import com.tle.core.item.dao.AttachmentDao;
 import com.tle.core.item.service.ItemService;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.security.TLEAclManager;
 import com.tle.core.services.item.FreetextResult;
 import com.tle.core.services.item.FreetextSearchResults;
@@ -75,6 +76,7 @@ import com.tle.web.viewurl.attachments.AttachmentResourceService;
 @Singleton
 public class EquellaConnectorService implements ConnectorRepositoryImplementation
 {
+	private static final String KEY_PFX = AbstractPluginService.getMyPluginId(EquellaConnectorService.class)+".";
 	private static final String VIEW_ITEM = "VIEW_ITEM"; //$NON-NLS-1$
 
 	@Inject
@@ -426,12 +428,12 @@ public class EquellaConnectorService implements ConnectorRepositoryImplementatio
 
 	private String getKey(String partKey)
 	{
-		return "com.tle.core.connectors.equella." + partKey;
+		return KEY_PFX + partKey;
 	}
 
 	private String getString(String partKey, String... params)
 	{
-		return CurrentLocale.get("com.tle.core.connectors.equella." + partKey, (Object[]) params);
+		return CurrentLocale.get(KEY_PFX + partKey, (Object[]) params);
 	}
 
 	@Override

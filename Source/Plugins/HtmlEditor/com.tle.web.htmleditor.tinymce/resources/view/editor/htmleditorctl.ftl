@@ -13,6 +13,3 @@
 	
 	<@textarea section=s.html rows=m.rows cols=1 class="htmleditor" />
 </div>
-
-<#-- TODO: remove this if we can... -->
-<@script>function setEnabled${m.properties['fid']}(on){}</@script>

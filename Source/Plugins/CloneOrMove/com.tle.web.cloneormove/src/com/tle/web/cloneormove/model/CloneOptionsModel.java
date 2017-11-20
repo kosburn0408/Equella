@@ -21,6 +21,7 @@ import java.util.List;
 
 import com.tle.common.NameValue;
 import com.tle.core.i18n.BundleNameValue;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.web.sections.SectionInfo;
 import com.tle.web.sections.standard.model.DynamicHtmlListModel;
 
@@ -29,6 +30,7 @@ import com.tle.web.sections.standard.model.DynamicHtmlListModel;
  */
 public class CloneOptionsModel extends DynamicHtmlListModel<NameValue>
 {
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(SchemaTransformsModel.class)+".";
 	public enum CloneOption
 	{
 		CLONE()
@@ -75,18 +77,18 @@ public class CloneOptionsModel extends DynamicHtmlListModel<NameValue>
 		if( isCanClone(info) )
 		{
 			values.add(new BundleNameValue(
-				"com.tle.web.cloneormove.selectcollection.option.clone.clone", CloneOption.CLONE.toString())); //$NON-NLS-1$
+					KEY_PFX+"selectcollection.option.clone.clone", CloneOption.CLONE.toString())); //$NON-NLS-1$
 		}
 		if( isCanCloneNoAttachments(info) )
 		{
 			values
 				.add(new BundleNameValue(
-					"com.tle.web.cloneormove.selectcollection.option.clone.clonenoattachments", CloneOption.CLONE_NO_ATTACHMENTS.toString())); //$NON-NLS-1$
+						KEY_PFX+"selectcollection.option.clone.clonenoattachments", CloneOption.CLONE_NO_ATTACHMENTS.toString())); //$NON-NLS-1$
 		}
 		if( isCanMove(info) )
 		{
 			values.add(new BundleNameValue(
-				"com.tle.web.cloneormove.selectcollection.option.clone.move", CloneOption.MOVE.toString())); //$NON-NLS-1$
+					KEY_PFX+"selectcollection.option.clone.move", CloneOption.MOVE.toString())); //$NON-NLS-1$
 		}
 		return values;
 	}

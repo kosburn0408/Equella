@@ -37,6 +37,9 @@ import java.util.Map.Entry;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.tle.core.plugins.AbstractPluginService;
+import com.tle.core.plugins.PluginService;
+import com.tle.core.plugins.impl.PluginServiceImpl;
 import org.apache.log4j.Logger;
 import org.ccil.cowan.tagsoup.Parser;
 import org.w3c.dom.Node;
@@ -91,6 +94,7 @@ public class MoodleConnectorService extends AbstractIntegrationConnectorResposit
 	private HttpService httpService;
 	@Inject
 	private ConfigurationService configService;
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(MoodleConnectorService.class)+".";
 
 	@Override
 	public boolean isRequiresAuthentication(Connector connector)
@@ -460,14 +464,14 @@ public class MoodleConnectorService extends AbstractIntegrationConnectorResposit
 				{
 					if( !Check.isEmpty(value) )
 					{
-						content.setAttribute(ConnectorContent.KEY_INSTRUCTOR, getKey("finduses.instructor"), value);
+						content.setAttribute(ConnectorContent.KEY_INSTRUCTOR, getKey("moodle.finduses.instructor"), value);
 					}
 				}
 				else if( key.equals("dateAccessed") )
 				{
 					if( !Check.isEmpty(value) )
 					{
-						content.setAttribute(ConnectorContent.KEY_DATE_ACCESSED, getKey("finduses.dateAccessed"),
+						content.setAttribute(ConnectorContent.KEY_DATE_ACCESSED, getKey("moodle.finduses.dateAccessed"),
 							new Date(Long.parseLong(value)));
 					}
 				}
@@ -475,14 +479,14 @@ public class MoodleConnectorService extends AbstractIntegrationConnectorResposit
 				{
 					if( !Check.isEmpty(value) )
 					{
-						content.setAttribute(ConnectorContent.KEY_ENROLLMENTS, getKey("finduses.enrollments"),
+						content.setAttribute(ConnectorContent.KEY_ENROLLMENTS, getKey("moodle.finduses.enrollments"),
 							Integer.valueOf(value));
 					}
 				}
 				else if( key.equals("visible") )
 				{
 					content.setAvailable(Integer.parseInt(value) == 1 ? true : false);
-					content.setAttribute("visible", getKey("finduses.visible"),
+					content.setAttribute("visible", getKey("moodle.finduses.visible"),
 						Integer.parseInt(value) == 1 ? true : false);
 				}
 
@@ -494,7 +498,7 @@ public class MoodleConnectorService extends AbstractIntegrationConnectorResposit
 				{
 					if( !Check.isEmpty(value) )
 					{
-						content.setAttribute(attributeKey, getKey("finduses." + attributeKey), value);
+						content.setAttribute(attributeKey, getKey("moodle.finduses." + attributeKey), value);
 					}
 				}
 			}
@@ -662,17 +666,17 @@ public class MoodleConnectorService extends AbstractIntegrationConnectorResposit
 
 	private String getKey(String partKey)
 	{
-		return "com.tle.core.connectors.moodle." + partKey;
+		return KEY_PFX + partKey;
 	}
 
 	@Override
 	public ConnectorTerminology getConnectorTerminology()
 	{
 		ConnectorTerminology terms = new ConnectorTerminology();
-		terms.setShowArchived(getKey("finduses.showarchived"));
-		terms.setShowArchivedLocations(getKey("finduses.showarchived.courses"));
-		terms.setCourseHeading(getKey("finduses.course"));
-		terms.setLocationHeading(getKey("finduses.location"));
+		terms.setShowArchived(getKey("moodle.finduses.showarchived"));
+		terms.setShowArchivedLocations(getKey("moodle.finduses.showarchived.courses"));
+		terms.setCourseHeading(getKey("moodle.finduses.course"));
+		terms.setLocationHeading(getKey("moodle.finduses.location"));
 		return terms;
 	}
 

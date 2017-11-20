@@ -92,15 +92,15 @@ public class ITunesUHandler extends BasicAbstractAttachmentHandler<ITunesUHandle
 	public static final String ITUNESU_URL = "trackUrl";
 	public static final String ITUNESU_TRACK = "trackName";
 
-	@PlugKey("name")
+	@PlugKey("itunesu.name")
 	private static Label NAME_LABEL;
-	@PlugKey("description")
+	@PlugKey("itunesu.description")
 	private static Label DESCRIPTION_LABEL;
-	@PlugKey("add.title")
+	@PlugKey("itunesu.add.title")
 	private static Label ADD_TITLE_LABEL;
 	@PlugKey("error.configproblem.heading")
 	private static Label CONFIG_ERROR_HEADING;
-	@PlugKey("edit.title")
+	@PlugKey("itunesu.edit.title")
 	private static Label EDIT_TITLE_LABEL;
 	@PlugKey("add.add")
 	private static Label ADD_LABEL;
@@ -109,7 +109,7 @@ public class ITunesUHandler extends BasicAbstractAttachmentHandler<ITunesUHandle
 	@PlugKey("error.badinstitutionid")
 	private static String BAD_ID_ERROR;
 
-	@PlugKey("details.viewlink")
+	@PlugKey("itunesu.details.viewlink")
 	private static Label VIEW_LINK_LABEL;
 
 	@Inject

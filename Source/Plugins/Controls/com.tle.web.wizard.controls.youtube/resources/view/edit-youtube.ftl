@@ -12,7 +12,7 @@
 		</#if>
 	</div>
 	<@editArea />
-	<@setting label=b.key("details.customparams") help=b.key("details.customparams.help") error=m.errors["customParams"] >
+	<@setting label=b.key("youtube.details.customparams") help=b.key("youtube.details.customparams.help") error=m.errors["customParams"] >
 		<@textarea section=s.customParamsArea rows=3  />
 	</@setting>
 </@detailArea >

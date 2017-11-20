@@ -40,11 +40,11 @@ public class ITunesUViewableResource extends AbstractWrappedResource
 		PluginResourceHandler.init(ITunesUViewableResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("itunesu.details.type")
 	private static Label TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("itunesu.details.mimetype")
 	private static Label MIMETYPE;
-	@PlugKey("details.name")
+	@PlugKey("itunesu.details.name")
 	private static Label NAME;
 
 	private final CustomAttachment itunesAttachment;

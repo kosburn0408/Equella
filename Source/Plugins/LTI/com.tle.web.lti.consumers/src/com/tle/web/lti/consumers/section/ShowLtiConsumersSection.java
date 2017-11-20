@@ -32,7 +32,7 @@ public class ShowLtiConsumersSection
 	extends
 		AbstractShowEntitiesSection<LtiConsumer, ShowLtiConsumersSection.ShowLtiConsumersModel>
 {
-	@PlugKey("settings.title")
+	@PlugKey("lti.settings.title")
 	private static Label TITLE_LABEL;
 	@PlugKey("consumers.add")
 	private static Label ADD_CONSUMER_LABEL;

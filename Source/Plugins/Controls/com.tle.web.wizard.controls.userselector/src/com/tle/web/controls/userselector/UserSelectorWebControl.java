@@ -71,18 +71,18 @@ public class UserSelectorWebControl extends AbstractWebControl<UserSelectorWebCo
 	implements
 		CurrentUsersCallback
 {
-	@PlugKey("prompt.selectsingle")
+	@PlugKey("usersel.prompt.selectsingle")
 	private static Label LABEL_PROMPTSINGLE;
-	@PlugKey("prompt.selectmultiple")
+	@PlugKey("usersel.prompt.selectmultiple")
 	private static Label LABEL_PROMPTMULTIPLE;
-	@PlugKey("title.selectsingle")
+	@PlugKey("usersel.title.selectsingle")
 	private static Label LABEL_TITLESINGLE;
-	@PlugKey("title.selectmultiple")
+	@PlugKey("usersel.title.selectmultiple")
 	private static Label LABEL_TITLEMULTIPLE;
 
-	@PlugKey("confirmremove")
+	@PlugKey("usersel.confirmremove")
 	private static Confirm KEY_CONFIRM;
-	@PlugKey("currentlyselectedstuff.remove")
+	@PlugKey("usersel.remove")
 	private static Label LABEL_REMOVE;
 
 	private UserSelectorControl definitionControl;
@@ -108,7 +108,7 @@ public class UserSelectorWebControl extends AbstractWebControl<UserSelectorWebCo
 	@Component
 	private SelectionsTable usersTable;
 	@Component
-	@PlugKey("button.selectuser")
+	@PlugKey("usersel.button.selectuser")
 	private Link addLink;
 
 	private JSCallable removeUserFunction;

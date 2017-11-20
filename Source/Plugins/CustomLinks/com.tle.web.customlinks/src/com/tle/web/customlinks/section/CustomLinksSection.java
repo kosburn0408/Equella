@@ -308,7 +308,7 @@ public class CustomLinksSection extends OneColumnLayout<CustomLinksModel>
 			{
 				urlField.setValue(context, "http://");
 			}
-			temp.addNamedResult("body", viewFactory.createResult("edit.ftl", this));
+			temp.addNamedResult("body", viewFactory.createResult("linkedit.ftl", this));
 		}
 		else
 		{

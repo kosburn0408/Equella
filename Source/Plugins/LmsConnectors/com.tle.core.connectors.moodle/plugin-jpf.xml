@@ -29,8 +29,8 @@
 
 	<extension plugin-id="com.tle.core.connectors" point-id="connectorType" id="moodleConnector">
 		<parameter id="id" value="moodle" />
-		<parameter id="nameKey" value="com.tle.core.connectors.moodle.connector.name" />
-		<parameter id="descriptionKey" value="com.tle.core.connectors.moodle.connector.description" />
+		<parameter id="nameKey" value="com.tle.core.connectors.moodle.moodle.connector.name" />
+		<parameter id="descriptionKey" value="com.tle.core.connectors.moodle.moodle.connector.description" />
 	</extension>
 
 	<extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">

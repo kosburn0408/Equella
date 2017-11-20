@@ -31,9 +31,9 @@ import com.tle.web.settings.AbstractParentSettingsSection;
 @Bind
 public class HtmlEditorSettingsSection extends AbstractParentSettingsSection<Object>
 {
-	@PlugKey("settings.title")
+	@PlugKey("htmledit.settings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.description")
+	@PlugKey("htmledit.settings.description")
 	private static Label DESCRIPTION_LABEL;
 
 	@Inject

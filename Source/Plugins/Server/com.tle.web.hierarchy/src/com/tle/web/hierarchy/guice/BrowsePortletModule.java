@@ -17,6 +17,7 @@
 package com.tle.web.hierarchy.guice;
 
 import com.google.inject.name.Names;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.web.hierarchy.portlet.renderer.BrowsePortletRenderer;
 import com.tle.web.sections.Section;
 import com.tle.web.sections.equella.guice.SectionsModule;
@@ -25,6 +26,8 @@ import com.tle.web.selection.home.sections.SelectionPortletRendererWrapper;
 @SuppressWarnings("nls")
 public class BrowsePortletModule extends SectionsModule
 {
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(BrowsePortletModule.class)+".";
+
 	@Override
 	protected void configure()
 	{
@@ -40,7 +43,7 @@ public class BrowsePortletModule extends SectionsModule
 			protected void customize(Section section)
 			{
 				SelectionPortletRendererWrapper sprw = (SelectionPortletRendererWrapper) section;
-				sprw.setPortletNameKey("com.tle.web.hierarchy.portlet.browse.name");
+				sprw.setPortletNameKey(KEY_PFX+"portlet.browse.name");
 				sprw.setPortletType("browse");
 			}
 		};

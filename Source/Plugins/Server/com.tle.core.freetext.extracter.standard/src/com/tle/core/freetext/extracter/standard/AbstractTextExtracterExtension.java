@@ -18,12 +18,14 @@ package com.tle.core.freetext.extracter.standard;
 
 import com.tle.beans.mime.MimeEntry;
 import com.tle.core.TextExtracterExtension;
+import com.tle.core.plugins.AbstractPluginService;
 
 /**
  * @author aholland
  */
 public abstract class AbstractTextExtracterExtension implements TextExtracterExtension
 {
+	private static String PFX_KEY = AbstractPluginService.getMyPluginId(AbstractTextExtracterExtension.class)+".";
 	protected String getKey()
 	{
 		return this.getClass().getSimpleName();
@@ -52,6 +54,6 @@ public abstract class AbstractTextExtracterExtension implements TextExtracterExt
 	@Override
 	public String getNameKey()
 	{
-		return "com.tle.core.freetext.extracter.standard." + getKey().toLowerCase() + ".title"; //$NON-NLS-1$ //$NON-NLS-2$
+		return PFX_KEY + getKey().toLowerCase() + ".title"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

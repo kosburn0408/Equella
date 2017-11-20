@@ -30,9 +30,9 @@ import com.tle.web.sections.standard.model.HtmlLinkState;
 @Bind
 public class LtiConsumersSettingsSection extends AbstractEntitySettingsLinkSection<Object>
 {
-	@PlugKey("settings.title")
+	@PlugKey("lti.settings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.description")
+	@PlugKey("lti.settings.description")
 	private static Label DESCRIPTION_LABEL;
 
 	@Inject

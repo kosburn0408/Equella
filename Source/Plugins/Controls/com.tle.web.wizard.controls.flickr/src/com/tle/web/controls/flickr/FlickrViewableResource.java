@@ -53,21 +53,21 @@ public class FlickrViewableResource extends AbstractWrappedResource
 		PluginResourceHandler.init(FlickrViewableResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("flickr.details.type")
 	private static KeyLabel TYPE;
-	@PlugKey("details.mimetype.description")
+	@PlugKey("flickr.details.mimetype.description")
 	private static KeyLabel MIMETYPE;
-	@PlugKey("details.title")
+	@PlugKey("flickr.details.title")
 	private static KeyLabel NAME;
-	@PlugKey("details.imagesize")
+	@PlugKey("flickr.details.imagesize")
 	private static KeyLabel FULL_IMAGE_SIZE;
-	@PlugKey("details.author")
+	@PlugKey("flickr.details.author")
 	private static KeyLabel AUTHOR;
-	@PlugKey("details.uploaded")
+	@PlugKey("flickr.details.uploaded")
 	private static KeyLabel UPLOADED;
-	@PlugKey("details.taken")
+	@PlugKey("flickr.details.taken")
 	private static KeyLabel TAKEN;
-	@PlugKey("details.licencename")
+	@PlugKey("flickr.details.licencename")
 	private static KeyLabel LICENCE_NAME;
 
 	private final CustomAttachment flickrAttachment;

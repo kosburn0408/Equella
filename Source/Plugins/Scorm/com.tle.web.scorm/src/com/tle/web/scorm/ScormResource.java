@@ -50,13 +50,13 @@ public class ScormResource
 		AttachmentResourceExtension<CustomAttachment>,
 		RegisterMimeTypeExtension<CustomAttachment>
 {
-	@PlugKey("details.type")
+	@PlugKey("scorm.details.type")
 	private static KeyLabel TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("scorm.details.mimetype")
 	private static KeyLabel MIMETYPE;
-	@PlugKey("details.name")
+	@PlugKey("scorm.details.name")
 	private static Label NAME;
-	@PlugKey("details.size")
+	@PlugKey("scorm.details.size")
 	private static Label SIZE;
 
 	@Inject

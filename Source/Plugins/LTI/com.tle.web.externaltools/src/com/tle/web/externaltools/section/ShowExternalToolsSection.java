@@ -39,7 +39,7 @@ import com.tle.web.sections.result.util.KeyLabel;
 @TreeIndexed
 public class ShowExternalToolsSection extends AbstractShowEntitiesSection<ExternalTool, ShowExternalToolsModel>
 {
-	@PlugKey("settings.title")
+	@PlugKey("tools.settings.title")
 	private static Label TITLE_LABEL;
 	@PlugKey("tools.add")
 	private static Label ADD_LABEL;

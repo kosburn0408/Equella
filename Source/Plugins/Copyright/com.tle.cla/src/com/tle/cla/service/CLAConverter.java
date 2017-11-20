@@ -95,7 +95,7 @@ public class CLAConverter extends AbstractConverter<Object>
 				@Override
 				public void total(int total)
 				{
-					message.setKey(KPFX + "calstatusmsg"); //$NON-NLS-1$
+					message.setKey(KPFX + "cla.statusmsg"); //$NON-NLS-1$
 					message.setTotal(total);
 				}
 			});
@@ -113,7 +113,7 @@ public class CLAConverter extends AbstractConverter<Object>
 		{
 			if( type == ConvertType.IMPORT || type == ConvertType.CLONE )
 			{
-				tasks.addAfter(new NameValue(CurrentLocale.get(KPFX + "collecttask"), CLA_CID)); //$NON-NLS-1$
+				tasks.addAfter(new NameValue(CurrentLocale.get(KPFX + "cla.collecttask"), CLA_CID)); //$NON-NLS-1$
 			}
 		}
 	}

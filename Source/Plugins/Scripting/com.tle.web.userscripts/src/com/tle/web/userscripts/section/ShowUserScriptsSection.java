@@ -41,7 +41,7 @@ public class ShowUserScriptsSection
 	extends
 		AbstractShowEntitiesSection<UserScript, ShowUserScriptsSection.ShowUserScriptsModel>
 {
-	@PlugKey("settings.title")
+	@PlugKey("scripts.settings.title")
 	private static Label TITLE_LABEL;
 	@PlugKey("scripts.add")
 	private static Label ADD_SCRIPT_LABEL;

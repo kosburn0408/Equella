@@ -5,7 +5,7 @@
 <@css path="favouritesdialog.css" hasRtl=true />
 
 <h3>${b.key("add.description")}</h3>
-<p>${b.key("description")}</p>
+<p>${b.key("favourites.description")}</p>
 
 <@textfield section=s.tagsField autoSubmitButton=s.ok size=50 class="focus" />
 

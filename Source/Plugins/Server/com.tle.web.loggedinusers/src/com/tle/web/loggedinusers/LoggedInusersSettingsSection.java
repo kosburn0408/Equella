@@ -31,9 +31,9 @@ import com.tle.web.settings.AbstractParentSettingsSection;
 @SuppressWarnings("nls")
 public class LoggedInusersSettingsSection extends AbstractParentSettingsSection<Object>
 {
-	@PlugKey("settings.title")
+	@PlugKey("liu.settings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.description")
+	@PlugKey("liu.settings.description")
 	private static Label DESCRIPTION_LABEL;
 
 	@Inject

@@ -45,7 +45,7 @@ public class RootEchoServerSection extends OneColumnLayout<OneColumnLayoutModel>
 
 	@PlugKey("serverlist.page.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("error.noaccess")
+	@PlugKey("echo.error.noaccess")
 	private static String ACCESS_ERROR;
 
 	@Inject

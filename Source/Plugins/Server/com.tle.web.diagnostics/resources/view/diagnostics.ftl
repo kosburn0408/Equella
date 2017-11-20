@@ -8,7 +8,7 @@
 <#include "/com.tle.web.sections.standard@/list.ftl" />
 
 <div class="area">
-	<h2>${b.key('title')}</h2>
+	<h2>${b.key('diagnostics.title')}</h2>
 	<@a.div id="usergroups">
 		<h3>${b.key("viewusers")}</h3>
 		<p>${b.key("viewusers.help")}</p>

@@ -62,7 +62,7 @@ public class BrowseSection extends AbstractPrototypeSection<BrowseSection.Model>
 	private FreetextIndex freetextIndex;
 	@EventFactory
 	private EventGenerator events;
-	@PlugKey("pagetitle")
+	@PlugKey("browseby.pagetitle")
 	private static String KEY_TITLE;
 	@PlugKey("alltitle")
 	private static Label LABEL_ROOT;

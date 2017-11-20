@@ -55,23 +55,23 @@ public class EchoViewableResource extends AbstractWrappedResource
 		PluginResourceHandler.init(EchoViewableResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("echo.details.type")
 	private static Label TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("echo.details.mimetype")
 	private static Label MIMETYPE;
-	@PlugKey("details.title")
+	@PlugKey("echo.details.title")
 	private static Label NAME;
-	@PlugKey("details.course")
+	@PlugKey("echo.details.course")
 	private static Label COURSE;
-	@PlugKey("details.section")
+	@PlugKey("echo.details.section")
 	private static Label SECTION;
-	@PlugKey("details.duration")
+	@PlugKey("echo.details.duration")
 	private static Label DURATION;
-	@PlugKey("details.presenters")
+	@PlugKey("echo.details.presenters")
 	private static Label PRESENTERS;
-	@PlugKey("details.published")
+	@PlugKey("echo.details.published")
 	private static Label PUBLISHED;
-	@PlugKey("details.modified")
+	@PlugKey("echo.details.modified")
 	private static Label CAPTURED;
 
 	private final CustomAttachment echoAttachment;

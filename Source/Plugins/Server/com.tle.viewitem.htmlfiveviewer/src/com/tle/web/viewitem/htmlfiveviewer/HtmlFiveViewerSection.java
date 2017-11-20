@@ -113,7 +113,7 @@ public class HtmlFiveViewerSection extends AbstractViewerSection<HtmlFiveViewerM
 		info.getBody().addReadyStatements(
 			Js.statement(Js.call(new ExternallyDefinedFunction("resizeListeners", new IncludeFile(RESIZE_JS_URL)),
 				width, height)));
-		return viewFactory.createTemplateResult("viewer.ftl", this);
+		return viewFactory.createTemplateResult("fiveviewer.ftl", this);
 	}
 
 	public static class HtmlFiveViewerModel

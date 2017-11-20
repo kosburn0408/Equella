@@ -91,10 +91,10 @@ public class ResourceHandler
 	@PlugKey("label.title.edit")
 	private static Label LABEL_TITLE_EDIT;
 
-	@PlugKey("details.item.desc")
+	@PlugKey("ressel.details.item.desc")
 	private static Label ITEM_DESC;
 
-	@PlugKey("details.item.viewlink")
+	@PlugKey("ressel.details.item.viewlink")
 	private static Label VIEW_LINK_LABEL;
 
 	@Inject

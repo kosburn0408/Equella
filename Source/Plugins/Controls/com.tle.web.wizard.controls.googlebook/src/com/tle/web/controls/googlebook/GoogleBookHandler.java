@@ -84,29 +84,29 @@ public class GoogleBookHandler extends BasicAbstractAttachmentHandler<AbstractAt
 {
 	private static final int PER_PAGE = 10;
 
-	@PlugKey("name")
+	@PlugKey("gbook.name")
 	private static Label NAME_LABEL;
-	@PlugKey("description")
+	@PlugKey("gbook.description")
 	private static Label DESCRIPTION_LABEL;
-	@PlugKey("add.title")
+	@PlugKey("gbook.add.title")
 	private static Label ADD_TITLE_LABEL;
-	@PlugKey("edit.title")
+	@PlugKey("gbook.edit.title")
 	private static Label EDIT_TITLE_LABEL;
 
-	@PlugKey("details.description")
+	@PlugKey("gbook.details.description")
 	private static Label DESCRIPTION;
-	@PlugKey("details.author")
+	@PlugKey("gbook.details.author")
 	private static Label AUTHOR;
-	@PlugKey("details.authors")
+	@PlugKey("gbook.details.authors")
 	private static Label AUTHORS;
-	@PlugKey("details.publisher")
+	@PlugKey("gbook.details.publisher")
 	private static Label PUBLISHER;
-	@PlugKey("details.publishers")
+	@PlugKey("gbook.details.publishers")
 	private static Label PUBLISHERS;
-	@PlugKey("details.rating")
+	@PlugKey("gbook.details.rating")
 	private static Label RATING;
 
-	@PlugKey("details.viewlink")
+	@PlugKey("gbook.details.viewlink")
 	private static Label VIEW_LINK_LABEL;
 
 	@Inject
@@ -117,7 +117,7 @@ public class GoogleBookHandler extends BasicAbstractAttachmentHandler<AbstractAt
 	@Component
 	private TextField query;
 	@Component
-	@PlugKey("add.search")
+	@PlugKey("gbook.add.search")
 	private Button search;
 	@Component
 	private MultiSelectionList<Void> results;

@@ -27,6 +27,7 @@ import com.tle.core.collection.service.ItemDefinitionService;
 import com.tle.core.i18n.BundleCache;
 import com.tle.core.i18n.BundleNameValue;
 import com.tle.core.i18n.TextBundle;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.web.sections.SectionInfo;
 import com.tle.web.sections.standard.model.DynamicHtmlListModel;
 import com.tle.web.sections.standard.model.NameValueOption;
@@ -40,6 +41,8 @@ public class ContributableCollectionsModel extends DynamicHtmlListModel<ItemDefi
 {
 	private final ItemDefinitionService itemdefService;
 	private final BundleCache bundleCache;
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(ContributableCollectionsModel.class)+".";
+
 
 	public ContributableCollectionsModel(ItemDefinitionService itemdefService, BundleCache bundleCache)
 	{
@@ -71,7 +74,7 @@ public class ContributableCollectionsModel extends DynamicHtmlListModel<ItemDefi
 		if( itemDef == null )
 		{
 			return new NameValueOption<ItemDefinition>(
-				new NameValue(CurrentLocale.get("com.tle.web.cloneormove.selectcollection.option.collection.none"), ""),
+				new NameValue(CurrentLocale.get(KEY_PFX+"selectcollection.option.collection.none"), ""),
 				null);
 		}
 		return new NameValueOption<ItemDefinition>(

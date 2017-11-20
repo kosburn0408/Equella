@@ -7,7 +7,7 @@
 
 <@css "blackboardconnector.css" />
 
-<@setting label='' help=b.key('editor.help.installmodule')>
+<@setting label='' help=b.key('bb.editor.help.installmodule')>
 	<hr>
 </@setting>
 
@@ -51,7 +51,7 @@
 		
 			<@ajax.div id="testdiv">
 				<@setting 
-					label=b.key('editor.label.testwebservice') 
+					label=b.key('bb.editor.label.testwebservice')
 					help=b.key('editor.help.testwebservice.username')
 					mandatory=true
 					rowStyle="testBlackboardRow"
@@ -69,7 +69,7 @@
 					
 						<@button section=s.testWebServiceButton showAs="verify" />
 					  	<#if m.testWebServiceStatus??>
-					  		<span class="status ${m.testWebServiceStatus}">${b.key('editor.label.testwebservice.' + m.testWebServiceStatus)}</span>
+					  		<span class="status ${m.testWebServiceStatus}">${b.key('bb.editor.label.testwebservice.' + m.testWebServiceStatus)}</span>
 					  	</#if>
 				</@setting>
 			</@ajax.div>				

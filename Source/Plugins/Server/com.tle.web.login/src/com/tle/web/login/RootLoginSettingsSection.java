@@ -83,7 +83,7 @@ public class RootLoginSettingsSection extends OneColumnLayout<RootLoginSettingsS
 	private static Label OK_LABEL;
 	@PlugKey("login.ipaddresslist.remove")
 	private static Label DELETE_LABEL;
-	@PlugKey("settings.save.receipt")
+	@PlugKey("login.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 	@PlugKey("login.ipaddresslist.empty")
 	private static Label EMPTY_LABEL;

@@ -118,7 +118,7 @@ public class RootRemoteCachingSection extends OneColumnLayout<RootRemoteCachingS
 	 */
 	@PlugKey("remotecaching.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.save.receipt")
+	@PlugKey("remotecaching.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 	@PlugKey("label.group")
 	private static Label LABEL_GROUP;

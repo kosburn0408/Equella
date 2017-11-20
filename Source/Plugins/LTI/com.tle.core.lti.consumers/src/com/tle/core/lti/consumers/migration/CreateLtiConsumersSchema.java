@@ -42,7 +42,7 @@ public class CreateLtiConsumersSchema extends AbstractCreateMigration
 	@Override
 	public MigrationInfo createMigrationInfo()
 	{
-		return new MigrationInfo(KEY_PFX + "migration.createentity");
+		return new MigrationInfo(KEY_PFX + "lti.migration.createentity");
 	}
 
 	@Override

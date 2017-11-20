@@ -39,9 +39,9 @@ public class LtiConsumersContributeSection
 		AbstractEntityContributeSection<LtiConsumerEditingBean, LtiConsumer, LtiConsumersContributeSection.LtiConsumerContributeModel>
 {
 
-	@PlugKey("editor.pagetitle.new")
+	@PlugKey("lti.editor.pagetitle.new")
 	private static Label NEW_CONSUMER_LABEL;
-	@PlugKey("editor.pagetitle.edit")
+	@PlugKey("lti.editor.pagetitle.edit")
 	private static Label EDIT_CONSUMER_LABEL;
 
 	@Inject

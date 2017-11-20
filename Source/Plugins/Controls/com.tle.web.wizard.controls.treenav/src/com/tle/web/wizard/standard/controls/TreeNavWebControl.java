@@ -126,6 +126,8 @@ public class TreeNavWebControl extends AbstractWebControl<TreeNavWebControl.Tree
 	private static Label LABEL_TABS_REMOVE;
 	@PlugKey("tabdialog.title")
 	private static Label TAB_DIALOG_TITLE;
+	@PlugKey("prepopconfirm")
+	private static Label CONFIRM;
 
 	@Component(name = "pp")
 	@PlugKey("prepop")
@@ -227,7 +229,7 @@ public class TreeNavWebControl extends AbstractWebControl<TreeNavWebControl.Tree
 			public String getExpression(RenderContext info)
 			{
 				return "tctl.confirmPrepop('" //$NON-NLS-1$
-					+ CurrentLocale.get("com.tle.web.wizard.controls.treenav.prepopconfirm") //$NON-NLS-1$
+					+ CONFIRM.getText() //$NON-NLS-1$
 					+ "')"; //$NON-NLS-1$
 			}
 

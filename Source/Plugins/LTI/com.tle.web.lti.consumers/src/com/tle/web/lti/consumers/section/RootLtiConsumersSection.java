@@ -31,7 +31,7 @@ import com.tle.web.sections.standard.model.HtmlLinkState;
 @Bind
 public class RootLtiConsumersSection extends AbstractRootEntitySection<OneColumnLayoutModel>
 {
-	@PlugKey("settings.title")
+	@PlugKey("lti.settings.title")
 	private static Label TITLE_LABEL;
 
 	@Inject

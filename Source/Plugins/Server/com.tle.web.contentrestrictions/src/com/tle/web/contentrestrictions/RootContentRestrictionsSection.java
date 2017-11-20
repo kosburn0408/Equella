@@ -108,9 +108,9 @@ public class RootContentRestrictionsSection extends OneColumnLayout<OneColumnLay
 	private static Label LABEL_MOVE_DOWN;
 	@PlugKey("quota.label.invalidexpression")
 	private static Label LABEL_INVALID_EXPRESSION;
-	@PlugURL("images/up.gif")
+	@PlugURL("images/moveup.gif")
 	private static String URL_ICON_UP;
-	@PlugURL("images/down.gif")
+	@PlugURL("images/movedown.gif")
 	private static String URL_ICON_DOWN;
 
 	@Inject

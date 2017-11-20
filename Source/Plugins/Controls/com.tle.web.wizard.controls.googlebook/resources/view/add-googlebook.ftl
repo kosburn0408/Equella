@@ -6,7 +6,7 @@
 
 <@css path="googlebook.css" hasRtl=true/>
 
-<h3>${b.key("add.heading")}</h3>
+<h3>${b.key("gbook.add.heading")}</h3>
 
 <div id="googlebook-query" class="input text">
 	<label for="${s.query}">${b.key("add.search.label")}</label>

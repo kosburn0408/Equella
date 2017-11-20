@@ -81,21 +81,21 @@ public class ResourceAttachmentResource
 		PluginResourceHandler.init(ResourceAttachmentResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("ressel.details.type")
 	private static Label TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("ressel.details.mimetype")
 	private static Label MIMETYPE;
-	@PlugKey("details.item.nodetail")
+	@PlugKey("ressel.details.item.nodetail")
 	private static Label LABEL_NA;
-	@PlugKey("details.item.name")
+	@PlugKey("ressel.details.item.name")
 	private static Label ITEM_NAME;
-	@PlugKey("details.item.collection")
+	@PlugKey("ressel.details.item.collection")
 	private static Label ITEM_COLLECTION;
-	@PlugKey("details.item.version")
+	@PlugKey("ressel.details.item.version")
 	private static Label ITEM_VERSION;
-	@PlugKey("details.item.rating")
+	@PlugKey("ressel.details.item.rating")
 	private static Label ITEM_RATING;
-	@PlugKey("details.item.lastmod")
+	@PlugKey("ressel.details.item.lastmod")
 	private static Label ITEM_MODIFIED;
 
 	private static final Log LOGGER = LogFactory.getLog(ResourceAttachmentResource.class);

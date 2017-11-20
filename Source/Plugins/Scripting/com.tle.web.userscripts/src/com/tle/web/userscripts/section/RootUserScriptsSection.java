@@ -32,7 +32,7 @@ import com.tle.web.sections.standard.model.HtmlLinkState;
 public class RootUserScriptsSection extends AbstractRootEntitySection<OneColumnLayoutModel>
 {
 
-	@PlugKey("settings.title")
+	@PlugKey("scripts.settings.title")
 	private static Label TITLE_LABEL;
 	
 	@Inject

@@ -52,7 +52,7 @@ public class LoggedInUsersListSection extends AbstractPrototypeSection<LoggedInU
 	implements
 		HtmlRenderer
 {
-	@PlugKey("title")
+	@PlugKey("liu.title")
 	private static Label LABEL_TITLE;
 	@PlugKey("sessions.count")
 	private static String KEY_SESSIONS;

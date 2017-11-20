@@ -24,6 +24,8 @@ import javax.inject.Inject;
 import com.tle.beans.item.ItemId;
 import com.tle.common.i18n.CurrentLocale;
 import com.tle.web.sections.SectionInfo;
+import com.tle.web.sections.equella.annotation.PlugKey;
+import com.tle.web.sections.render.Label;
 import com.tle.web.sections.standard.model.HtmlLinkState;
 import com.tle.web.selection.SelectionHistory;
 import com.tle.web.selection.SelectionService;
@@ -33,6 +35,9 @@ import com.tle.web.viewurl.ViewItemUrlFactory;
 
 public class SelectionsSegment extends AbstractRecentSegment
 {
+	@PlugKey("recently.selected")
+	private static Label TITLE;
+
 	@Inject
 	private ViewItemUrlFactory urlFactory;
 	@Inject
@@ -55,7 +60,7 @@ public class SelectionsSegment extends AbstractRecentSegment
 	@Override
 	public String getTitle(SectionInfo info, SelectionSession session)
 	{
-		return CurrentLocale.get("com.tle.web.selection.home.recently.selected"); //$NON-NLS-1$
+		return TITLE.getText(); //$NON-NLS-1$
 	}
 
 }

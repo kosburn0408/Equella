@@ -52,7 +52,7 @@ import com.tle.web.sections.standard.dialog.model.DialogModel;
 @Bind
 public class AddShortcutUrlDialog extends AbstractOkayableDialog<AddShortcutUrlDialog.AddShortculUrlDialogModel>
 {
-	@PlugKey("dialog.title")
+	@PlugKey("shortcuts.dialog.title")
 	private static Label LABEL_TITLE;
 
 	@PlugKey("dialog.error.shortcut.overwrite")
@@ -65,7 +65,7 @@ public class AddShortcutUrlDialog extends AbstractOkayableDialog<AddShortcutUrlD
 	private static Label ERROR_URL_BLANK;
 	@PlugKey("dialog.error.url.invalid")
 	private static String ERROR_INVALID_URL;
-	@PlugKey("save.receipt")
+	@PlugKey("shortcuts.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 
 	private static String SHORTCUT_ERROR = "shortcut";

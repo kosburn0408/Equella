@@ -29,7 +29,7 @@
 
 	<extension plugin-id="com.tle.web.viewurl" point-id="resourceViewer" id="externalLinkViewer">
 		<parameter id="id" value="externalLinkViewer" />
-		<parameter id="nameKey" value="com.tle.web.viewitem.externallinkviewer.name" />
+		<parameter id="nameKey" value="com.tle.web.viewitem.externallinkviewer.extlink.name" />
 		<parameter id="class" value="bean:com.tle.web.viewitem.externallinkviewer.ExternalLinkViewer" />
 	</extension>
 

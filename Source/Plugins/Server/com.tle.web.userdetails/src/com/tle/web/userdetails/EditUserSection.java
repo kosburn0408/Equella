@@ -104,7 +104,8 @@ public class EditUserSection extends TwoColumnLayout<EditUserSection.EditUserMod
 	public static final String DATE_FORMAT_EXACT = "format.exact";
 	@PlugKey("common.savesuccess")
 	private static Label SAVE_SUCCESS;
-
+	@PlugKey("common.denied")
+	private static Label DENIED;
 	@PlugKey("internal.change")
 	private static Label PASS_LABEL;
 	@PlugKey("my.title")
@@ -122,6 +123,14 @@ public class EditUserSection extends TwoColumnLayout<EditUserSection.EditUserMod
 	private static String USE_EXACT;
 	@PlugKey("dateformat.relative")
 	private static String USE_APPROX;
+
+	@PlugKey("defaulttimezone")
+	private static String KEY_TIMEZONE;
+
+	@PlugKey("page.portal.title")
+	private static String KEY_PORTAL_TITLE;
+	@PlugKey("page.breadcrumb.title")
+	private static String KEY_BREADCRUMB_TITLE;
 
 	@PlugURL("css/search.css")
 	private static String URL_CSS;
@@ -200,7 +209,7 @@ public class EditUserSection extends TwoColumnLayout<EditUserSection.EditUserMod
 	{
 		if( !isEditUserDetailsAvailable() )
 		{
-			throw new AccessDeniedException(CurrentLocale.get("com.tle.web.userdetails.common.denied"));
+			throw new AccessDeniedException(DENIED.getText());
 		}
 
 		EditUserModel model = getModel(context);
@@ -366,7 +375,7 @@ public class EditUserSection extends TwoColumnLayout<EditUserSection.EditUserMod
 		saveButton.setLabel(SAVE_LABEL);
 		saveButton.setStyleClass("profile-save-button");
 		timeZones.setListModel(new SimpleHtmlListModel<NameValue>(DateHelper
-			.getTimeZoneNameValues(new BundleNameValue("com.tle.web.userdetails.defaulttimezone", ""), false)));
+			.getTimeZoneNameValues(new BundleNameValue(KEY_TIMEZONE, ""), false)));
 
 		changePassButton.setLabel(PASS_LABEL);
 		changePassButton.setDefaultRenderer(EquellaButtonExtension.ACTION_BUTTON);
@@ -384,8 +393,8 @@ public class EditUserSection extends TwoColumnLayout<EditUserSection.EditUserMod
 		decorations.setTitle(CurrentUser.getUserState().isInternal() ? INTERNAL_TITLE : MY_TITLE);
 		decorations.setContentBodyClass("user-details");
 		HtmlLinkState linkState = new HtmlLinkState(new SimpleBookmark(WebConstants.DEFAULT_HOME_PAGE));
-		linkState.setLabel(new KeyLabel("com.tle.web.portal.page.portal.title"));
-		linkState.setTitle(new KeyLabel("com.tle.web.portal.page.breadcrumb.title"));
+		linkState.setLabel(new KeyLabel(KEY_PORTAL_TITLE));
+		linkState.setTitle(new KeyLabel(KEY_BREADCRUMB_TITLE));
 		crumbs.add(linkState);
 	}
 

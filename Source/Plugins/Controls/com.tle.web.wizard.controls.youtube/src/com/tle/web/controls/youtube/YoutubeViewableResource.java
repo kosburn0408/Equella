@@ -52,19 +52,19 @@ public class YoutubeViewableResource extends AbstractWrappedResource
 		PluginResourceHandler.init(YoutubeViewableResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("youtube.details.type")
 	private static KeyLabel TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("youtube.details.mimetype")
 	private static KeyLabel MIMETYPE;
-	@PlugKey("details.title")
+	@PlugKey("youtube.details.title")
 	private static KeyLabel NAME;
-	@PlugKey("details.duration")
+	@PlugKey("youtube.details.duration")
 	private static KeyLabel DURATION;
-	@PlugKey("details.author")
+	@PlugKey("youtube.details.author")
 	private static KeyLabel AUTHOR;
-	@PlugKey("details.uploaded")
+	@PlugKey("youtube.details.uploaded")
 	private static KeyLabel UPLOADED;
-	@PlugKey("details.tags")
+	@PlugKey("youtube.details.tags")
 	private static KeyLabel TAGS;
 
 	private final CustomAttachment youTubeAttachment;

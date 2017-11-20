@@ -2,7 +2,7 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
 
-<entry key="helppage"><![CDATA[
+<entry key="hier.helppage"><![CDATA[
 <div id="helpMain" >
 	<h3>Browse</h3>
 	<p>The Browse page provides access to resources by grouping resources using the hierarchy categories.</p>
@@ -110,7 +110,7 @@
 ]]>
 </entry>
 
-<entry key="commonmoredivs">
+<entry key="hier.commonmoredivs">
 <![CDATA[
 <div id="moreNavigation" style="display: none">
 	<h3>More about the Navigation menu</h3>

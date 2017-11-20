@@ -31,9 +31,9 @@ import com.tle.web.settings.AbstractParentSettingsSection;
 @SuppressWarnings("nls")
 public class ShortcutUrlsSettingsLinkSection extends AbstractParentSettingsSection<Object>
 {
-	@PlugKey("settings.title")
+	@PlugKey("shortcuts.settings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.description")
+	@PlugKey("shortcuts.settings.description")
 	private static Label DESCRIPTION_LABEL;
 
 	@Inject

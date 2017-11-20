@@ -86,7 +86,7 @@
 </entry>
 
 <!-- unable to effectively the placeholder parameter for the small gifs. -->
-<entry key="commonmoredivs"><![CDATA[
+<entry key="fave.commonmoredivs"><![CDATA[
 <div id="moreNavMenu" style="display: none">
  <h3>More about the Navigation menu</h3>
  <p>The navigation menu is displayed on the left-hand side of the page and displays links for accessing and managing content. The menu comprises standard EQUELLA, browse, custom and administration links. 

@@ -11,7 +11,7 @@
 	</#if>
 	<br>
 	<#if m.confirmStartProcess>
-		<@render section=s.startButton>${b.key('confirm')}</@render>
+		<@render section=s.startButton>${b.key('liv.confirm')}</@render>
 	<#else>
 		<div style="text-align:center;">
 			<img src=${p.url("images/pageloader.gif")} alt="loading">

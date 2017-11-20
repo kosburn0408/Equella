@@ -52,7 +52,7 @@ import com.tle.web.template.Decorations;
 @SuppressWarnings("nls")
 public class RootScheduledTasksSettingsSection extends OneColumnLayout<OneColumnLayoutModel>
 {
-	@PlugKey("title")
+	@PlugKey("scheduler.title")
 	private static Label TITLE_LABEL;
 	@PlugKey("save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;

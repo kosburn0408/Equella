@@ -16,13 +16,13 @@
 					
 			<@settingContainer mandatory=false>
 				<#if m.questionCount??>
-					<@setting label=b.key('details.questions.count')>
+					<@setting label=b.key('qti.details.questions.count')>
 						${m.questionCount}
 					</@setting>
 				</#if>
 				
 				<#if m.sectionCount??>
-					<@setting label=b.key('details.sections.count') > 
+					<@setting label=b.key('qti.details.sections.count') >
 						${m.sectionCount}
 					</@setting>
 				</#if>

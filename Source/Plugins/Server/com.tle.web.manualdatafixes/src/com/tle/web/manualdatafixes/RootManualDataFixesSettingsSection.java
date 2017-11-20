@@ -66,7 +66,7 @@ public class RootManualDataFixesSettingsSection extends AbstractPrototypeSection
 	private static String update_url;
 	@PlugURL("css/manualdatafix.css")
 	private static String css_url;
-	@PlugKey("title")
+	@PlugKey("fix.title")
 	private static Label TITLE_LABEL;
 
 	@AjaxFactory

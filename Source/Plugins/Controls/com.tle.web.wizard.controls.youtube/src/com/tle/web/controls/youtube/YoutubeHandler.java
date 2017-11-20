@@ -98,13 +98,13 @@ public class YoutubeHandler extends BasicAbstractAttachmentHandler<YoutubeHandle
 	private static final int PER_PAGE = 50;
 	public static final String KEY_ALL_YOUTUBE = "AllYouTube";
 
-	@PlugKey("name")
+	@PlugKey("youtube.name")
 	private static Label NAME_LABEL;
-	@PlugKey("description")
+	@PlugKey("youtube.description")
 	private static Label DESCRIPTION_LABEL;
-	@PlugKey("add.title")
+	@PlugKey("youtube.add.title")
 	private static Label ADD_TITLE_LABEL;
-	@PlugKey("edit.title")
+	@PlugKey("youtube.edit.title")
 	private static Label EDIT_TITLE_LABEL;
 	@PlugKey("add.views")
 	private static String ADD_VIEWS_LABEL;
@@ -119,16 +119,16 @@ public class YoutubeHandler extends BasicAbstractAttachmentHandler<YoutubeHandle
 	@PlugKey("error.channelid.invalid")
 	private static String CHANNEL_INVALID;
 
-	@PlugKey("details.customparams.error")
+	@PlugKey("youtube.details.customparams.error")
 	private static Label CUSTOM_PARAMS_ERROR;
-	@PlugKey("details.views")
+	@PlugKey("youtube.details.views")
 	private static Label VIEWS_LABEL;
-	@PlugKey("details.rating")
+	@PlugKey("youtube.details.rating")
 	private static Label RATING;
-	@PlugKey("details.rating.info")
+	@PlugKey("youtube.details.rating.info")
 	private static String RATING_INFO;
 
-	@PlugKey("details.viewlink")
+	@PlugKey("youtube.details.viewlink")
 	private static Label VIEW_LINK_LABEL;
 
 	@Inject

@@ -7,7 +7,7 @@
 <@css path="dateformatsettings.css" hasRtl=true />
 
 <div class="area">
-	<h2>${b.key('settings.page.title')}</h2>	
+	<h2>${b.key('dates.settings.page.title')}</h2>
 	
 	<div class="input checkbox">
 		<@checklist section=s.dateFormats list=true />

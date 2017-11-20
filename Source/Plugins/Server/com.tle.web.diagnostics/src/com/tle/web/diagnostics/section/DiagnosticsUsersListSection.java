@@ -63,7 +63,7 @@ public class DiagnosticsUsersListSection extends AbstractPrototypeSection<Diagno
 	implements
 		HtmlRenderer
 {
-	@PlugKey("title")
+	@PlugKey("diagnostics.title")
 	private static Label LABEL_TITLE;
 
 	@PlugKey("no.group.found")

@@ -6,7 +6,7 @@
 <@css "uploadcustomisation.css" />
 
 <div class="area">
-	<h2>${b.key('title')}</h2>
+	<h2>${b.key('customisation.title')}</h2>
 	<p>
 		<@setting label=b.key("upload")>
 			<@file section=s.getUpload() size=30/>

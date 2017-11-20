@@ -35,8 +35,8 @@
 
 	<extension plugin-id="com.tle.core.connectors" point-id="connectorType" id="brightspaceConnector">
 		<parameter id="id" value="brightspace" />
-		<parameter id="nameKey" value="com.tle.core.connectors.brightspace.connector.name" />
-		<parameter id="descriptionKey" value="com.tle.core.connectors.brightspace.connector.description" />
+		<parameter id="nameKey" value="com.tle.core.connectors.brightspace.bspace.connector.name" />
+		<parameter id="descriptionKey" value="com.tle.core.connectors.brightspace.bspace.connector.description" />
 	</extension>
 
 	<extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings">

@@ -48,7 +48,7 @@ public abstract class AbstractRootFavouritesSection extends ContextableSearchSec
 	private static final String SEARCHES_TYPE = "searches";
 	private static final String ITEMS_TYPE = "items";
 
-	@PlugKey("title")
+	@PlugKey("favourites.title")
 	private static Label LABEL_TITLE;
 	@PlugKey(SEARCHES_TYPE)
 	private static String KEY_SEARCHES;

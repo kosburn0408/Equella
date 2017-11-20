@@ -34,6 +34,7 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.MapKeyColumn;
 
+import com.tle.core.plugins.AbstractPluginService;
 import org.hibernate.annotations.AccessType;
 import org.hibernate.annotations.Index;
 import org.hibernate.annotations.MapKeyType;
@@ -53,6 +54,7 @@ import com.tle.core.qti.QtiConstants;
 @Singleton
 public class AddQTIMimeTypeMigration extends AbstractHibernateDataMigration
 {
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(AddQTIMimeTypeMigration.class)+".";
 	private static final String COUNT = "SELECT COUNT(*) FROM MimeEntry WHERE type = 'equella/qtitest' and institution = :institution";
 
 	@Override
@@ -64,7 +66,7 @@ public class AddQTIMimeTypeMigration extends AbstractHibernateDataMigration
 	@Override
 	public MigrationInfo createMigrationInfo()
 	{
-		return new MigrationInfo("com.tle.web.qti.migration.mime.title");
+		return new MigrationInfo(KEY_PFX+"qti.migration.mime.title");
 	}
 
 	@SuppressWarnings("unchecked")

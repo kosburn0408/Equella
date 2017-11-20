@@ -62,7 +62,7 @@ public class RootOaiIdentifierSettingsSection extends OneColumnLayout<RootOaiIde
 	@Component(stateful = false)
 	private Checkbox useDownloadItemAcl;
 
-	@PlugKey("settings.save.receipt")
+	@PlugKey("oai.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 	@Component
 	@PlugKey("settings.save.button")

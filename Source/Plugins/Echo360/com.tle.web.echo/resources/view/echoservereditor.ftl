@@ -32,7 +32,7 @@
 		<@button section=s.testUrlButton showAs="verify" />
 		<#if m.testStatus??>
 			<span class="status ${m.testStatus}">
-				${b.key('editor.label.teststatus.' + m.testStatus)}
+				${b.key('echo.editor.label.teststatus.' + m.testStatus)}
 			</span>
 		</#if>
 		</@setting>

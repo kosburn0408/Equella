@@ -42,7 +42,7 @@ import com.tle.core.plugins.impl.PluginServiceImpl;
 @Singleton
 public class CLAAddNullConstraints extends AbstractHibernateMigration
 {
-	private static final String keyPrefix = PluginServiceImpl.getMyPluginId(CLAAddNullConstraints.class) + ".addnulls."; //$NON-NLS-1$
+	private static final String keyPrefix = PluginServiceImpl.getMyPluginId(CLAAddNullConstraints.class) + ".cla.addnulls."; //$NON-NLS-1$
 
 	@SuppressWarnings("nls")
 	@Override

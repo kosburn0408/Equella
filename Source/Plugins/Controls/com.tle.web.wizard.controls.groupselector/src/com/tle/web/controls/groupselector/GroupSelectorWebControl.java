@@ -70,18 +70,18 @@ public class GroupSelectorWebControl extends AbstractWebControl<GroupSelectorWeb
 	implements
 		CurrentGroupsCallback
 {
-	@PlugKey("prompt.selectsingle")
+	@PlugKey("groupsel.prompt.selectsingle")
 	private static Label LABEL_PROMPTSINGLE;
-	@PlugKey("prompt.selectmultiple")
+	@PlugKey("groupsel.prompt.selectmultiple")
 	private static Label LABEL_PROMPTMULTIPLE;
-	@PlugKey("title.selectsingle")
+	@PlugKey("groupsel.title.selectsingle")
 	private static Label LABEL_TITLESINGLE;
-	@PlugKey("title.selectmultiple")
+	@PlugKey("groupsel.title.selectmultiple")
 	private static Label LABEL_TITLEMULTIPLE;
 
-	@PlugKey("confirmremove")
+	@PlugKey("groupsel.confirmremove")
 	private static Confirm KEY_CONFIRM;
-	@PlugKey("currentlyselectedstuff.remove")
+	@PlugKey("groupsel.remove")
 	private static Label LABEL_REMOVE;
 
 	private GroupSelectorControl definitionControl;
@@ -104,7 +104,7 @@ public class GroupSelectorWebControl extends AbstractWebControl<GroupSelectorWeb
 	@Component
 	private SelectionsTable groupsTable;
 	@Component
-	@PlugKey("button.selectgroup")
+	@PlugKey("groupsel.button.selectgroup")
 	private Link addLink;
 
 	private JSCallable removeGroupFunction;

@@ -34,6 +34,7 @@ import com.tle.common.security.PrivilegeTree.Node;
 import com.tle.common.security.SecurityConstants;
 import com.tle.core.activation.service.CourseInfoService;
 import com.tle.core.guice.Bind;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.security.TLEAclManager;
 import com.tle.web.api.activation.CourseBean;
 import com.tle.web.api.activation.CourseBeanSerializer;
@@ -59,6 +60,9 @@ public class CourseResourceImpl extends AbstractBaseEntityResource<CourseInfo, B
 	private CourseBeanSerializer courseSerializer;
 	@Inject
 	private TLEAclManager aclService;
+
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(CourseResource.class)+".";
+
 
 	/**
 	 * Provide the full course data in the results
@@ -109,7 +113,7 @@ public class CourseResourceImpl extends AbstractBaseEntityResource<CourseInfo, B
 			if( courseSameCode != null && (isNew || !uuid.equals(courseSameCode.getUuid())) )
 			{
 				throw new InvalidDataException(new ValidationError("code",
-					CurrentLocale.get("com.tle.web.api.activation.course.edit.validation.codeinuse", courseCode)));
+					CurrentLocale.get(KEY_PFX + "course.edit.validation.codeinuse", courseCode)));
 			}
 		}
 	}

@@ -48,17 +48,17 @@ public class GoogleBookSearchViewableResource extends AbstractWrappedResource
 		PluginResourceHandler.init(GoogleBookSearchViewableResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("gbook.details.type")
 	private static KeyLabel TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("gbook.details.mimetype")
 	private static KeyLabel MIMETYPE;
-	@PlugKey("details.title")
+	@PlugKey("gbook.details.title")
 	private static KeyLabel TITLE;
-	@PlugKey("details.pages")
+	@PlugKey("gbook.details.pages")
 	private static KeyLabel PAGES;
 	// @PlugKey("details.authors")
 	// private static KeyLabel AUTHORS;
-	@PlugKey("details.published")
+	@PlugKey("gbook.details.published")
 	private static KeyLabel PUBLISHED;
 
 	private final CustomAttachment googleBookAttachment;

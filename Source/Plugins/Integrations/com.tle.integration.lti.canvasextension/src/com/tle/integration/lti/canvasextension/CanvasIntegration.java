@@ -101,7 +101,7 @@ public class CanvasIntegration extends AbstractIntegrationService<CanvasSessionD
 
 	@PlugKey("integration.receipt.addedtocanvas")
 	private static String KEY_RECEIPT_ADDED;
-	@PlugKey("integration.error.requireoneconnector")
+	@PlugKey("canvas.error.requireoneconnector")
 	private static String KEY_ERROR_NO_SINGLE_CONNECTOR;
 
 	@PlugKey("integration.error.nocourse")

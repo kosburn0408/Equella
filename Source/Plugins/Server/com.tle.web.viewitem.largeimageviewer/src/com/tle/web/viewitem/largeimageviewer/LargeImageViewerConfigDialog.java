@@ -23,7 +23,7 @@ import com.tle.web.sections.render.Label;
 
 public class LargeImageViewerConfigDialog extends AbstractNewWindowConfigDialog
 {
-	@PlugKey("title")
+	@PlugKey("liv.title")
 	private static Label LABEL_TITLE;
 
 	public LargeImageViewerConfigDialog()

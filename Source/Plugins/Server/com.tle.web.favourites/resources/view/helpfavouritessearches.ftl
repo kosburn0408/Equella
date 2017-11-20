@@ -13,5 +13,5 @@
 	${b.key('selection.commonmoredivs',p.plugUrl('com.tle.web.sections.equella', 'images/component/box_head_open.gif'))}
 <#else>
 	<@bundlekey 'helpfavouritessearches' />
-	${b.key('commonmoredivs',p.plugUrl('com.tle.web.sections.equella', 'images/component/box_head_open.gif'))}
+	${b.key('fave.commonmoredivs',p.plugUrl('com.tle.web.sections.equella', 'images/component/box_head_open.gif'))}
 </#if>

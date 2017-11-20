@@ -42,30 +42,30 @@ public class QtiTestViewableResource extends AbstractWrappedResource
 		PluginResourceHandler.init(QtiTestViewableResource.class);
 	}
 
-	@PlugKey("details.type")
+	@PlugKey("qti.details.type")
 	private static Label TYPE;
-	@PlugKey("details.mimetype")
+	@PlugKey("qti.details.mimetype")
 	private static Label MIMETYPE;
-	@PlugKey("details.name")
+	@PlugKey("qti.details.name")
 	private static Label NAME;
-	@PlugKey("details.size")
+	@PlugKey("qti.details.size")
 	private static Label SIZE;
-	@PlugKey("details.tool.name")
+	@PlugKey("qti.details.tool.name")
 	private static Label TOOL_NAME;
-	@PlugKey("details.tool.version")
+	@PlugKey("qti.details.tool.version")
 	private static Label TOOL_VERSION;
-	@PlugKey("details.timelimit.max")
+	@PlugKey("qti.details.timelimit.max")
 	private static Label TIME_LIMIT_MAX;
-	@PlugKey("details.questions.count")
+	@PlugKey("qti.details.questions.count")
 	private static Label QUESTION_COUNT;
-	@PlugKey("details.sections.count")
+	@PlugKey("qti.details.sections.count")
 	private static Label SECTION_COUNT;
-	@PlugKey("details.navigationmode")
+	@PlugKey("qti.details.navigationmode")
 	private static Label NAVIGATION_MODE;
 
-	@PlugKey("details.value.yes")
+	@PlugKey("qti.details.value.yes")
 	private static Label YES;
-	@PlugKey("details.value.no")
+	@PlugKey("qti.details.value.no")
 	private static Label NO;
 	// NAVIGATION_MODE_LINEAR;
 	// NAVIGATION_MODE_NONLINEAR

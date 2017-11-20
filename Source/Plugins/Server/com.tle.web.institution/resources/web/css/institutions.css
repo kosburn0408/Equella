@@ -359,7 +359,7 @@ table.databases th.actionsheader {
 }
 
 #isclusternodes_n tbody tr td.good {
-	background-image: url("../images/ok.png");
+	background-image: url("../images/oknode.png");
 	background-repeat: no-repeat;
 	background-position: 20px;
 }

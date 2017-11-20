@@ -53,6 +53,9 @@ public class CanvasConnectorEditor
 	@PlugKey("editor.error.badtoken")
 	private static Label BAD_TOKEN_ERROR;
 
+	@PlugKey("canvas.testtoken.response.")
+	private static String PFX_TOKEN_RESPONSE;
+
 	@Component(stateful = false)
 	private TextField manualTokenEntry;
 	@Component
@@ -96,8 +99,7 @@ public class CanvasConnectorEditor
 			manualTokenEntry.getValue(info));
 
 		model.setStatusClass(testResponse.equals("unauthorized") ? "fail" : testResponse);
-		model.setTestAccessTokenStatus(CurrentLocale.get("com.tle.web.connectors.canvas.testtoken.response."
-			+ testResponse));
+		model.setTestAccessTokenStatus(CurrentLocale.get(PFX_TOKEN_RESPONSE + testResponse));
 		if( testResponse.equals("ok") )
 		{
 			connector.setAttribute(CanvasConnectorConstants.FIELD_TOKEN_OK, true);

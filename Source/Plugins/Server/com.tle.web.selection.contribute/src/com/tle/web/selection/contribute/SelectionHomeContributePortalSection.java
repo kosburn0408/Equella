@@ -56,7 +56,7 @@ public class SelectionHomeContributePortalSection extends AbstractPrototypeSecti
 		HtmlRenderer,
 		ViewableChildInterface
 {
-	@PlugKey("title")
+	@PlugKey("selcontribute.title")
 	private static Label LABEL_TITLE;
 	@PlugKey("contributebutton")
 	private static Label LABEL_CONTRIBUTEBUTTON;

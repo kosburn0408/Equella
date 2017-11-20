@@ -27,8 +27,8 @@
 
 	<extension plugin-id="com.tle.core.connectors" point-id="connectorType" id="canvasConnector">
 		<parameter id="id" value="canvas" />
-		<parameter id="nameKey" value="com.tle.core.connectors.canvas.connector.name" />
-		<parameter id="descriptionKey" value="com.tle.core.connectors.canvas.connector.description" />
+		<parameter id="nameKey" value="com.tle.core.connectors.canvas.canvas.connector.name" />
+		<parameter id="descriptionKey" value="com.tle.core.connectors.canvas.canvas.connector.description" />
 	</extension>
 
 

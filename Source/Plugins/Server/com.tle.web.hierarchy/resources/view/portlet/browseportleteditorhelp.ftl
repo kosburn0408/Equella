@@ -12,4 +12,4 @@
 </#if>
 
 ${b.key('browseportleteditorhelp', [text])}
-${b.key('commonmoredivs', [''])}
+${b.key('hier.commonmoredivs', [''])}

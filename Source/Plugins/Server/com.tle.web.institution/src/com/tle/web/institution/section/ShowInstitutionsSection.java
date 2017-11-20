@@ -99,7 +99,7 @@ public class ShowInstitutionsSection extends AbstractPrototypeSection<ShowInstit
 		decorations.setMenuMode(MenuMode.HIDDEN);
 		decorations.setTitle(TITLE_LABEL);
 
-		return viewFactory.createResult("list.ftl", context);
+		return viewFactory.createResult("instlist.ftl", context);
 	}
 
 	@Override

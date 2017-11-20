@@ -21,6 +21,7 @@ import java.util.List;
 
 import com.tle.beans.entity.Schema;
 import com.tle.beans.entity.itemdef.ItemDefinition;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.schema.service.SchemaService;
 import com.tle.web.sections.SectionInfo;
 import com.tle.web.sections.equella.utils.KeyOption;
@@ -35,6 +36,8 @@ public class SchemaTransformsModel extends DynamicHtmlListModel<String>
 {
 	private final SingleSelectionList<ItemDefinition> collections;
 	private final SchemaService schemaService;
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(SchemaTransformsModel.class)+".";
+
 
 	public SchemaTransformsModel(SingleSelectionList<ItemDefinition> collections, SchemaService schemaService)
 	{
@@ -66,6 +69,6 @@ public class SchemaTransformsModel extends DynamicHtmlListModel<String>
 	@Override
 	protected Option<String> getTopOption()
 	{
-		return new KeyOption<String>("com.tle.web.cloneormove.selectcollection.option.schematransform.none", "", null); //$NON-NLS-1$ //$NON-NLS-2$
+		return new KeyOption<String>(KEY_PFX+"selectcollection.option.schematransform.none", "", null); //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

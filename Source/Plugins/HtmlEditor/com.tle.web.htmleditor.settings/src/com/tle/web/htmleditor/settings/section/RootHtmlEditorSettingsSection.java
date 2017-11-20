@@ -37,7 +37,7 @@ import com.tle.web.template.Decorations;
 @Bind
 public class RootHtmlEditorSettingsSection extends OneColumnLayout<OneColumnLayoutModel>
 {
-	@PlugKey("settings.title")
+	@PlugKey("htmledit.settings.title")
 	private static Label TITLE_LABEL;
 	@PlugKey("settings.plugins.error.noaccess")
 	private static Label LABEL_NOACCESS;

@@ -61,19 +61,19 @@ many refactors for 5.1 GA -->
 					
 												<#if opt.photoSize??>
 													<div class="itemresult-metaline">
-														<strong>${b.key('details.imagesize')}</strong>${opt.photoSize}
+														<strong>${b.key('flickr.details.imagesize')}</strong>${opt.photoSize}
 													</div>
 												</#if>
 					
 												<#if opt.dateTaken??>
 													<div class="itemresult-metaline">
-														<strong>${b.key('details.taken')}</strong>${opt.dateTaken}
+														<strong>${b.key('flickr.details.taken')}</strong>${opt.dateTaken}
 													</div>
 												</#if>
 					
 												<#if opt.license??>
 													<div class="itemresult-metaline">
-														<strong>${b.key('details.license')}</strong>${opt.license}
+														<strong>${b.key('flickr.details.license')}</strong>${opt.license}
 													</div>
 												</#if>
 											</div>

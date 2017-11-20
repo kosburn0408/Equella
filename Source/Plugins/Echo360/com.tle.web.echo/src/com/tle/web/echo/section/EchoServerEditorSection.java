@@ -144,7 +144,7 @@ public class EchoServerEditorSection extends AbstractPrototypeSection<EchoServer
 	@PlugKey("editor.button.save")
 	private Button saveButton;
 	@Component
-	@PlugKey("editor.button.test")
+	@PlugKey("echo.editor.button.test")
 	private Button testUrlButton;
 	@Component
 	@PlugKey("editor.button.cancel")

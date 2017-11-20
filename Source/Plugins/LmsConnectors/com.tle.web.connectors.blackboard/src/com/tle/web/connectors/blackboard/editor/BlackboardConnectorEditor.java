@@ -55,7 +55,7 @@ public class BlackboardConnectorEditor
 	extends
 		AbstractConnectorEditorSection<BlackboardConnectorEditor.BlackboardConnectorEditorModel>
 {
-	@PlugKey("editor.error.testwebservice.mandatory")
+	@PlugKey("bb.editor.error.testwebservice.mandatory")
 	private static Label LABEL_TEST_WEBSERVICE_MANDATORY;
 	@PlugKey("editor.error.testwebservice.enteruser")
 	private static Label LABEL_TEST_WEBSERVICE_ENTERUSER;

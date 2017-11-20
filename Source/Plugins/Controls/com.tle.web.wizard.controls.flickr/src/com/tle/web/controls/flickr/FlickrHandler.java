@@ -71,16 +71,16 @@ public class FlickrHandler extends BasicAbstractAttachmentHandler<FlickrHandler.
 	implements
 		InfoEventListener
 {
-	@PlugKey("name")
+	@PlugKey("flickr.name")
 	private static Label NAME_LABEL;
-	@PlugKey("description")
+	@PlugKey("flickr.description")
 	private static Label DESCRIPTION_LABEL;
-	@PlugKey("add.title")
+	@PlugKey("flickr.add.title")
 	private static Label ADD_TITLE_LABEL;
-	@PlugKey("edit.title")
+	@PlugKey("flickr.edit.title")
 	private static Label EDIT_TITLE_LABEL;
 
-	@PlugKey("details.viewlink")
+	@PlugKey("flickr.details.viewlink")
 	private static Label VIEW_LINK_LABEL;
 
 	@Inject

@@ -70,18 +70,18 @@ public class RoleSelectorWebControl extends AbstractWebControl<RoleSelectorWebCo
 	implements
 		CurrentRolesCallback
 {
-	@PlugKey("prompt.selectsingle")
+	@PlugKey("rolesel.prompt.selectsingle")
 	private static Label LABEL_PROMPTSINGLE;
-	@PlugKey("prompt.selectmultiple")
+	@PlugKey("rolesel.prompt.selectmultiple")
 	private static Label LABEL_PROMPTMULTIPLE;
-	@PlugKey("title.selectsingle")
+	@PlugKey("rolesel.title.selectsingle")
 	private static Label LABEL_TITLESINGLE;
-	@PlugKey("title.selectmultiple")
+	@PlugKey("rolesel.title.selectmultiple")
 	private static Label LABEL_TITLEMULTIPLE;
 
-	@PlugKey("confirmremove")
+	@PlugKey("rolesel.confirmremove")
 	private static Confirm KEY_CONFIRM;
-	@PlugKey("currentlyselectedstuff.remove")
+	@PlugKey("rolesel.remove")
 	private static Label LABEL_REMOVE;
 
 	private RoleSelectorControl definitionControl;
@@ -104,7 +104,7 @@ public class RoleSelectorWebControl extends AbstractWebControl<RoleSelectorWebCo
 	@Component
 	private SelectionsTable rolesTable;
 	@Component
-	@PlugKey("button.selectrole")
+	@PlugKey("rolesel.button.selectrole")
 	private Link addLink;
 
 	private JSCallable removeRoleFunction;

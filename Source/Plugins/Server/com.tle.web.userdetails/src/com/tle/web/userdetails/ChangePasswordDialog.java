@@ -59,6 +59,11 @@ public class ChangePasswordDialog extends AbstractOkayableDialog<ChangePasswordD
 	private static Label LABEL_TITLE;
 	@PlugKey("internal.passsuccess")
 	private static Label PASSWORD_SUCCESS;
+	@PlugKey("internal.nomatch")
+	private static Label PASSWORD_NOMATCH;
+	@PlugKey("common.invalidpassword")
+	private static Label PASSWORD_INVALID;
+
 
 	@ViewFactory
 	private FreemarkerFactory viewFactory;
@@ -126,13 +131,13 @@ public class ChangePasswordDialog extends AbstractOkayableDialog<ChangePasswordD
 		String newPasswordText = newPassword.getValue(info);
 		if( !newPasswordText.equals(confirmPassword.getValue(info)) )
 		{
-			errorList.put("confirmpass", CurrentLocale.get("com.tle.web.userdetails.internal.nomatch")); //$NON-NLS-2$
+			errorList.put("confirmpass", PASSWORD_NOMATCH.getText()); //$NON-NLS-2$
 		}
 
 		boolean b = tleUserService.checkPasswordMatch(old, oldPassword.getValue(info));
 		if( !b )
 		{
-			errorList.put("oldpass", CurrentLocale.get("com.tle.web.userdetails.common.invalidpassword")); //$NON-NLS-2$
+			errorList.put("oldpass", PASSWORD_INVALID.getText()); //$NON-NLS-2$
 		}
 
 		boolean blankPass = checkBlank(info, oldPassword, "oldpass");

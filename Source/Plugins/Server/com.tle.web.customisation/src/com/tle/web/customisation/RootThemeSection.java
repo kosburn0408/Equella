@@ -62,7 +62,7 @@ public class RootThemeSection extends AbstractPrototypeSection<RootThemeSection.
 	implements
 		HtmlRenderer
 {
-	@PlugKey("title")
+	@PlugKey("customisation.title")
 	private static Label TITLE_LABEL;
 
 	@EventFactory

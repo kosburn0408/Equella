@@ -110,7 +110,7 @@ public class RootHierarchySection extends ContextableSearchSection<ContextableSe
 	@Override
 	public void addBlueBarResults(RenderContext context, BlueBarEvent event)
 	{
-		event.addHelp(viewFactory.createResult("help.ftl", this));
+		event.addHelp(viewFactory.createResult("hierarchyhelp.ftl", this));
 	}
 
 	/**

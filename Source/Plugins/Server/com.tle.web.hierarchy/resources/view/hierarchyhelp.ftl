@@ -12,5 +12,5 @@ function switchText(id)
 <#if m.courseSelectionSession??>
 	${b.key('selection.helppage',p.plugUrl('com.tle.web.sections.equella', 'images/component/box_close.png'),p.plugUrl('com.tle.web.sections.equella', 'images/component/box_head_open.gif'))}
 <#else>
-	${b.key('helppage',p.plugUrl('com.tle.web.sections.equella', 'images/component/box_close.png'),p.plugUrl('com.tle.web.sections.equella', 'images/component/box_head_open.gif'))}
+	${b.key('hier.helppage',p.plugUrl('com.tle.web.sections.equella', 'images/component/box_close.png'),p.plugUrl('com.tle.web.sections.equella', 'images/component/box_head_open.gif'))}
 </#if>

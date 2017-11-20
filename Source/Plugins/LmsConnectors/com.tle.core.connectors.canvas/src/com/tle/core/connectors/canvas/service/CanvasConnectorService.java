@@ -37,6 +37,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.tle.core.plugins.AbstractPluginService;
 import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -91,6 +92,8 @@ import com.tle.web.selection.SelectedResource;
 public class CanvasConnectorService extends AbstractIntegrationConnectorRespository
 {
 	private static final Logger LOGGER = Logger.getLogger(CanvasConnectorService.class);
+
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(CanvasConnectorService.class)+".";
 
 	private static final String REQUEST_HEADER_AUTHORIZATION = "Authorization";
 
@@ -271,17 +274,17 @@ public class CanvasConnectorService extends AbstractIntegrationConnectorResposit
 
 	private String getKey(String partKey)
 	{
-		return "com.tle.core.connectors.canvas." + partKey;
+		return KEY_PFX + partKey;
 	}
 
 	@Override
 	public ConnectorTerminology getConnectorTerminology()
 	{
 		final ConnectorTerminology terms = new ConnectorTerminology();
-		terms.setShowArchived(getKey("finduses.showarchived"));
-		terms.setShowArchivedLocations(getKey("finduses.showarchived.courses"));
-		terms.setCourseHeading(getKey("finduses.course"));
-		terms.setLocationHeading(getKey("finduses.location"));
+		terms.setShowArchived(getKey("canvas.finduses.showarchived"));
+		terms.setShowArchivedLocations(getKey("canvas.finduses.showarchived.courses"));
+		terms.setCourseHeading(getKey("canvas.finduses.course"));
+		terms.setLocationHeading(getKey("canvas.finduses.location"));
 		return terms;
 	}
 

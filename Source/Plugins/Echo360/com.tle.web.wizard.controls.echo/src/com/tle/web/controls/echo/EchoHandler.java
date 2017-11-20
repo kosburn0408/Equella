@@ -53,12 +53,12 @@ import com.tle.web.viewurl.attachments.AttachmentResourceService;
 @SuppressWarnings("nls")
 public class EchoHandler extends BasicAbstractAttachmentHandler<EchoHandler.EchoHandlerModel>
 {
-	@PlugKey("name")
+	@PlugKey("echo.name")
 	private static Label NAME_LABEL;
-	@PlugKey("description")
+	@PlugKey("echo.description")
 	private static Label DESCRIPTION_LABEL;
 
-	@PlugKey("edit.title")
+	@PlugKey("echo.edit.title")
 	private static Label EDIT_TITLE_LABEL;
 
 	@PlugKey("details.error.noserver")

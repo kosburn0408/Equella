@@ -56,7 +56,7 @@ public class RootHarvesterSkipDrmSettingsSection
 	@PlugKey("settings.save.button")
 	private Button saveButton;
 
-	@PlugKey("settings.save.receipt")
+	@PlugKey("harvesterskipdrmsettings.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 
 	@Inject

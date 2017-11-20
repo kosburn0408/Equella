@@ -60,11 +60,6 @@
 		<parameter id="file" value="lang/i18n.xml" />
 	</extension>
 
-	<extension plugin-id="com.tle.common.i18n" point-id="bundle" id="helpstrings">
-		<parameter id="group" value="resource-centre" />
-		<parameter id="file" value="lang/i18n.xml" />
-	</extension>
-
 	<extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="hierarchy">
 		<parameter id="path" value="/hierarchy.do" />
 		<parameter id="root" value="bean:/hierarchy" />

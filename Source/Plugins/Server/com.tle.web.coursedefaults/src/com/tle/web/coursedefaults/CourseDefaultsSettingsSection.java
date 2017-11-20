@@ -64,7 +64,7 @@ public class CourseDefaultsSettingsSection
 {
 	@PlugKey("coursedefaults.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.save.receipt")
+	@PlugKey("coursedefaults.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 
 	/**

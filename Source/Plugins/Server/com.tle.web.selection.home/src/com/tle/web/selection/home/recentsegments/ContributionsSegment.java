@@ -31,6 +31,8 @@ import com.tle.common.searching.SearchResults;
 import com.tle.common.usermanagement.user.CurrentUser;
 import com.tle.core.freetext.service.FreeTextService;
 import com.tle.web.sections.SectionInfo;
+import com.tle.web.sections.equella.annotation.PlugKey;
+import com.tle.web.sections.render.Label;
 import com.tle.web.sections.standard.model.HtmlLinkState;
 import com.tle.web.selection.SelectionService;
 import com.tle.web.selection.SelectionSession;
@@ -42,6 +44,8 @@ import com.tle.web.viewurl.ViewItemUrlFactory;
  */
 public class ContributionsSegment extends AbstractRecentSegment
 {
+	@PlugKey("recently.contributed")
+	private static Label TITLE;
 	@Inject
 	private FreeTextService searchService;
 	@Inject
@@ -91,6 +95,6 @@ public class ContributionsSegment extends AbstractRecentSegment
 	@Override
 	public String getTitle(SectionInfo info, SelectionSession session)
 	{
-		return CurrentLocale.get("com.tle.web.selection.home.recently.contributed"); //$NON-NLS-1$
+		return TITLE.getText(); //$NON-NLS-1$
 	}
 }

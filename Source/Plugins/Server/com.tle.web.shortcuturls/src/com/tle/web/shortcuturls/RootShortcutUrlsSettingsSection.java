@@ -59,7 +59,7 @@ import com.tle.web.template.Decorations;
 @SuppressWarnings("nls")
 public class RootShortcutUrlsSettingsSection extends OneColumnLayout<ShortcutUrlsSettingsModel>
 {
-	@PlugKey("page.title")
+	@PlugKey("shortcuts.page.title")
 	private static Label LABEL_TITLE;
 	@PlugKey("shortcuts.table.heading.text")
 	private static Label LABEL_SHORTCUT_TEXT;

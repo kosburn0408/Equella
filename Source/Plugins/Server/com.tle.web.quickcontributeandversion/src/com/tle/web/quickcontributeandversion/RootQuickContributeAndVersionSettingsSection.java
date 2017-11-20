@@ -64,7 +64,7 @@ public class RootQuickContributeAndVersionSettingsSection
 {
 	@PlugKey("quickcontributeandversionsettings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.save.receipt")
+	@PlugKey("quickcontribute.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 	@PlugKey("quickcontributeandversionsettings.none")
 	private static String NO_COLLECTION_KEY;

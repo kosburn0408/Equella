@@ -46,7 +46,7 @@ public class GoogleAnalyticsPage extends OneColumnLayout<GoogleAnalyticsPage.Goo
 {
 	public static final String ANALYTICS_KEY = "GOOGLE_ANALYTICS";
 
-	@PlugKey("pagetitle")
+	@PlugKey("analytics.pagetitle")
 	private static Label TITLE_LABEL;
 	@PlugKey("account.receipt")
 	private static Label RECEIPT_LABEL;

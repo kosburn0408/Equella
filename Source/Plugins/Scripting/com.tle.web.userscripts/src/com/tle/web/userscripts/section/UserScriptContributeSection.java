@@ -39,9 +39,9 @@ public class UserScriptContributeSection
 		AbstractEntityContributeSection<UserScriptEditingBean, UserScript, UserScriptContributeSection.UserScriptContributeModel>
 {
 
-	@PlugKey("editor.pagetitle.new")
+	@PlugKey("scripts.editor.pagetitle.new")
 	private static Label NEW_SCRIPT_LABEL;
-	@PlugKey("editor.pagetitle.edit")
+	@PlugKey("scripts.editor.pagetitle.edit")
 	private static Label EDIT_SCRIPT_LABEL;
 
 	@Inject

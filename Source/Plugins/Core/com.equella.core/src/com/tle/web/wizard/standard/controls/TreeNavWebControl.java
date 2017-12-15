@@ -178,7 +178,7 @@ public class TreeNavWebControl extends AbstractWebControl<TreeNavWebControl.Tree
 	private EventGenerator events;
 	@AjaxFactory
 	private AjaxGenerator ajaxCalls;
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private WizardFreemarkerFactory factory;
 
 	@Inject

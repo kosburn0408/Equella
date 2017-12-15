@@ -33,7 +33,6 @@ public class PortalStandardModule extends SectionsModule
 		node.child(SearchPortletRenderer.class);
 		bind(Object.class).annotatedWith(Names.named("com.tle.web.portal.standard.searchSelectionPortal")).toProvider(
 			node);
-		bind(BasicFreemarkerFactory.class).in(Scopes.SINGLETON);
 	}
 
 }

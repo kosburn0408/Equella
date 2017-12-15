@@ -23,7 +23,7 @@
 		<import plugin-id="com.tle.web.wizard.page" />
 		<import plugin-id="org.springframework:spring-jdbc" />
 		<import plugin-id="org.eclipse.birt:birt-api" exported="true" />
-		<import plugin-id="rhino:js" />
+		<import plugin-id="old.rhino" />
 		<import plugin-id="com.tle.core.settings" />
 		<import plugin-id="com.tle.core.entity.security" />
 		<import plugin-id="com.tle.core.xml" />

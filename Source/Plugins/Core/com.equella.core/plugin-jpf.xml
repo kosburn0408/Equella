@@ -246,15 +246,12 @@
     <parameter id="class" value="com.tle.web.remoterepo.z3950.Z3950Module" />
     <parameter id="class" value="com.tle.web.scheduler.SchedulerModule" />
     <parameter id="class" value="com.tle.web.scripting.advanced.guice.AscGuiceModule" />
-    <parameter id="class" value="com.tle.web.sections.equella.guice.EquellaModule" />
-    <parameter id="class" value="com.tle.web.sections.equella.guice.SimpleEquellaModule" />
     <parameter id="class" value="com.tle.web.selection.home.guice.SelectionHomeModule" />
     <parameter id="class" value="com.tle.web.shortcuturls.ShortcutUrlsSettingsModule" />
     <parameter id="class" value="com.tle.web.userdetails.guice.UserDetailsModule" />
     <parameter id="class" value="com.tle.web.userscripts.service.UserScriptsModule" />
     <parameter id="class" value="com.tle.web.viewitem.largeimageviewer.guice.LargeImageViewerModule" />
     <parameter id="class" value="com.tle.web.wizard.guice.WizardBindBothModule" />
-    <parameter id="class" value="com.tle.web.wizard.guice.WizardControlModule" />
   </extension>
   <extension plugin-id="com.tle.core.connectors" point-id="connectorImplementation" id="equella">
     <parameter id="type" value="equella" />

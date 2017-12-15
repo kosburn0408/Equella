@@ -82,7 +82,7 @@ public class DisplayTempateTitleXmlMigrator extends XmlMigrator
 					DisplayTempateTitleMigration.addNewBundleTitle(commentTitle.toString(), config);
 					break;
 				case "citationSummarySection":
-					InternalI18NString citationTitle = new KeyString("com.tle.cal.web.citation.summary.title");
+					InternalI18NString citationTitle = new KeyString("com.equella.core.citation.summary.title");
 					DisplayTempateTitleMigration.addNewBundleTitle(citationTitle.toString(), config);
 					break;
 				default:

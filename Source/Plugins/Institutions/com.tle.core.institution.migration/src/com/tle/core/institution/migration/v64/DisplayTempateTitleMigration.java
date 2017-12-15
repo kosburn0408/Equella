@@ -98,7 +98,7 @@ public class DisplayTempateTitleMigration extends AbstractHibernateDataMigration
 							addNewBundleTitle(commentTitle.toString(), config);
 							break;
 						case "citationSummarySection":
-							InternalI18NString citationTitle = new KeyString("com.tle.cal.web.citation.summary.title");
+							InternalI18NString citationTitle = new KeyString("com.equella.core.citation.summary.title");
 							addNewBundleTitle(citationTitle.toString(), config);
 							break;
 						default:

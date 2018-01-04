@@ -19,10 +19,11 @@ package com.tle.web.controls.universal.handlers.fileupload.details
 import com.tle.common.wizard.controls.universal.handlers.FileUploadSettings
 import com.tle.web.controls.universal.handlers.fileupload.packages.PackageFileCreate
 import com.tle.web.controls.universal.handlers.fileupload.{PackageType, ValidatedUpload, WebFileUploads}
-import com.tle.web.controls.universal.{AbstractScalaSection, ControlContext, DialogRenderOptions, RenderHelper}
+import com.tle.web.controls.universal.{ControlContext, DialogRenderOptions, RenderHelper}
 import com.tle.web.freemarker.FreemarkerFactory
 import com.tle.web.freemarker.annotations.ViewFactory
 import com.tle.web.sections.annotations.{EventFactory, EventHandlerMethod}
+import com.tle.web.sections.equella.AbstractScalaSection
 import com.tle.web.sections.equella.annotation.PlugKey
 import com.tle.web.sections.events.RenderContext
 import com.tle.web.sections.events.js.EventGenerator

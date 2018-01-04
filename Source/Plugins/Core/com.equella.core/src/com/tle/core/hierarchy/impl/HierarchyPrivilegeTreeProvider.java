@@ -31,7 +31,10 @@ import com.tle.common.security.remoting.RemotePrivilegeTreeService.SecurityTarge
 import com.tle.common.security.remoting.RemotePrivilegeTreeService.TargetId;
 import com.tle.core.guice.Bind;
 import com.tle.core.hierarchy.HierarchyService;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.security.PrivilegeTreeProvider;
+import com.tle.web.resources.PluginResourceHelper;
+import com.tle.web.resources.ResourcesService;
 
 @Bind
 @Singleton
@@ -39,6 +42,7 @@ public class HierarchyPrivilegeTreeProvider implements PrivilegeTreeProvider
 {
 	@Inject
 	private HierarchyService hierarchyService;
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(HierarchyPrivilegeTreeProvider.class)+".";
 
 	@Override
 	public void mapTargetIdsToNames(Collection<TargetId> targetIds, Map<TargetId, String> results)
@@ -59,7 +63,7 @@ public class HierarchyPrivilegeTreeProvider implements PrivilegeTreeProvider
 	{
 		if( target == null )
 		{
-			childTargets.add(new SecurityTarget(CurrentLocale.get("com.tle.web.hierarchy.privilegetree.rootname"),
+			childTargets.add(new SecurityTarget(CurrentLocale.get(KEY_PFX + "privilegetree.rootname"),
 				Node.HIERARCHY_TOPIC, null, true));
 		}
 		else if( target.getTargetType() == Node.HIERARCHY_TOPIC )

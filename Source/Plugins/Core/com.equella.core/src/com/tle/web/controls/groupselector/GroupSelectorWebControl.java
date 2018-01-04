@@ -94,7 +94,7 @@ public class GroupSelectorWebControl extends AbstractWebControl<GroupSelectorWeb
 	@Inject
 	private UserService userService;
 
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory viewFactory;
 	@EventFactory
 	private EventGenerator events;

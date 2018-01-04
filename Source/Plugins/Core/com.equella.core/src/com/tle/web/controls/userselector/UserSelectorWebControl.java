@@ -98,7 +98,7 @@ public class UserSelectorWebControl extends AbstractWebControl<UserSelectorWebCo
 	private UserLinkService userLinkService;
 	private UserLinkSection userLinkSection;
 
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory viewFactory;
 	@EventFactory
 	private EventGenerator events;

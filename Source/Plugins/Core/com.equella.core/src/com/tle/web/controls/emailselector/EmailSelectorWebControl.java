@@ -86,7 +86,7 @@ public class EmailSelectorWebControl extends AbstractWebControl<EmailSelectorWeb
 	private EmailSelectorControl definitionControl;
 	private CCustomControl storageControl;
 
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory viewFactory;
 	@EventFactory
 	private EventGenerator events;

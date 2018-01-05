@@ -170,6 +170,6 @@ public class InitialMigration extends AbstractHibernateSchemaMigration
 	@Override
 	public MigrationInfo createMigrationInfo()
 	{
-		return new MigrationInfo(KEY_PREFIX + "migration.title", KEY_PREFIX + "migration.title");
+		return new MigrationInfo(KEY_PREFIX + "system.migration.title", KEY_PREFIX + "system.migration.title");
 	}
 }

@@ -47,6 +47,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import javax.inject.Singleton;
 
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.services.ZipProgress;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -103,6 +104,7 @@ public class FileSystemServiceImpl implements FileSystemService, ServiceCheckReq
 {
 	private static final Log LOGGER = LogFactory.getLog(FileSystemServiceImpl.class);
 	private static final String DIGEST_MD5 = "md5";
+	private static final String KEY_PFX = AbstractPluginService.getMyPluginId(FileSystemServiceImpl.class)+".";
 
 	@Inject
 	private ConfigurationService configService;
@@ -1236,7 +1238,7 @@ public class FileSystemServiceImpl implements FileSystemService, ServiceCheckReq
 			if( parent.getName().toUpperCase().equals(SECURE_FOLDER) )
 			{
 				throw Throwables.propagate(new com.tle.exceptions.AccessDeniedException(
-					CurrentLocale.get("com.tle.core.filesystem.error.protectedresource")));
+					CurrentLocale.get(KEY_PFX+"error.protectedresource")));
 			}
 			parent = parent.getParentFile();
 		}
@@ -1289,14 +1291,14 @@ public class FileSystemServiceImpl implements FileSystemService, ServiceCheckReq
 				if( fileExists && removeFile(testFile, filename) )
 				{
 					// 1024 ^ 2 = 1048576
-					result.append(CurrentLocale.get("com.tle.core.filesystem.servicecheck.moreinfo",
+					result.append(CurrentLocale.get(KEY_PFX+"fileservicecheck.moreinfo",
 						fsRoot.getAbsolutePath(), fsRoot.getTotalSpace() / 1048576, fsRoot.getFreeSpace() / 1048576));
 				}
 			}
 			catch( Exception e )
 			{
 				LOGGER.error("Service check error", e);
-				result.append(CurrentLocale.get("com.tle.core.filesystem.servicecheck.error", fsRoot.getAbsolutePath(),
+				result.append(CurrentLocale.get(KEY_PFX+"fileservicecheck.error", fsRoot.getAbsolutePath(),
 					e.getMessage()));
 			}
 		}

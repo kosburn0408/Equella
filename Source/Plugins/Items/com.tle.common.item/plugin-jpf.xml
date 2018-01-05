@@ -4,7 +4,7 @@
 		<import plugin-id="com.tle.common.beans" />
 		<import plugin-id="com.tle.common.workflow" exported="true" />
 		<import plugin-id="com.tle.common.entity" />
-		<import plugin-id="com.tle.common.i18n" />
+		<import plugin-id="com.tle.common.i18n.base" />
 		<import plugin-id="com.tle.common.collection" exported="true" />
 		<import plugin-id="com.tle.common.security" />
 		<import plugin-id="com.tle.common.url" exported="true" />

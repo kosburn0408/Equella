@@ -2,7 +2,7 @@
 <plugin id="com.tle.common.wizard" version="1">
 	<requires>
 		<import plugin-id="com.tle.common.beans" exported="true" />
-		<import plugin-id="com.tle.common.i18n" />
+		<import plugin-id="com.tle.common.i18n.base" />
 		<!-- Used in DRMPage -->
 		<import plugin-id="com.tle.xstream" exported="true" />
 	</requires>

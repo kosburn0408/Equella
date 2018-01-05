@@ -5,7 +5,7 @@
 		<import plugin-id="com.tle.platform.equella" exported="true" />
 		<import plugin-id="com.tle.common.beans" exported="true" />
 		<import plugin-id="com.tle.common.security" exported="true" />
-		<import plugin-id="com.tle.common.i18n" exported="true" />
+		<import plugin-id="com.tle.common.i18n.base" exported="true" />
 		<import plugin-id="org.codehaus.jackson" />
 		<import plugin-id="com.tle.common.institution" />
 		<import plugin-id="com.tle.common.filesystem" exported="true" />

@@ -4,7 +4,7 @@
 		<import plugin-id="com.tle.common.settings" exported="true" />
 		<import plugin-id="com.tle.platform.equella" exported="true" />
 		<import plugin-id="com.tle.common.usermanagement" exported="true" />
-		<import plugin-id="com.tle.common.i18n" />
+		<import plugin-id="com.tle.common.i18n.base" />
 	</requires>
 	<runtime>
 		<library id="core" path="classes/" type="code">

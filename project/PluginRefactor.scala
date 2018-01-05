@@ -35,13 +35,20 @@ object PluginRefactor {
 
     val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
 
-    val keepPlugins = Set("com.tle.log4j", "com.tle.web.adminconsole", "com.equella.core")++platformPlugins
-    val allowedImports = Set("org.hibernate")++platformPlugins
+    val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.web.adminconsole", "com.equella.core")++platformPlugins
+    val allowedImports = Set("org.codehaus.jackson","org.hibernate")++platformPlugins
+
+    val needReason = Set("com.tle.common.item", "com.tle.common.collection")
 
     @tailrec
     def minimalPlugins(allowedMap: Map[String, PluginDeets]): Map[String, PluginDeets] = {
       allowedMap.values.find(_.importIds.exists(i => !allowedMap.contains(i) && !allowedImports(i))) match {
-        case Some(illegal) => minimalPlugins(allowedMap - illegal.pId)
+        case Some(illegal) =>
+          if (illegal.pId.contains("common")) {
+            val reason = illegal.importIds.filterNot(allowedMap.keySet)
+            println(s"${illegal.pId} evicted because of ${reason.mkString(",")}")
+          }
+          minimalPlugins(allowedMap - illegal.pId)
         case None => allowedMap
       }
     }
@@ -57,7 +64,7 @@ object PluginRefactor {
       }.exists(_.getAttributeValue("value") == "admin-console")
 
       p.libs.isEmpty && !adminConsole && r.getChildren("extension-point").isEmpty &&
-        r.getChildren("extension").isEmpty &&
+        // r.getChildren("extension").isEmpty &&
         !keepPlugins(p.pId) && !(p.bd / "build.sbt").exists
     }
 
@@ -75,6 +82,7 @@ object PluginRefactor {
 
     val baseSrc = baseDir / "src"
     val baseScalaSrc = baseDir / "scalasrc"
+    val baseTestSrc = baseDir / "test"
     val baseRes = baseDir / "resources"
 
     val allowedIds = toMerge.toSet
@@ -193,6 +201,7 @@ object PluginRefactor {
       val pId = i._4
       IO.copyDirectory(bd / "src", baseSrc, overwrite = false)
       IO.copyDirectory(bd / "scalasrc", baseScalaSrc, overwrite = false)
+      IO.copyDirectory(bd / "test", baseTestSrc, overwrite = false)
       val plugRes = bd / "resources"
       val allRes = (plugRes ***) --- (plugRes * "lang" ***)
       val relative = allRes.pair(rebase(plugRes, "")).collect {

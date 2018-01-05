@@ -53,7 +53,7 @@ public final class CurrentTimeZone
 	{
 		if( impl == null )
 		{
-			impl = new PluginTracker<AbstractCurrentTimeZone>(AbstractPluginService.get(), CurrentTimeZone.class,
+			impl = new PluginTracker<AbstractCurrentTimeZone>(AbstractPluginService.get(), "com.tle.common.i18n",
 				"currentTimeZoneImpl", null).setBeanKey("bean").getBeanList().get(0);
 		}
 		return impl;

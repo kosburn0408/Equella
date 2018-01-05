@@ -39,7 +39,7 @@ public final class CurrentLocale
 	{
 		if( implementation == null )
 		{
-			implementation = new PluginTracker<AbstractCurrentLocale>(AbstractPluginService.get(), CurrentLocale.class,
+			implementation = new PluginTracker<AbstractCurrentLocale>(AbstractPluginService.get(), "com.tle.common.i18n",
 				"currentLocaleImpl", null).setBeanKey("bean").getBeanList().get(0);
 		}
 		return implementation;

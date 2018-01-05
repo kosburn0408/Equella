@@ -120,8 +120,8 @@ val pluginAndLibs = Def.task {
 
 mergeJPF := {
   val args = spaceDelimited("<arg>").parsed
-  val newPlugin = "com.equella.base"
-  val basePlugin = baseDirectory.value / "Source/Plugins/Core" / newPlugin
+  val newPlugin = "com.equella.core"
+  val basePlugin = baseDirectory.value / "Source/Plugins/Core" / "newplugin"
   val allPluginDirs = pluginAndLibs.all(ScopeFilter(inAggregates(allPlugins, includeRoot = false))).value
   PluginRefactor.mergePlugins(allPluginDirs, basePlugin, newPlugin, modify = args.headOption.exists(_ == "commit"))
 }

@@ -35,27 +35,34 @@ object PluginRefactor {
 
     val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
 
-    val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.web.adminconsole", "com.equella.core")++platformPlugins
-    val allowedImports = Set("org.codehaus.jackson","org.hibernate")++platformPlugins
+    val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin",
+      "com.tle.web.adminconsole", "com.tle.web.resources", "com.equella.base",
+      "com.tle.core.config", "com.tle.core.entity.security", "com.tle.core.hibernate.equella")++platformPlugins
 
     val needReason = Set("com.tle.common.item", "com.tle.common.collection")
 
+    val deetMap = allImports.map(p => (p.pId, p)).toMap
+
     @tailrec
-    def minimalPlugins(allowedMap: Map[String, PluginDeets]): Map[String, PluginDeets] = {
-      allowedMap.values.find(_.importIds.exists(i => !allowedMap.contains(i) && !allowedImports(i))) match {
-        case Some(illegal) =>
-          if (illegal.pId.contains("common")) {
-            val reason = illegal.importIds.filterNot(allowedMap.keySet)
-            println(s"${illegal.pId} evicted because of ${reason.mkString(",")}")
+    def minimalPlugins(mergeSet: Set[String], attemptList: List[String]): Set[String] = attemptList match {
+      case Nil => mergeSet
+      case pId :: next =>
+        val pd = deetMap(pId)
+        val illegalImports = pd.importIds.flatMap { impId =>
+          val impDeet = deetMap(impId)
+          if (mergeSet(impId)) Seq.empty else {
+            impDeet.importIds.collect {
+              case impImpId if mergeSet(impImpId) => impId -> impImpId
+            }
           }
-          minimalPlugins(allowedMap - illegal.pId)
-        case None => allowedMap
-      }
+        }
+        if (illegalImports.isEmpty) minimalPlugins(mergeSet + pId, next)
+        else {
+          println(s"Can't include $pId because of ${illegalImports}")
+          minimalPlugins(mergeSet, next)
+        }
     }
 
-    val depMap = allImports.flatMap {
-      p => p.importIds.map(_ -> p.pId)
-    }.groupBy(_._1).mapValues(_.map(_._2))
 
     val initialPlugins = allImports.filter { p =>
       val r = p.rootElem
@@ -68,7 +75,7 @@ object PluginRefactor {
         !keepPlugins(p.pId) && !(p.bd / "build.sbt").exists
     }
 
-    minimalPlugins(initialPlugins.map(p => (p.pId, p)).toMap).values.map(_.pId)
+    minimalPlugins(Set.empty, initialPlugins.map(_.pId).toList.sorted)
   }
 
 
@@ -245,8 +252,8 @@ object PluginRefactor {
             impElem.setAttribute("exported", "true")
             r.addContent(impElem)
           }
-          val allRemoved = (removed.asScala ++ removedOld.asScala).map(getPluginId)
-          if (allRemoved.nonEmpty) println(s"Removing from ${p.pId}: ${allRemoved.mkString(",")}")
+//          val allRemoved = (removed.asScala ++ removedOld.asScala).map(getPluginId)
+//          if (allRemoved.nonEmpty) println(s"Removing from ${p.pId}: ${allRemoved.mkString(",")}")
         }
         val newManifest = new XMLOutputter(Format.getPrettyFormat).outputString(p.rootDoc)
         if (modify) IO.write(p.bd / "plugin-jpf.xml", newManifest)

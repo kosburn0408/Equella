@@ -15,5 +15,5 @@ packageOptions in assembly += Package.ManifestAttributes(
 )
 assemblyOption in assembly := (assemblyOption in assembly).value.copy(includeScala = false)
 
-dependsOn(platformSwing, LocalProject("com_tle_common_entity"),
+dependsOn(platformSwing, LocalProject("com_equella_base"),
   LocalProject("com_tle_common_applet"), LocalProject("com_tle_common_inplaceeditor"))

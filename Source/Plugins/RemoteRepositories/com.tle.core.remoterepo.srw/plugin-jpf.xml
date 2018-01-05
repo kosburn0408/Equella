@@ -1,22 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.tle.core.remoterepo.srw" version="1">
-	<requires>
-		<import plugin-id="com.tle.common.search" exported="true" />
-		<import plugin-id="com.tle.core.guice" />
-		<import plugin-id="com.tle.core.fedsearch" exported="true" />
-		<import plugin-id="com.tle.core.remoterepo.parser.mods" />
-		<import plugin-id="com.tle.common.remoterepo.srw" exported="true" />
-		<import plugin-id="com.tle.web.endpoint.srw" />
-		<import plugin-id="javax.xml:jaxrpc-api" />
-		<import plugin-id="com.tle.core.xslt" />
-	</requires>
-
-	<runtime>
-		<library type="code" path="classes/" id="srwcore">
-			<export prefix="*" />
-		</library>
-	</runtime>
-
-	<extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules" />
-
+  <requires>
+    <import plugin-id="com.tle.core.guice" />
+    <import plugin-id="com.tle.core.fedsearch" exported="true" />
+    <import plugin-id="com.tle.core.remoterepo.parser.mods" />
+    <import plugin-id="com.tle.web.endpoint.srw" />
+    <import plugin-id="com.tle.core.xslt" />
+    <import plugin-id="com.equella.base" exported="true" />
+  </requires>
+  <runtime>
+    <library type="code" path="classes/" id="srwcore">
+      <export prefix="*" />
+    </library>
+  </runtime>
+  <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules" />
 </plugin>

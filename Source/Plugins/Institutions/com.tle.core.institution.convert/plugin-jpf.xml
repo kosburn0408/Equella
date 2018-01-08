@@ -3,15 +3,12 @@
 <plugin id="com.tle.core.institution.convert" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.institution" exported="true" />
-    <import plugin-id="com.tle.core.filesystem" exported="true" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate.equella" exported="true" />
     <import plugin-id="com.tle.platform.common" exported="true" />
-    <import plugin-id="com.tle.core.xml" exported="true" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

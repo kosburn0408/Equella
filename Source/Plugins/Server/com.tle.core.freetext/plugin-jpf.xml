@@ -3,7 +3,6 @@
 <plugin id="com.tle.core.freetext" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.config" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.migration" />
@@ -11,14 +10,13 @@
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services" />
-    <import plugin-id="com.tle.core.settings" />
-    <import plugin-id="com.tle.core.healthcheck.listeners" />
-    <import plugin-id="com.tle.core.url" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.ims" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

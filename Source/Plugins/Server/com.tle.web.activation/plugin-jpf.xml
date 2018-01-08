@@ -6,9 +6,6 @@
     <import plugin-id="com.tle.core.activation" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.settings" />
-    <import plugin-id="com.tle.core.usermanagement.standard" />
-    <import plugin-id="com.tle.web.bulk" />
     <import plugin-id="com.tle.web.integration" />
     <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
@@ -21,6 +18,9 @@
     <import plugin-id="com.tle.web.htmleditor" />
     <import plugin-id="com.tle.core.item.standard" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core6" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

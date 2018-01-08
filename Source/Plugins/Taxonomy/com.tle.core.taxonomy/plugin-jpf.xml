@@ -20,11 +20,9 @@
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.wizard" />
     <import plugin-id="com.tle.core.hibernate.equella" />
-    <import plugin-id="com.tle.core.entity.security" />
-    <import plugin-id="com.tle.core.xml" />
-    <import plugin-id="com.tle.core.filesystem" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -9,8 +9,8 @@
     <import plugin-id="com.tle.web.portal" />
     <import plugin-id="com.tle.web.remoting.soap" />
     <import plugin-id="com.tle.web.sections.equella" />
-    <import plugin-id="com.tle.web.recipientselector" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

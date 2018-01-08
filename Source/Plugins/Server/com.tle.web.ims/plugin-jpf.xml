@@ -16,7 +16,7 @@
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item.convert" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

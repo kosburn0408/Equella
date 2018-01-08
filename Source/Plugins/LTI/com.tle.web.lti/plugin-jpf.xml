@@ -6,20 +6,17 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.web.sections" />
-    <import plugin-id="com.tle.core.oauth" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.viewurl" />
-    <import plugin-id="com.tle.core.usermanagement.standard" />
-    <import plugin-id="com.tle.core.lti.consumers" />
-    <import plugin-id="com.tle.core.encryption" />
     <import plugin-id="com.tle.core.institution.convert" />
-    <import plugin-id="com.tle.core.xml" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

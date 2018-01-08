@@ -7,8 +7,8 @@
   <requires>
     <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.tle.admin.security.tool" />
-    <import plugin-id="com.tle.common.recipientselector" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -5,7 +5,6 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.imagemagick" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
@@ -17,10 +16,8 @@
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.tle.core.institution" />
-    <import plugin-id="com.tle.core.filesystem" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

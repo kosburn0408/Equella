@@ -6,8 +6,6 @@
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.fedsearch" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.settings" />
-    <import plugin-id="com.tle.core.wizard" exported="true" />
     <import plugin-id="com.tle.web.wizard.page" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.standard" />
@@ -16,7 +14,6 @@
     <import plugin-id="com.tle.web.viewitem.summary" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.freemarker" />
-    <import plugin-id="com.tle.web.resources" />
     <import plugin-id="com.tle.web.selection" />
     <import plugin-id="com.tle.web.integration" />
     <import plugin-id="com.tle.web.workflow" />
@@ -25,9 +22,10 @@
     <import plugin-id="com.tle.core.item.standard" exported="true" />
     <import plugin-id="com.tle.core.i18n" />
     <import plugin-id="com.tle.core.collection" />
-    <import plugin-id="com.tle.core.quota" />
-    <import plugin-id="com.tle.core.office2html" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

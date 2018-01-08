@@ -3,11 +3,8 @@
 <plugin id="com.tle.web.viewitem.summary" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.config" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.url" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.sections.standard" />
@@ -19,9 +16,9 @@
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.standard" />
     <import plugin-id="com.tle.core.usermanagement" />
-    <import plugin-id="com.tle.core.xml" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

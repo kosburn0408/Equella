@@ -4,14 +4,10 @@
   <requires>
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.imagemagick" />
     <import plugin-id="com.tle.core.mimetypes" exported="true" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.freemarker" />
-    <import plugin-id="com.tle.web.mimetypes.service" />
-    <import plugin-id="com.tle.web.resources" />
     <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
@@ -21,8 +17,9 @@
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.itemlist" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -8,14 +8,11 @@
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.core.services" />
-    <import plugin-id="com.tle.core.settings" />
-    <import plugin-id="com.tle.core.system" />
-    <import plugin-id="com.tle.core.xslt" />
-    <import plugin-id="com.tle.core.filesystem" />
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.tle.core.i18n" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

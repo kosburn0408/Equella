@@ -3,12 +3,12 @@
 <plugin id="com.tle.core.services.item.relation" version="1">
   <requires>
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.qti" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item.standard" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

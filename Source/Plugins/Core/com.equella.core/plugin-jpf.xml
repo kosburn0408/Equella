@@ -6,57 +6,32 @@
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
-    <import plugin-id="com.tle.common.interfaces.equella" />
-    <import plugin-id="com.tle.common.recipientselector" />
     <import plugin-id="com.tle.common.remoterepo.z3950" exported="true" />
     <import plugin-id="com.tle.common.wizard.controls.resource" />
-    <import plugin-id="com.tle.core.accessibility" />
     <import plugin-id="com.tle.core.activation" />
     <import plugin-id="com.tle.core.collection" />
-    <import plugin-id="com.tle.core.config" />
     <import plugin-id="com.tle.core.connectors" />
     <import plugin-id="com.tle.core.connectors.blackboard" />
-    <import plugin-id="com.tle.core.dynacollection" />
-    <import plugin-id="com.tle.core.email" />
-    <import plugin-id="com.tle.core.encryption" />
     <import plugin-id="com.tle.core.entity" />
-    <import plugin-id="com.tle.core.entity.security" />
     <import plugin-id="com.tle.core.events" />
-    <import plugin-id="com.tle.core.favourites" />
     <import plugin-id="com.tle.core.fedsearch" />
-    <import plugin-id="com.tle.core.filesystem" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.tle.core.freetext" />
-    <import plugin-id="com.tle.core.google" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.harvester" />
-    <import plugin-id="com.tle.core.healthcheck.listeners" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.hibernate.equella" />
-    <import plugin-id="com.tle.core.htmleditor" />
     <import plugin-id="com.tle.core.i18n" />
-    <import plugin-id="com.tle.core.imagemagick" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.convert" />
     <import plugin-id="com.tle.core.item.standard" />
     <import plugin-id="com.tle.core.jackson" />
     <import plugin-id="com.tle.core.javascript" />
-    <import plugin-id="com.tle.core.libav" />
-    <import plugin-id="com.tle.core.lti.consumers" />
     <import plugin-id="com.tle.core.metadata" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.core.notification" />
-    <import plugin-id="com.tle.core.notification.standard" />
-    <import plugin-id="com.tle.core.oauth" />
     <import plugin-id="com.tle.core.portal" />
-    <import plugin-id="com.tle.core.powersearch" />
-    <import plugin-id="com.tle.core.qti" />
-    <import plugin-id="com.tle.core.quickupload" />
-    <import plugin-id="com.tle.core.quota" />
-    <import plugin-id="com.tle.core.remoterepo.parser.mods" />
     <import plugin-id="com.tle.core.remoterepo.srw" />
     <import plugin-id="com.tle.core.replicatedcache" />
     <import plugin-id="com.tle.core.reporting" />
@@ -65,41 +40,24 @@
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.security.convert" />
-    <import plugin-id="com.tle.core.security.runasuser" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.services.item.relation" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.core.settings.convert" />
-    <import plugin-id="com.tle.core.soap" />
-    <import plugin-id="com.tle.core.system" />
     <import plugin-id="com.tle.core.taxonomy" />
-    <import plugin-id="com.tle.core.url" />
     <import plugin-id="com.tle.core.usermanagement" />
-    <import plugin-id="com.tle.core.usermanagement.standard" />
     <import plugin-id="com.tle.core.workflow" />
     <import plugin-id="com.tle.core.workflow.thumbnail" />
     <import plugin-id="com.tle.core.workflow.video" />
-    <import plugin-id="com.tle.core.xml" />
-    <import plugin-id="com.tle.core.xslt" />
     <import plugin-id="com.tle.core.zookeeper" />
     <import plugin-id="com.tle.ims" />
     <import plugin-id="com.tle.mycontent" />
     <import plugin-id="com.tle.mypages" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.web.activation" />
-    <import plugin-id="com.tle.web.api.baseentity.serializer" />
-    <import plugin-id="com.tle.web.api.item.equella" />
-    <import plugin-id="com.tle.web.api.item.equella.interfaces" />
     <import plugin-id="com.tle.web.api.item.equella.serializer" />
-    <import plugin-id="com.tle.web.api.search" />
-    <import plugin-id="com.tle.web.appletcommon" />
-    <import plugin-id="com.tle.web.bulk" />
     <import plugin-id="com.tle.web.connectors" />
     <import plugin-id="com.tle.web.core" />
-    <import plugin-id="com.tle.web.core.equella" />
     <import plugin-id="com.tle.web.endpoint.srw" />
-    <import plugin-id="com.tle.web.entities" />
     <import plugin-id="com.tle.web.fedsearch" />
     <import plugin-id="com.tle.web.filemanager.applet" />
     <import plugin-id="com.tle.web.freemarker" />
@@ -110,15 +68,11 @@
     <import plugin-id="com.tle.web.itemlist" />
     <import plugin-id="com.tle.web.lti" />
     <import plugin-id="com.tle.web.mimetypes" />
-    <import plugin-id="com.tle.web.mimetypes.service" />
     <import plugin-id="com.tle.web.myresources" />
     <import plugin-id="com.tle.web.portal" />
-    <import plugin-id="com.tle.web.recipientselector" />
     <import plugin-id="com.tle.web.remoting" />
     <import plugin-id="com.tle.web.remoting.rest" />
     <import plugin-id="com.tle.web.remoting.soap" />
-    <import plugin-id="com.tle.web.resources" />
-    <import plugin-id="com.tle.web.scripting" />
     <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.searching" />
     <import plugin-id="com.tle.web.sections" />
@@ -133,14 +87,20 @@
     <import plugin-id="com.tle.web.viewitem.treeviewer" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.wizard" />
-    <import plugin-id="com.tle.web.wizard.controls" />
     <import plugin-id="com.tle.web.wizard.controls.universal" />
     <import plugin-id="com.tle.web.workflow" />
     <import plugin-id="com.tle.web.workflow.portal" />
     <import plugin-id="org.hibernate" />
     <import plugin-id="org.mozilla.rhino" />
-    <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.admin" exported="true" />
+    <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core8" exported="true" />
+    <import plugin-id="com.equella.core6" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -2,7 +2,6 @@
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.tle.web.integration" version="1.0.1">
   <requires>
-    <import plugin-id="com.tle.core.integration" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
@@ -13,6 +12,7 @@
     <import plugin-id="com.tle.core.jackson" />
     <import plugin-id="com.tle.web.lti" />
     <import plugin-id="com.tle.core.item" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

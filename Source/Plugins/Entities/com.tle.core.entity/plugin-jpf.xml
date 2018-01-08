@@ -4,17 +4,15 @@
   <requires>
     <import plugin-id="com.tle.core.auditlog" exported="true" />
     <import plugin-id="com.tle.core.events" />
-    <import plugin-id="com.tle.core.filesystem" exported="true" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.hibernate.equella" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.tle.core.services" exported="true" />
     <import plugin-id="com.tle.core.institution.convert" exported="true" />
     <import plugin-id="com.tle.core.usermanagement" exported="true" />
     <import plugin-id="com.tle.core.security" exported="true" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

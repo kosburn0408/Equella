@@ -6,9 +6,9 @@
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

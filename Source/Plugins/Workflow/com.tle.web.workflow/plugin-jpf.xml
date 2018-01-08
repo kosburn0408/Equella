@@ -3,18 +3,14 @@
 <plugin id="com.tle.web.workflow" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.notification" />
-    <import plugin-id="com.tle.core.notification.standard" />
     <import plugin-id="com.tle.core.portal" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.core.workflow" />
     <import plugin-id="com.tle.web.itemadmin" />
     <import plugin-id="com.tle.web.htmleditor" />
     <import plugin-id="com.tle.web.itemlist" />
     <import plugin-id="com.tle.web.myresources" />
-    <import plugin-id="com.tle.web.notification" />
     <import plugin-id="com.tle.web.portal" />
     <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
@@ -23,12 +19,14 @@
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewitem.summary" />
     <import plugin-id="com.tle.web.sections.standard" />
-    <import plugin-id="com.tle.web.recipientselector" />
-    <import plugin-id="com.tle.web.bulk" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.standard" exported="true" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core6" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

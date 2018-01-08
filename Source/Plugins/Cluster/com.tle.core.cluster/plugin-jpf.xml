@@ -6,7 +6,7 @@
     <import plugin-id="com.tle.core.application" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.zookeeper" />
-    <import plugin-id="com.tle.core.config" />
+    <import plugin-id="com.equella.base" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -3,18 +3,15 @@
 <plugin id="com.tle.core.i18n" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.config" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.filesystem" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.hibernate.equella" exported="true" />
     <import plugin-id="com.tle.core.usermanagement" />
-    <import plugin-id="com.tle.web.core.equella" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

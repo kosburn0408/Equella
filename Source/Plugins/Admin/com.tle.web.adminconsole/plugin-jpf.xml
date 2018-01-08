@@ -13,9 +13,9 @@
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.tle.webstart.admin" />
     <import plugin-id="com.tle.core.freetext" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

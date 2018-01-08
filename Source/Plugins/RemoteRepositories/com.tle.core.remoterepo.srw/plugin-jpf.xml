@@ -4,10 +4,10 @@
   <requires>
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.fedsearch" exported="true" />
-    <import plugin-id="com.tle.core.remoterepo.parser.mods" />
     <import plugin-id="com.tle.web.endpoint.srw" />
-    <import plugin-id="com.tle.core.xslt" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="srwcore">

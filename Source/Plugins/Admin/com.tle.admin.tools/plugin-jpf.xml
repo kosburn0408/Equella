@@ -7,8 +7,8 @@
   <requires>
     <import plugin-id="com.tle.admin.common" exported="true" />
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.common.accesscontrolbuilder" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

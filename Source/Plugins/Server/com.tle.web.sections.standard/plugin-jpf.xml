@@ -6,11 +6,10 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.javascript" exported="true" />
     <import plugin-id="com.tle.web.freemarker" />
-    <import plugin-id="com.tle.web.resources" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.platform.common" />
-    <import plugin-id="com.tle.web.core.equella" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

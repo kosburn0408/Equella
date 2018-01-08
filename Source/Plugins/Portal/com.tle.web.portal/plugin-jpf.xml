@@ -3,12 +3,10 @@
 <plugin id="com.tle.web.portal" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.common.recipientselector" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.portal" exported="true" />
-    <import plugin-id="com.tle.web.recipientselector" />
     <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
@@ -16,8 +14,9 @@
     <import plugin-id="com.tle.web.settings" />
     <import plugin-id="com.tle.web.htmleditor" />
     <import plugin-id="com.tle.web.itemlist" />
-    <import plugin-id="com.tle.core.accessibility" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

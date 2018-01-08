@@ -5,7 +5,6 @@
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.wizard" />
-    <import plugin-id="com.tle.web.wizard.controls" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.common.i18n" />
@@ -13,6 +12,7 @@
     <import plugin-id="com.tle.mypages" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core8" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

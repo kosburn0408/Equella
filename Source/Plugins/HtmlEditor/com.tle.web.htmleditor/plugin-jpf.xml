@@ -4,17 +4,17 @@
   <requires>
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.htmleditor" />
     <import plugin-id="com.tle.core.jackson" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.freemarker" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.standard" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

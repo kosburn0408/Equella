@@ -11,7 +11,6 @@
     <import plugin-id="com.tle.core.replicatedcache" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.web.sections" />
-    <import plugin-id="com.tle.core.xml" />
     <import plugin-id="com.equella.base" exported="true" />
   </requires>
   <runtime>

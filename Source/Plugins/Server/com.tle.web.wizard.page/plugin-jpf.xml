@@ -2,9 +2,9 @@
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.tle.web.wizard.page" version="1">
   <requires>
-    <import plugin-id="com.tle.core.wizard" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.core.guice" />
+    <import plugin-id="com.equella.core4" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -3,7 +3,6 @@
 <plugin id="com.tle.core.harvester" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.dynacollection" />
     <import plugin-id="com.tle.core.entity" exported="true" />
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
@@ -13,22 +12,21 @@
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.core.services" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.web.remoting.soap" />
-    <import plugin-id="com.tle.web.resources" />
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.core.hibernate.equella" />
     <import plugin-id="com.tle.core.schema" />
-    <import plugin-id="com.tle.core.entity.security" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.standard" />
-    <import plugin-id="com.tle.core.soap" />
     <import plugin-id="com.tle.core.events" />
-    <import plugin-id="com.tle.core.filesystem" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core6" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

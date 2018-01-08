@@ -5,20 +5,16 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.auditlog" />
     <import plugin-id="com.tle.core.events" />
-    <import plugin-id="com.tle.core.config" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.hibernate.equella" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.tle.core.replicatedcache" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.core.services" />
-    <import plugin-id="com.tle.core.xml" />
-    <import plugin-id="com.tle.web.core.equella" exported="true" />
     <import plugin-id="com.tle.core.application" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="code">

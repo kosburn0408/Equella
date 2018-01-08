@@ -4,15 +4,9 @@
   <requires>
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.dynacollection" />
-    <import plugin-id="com.tle.core.email" exported="true" />
-    <import plugin-id="com.tle.core.favourites" exported="true" />
     <import plugin-id="com.tle.core.fedsearch" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.search" />
-    <import plugin-id="com.tle.core.security.runasuser" />
-    <import plugin-id="com.tle.core.settings" />
-    <import plugin-id="com.tle.core.wizard" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.integration" exported="true" />
     <import plugin-id="com.tle.web.itemlist" />
@@ -22,11 +16,15 @@
     <import plugin-id="com.tle.web.settings" />
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewurl" exported="true" />
-    <import plugin-id="com.tle.core.url" />
     <import plugin-id="com.tle.core.item" exported="true" />
     <import plugin-id="com.tle.core.collection" exported="true" />
     <import plugin-id="com.tle.core.i18n" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

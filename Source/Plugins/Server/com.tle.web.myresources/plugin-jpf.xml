@@ -6,13 +6,13 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.portal" />
     <import plugin-id="com.tle.web.portal" />
-    <import plugin-id="com.tle.web.recipientselector" />
     <import plugin-id="com.tle.web.search" exported="true" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.itemlist" />
     <import plugin-id="com.tle.web.selection" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

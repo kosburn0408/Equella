@@ -8,10 +8,9 @@
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.core.freetext" />
-    <import plugin-id="com.tle.core.libav" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.tle.core.filesystem" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

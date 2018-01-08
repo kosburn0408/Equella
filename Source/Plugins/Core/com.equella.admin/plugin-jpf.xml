@@ -5,7 +5,6 @@
     <attribute id="type" value="admin-console" />
   </attributes>
   <requires>
-    <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.tle.admin.codeeditor" />
     <import plugin-id="com.tle.admin.collection.tool" />
     <import plugin-id="com.tle.admin.common" />
@@ -17,12 +16,12 @@
     <import plugin-id="com.tle.admin.search" />
     <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.tle.admin.usermanagement.tool" />
-    <import plugin-id="com.tle.common.accesscontrolbuilder" />
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.common.recipientselector" />
     <import plugin-id="com.tle.common.remoterepo.z3950" />
     <import plugin-id="com.tle.common.wizard.controls.resource" />
+    <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="htmleditor">
     <parameter id="id" value="htmleditor" />

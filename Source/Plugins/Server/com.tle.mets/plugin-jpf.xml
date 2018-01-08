@@ -13,8 +13,8 @@
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.ims" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.tle.core.item" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

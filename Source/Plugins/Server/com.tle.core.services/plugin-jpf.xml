@@ -4,14 +4,14 @@
   <requires>
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.application" />
-    <import plugin-id="com.tle.core.config" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.events" exported="true" />
     <import plugin-id="com.tle.core.zookeeper" />
-    <import plugin-id="com.tle.web.core.equella" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.cluster" />
+    <import plugin-id="com.tle.platform.equella" />
     <import plugin-id="com.tle.core.hibernate.equella" />
+
     <import plugin-id="com.equella.base" exported="true" />
   </requires>
   <runtime>

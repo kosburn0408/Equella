@@ -5,14 +5,10 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.filesystem" exported="true" />
-    <import plugin-id="com.tle.core.settings" />
-    <import plugin-id="com.tle.core.url" />
     <import plugin-id="com.tle.mycontent" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.inplaceeditor" />
     <import plugin-id="com.tle.web.mimetypes" />
-    <import plugin-id="com.tle.web.mycontent.files" />
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
@@ -22,13 +18,14 @@
     <import plugin-id="com.tle.web.wizard" />
     <import plugin-id="com.tle.core.workflow.thumbnail" />
     <import plugin-id="com.tle.core.workflow.video" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.tle.core.item" />
     <!-- FIXME: used for ZippingProgess.  Needs removing -->
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core8" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

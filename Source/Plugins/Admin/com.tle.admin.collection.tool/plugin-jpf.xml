@@ -11,11 +11,10 @@
     <import plugin-id="com.tle.admin.schema.common" />
     <import plugin-id="com.tle.admin.scripting" />
     <import plugin-id="com.tle.admin.tools" />
-    <import plugin-id="com.tle.common.accesscontrolbuilder" />
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.common.recipientselector" />
     <import plugin-id="com.tle.admin.security.tool" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

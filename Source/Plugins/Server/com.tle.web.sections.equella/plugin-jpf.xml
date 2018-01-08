@@ -3,17 +3,13 @@
 <plugin id="com.tle.web.sections.equella" version="1" class="com.tle.web.sections.equella.Initialise">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.accessibility" />
     <import plugin-id="com.tle.core.activation" />
     <import plugin-id="com.tle.core.freetext" exported="true" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.javascript" />
     <import plugin-id="com.tle.core.mimetypes" exported="true" />
-    <import plugin-id="com.tle.core.system" />
-    <import plugin-id="com.tle.core.settings" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.freemarker" exported="true" />
-    <import plugin-id="com.tle.web.resources" exported="true" />
     <import plugin-id="com.tle.web.sections" exported="true" />
     <import plugin-id="com.tle.web.sections.standard" exported="true" />
     <import plugin-id="com.tle.web.viewurl" />
@@ -22,10 +18,12 @@
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.i18n" exported="true" />
     <import plugin-id="com.tle.core.usermanagement" />
-    <import plugin-id="com.tle.core.institution" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.auditlog" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="com.equella.core4" version="1">
+  <requires>
+    <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.tle.common.i18n" />
+    <import plugin-id="com.tle.core.collection" />
+    <import plugin-id="com.tle.core.fedsearch" />
+    <import plugin-id="com.tle.core.freetext" />
+    <import plugin-id="com.tle.core.guice" />
+    <import plugin-id="com.tle.core.hibernate" />
+    <import plugin-id="com.tle.core.hibernate.equella" />
+    <import plugin-id="com.tle.core.i18n" />
+    <import plugin-id="com.tle.core.institution.convert" />
+    <import plugin-id="com.tle.core.item" />
+    <import plugin-id="com.tle.core.migration" />
+    <import plugin-id="com.tle.core.mimetypes" exported="true" />
+    <import plugin-id="com.tle.core.notification" exported="true" />
+    <import plugin-id="com.tle.core.scheduler" />
+    <import plugin-id="com.tle.core.scripting" />
+    <import plugin-id="com.tle.core.security" />
+    <import plugin-id="com.tle.core.services" />
+    <import plugin-id="com.tle.platform.common" />
+    <import plugin-id="com.tle.web.core" />
+    <import plugin-id="com.tle.web.sections" />
+    <import plugin-id="com.equella.core3" exported="true" />
+  </requires>
+  <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
+    <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />
+    <parameter id="class" value="com.tle.web.resources.ResourcesModule" />
+  </extension>
+  <extension plugin-id="com.tle.web.core" point-id="webServlet" id="resourcesServlet">
+    <parameter id="url-pattern" value="/p/r/*" />
+    <parameter id="bean" value="bean:com.tle.web.resources.ResourcesServlet" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="registrationHandler" id="handler">
+    <parameter id="class" value="bean:com.tle.web.resources.ResourceHelperHandler" />
+    <parameter id="order" value="0" />
+  </extension>
+  <extension plugin-id="com.tle.core.scheduler" point-id="scheduledTask" id="checkInstitutionStorageQuotas">
+    <parameter id="id" value="Check Institution Storage Quotas" />
+    <parameter id="bean" value="bean:com.tle.core.quota.task.CheckInstitutionStorageQuotas" />
+    <parameter id="frequency" value="daily" />
+    <parameter id="scope" value="server" />
+  </extension>
+  <extension plugin-id="com.tle.core.freetext" point-id="freetextIndex" id="notificationIndex">
+    <parameter id="id" value="notifications" />
+    <parameter id="class" value="bean:com.tle.core.notification.standard.indexer.NotificationIndex" />
+  </extension>
+  <extension plugin-id="com.tle.core.freetext" point-id="indexingExtension" id="tasksIndexer">
+    <parameter id="class" value="bean:com.tle.core.notification.standard.indexer.NotificationIndexer" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="converter" id="converter">
+    <parameter id="id" value="notifications" />
+    <parameter id="class" value="bean:com.tle.core.notification.standard.institution.NotificationConverter" />
+    <parameter id="order" value="2000" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="itemXmlConvert">
+    <parameter id="id" value="com.tle.core.notification.institution.NotificationConverter" />
+    <parameter id="bean" value="bean:com.tle.core.notification.standard.institution.NotificationConverter" />
+    <parameter id="date" value="1970-01-11" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="notificationMigrator">
+    <parameter id="id" value="com.tle.core.notification.institution.MigrateNotifications2XML" />
+    <parameter id="bean" value="bean:com.tle.core.notification.standard.institution.MigrateNotifications2XML" />
+    <parameter id="date" value="1970-02-12" />
+  </extension>
+  <extension plugin-id="com.tle.core.item" point-id="itemDaoExtension" id="itemDao">
+    <parameter id="class" value="bean:com.tle.core.notification.standard.institution.NotificationItemDao" />
+    <parameter id="order" value="101" />
+  </extension>
+  <extension plugin-id="com.tle.core.scheduler" point-id="scheduledTask" id="checkForBatchEmails">
+    <parameter id="id" value="com.tle.core.notification.scheduler.CheckEmailsTask" />
+    <parameter id="bean" value="bean:com.tle.core.notification.standard.task.CheckEmailsTask" />
+    <parameter id="frequency" value="daily" />
+    <parameter id="scope" value="server" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="com.tle.core.wizard.institution.migration.v41.WizardLayoutConverter">
+    <parameter id="id" value="com.tle.core.wizard.institution.migration.v41.WizardLayoutConverter" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="wizardLayoutXmlMigrator">
+    <parameter id="id" value="com.tle.core.wizard.institution.migration.v41.WizardLayoutXmlMigrator" />
+    <parameter id="bean" value="bean:com.tle.core.wizard.institution.migration.v41.WizardLayoutXmlMigrator" />
+    <parameter id="date" value="1970-01-17" />
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects">
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DefaultWizardPage" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$NetworkSet" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$NetworkSet$1" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$Network" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$Container" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$Contributor" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$ExistsMapping" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.FixedMetadata" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.Metadata" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.NavPage" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.WizardPage" />
+    <parameter id="class" value="com.dytech.edge.wizard.TargetNode" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.AbstractControlsWizardControl" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Attachment" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Button" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Calendar" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.CheckBoxGroup" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.ContainerControl" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.CustomControl" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Date" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Description" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.EditBox" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Group" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.GroupItem" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Hidden" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Html" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.HtmlEdit" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.ListBox" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Multi" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.MultiEditBox" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.MyItem" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.RadioGroup" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.Repeater" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.ShuffleBox" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.ShuffleList" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.TreeNav" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.UnsupportedControl" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.WizardControl" />
+    <parameter id="class" value="com.dytech.edge.wizard.beans.control.WizardControlItem" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="iconServer">
+    <parameter id="path" value="/icon.do" />
+    <parameter id="root" value="bean:com.tle.web.mimetypes.service.IconServer" />
+  </extension>
+  <extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings_resource-centre">
+    <parameter id="group" value="resource-centre" />
+    <parameter id="file" value="lang/i18n-resource-centre.properties" />
+  </extension>
+</plugin>

@@ -60,18 +60,18 @@ public class DynaCollectionEditor extends BaseEntityEditor<DynaCollection>
 	@Override
 	protected String getEntityName()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.entityname"); //$NON-NLS-1$
+		return getString("entityname"); //$NON-NLS-1$
 	}
 
 	@Override
 	protected String getWindowTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.windowtitle"); //$NON-NLS-1$
+		return getString("windowtitle"); //$NON-NLS-1$
 	}
 
 	@Override
 	public String getDocumentName()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.entityname"); //$NON-NLS-1$
+		return getString("entityname"); //$NON-NLS-1$
 	}
 }

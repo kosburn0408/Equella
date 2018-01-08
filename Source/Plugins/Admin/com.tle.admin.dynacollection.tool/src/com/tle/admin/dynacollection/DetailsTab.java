@@ -63,7 +63,7 @@ public class DetailsTab extends BaseEntityTab<DynaCollection> implements Abstrac
 	@Override
 	public String getTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.detailstab.title");
+		return getString("dyncol.detailstab.title");
 	}
 
 	private void setupGUI()
@@ -75,16 +75,16 @@ public class DetailsTab extends BaseEntityTab<DynaCollection> implements Abstrac
 
 		setLayout(new MigLayout("wrap 2,fillx", "[align label][fill, grow]25%"));
 
-		add(new JLabel(CurrentLocale.get("com.tle.admin.dynacollection.detailstab.name")));
+		add(new JLabel(getString("dyncol.detailstab.name")));
 		add(name, "growx");
 
-		add(new JLabel(CurrentLocale.get("com.tle.admin.dynacollection.detailstab.desc")), "top");
+		add(new JLabel(getString("dyncol.detailstab.desc")), "top");
 		add(description, "height pref*3, growx");
 
-		add(new JLabel(CurrentLocale.get("com.tle.admin.dynacollection.detailstab.owner")));
+		add(new JLabel(getString("dyncol.detailstab.owner")));
 		add(owner);
 
-		add(new JLabel(CurrentLocale.get("com.tle.admin.dynacollection.detailstab.usages")), "span 2");
+		add(new JLabel(getString("dyncol.detailstab.usages")), "span 2");
 
 		for( Extension ext : pluginService.getConnectedExtensions("com.tle.common.dynacollection", "usages") )
 		{
@@ -161,12 +161,12 @@ public class DetailsTab extends BaseEntityTab<DynaCollection> implements Abstrac
 	{
 		if( name.isCompletelyEmpty() )
 		{
-			throw new EditorException(CurrentLocale.get("com.tle.admin.dynacollection.detailstab.supplyname")); //$NON-NLS-1$
+			throw new EditorException(getString("dyncol.detailstab.supplyname")); //$NON-NLS-1$
 		}
 
 		if( owner.getUser() == null )
 		{
-			throw new EditorException(CurrentLocale.get("com.tle.admin.dynacollection.detailstab.noowner")); //$NON-NLS-1$
+			throw new EditorException(getString("dyncol.detailstab.noowner")); //$NON-NLS-1$
 		}
 	}
 }

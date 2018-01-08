@@ -32,6 +32,7 @@ import java.util.UUID;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileFilter;
 
+import com.tle.core.plugins.AbstractPluginService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -63,6 +64,13 @@ import com.tle.i18n.BundleCache;
 public abstract class BaseEntityTool<T extends BaseEntity> extends AdminToolListClone
 {
 	static final Log LOGGER = LogFactory.getLog(BaseEntityTool.class);
+
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(KEY_PFX+key);
+	}
 
 	// //////// ABSTRACT ///////////
 

@@ -58,7 +58,7 @@ public class FilterTab extends BaseEntityTab<DynaCollection>
 	@Override
 	public String getTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.filtertab.title"); //$NON-NLS-1$
+		return getString("filtertab.title"); //$NON-NLS-1$
 	}
 
 	@Override

@@ -37,8 +37,8 @@ public class VirtualisationTab extends BaseEntityTab<DynaCollection>
 	@Override
 	public void init(Component parent)
 	{
-		editor = new VirtualisationEditor(pluginService, clientService, "com.tle.admin.dynacollection.entityname",
-			"com.tle.admin.dynacollection.virtualisationtab.renamingHelp");
+		editor = new VirtualisationEditor(pluginService, clientService, getKey("entityname"),
+			getKey("virtualisationtab.renamingHelp"));
 
 		setLayout(new GridLayout(1, 1));
 		add(editor);
@@ -52,7 +52,7 @@ public class VirtualisationTab extends BaseEntityTab<DynaCollection>
 	@Override
 	public String getTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.virtualisationtab.title");
+		return getString("virtualisationtab.title");
 	}
 
 	@Override

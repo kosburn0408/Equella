@@ -34,6 +34,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import javax.swing.text.JTextComponent;
 
+import com.tle.core.plugins.AbstractPluginService;
 import net.miginfocom.swing.MigLayout;
 
 import org.apache.commons.logging.Log;
@@ -91,6 +92,12 @@ public abstract class BaseEntityEditor<T extends BaseEntity>
 	@Deprecated
 	protected Driver driver;
 	protected AbstractDetailsTab<T> detailsTab;
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(KEY_PFX+key);
+	}
 
 	public BaseEntityEditor(BaseEntityTool<T> tool, boolean readonly)
 	{

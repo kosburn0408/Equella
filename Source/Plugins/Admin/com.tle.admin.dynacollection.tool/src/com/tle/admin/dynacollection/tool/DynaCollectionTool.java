@@ -53,6 +53,6 @@ public class DynaCollectionTool extends BaseEntityTool<DynaCollection>
 	@Override
 	protected String getEntityName()
 	{
-		return CurrentLocale.get("com.tle.admin.dynacollection.entityname"); //$NON-NLS-1$
+		return getString("entityname"); //$NON-NLS-1$
 	}
 }

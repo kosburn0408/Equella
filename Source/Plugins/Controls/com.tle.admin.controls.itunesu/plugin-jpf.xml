@@ -21,7 +21,7 @@
     <parameter id="file" value="lang/i18n.properties" />
   </extension>
   <extension plugin-id="com.tle.admin.controls.universal" point-id="editor" id="iTunesUHandler">
-    <parameter id="nameKey" value="com.tle.admin.controls.itunesu.settings.title" />
+    <parameter id="nameKey" value="com.tle.admin.controls.itunesu.itunesu.settings.title" />
     <parameter id="configPanel" value="com.tle.admin.controls.itunesu.universal.ITunesUSettingsPanel" />
   </extension>
   <extension plugin-id="com.tle.admin.controls.universal" point-id="universalvalidator" id="iTunesUValidator">

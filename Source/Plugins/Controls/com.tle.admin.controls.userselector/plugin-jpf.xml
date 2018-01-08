@@ -22,7 +22,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="userSelectorControl">
     <parameter id="id" value="userselector" />
-    <parameter id="name" value="com.tle.admin.controls.userselector.title" />
+    <parameter id="name" value="com.tle.admin.controls.userselector.usersel.title" />
     <parameter id="modelClass" value="com.tle.admin.controls.userselector.UserSelectorControlModel" />
     <parameter id="wrappedClass" value="com.tle.common.wizard.controls.userselector.UserSelectorControl" />
     <parameter id="editorClass" value="com.tle.admin.controls.userselector.UserSelectorControlEditor" />

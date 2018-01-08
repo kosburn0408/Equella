@@ -45,7 +45,7 @@ public class ITunesUSettingsPanel extends UniversalControlSettingPanel implement
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.itunesu.settings.title";
+		return "com.tle.admin.controls.itunesu.itunesu.settings.title";
 	}
 
 	@Override

@@ -116,7 +116,7 @@ public class ResourceSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.resource.settings.title";
+		return "com.tle.admin.controls.resource.rescontrol.settings.title";
 	}
 
 	@Override

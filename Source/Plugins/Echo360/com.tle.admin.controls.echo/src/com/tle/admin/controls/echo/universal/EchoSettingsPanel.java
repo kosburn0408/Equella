@@ -30,7 +30,7 @@ public class EchoSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.echo.settings.title";
+		return "com.tle.admin.controls.echo.echo.settings.title";
 	}
 
 	@Override

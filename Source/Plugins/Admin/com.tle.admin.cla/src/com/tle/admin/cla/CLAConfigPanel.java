@@ -138,7 +138,7 @@ public class CLAConfigPanel extends AbstractExtensionConfigPanel
 		uploadPanel.add(upload, new Rectangle(1, 1, 1, 1));
 		uploadPanel.add(remove, new Rectangle(2, 1, 1, 1));
 
-		agreementGroup = new JGroup(CurrentLocale.get("com.tle.admin.cla.agreement.requires")); //$NON-NLS-1$
+		agreementGroup = new JGroup(CurrentLocale.get("com.tle.admin.cla.cla.agreement.requires")); //$NON-NLS-1$
 		agreementGroup.setInnerLayout(new BorderLayout());
 		agreementGroup.addInner(uploadPanel);
 		agreementGroup.addActionListener(new ActionListener()

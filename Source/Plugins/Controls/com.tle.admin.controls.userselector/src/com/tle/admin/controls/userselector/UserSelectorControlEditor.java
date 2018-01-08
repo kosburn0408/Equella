@@ -74,7 +74,7 @@ public class UserSelectorControlEditor extends AbstractControlEditor<CustomContr
 
 		addSection(createDetailsSection());
 
-		groupRestriction = new UserGroupPanel(getString("restrict.groups"), //$NON-NLS-1$
+		groupRestriction = new UserGroupPanel(getString("usersel.restrict.groups"), //$NON-NLS-1$
 			getString("groups.select"), getString("groups.selected")); //$NON-NLS-1$//$NON-NLS-2$
 
 		addSection(groupRestriction);
@@ -120,7 +120,7 @@ public class UserSelectorControlEditor extends AbstractControlEditor<CustomContr
 		title = new I18nTextField(langs);
 		description = new I18nTextField(langs);
 		mandatory = new JCheckBox(CurrentLocale.get("wizard.controls.mandatory")); //$NON-NLS-1$
-		selectMultiple = new JCheckBox(getString("selectmultiple")); //$NON-NLS-1$
+		selectMultiple = new JCheckBox(getString("usersel.selectmultiple")); //$NON-NLS-1$
 
 		final JPanel all = new JPanel(new MigLayout("wrap", "[][grow, fill]"));
 

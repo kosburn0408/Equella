@@ -21,7 +21,7 @@
     <parameter id="file" value="lang/i18n.properties" />
   </extension>
   <extension plugin-id="com.tle.admin.controls.universal" point-id="editor" id="mypagesHandler">
-    <parameter id="nameKey" value="com.tle.admin.controls.mypages.settings.title" />
+    <parameter id="nameKey" value="com.tle.admin.controls.mypages.mypages.settings.title" />
     <parameter id="configPanel" value="com.tle.admin.controls.mypages.universal.MyPagesSettingsPanel" />
   </extension>
 </plugin>

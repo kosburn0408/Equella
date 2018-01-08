@@ -24,6 +24,6 @@
     <parameter id="class" value="com.tle.admin.usermanagement.shibboleth.ExternalAuthorisationPlugin" />
     <parameter id="width" value="600" />
     <parameter id="height" value="450" />
-    <parameter id="name" value="com.tle.admin.usermanagement.shibboleth.title" />
+    <parameter id="name" value="com.tle.admin.usermanagement.shibboleth.shib.title" />
   </extension>
 </plugin>

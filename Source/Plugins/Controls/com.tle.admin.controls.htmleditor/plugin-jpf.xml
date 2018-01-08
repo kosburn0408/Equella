@@ -23,7 +23,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="htmleditor">
     <parameter id="id" value="htmleditor" />
-    <parameter id="name" value="com.tle.admin.controls.htmleditor.title" />
+    <parameter id="name" value="com.tle.admin.controls.htmleditor.htmleditor.title" />
     <parameter id="modelClass" value="com.tle.admin.controls.htmleditor.HtmlEditMceModel" />
     <parameter id="wrappedClass" value="com.tle.common.wizard.controls.htmleditmce.HtmlEditMceControl" />
     <parameter id="editorClass" value="com.tle.admin.controls.htmleditor.HtmlEditMceEditor" />

@@ -22,7 +22,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="roleSelectorControl">
     <parameter id="id" value="roleselector" />
-    <parameter id="name" value="com.tle.admin.controls.roleselector.title" />
+    <parameter id="name" value="com.tle.admin.controls.roleselector.rolesel.title" />
     <parameter id="modelClass" value="com.tle.admin.controls.roleselector.RoleSelectorControlModel" />
     <parameter id="wrappedClass" value="com.tle.common.wizard.controls.roleselector.RoleSelectorControl" />
     <parameter id="editorClass" value="com.tle.admin.controls.roleselector.RoleSelectorControlEditor" />

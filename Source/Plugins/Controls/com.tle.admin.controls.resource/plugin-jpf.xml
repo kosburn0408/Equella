@@ -24,7 +24,7 @@
     <parameter id="file" value="lang/i18n.properties" />
   </extension>
   <extension plugin-id="com.tle.admin.controls.universal" point-id="editor" id="resourceHandler">
-    <parameter id="nameKey" value="com.tle.admin.controls.resource.settings.title" />
+    <parameter id="nameKey" value="com.tle.admin.controls.resource.rescontrol.settings.title" />
     <parameter id="configPanel" value="com.tle.admin.controls.resource.universal.ResourceSettingsPanel" />
   </extension>
 </plugin>

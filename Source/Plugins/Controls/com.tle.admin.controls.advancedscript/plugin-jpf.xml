@@ -23,7 +23,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="advancedScriptControl">
     <parameter id="id" value="advancedscript" />
-    <parameter id="name" value="com.tle.admin.controls.advancedscript.title" />
+    <parameter id="name" value="com.tle.admin.controls.advancedscript.asc.title" />
     <parameter id="modelClass" value="com.dytech.edge.admin.wizard.model.CustomControlModel" />
     <parameter id="wrappedClass" value="com.tle.common.wizard.controls.advancedscript.AdvancedScriptControl" />
     <parameter id="editorClass" value="com.tle.admin.controls.advancedscript.AdvancedScriptControlEditor" />

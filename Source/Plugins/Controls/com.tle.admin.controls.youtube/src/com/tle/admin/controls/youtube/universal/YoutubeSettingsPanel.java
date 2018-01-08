@@ -93,7 +93,7 @@ public class YoutubeSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.youtube.settings.title";
+		return "com.tle.admin.controls.youtube.youtube.settings.title";
 	}
 
 	@Override

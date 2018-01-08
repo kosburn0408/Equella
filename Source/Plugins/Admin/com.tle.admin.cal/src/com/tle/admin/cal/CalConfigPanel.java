@@ -176,7 +176,7 @@ public class CalConfigPanel extends AbstractExtensionConfigPanel
 
 		restrictiveValidation = new JCheckBox(CurrentLocale.get("com.tle.admin.cal.restrictiveValidation"));
 
-		agreementGroup = new JGroup(CurrentLocale.get("com.tle.admin.cal.agreement.requires")); //$NON-NLS-1$
+		agreementGroup = new JGroup(CurrentLocale.get("com.tle.admin.cal.cal.agreement.requires")); //$NON-NLS-1$
 		agreementGroup.setInnerLayout(new BorderLayout());
 		agreementGroup.addInner(uploadPanel);
 		agreementGroup.addActionListener(new ActionListener()

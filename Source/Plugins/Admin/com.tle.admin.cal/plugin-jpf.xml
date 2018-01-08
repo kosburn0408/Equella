@@ -31,7 +31,7 @@
     <parameter id="class" value="com.tle.admin.cal.CalSummaryDisplayConfig" />
   </extension>
   <extension plugin-id="com.tle.common.wizard.controls.resource" point-id="relationTypes" id="relationTypes">
-    <parameter id="nameKey" value="com.tle.admin.cal.resourceType" />
+    <parameter id="nameKey" value="com.tle.admin.cal.cal.resourceType" />
     <parameter id="value" value="CAL_HOLDING" />
     <parameter id="lockMultiSelectToValue" value="false" />
     <parameter id="lockSelectTypeToValue" value="ITEMS" />

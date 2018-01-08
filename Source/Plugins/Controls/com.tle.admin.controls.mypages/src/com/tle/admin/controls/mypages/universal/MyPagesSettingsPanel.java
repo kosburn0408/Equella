@@ -28,7 +28,7 @@ public class MyPagesSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.mypages.settings.title";
+		return "com.tle.admin.controls.mypages.mypages.settings.title";
 	}
 
 	@Override

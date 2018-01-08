@@ -21,7 +21,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="fileManagerControl">
     <parameter id="id" value="filemanager" />
-    <parameter id="name" value="com.tle.admin.controls.filemanager.title" />
+    <parameter id="name" value="com.tle.admin.controls.filemanager.fileman.title" />
     <parameter id="modelClass" value="com.dytech.edge.admin.wizard.model.CustomControlModel" />
     <parameter id="wrappedClass" value="com.tle.admin.controls.filemanager.FileManagerControl" />
     <parameter id="editorClass" value="com.tle.admin.controls.filemanager.FileManagerEditor" />

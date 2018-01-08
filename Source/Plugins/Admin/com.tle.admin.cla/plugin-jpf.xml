@@ -21,7 +21,7 @@
     <parameter id="file" value="lang/i18n.properties" />
   </extension>
   <extension plugin-id="com.tle.common.wizard.controls.resource" point-id="relationTypes" id="claRelationTypes">
-    <parameter id="nameKey" value="com.tle.admin.cla.resourceType" />
+    <parameter id="nameKey" value="com.tle.admin.cla.cla.resourceType" />
     <parameter id="value" value="CLA_HOLDING" />
     <parameter id="lockMultiSelectToValue" value="false" />
     <parameter id="lockSelectTypeToValue" value="ITEMS" />

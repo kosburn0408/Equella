@@ -83,7 +83,7 @@ public class FlickrSettingsPanel extends com.tle.admin.controls.universal.Univer
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.flickr.settings.title";
+		return "com.tle.admin.controls.flickr.flickr.settings.title";
 	}
 
 	@Override

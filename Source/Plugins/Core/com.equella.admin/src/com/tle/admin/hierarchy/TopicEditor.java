@@ -35,6 +35,7 @@ import com.tle.common.applet.client.EntityCache;
 import com.tle.common.applet.gui.AppletGuiUtils;
 import com.tle.common.hierarchy.RemoteHierarchyService;
 import com.tle.common.i18n.CurrentLocale;
+import com.tle.core.plugins.AbstractPluginService;
 
 /**
  * @author Nicholas Read
@@ -74,19 +75,19 @@ public class TopicEditor extends AbstractTreeNodeEditor
 	{
 		tabs = new JTabbedPane();
 
-		tabs.addTab(CurrentLocale.get("com.tle.admin.hierarchy.tool.topiceditor.details"), new DetailsTab(cache));
-		tabs.addTab(CurrentLocale.get("com.tle.admin.hierarchy.tool.topiceditor.filtering"), new FilteringTab(cache,
+		tabs.addTab(getString("topiceditor.details"), new DetailsTab(cache));
+		tabs.addTab(getString("topiceditor.filtering"), new FilteringTab(cache,
 			clientService));
 		if( pack.getTopic().getParent() != null )
 		{
-			tabs.addTab(CurrentLocale.get("com.tle.admin.hierarchy.tool.topiceditor.inheritance"), new InheritanceTab(
+			tabs.addTab(getString("topiceditor.inheritance"), new InheritanceTab(
 				cache, clientService));
 		}
-		tabs.addTab(CurrentLocale.get("com.tle.admin.hierarchy.tool.topiceditor.virtual"), new VirtualisationTab(Driver
+		tabs.addTab(getString("topiceditor.virtual"), new VirtualisationTab(Driver
 			.instance().getPluginService(), clientService));
-		tabs.addTab(CurrentLocale.get("com.tle.admin.hierarchy.tool.topiceditor.resources"), new KeyResourcesTab(
+		tabs.addTab(getString("topiceditor.resources"), new KeyResourcesTab(
 			clientService));
-		tabs.addTab(CurrentLocale.get("com.tle.admin.hierarchy.tool.topiceditor.control"), new AccessControlTab(
+		tabs.addTab(getString("topiceditor.control"), new AccessControlTab(
 			clientService));
 
 		JButton save = new JButton(createSaveAction());
@@ -167,6 +168,18 @@ public class TopicEditor extends AbstractTreeNodeEditor
 	 */
 	public abstract static class AbstractTopicEditorTab extends JPanel
 	{
+		private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+		protected String getString(String key)
+		{
+			return CurrentLocale.get(getKey(key));
+		}
+
+		protected String getKey(String key)
+		{
+			return KEY_PFX+key;
+		}
+
 		private static final long serialVersionUID = 1L;
 
 		public AbstractTopicEditorTab()

@@ -28,6 +28,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
+import com.tle.core.plugins.AbstractPluginService;
 import net.miginfocom.swing.MigLayout;
 
 import com.dytech.gui.ComponentHelper;
@@ -51,6 +52,18 @@ public class HierarchyDialog extends JDialog
 
 	protected AbstractTreeEditor<HierarchyTreeNode> tree;
 
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(getKey(key));
+	}
+
+	protected String getKey(String key)
+	{
+		return KEY_PFX+key;
+	}
+
 	public HierarchyDialog(Frame frame, final ClientService clientService)
 	{
 		super(frame);
@@ -68,7 +81,7 @@ public class HierarchyDialog extends JDialog
 			{
 				if( !tree.canEdit(node) )
 				{
-					return new BasicMessageEditor(CurrentLocale.get("com.tle.admin.hierarchy.tool.notopic.noteditable"));
+					return new BasicMessageEditor(getString("notopic.noteditable"));
 				}
 
 				HierarchyPack pack = hierarchyService.getHierarchyPack(node.getId());
@@ -95,7 +108,7 @@ public class HierarchyDialog extends JDialog
 		all.add(new JSeparator(), "growx");
 		all.add(new JButton(closeAction), "alignx right");
 
-		setTitle(CurrentLocale.get("com.tle.admin.hierarchy.tool.hierarchydialog.title"));
+		setTitle(getString("hierarchydialog.title"));
 		setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
 		getContentPane().add(all);
 		setModal(true);

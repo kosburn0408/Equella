@@ -36,7 +36,7 @@ public class ITunesUSettingsPanel extends UniversalControlSettingPanel implement
 	public ITunesUSettingsPanel()
 	{
 		super(); // thanks for asking
-		JLabel institutionIdLabel = new JLabel(CurrentLocale.get("com.tle.admin.controls.itunesu.institutionid"));
+		JLabel institutionIdLabel = new JLabel(getString("institutionid"));
 		institutionId = new JTextField();
 		add(institutionIdLabel);
 		add(institutionId);
@@ -45,7 +45,7 @@ public class ITunesUSettingsPanel extends UniversalControlSettingPanel implement
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.itunesu.itunesu.settings.title";
+		return getKey("itunesu.settings.title");
 	}
 
 	@Override
@@ -68,7 +68,7 @@ public class ITunesUSettingsPanel extends UniversalControlSettingPanel implement
 
 	private String s(String postfix)
 	{
-		return CurrentLocale.get("com.tle.admin.controls.itunesu.settings." + postfix);
+		return getString("settings." + postfix);
 	}
 
 	@Override

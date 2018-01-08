@@ -84,8 +84,8 @@ public class FileManagerEditor extends AbstractControlEditor<FileManagerControl>
 		title = new I18nTextField(BundleCache.getLanguages());
 		description = new I18nTextField(BundleCache.getLanguages());
 		mandatory = new JCheckBox(CurrentLocale.get("wizard.controls.mandatory"));
-		autoMarkAsResources = new JCheckBox(CurrentLocale.get("com.tle.admin.controls.filemanager.autoMarkAsResource"));
-		webdav = new JCheckBox(CurrentLocale.get("com.tle.admin.controls.filemanager.webdav"), true);
+		autoMarkAsResources = new JCheckBox(getString("autoMarkAsResource"));
+		webdav = new JCheckBox(getString("webdav"), true);
 
 		final int height1 = title.getPreferredSize().height;
 		final int width1 = descriptionLabel.getPreferredSize().width;
@@ -121,7 +121,7 @@ public class FileManagerEditor extends AbstractControlEditor<FileManagerControl>
 			{
 				JOptionPane
 					.showMessageDialog(autoMarkAsResources,
-						CurrentLocale.get("com.tle.admin.controls.filemanager.conflict"), null,
+						getString("conflict"), null,
 						JOptionPane.WARNING_MESSAGE);
 			}
 		}

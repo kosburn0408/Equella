@@ -33,7 +33,7 @@ public class LinksSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.standard.links.settings.title";
+		return getKey("links.settings.title");
 	}
 
 	@Override

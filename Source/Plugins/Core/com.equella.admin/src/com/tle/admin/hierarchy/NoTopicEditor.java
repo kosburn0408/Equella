@@ -23,6 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
 import com.tle.common.i18n.CurrentLocale;
+import com.tle.core.plugins.AbstractPluginService;
 
 /**
  * A mostly blank panel used to inidicate when no topic has been selected in the
@@ -36,6 +37,18 @@ public class NoTopicEditor extends JPanel
 {
 	private static final long serialVersionUID = 1L;
 
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(getKey(key));
+	}
+
+	protected String getKey(String key)
+	{
+		return KEY_PFX+key;
+	}
+
 	public static NoTopicEditor noTopicSelected()
 	{
 		return new NoTopicEditor("noneselected");
@@ -48,7 +61,7 @@ public class NoTopicEditor extends JPanel
 
 	public NoTopicEditor(String message)
 	{
-		JLabel messageLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.notopic." + message));
+		JLabel messageLabel = new JLabel(CurrentLocale.get(getKey("notopic.") + message));
 		messageLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
 		setLayout(new GridLayout(1, 1));

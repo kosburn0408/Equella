@@ -31,7 +31,7 @@ public class LTISettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.externaltools.lti.settings.title";
+		return getKey("lti.settings.title");
 	}
 
 	@Override

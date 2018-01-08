@@ -52,6 +52,7 @@ import com.tle.common.Check;
 import com.tle.common.LazyTreeNode;
 import com.tle.common.LazyTreeNode.ChildrenState;
 import com.tle.common.i18n.CurrentLocale;
+import com.tle.core.plugins.AbstractPluginService;
 
 /**
  * @author Nicholas Read
@@ -68,6 +69,18 @@ public abstract class AbstractTreeEditorTree<NodeType extends LazyTreeNode> exte
 	protected DefaultTreeModel model;
 
 	protected List<TLEAction> actions;
+
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(getKey(key));
+	}
+
+	protected String getKey(String key)
+	{
+		return KEY_PFX+key;
+	}
 
 	public AbstractTreeEditorTree(boolean canAddRootNodes)
 	{

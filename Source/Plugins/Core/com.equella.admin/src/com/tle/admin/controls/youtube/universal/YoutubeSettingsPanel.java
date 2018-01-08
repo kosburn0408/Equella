@@ -60,25 +60,25 @@ public class YoutubeSettingsPanel extends UniversalControlSettingPanel
 	@SuppressWarnings("nls")
 	private void createGUI()
 	{
-		enableChannel = GroupBox.withCheckBox(CurrentLocale.get("com.tle.admin.controls.youtube.allowChannel"), false);
+		enableChannel = GroupBox.withCheckBox(getString("allowChannel"), false);
 		setLayout(new MigLayout("wrap, insets 0", "[grow]", "[][grow]"));
 
 		add(enableChannel, "grow");
 
 		enableChannel.getInnerPanel().setLayout(new MigLayout("wrap", "[grow]"));
 
-		allow = new JRadioButton(CurrentLocale.get("com.tle.admin.controls.youtube.option.allowChannel"));
-		restrict = new JRadioButton(CurrentLocale.get("com.tle.admin.controls.youtube.option.restrictChannel"));
+		allow = new JRadioButton(getString("option.allowChannel"));
+		restrict = new JRadioButton(getString("option.restrictChannel"));
 		allow.setSelected(true);
 		ButtonGroup buttonGroup = new ButtonGroup();
 		buttonGroup.add(allow);
 		buttonGroup.add(restrict);
 
-		displayLabel = new JLabel(CurrentLocale.get("com.tle.admin.controls.youtube.allowChannel"));
-		helpLabel1 = new JLabel(CurrentLocale.get("com.tle.admin.controls.youtube.channel.help1"));
-		helpLabel2 = new JLabel(CurrentLocale.get("com.tle.admin.controls.youtube.channel.help2"));
-		channels = new DualShuffleList(CurrentLocale.get("com.tle.admin.controls.youtube.label.channelName"),
-			CurrentLocale.get("com.tle.admin.controls.youtube.label.userName"));
+		displayLabel = new JLabel(getString("allowChannel"));
+		helpLabel1 = new JLabel(getString("channel.help1"));
+		helpLabel2 = new JLabel(getString("channel.help2"));
+		channels = new DualShuffleList(getString("label.channelName"),
+			getString("label.userName"));
 		channels.setEnabled(false);
 
 		enableChannel.add(allow);
@@ -93,7 +93,7 @@ public class YoutubeSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.youtube.youtube.settings.title";
+		return getKey("youtube.settings.title");
 	}
 
 	@Override

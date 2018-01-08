@@ -144,7 +144,7 @@ public class FileUploadSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.standard.fileupload.settings.title";
+		return getKey("fileupload.settings.title");
 	}
 
 	@Override

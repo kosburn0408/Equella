@@ -65,15 +65,15 @@ public class DetailsTab extends AbstractTopicEditorTab
 	@Override
 	public void setup(ChangeDetector changeDetector)
 	{
-		JLabel topicNameLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.topicname")); //$NON-NLS-1$
-		JLabel shortLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.shortdesc")); //$NON-NLS-1$
-		JLabel longLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.fulldesc")); //$NON-NLS-1$
-		JLabel sectionsLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.sectionnames")); //$NON-NLS-1$
-		JLabel subtopicsLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.subtopics")); //$NON-NLS-1$
+		JLabel topicNameLabel = new JLabel(getString("detailstab.topicname")); //$NON-NLS-1$
+		JLabel shortLabel = new JLabel(getString("detailstab.shortdesc")); //$NON-NLS-1$
+		JLabel longLabel = new JLabel(getString("detailstab.fulldesc")); //$NON-NLS-1$
+		JLabel sectionsLabel = new JLabel(getString("detailstab.sectionnames")); //$NON-NLS-1$
+		JLabel subtopicsLabel = new JLabel(getString("detailstab.subtopics")); //$NON-NLS-1$
 		JLabel searchResultsLabel = new JLabel(
-			CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.searchresults")); //$NON-NLS-1$
+			getString("detailstab.searchresults")); //$NON-NLS-1$
 		JLabel advancedSearchLabel = new JLabel(
-			CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.advancedsearch")); //$NON-NLS-1$
+			getString("detailstab.advancedsearch")); //$NON-NLS-1$
 
 		topicName = new I18nTextField(BundleCache.getLanguages());
 
@@ -84,10 +84,10 @@ public class DetailsTab extends AbstractTopicEditorTab
 		longDescription = new I18nTextArea(BundleCache.getLanguages());
 
 		hideSubtopicsWithNoResults = new JCheckBox(
-			CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.hidesubtopicswithnoresults")); //$NON-NLS-1$
+			getString("detailstab.hidesubtopicswithnoresults")); //$NON-NLS-1$
 
 		advancedSearchSelector = new JComboBox();
-		advancedSearchSelector.addItem(CurrentLocale.get("com.tle.admin.hierarchy.tool.detailstab.nopowersearch")); //$NON-NLS-1$
+		advancedSearchSelector.addItem(getString("detailstab.nopowersearch")); //$NON-NLS-1$
 		AppletGuiUtils.addItemsToJCombo(advancedSearchSelector, cache.getPowerSearches());
 
 		final int width1 = 20;

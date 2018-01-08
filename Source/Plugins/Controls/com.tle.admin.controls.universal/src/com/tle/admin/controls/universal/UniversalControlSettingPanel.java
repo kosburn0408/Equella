@@ -45,7 +45,12 @@ public abstract class UniversalControlSettingPanel extends DynamicChoicePanel<Un
 
 	protected String getString(String key)
 	{
-		return CurrentLocale.get(KEY_PFX+key);
+		return CurrentLocale.get(getKey(key));
+	}
+
+	protected String getKey(String key)
+	{
+		return KEY_PFX+key;
 	}
 
 	/**

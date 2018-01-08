@@ -45,7 +45,7 @@ public class VirtualisationTab extends AbstractTopicEditorTab
 	public void setup(ChangeDetector changeDetector)
 	{
 		editor = new VirtualisationEditor(pluginService, clientService,
-			"com.tle.admin.hierarchy.tool.virtual.entityname", "com.tle.admin.hierarchy.tool.virtual.renameHelp");
+			getKey("virtual.entityname"), getKey("virtual.renameHelp"));
 
 		setLayout(new GridLayout(1, 1));
 		add(editor);

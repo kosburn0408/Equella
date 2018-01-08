@@ -104,8 +104,8 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 	@SuppressWarnings("nls")
 	public void setup(ChangeDetector changeDetector)
 	{
-		JLabel selectedLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.selected"));
-		JLabel searchLabel = new JLabel(CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.find"));
+		JLabel selectedLabel = new JLabel(getString("keyresourcestab.selected"));
+		JLabel searchLabel = new JLabel(getString("keyresourcestab.find"));
 
 		final int height1 = selectedLabel.getPreferredSize().height;
 		final int width1 = 20;
@@ -183,7 +183,7 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 			}
 		});
 
-		addAsKeyResource = new JButton(CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.add")); //$NON-NLS-1$
+		addAsKeyResource = new JButton(getString("keyresourcestab.add")); //$NON-NLS-1$
 		addAsKeyResource.addActionListener(this);
 		addAsKeyResource.setEnabled(false);
 
@@ -259,7 +259,7 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 
 				if( tip == null || tip.trim().length() == 0 )
 				{
-					tip = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.nodesc"); //$NON-NLS-1$
+					tip = getString("keyresourcestab.nodesc"); //$NON-NLS-1$
 				}
 				else if( tip.length() > 100 )
 				{
@@ -294,8 +294,8 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 			if( versions.contains(entry.getVersion()) )
 			{
 				JOptionPane.showMessageDialog(this,
-					CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.warn"), CurrentLocale //$NON-NLS-1$
-						.get("com.tle.admin.hierarchy.tool.keyresourcestab.already"), //$NON-NLS-1$
+					getString("keyresourcestab.warn"), CurrentLocale //$NON-NLS-1$
+						.get(getKey("keyresourcestab.already")), //$NON-NLS-1$
 					JOptionPane.ERROR_MESSAGE);
 			}
 			else if( !versions.isEmpty() )
@@ -306,16 +306,16 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 					final int otherVersion = versions.iterator().next();
 					if( otherVersion < entry.getVersion() )
 					{
-						message = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.earlier"); //$NON-NLS-1$
+						message = getString("keyresourcestab.earlier"); //$NON-NLS-1$
 					}
 					else
 					{
-						message = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.newer"); //$NON-NLS-1$
+						message = getString("keyresourcestab.newer"); //$NON-NLS-1$
 					}
 				}
 				else
 				{
-					message = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.other"); //$NON-NLS-1$
+					message = getString("keyresourcestab.other"); //$NON-NLS-1$
 				}
 
 				if( JOptionPane.showConfirmDialog(this, message,
@@ -456,7 +456,7 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 			public void exception()
 			{
 				Driver.displayInformation(getComponent(),
-					CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.invalid")); //$NON-NLS-1$
+					getString("keyresourcestab.invalid")); //$NON-NLS-1$
 				getException().printStackTrace();
 
 				doInAnyCase();
@@ -465,7 +465,7 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 			public void doInAnyCase()
 			{
 				countLabel.setText(CurrentLocale.get(
-					"com.tle.admin.hierarchy.tool.keyresourcestab.results", new Object[]{ //$NON-NLS-1$
+					getKey("keyresourcestab.results"), new Object[]{ //$NON-NLS-1$
 					startResult + 1, startResult + searchModel.getRowCount(), totalResults}));
 
 				prevPage.setEnabled(startResult > 0);
@@ -483,12 +483,12 @@ public class KeyResourcesTab extends AbstractTopicEditorTab implements ActionLis
 	/**
 	 * @author Nicholas Read
 	 */
-	private static class MyTableModel extends AbstractTableModel
+	private class MyTableModel extends AbstractTableModel
 	{
 		private static final long serialVersionUID = 1L;
-		private static final String FIRST = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.name"); //$NON-NLS-1$
-		private static final String SECOND = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.version"); //$NON-NLS-1$
-		private static final String THIRD = CurrentLocale.get("com.tle.admin.hierarchy.tool.keyresourcestab.status"); //$NON-NLS-1$
+		private final String FIRST = getString("keyresourcestab.name"); //$NON-NLS-1$
+		private final String SECOND = getString("keyresourcestab.version"); //$NON-NLS-1$
+		private final String THIRD = getString("keyresourcestab.status"); //$NON-NLS-1$
 
 		private final List<Item> entries = new ArrayList<Item>();
 

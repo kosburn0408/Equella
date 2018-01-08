@@ -58,7 +58,7 @@ public class FlickrSettingsPanel extends com.tle.admin.controls.universal.Univer
 		apiKeyHelp.setDocument(new HTMLDocument());
 		apiKeyHelp.setEditable(false);
 		apiKeyHelp.setText("<html><head><style>" + "<!--a{color:#0000cc;text-decoration: none;}//--></style></head>"
-			+ "<body>" + CurrentLocale.get("com.tle.admin.controls.flickr.settings.label.apikeyhelp"));
+			+ "<body>" + getString("settings.label.apikeyhelp"));
 		apiKeyHelp.addHyperlinkListener(new HyperlinkListener()
 		{
 			@Override
@@ -74,16 +74,16 @@ public class FlickrSettingsPanel extends com.tle.admin.controls.universal.Univer
 
 		add(apiKeyHelp, "span 2");
 
-		add(new JLabel(CurrentLocale.get("com.tle.admin.controls.flickr.settings.label.apikey")));
+		add(new JLabel(getString("settings.label.apikey")));
 		add(apiKey);
-		add(new JLabel(CurrentLocale.get("com.tle.admin.controls.flickr.settings.label.apisharedsecret")));
+		add(new JLabel(getString("settings.label.apisharedsecret")));
 		add(apiSharedSecret);
 	}
 
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.flickr.flickr.settings.title";
+		return getKey("flickr.settings.title");
 	}
 
 	@Override

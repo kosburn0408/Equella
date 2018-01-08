@@ -28,6 +28,7 @@ import com.tle.admin.gui.common.actions.SaveAction;
 import com.tle.admin.gui.common.actions.TLEAction;
 import com.tle.common.LazyTreeNode;
 import com.tle.common.i18n.CurrentLocale;
+import com.tle.core.plugins.AbstractPluginService;
 
 /**
  * @author Nicholas Read
@@ -44,6 +45,17 @@ public abstract class AbstractTreeNodeEditor extends JPanel
 
 	protected abstract void validation() throws EditorException;
 
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(getKey(key));
+	}
+
+	protected String getKey(String key)
+	{
+		return KEY_PFX+key;
+	}
 	@SuppressWarnings("nls")
 	public void doSave()
 	{

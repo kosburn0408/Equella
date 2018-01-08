@@ -57,8 +57,8 @@ public class ResourceSettingsPanel extends UniversalControlSettingPanel
 		super();
 
 		JLabel allowSelectionLabel = new JLabel(
-			CurrentLocale.get("com.tle.admin.controls.resource.allowSelection.title"));
-		JLabel relationTypeLabel = new JLabel(CurrentLocale.get("com.tle.admin.controls.resource.relationType.title"));
+			getString("allowSelection.title"));
+		JLabel relationTypeLabel = new JLabel(getString("relationType.title"));
 
 		allowSelection = new JComboBox<>();
 		allowSelection.addItem(new ASItem("anything", AllowedSelection.ANYTHING));
@@ -78,13 +78,13 @@ public class ResourceSettingsPanel extends UniversalControlSettingPanel
 			}
 		});
 
-		restrictions.add(new RestrictEntities("com.tle.admin.controls.resource.restrict.collections",
+		restrictions.add(new RestrictEntities(getKey("restrict.collections"),
 			RemoteItemDefinitionService.class, ResourceSettings.KEY_RESTRICT_COLLECTIONS));
-		restrictions.add(new RestrictEntities("com.tle.admin.controls.resource.restrict.powersearches",
+		restrictions.add(new RestrictEntities(getKey("restrict.powersearches"),
 			RemotePowerSearchService.class, ResourceSettings.KEY_RESTRICT_POWERSEARCHES));
-		restrictions.add(new RestrictEntities("com.tle.admin.controls.resource.restrict.dynacollection",
+		restrictions.add(new RestrictEntities(getKey("restrict.dynacollection"),
 			RemoteDynaCollectionService.class, ResourceSettings.KEY_RESTRICT_DYNACOLLECTION));
-		restrictions.add(new RestrictEntities("com.tle.admin.controls.resource.restrict.contribution",
+		restrictions.add(new RestrictEntities(getKey("restrict.contribution"),
 			RemoteItemDefinitionService.class, ResourceSettings.KEY_RESTRICT_CONTRIBUTION));
 
 		add(relationTypeLabel);
@@ -116,7 +116,7 @@ public class ResourceSettingsPanel extends UniversalControlSettingPanel
 	@Override
 	protected String getTitleKey()
 	{
-		return "com.tle.admin.controls.resource.rescontrol.settings.title";
+		return getKey("rescontrol.settings.title");
 	}
 
 	@Override
@@ -155,7 +155,7 @@ public class ResourceSettingsPanel extends UniversalControlSettingPanel
 	{
 		List<RelationType> results = new ArrayList<RelationType>();
 
-		results.add(new RelationType("com.tle.admin.controls.resource.relationType.general", null));
+		results.add(new RelationType(getKey("relationType.general"), null));
 
 		for( Extension ext : Driver.instance().getPluginService()
 			.getConnectedExtensions("com.tle.common.wizard.controls.resource", "relationTypes") )
@@ -166,13 +166,13 @@ public class ResourceSettingsPanel extends UniversalControlSettingPanel
 		return results;
 	}
 
-	private static class ASItem extends Pair<String, AllowedSelection>
+	private class ASItem extends Pair<String, AllowedSelection>
 	{
 		private static final long serialVersionUID = 1L;
 
 		public ASItem(String key, AllowedSelection as)
 		{
-			super(key == null ? null : CurrentLocale.get("com.tle.admin.controls.resource.allowSelection." + key), as);
+			super(key == null ? null : CurrentLocale.get(getKey("allowSelection.") + key), as);
 		}
 
 		@Override

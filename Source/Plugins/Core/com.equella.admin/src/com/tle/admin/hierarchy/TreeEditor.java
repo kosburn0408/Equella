@@ -103,8 +103,8 @@ public class TreeEditor extends AbstractTreeEditorTree<HierarchyTreeNode>
 	protected boolean preAddNewNode(HierarchyTreeNode parent, HierarchyTreeNode newNode, Map<Object, Object> params)
 	{
 		if( !parent.isRoot() && JOptionPane.showConfirmDialog(this,
-			CurrentLocale.get("com.tle.admin.hierarchy.tool.treeeditor.constraints"),
-			CurrentLocale.get("com.tle.admin.hierarchy.tool.treeeditor.inheritconstraints"),
+			getString("treeeditor.constraints"),
+			getString("treeeditor.inheritconstraints"),
 			JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION )
 		{
 			params.put(INHERIT_CONSTRAINTS, INHERIT_CONSTRAINTS);
@@ -164,8 +164,8 @@ public class TreeEditor extends AbstractTreeEditorTree<HierarchyTreeNode>
 			if( dest != null )
 			{
 				final boolean exportSecurity = JOptionPane.showConfirmDialog(TreeEditor.this,
-					CurrentLocale.get("com.tle.admin.hierarchy.tool.treeeditor.export"),
-					CurrentLocale.get("com.tle.admin.hierarchy.tool.treeeditor.expsecurity"),
+					getString("treeeditor.export"),
+					getString("treeeditor.expsecurity"),
 					JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
 
 				final ProgressDialog pd = ProgressDialog.showProgress(TreeEditor.this, "Exporting...");
@@ -233,8 +233,8 @@ public class TreeEditor extends AbstractTreeEditorTree<HierarchyTreeNode>
 
 			boolean importSecurity = false;
 			if( JOptionPane.showConfirmDialog(TreeEditor.this,
-				CurrentLocale.get("com.tle.admin.hierarchy.tool.treeeditor.import"),
-				CurrentLocale.get("com.tle.admin.hierarchy.tool.treeeditor.impsecurity"),
+				getString("treeeditor.import"),
+				getString("treeeditor.impsecurity"),
 				JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION )
 			{
 				importSecurity = true;

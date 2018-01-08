@@ -52,7 +52,7 @@ public class FilteringTab extends AbstractTopicEditorTab
 	@Override
 	public void setup(ChangeDetector changeDetector)
 	{
-		showResults = new JCheckBox(CurrentLocale.get("com.tle.admin.hierarchy.tool.filteringtab.display"), true); //$NON-NLS-1$
+		showResults = new JCheckBox(getString("filteringtab.display"), true); //$NON-NLS-1$
 		filter = new SearchSetFilter(cache, clientService);
 
 		final int[] rows = {TableLayout.PREFERRED, TableLayout.FILL,};

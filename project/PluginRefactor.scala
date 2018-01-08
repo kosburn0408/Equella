@@ -92,7 +92,7 @@ object PluginRefactor {
         _.getAttributeValue("id") == "type"
       }.exists(_.getAttributeValue("value") == "admin-console")
 
-      p.libs.isEmpty && !adminConsole && r.getChildren("extension-point").isEmpty &&
+      p.libs.isEmpty && adminConsole && r.getChildren("extension-point").isEmpty &&
         // r.getChildren("extension").isEmpty &&
         !keepPlugins(p.pId) && !(p.bd / "build.sbt").exists
     }
@@ -120,7 +120,7 @@ object PluginRefactor {
         }
       }
       checkSubsets(allSubsets, soFar, stats) match {
-        case Left(Left(failed)) => findSubset(Math.min(baseSet.size - 2, 15), baseSet - failed, 0, Map.empty)
+        case Left(Left(failed)) => findSubset(baseSet.size - 2, baseSet - failed, 0, Map.empty)
         case Left(Right((sf, s))) => findSubset(size-1, baseSet, sf, s)
         case Right(success) => Right(success)
       }
@@ -222,18 +222,36 @@ object PluginRefactor {
         bundleExt
     }
 
-    def reprefix(pId: String, e: Element): Element = {
-      e.getChildren("parameter").asScala.filter(p => Option(p.getAttributeValue("id")).exists(_.endsWith("Key"))).foreach {
+    def reprefix(pId: String, e: Element, f: String => Boolean): Element = {
+      e.getChildren("parameter").asScala.filter(p =>
+        Option(p.getAttributeValue("id")).exists(f) &&
+        p.getAttributeValue("value").startsWith(pId)
+      ).foreach {
         p => p.setAttribute("value", pluginId + p.getAttributeValue("value").substring(pId.length))
       }
       e
+    }
+
+    def keyParameters(extPlugin: String, ext: String): (Set[String],Set[String]) = (extPlugin, ext) match {
+      case (_, "portletRenderer" | "resourceViewer" | "connectorType" | "portletType") => (Set("nameKey", "descriptionKey"),Set())
+      case ("com.tle.admin.tools", "tool") => (Set("name"), Set("class"))
+      case ("com.tle.admin.controls", "control") => (Set("name"), Set("wrappedClass", "editorClass", "modelClass"))
+      case ("com.tle.admin.controls.universal", "editor") => (Set("nameKey"), Set("configPanel"))
+      case ("com.tle.admin.fedsearch.tool", "configUI") => (Set.empty, Set("class"))
+      case ("com.tle.admin.usermanagement.tool", "configUI") => (Set("name"), Set("class"))
+      case ("com.tle.common.dynacollection", "usages") => (Set("nameKey"), Set.empty)
+      case ("com.tle.common.wizard.controls.resource", "relationTypes") => (Set("nameKey"), Set.empty)
+      case ("com.tle.admin.collection.tool", "extra") => (Set("name"), Set("configPanel"))
+      case ("com.tle.admin.collection.tool", "summaryDisplay") => (Set("nameKey", "defaultNameKey"), Set("class"))
+      case ("com.tle.admin.controls.universal" , "universalvalidator") => (Set.empty, Set("id", "class"))
+      case _ => (Set.empty, Set.empty)
     }
 
     val afterExt = exts.flatMap {
       case (bd, pId, e) => (getPluginId(e), e.getAttributeValue("point-id")) match {
         case ("com.tle.core.guice", _) => Seq.empty
         case ("com.tle.common.i18n", "bundle") => Seq.empty
-        case (_, "portletRenderer" | "resourceViewer" | "connectorType" | "portletType") => Seq(reprefix(pId, e.clone))
+        case (extPlugin, ext) if keyParameters(extPlugin, ext)._1.nonEmpty => Seq(reprefix(pId, e.clone, keyParameters(extPlugin, ext)._1))
         case _ => Seq(e)
       }
     }
@@ -272,23 +290,29 @@ object PluginRefactor {
       relative
     }
 
-    val dupeResource = pathsTo.groupBy(_._1).filter(t => t._2.map(_._3).distinct.size > 1).exists {
+    var dupeResource = false
+    pathsTo.groupBy(_._1).filter(t => t._2.map(_._3).distinct.size > 1).foreach {
       case (p, pids) =>
         println(s"DUPE FILE:$p=${pids.map(t => t._2 -> t._3)}")
-        true
+        dupeResource = true
     }
 
-    val dupeKey = langStrings.groupBy { case LangString(g, k, _, _) => (g, k) }
-      .filter(_._2.map(_.value).distinct.size > 1).toSeq.sortBy(_._1).exists {
+    var dupeKey = false
+    langStrings.groupBy { case LangString(g, k, _, _) => (g, k) }
+      .filter(_._2.map(_.value).distinct.size > 1).toSeq.sortBy(_._1).foreach {
       case (k, dupes) => println(s"DUPE KEY: $k=${dupes.map(_.pluginId).mkString(",")}")
-        true
+        dupeKey = true
     }
 
     exts.flatMap {
       case (bd, pId, e) => e.getChildren("parameter").asScala.collect {
         case p if Option(p.getAttributeValue("value")).exists(_.startsWith(pId))
-          && Option(p.getAttributeValue("id")).exists(_.endsWith("Key"))
-        => (e.getAttributeValue("plugin-id"), e.getAttributeValue("point-id"), p.getAttributeValue("id"), p.getAttributeValue("value"))
+          && Option(p.getAttributeValue("id")).exists {
+          paramId =>
+            val (keys,nonKeys) = keyParameters(getPluginId(e), e.getAttributeValue("point-id"))
+            !(keys(paramId) || nonKeys(paramId))
+        }
+        => s"SUSPICIOUS:${getPluginId(e)} ${e.getAttributeValue("point-id")} ${p.getAttributeValue("id")} ${p.getAttributeValue("value")}"
       }
     }.foreach(println)
 

@@ -37,7 +37,7 @@
     <parameter id="lockSelectTypeToValue" value="ITEMS" />
   </extension>
   <extension plugin-id="com.tle.admin.collection.tool" point-id="extra" id="extra-cal">
-    <parameter id="name" value="com.tle.admin.cal.extensionname" />
+    <parameter id="name" value="com.tle.admin.cal.cal.extensionname" />
     <parameter id="enabledAttribute" value="com.tle.cal-Enabled" />
     <parameter id="configPanel" value="com.tle.admin.cal.CalConfigPanel" />
   </extension>

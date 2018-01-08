@@ -56,7 +56,7 @@ public final class Driver
 
 	private final ClientService clientService;
 
-	private ControlsRepositoryCreator controlsRepositoryCreator;
+	private static ControlsRepositoryCreator controlsRepositoryCreator;
 	private ControlRepository controlRepository;
 	private final PluginServiceImpl pluginService;
 
@@ -198,23 +198,18 @@ public final class Driver
 	{
 		if( controlRepository == null )
 		{
-			controlRepository = controlsRepositoryCreator.getControlRepository();
+			controlRepository = controlsRepositoryCreator.getControlRepository(this);
 		}
 		return controlRepository;
 	}
 
-	public void setControlRepository(ControlRepository controlRepository)
-	{
-		this.controlRepository = controlRepository;
-	}
-
-	public void registerControlRepositoryCreator(ControlsRepositoryCreator creator)
+	public static void registerControlRepositoryCreator(ControlsRepositoryCreator creator)
 	{
 		controlsRepositoryCreator = creator;
 	}
 
 	public interface ControlsRepositoryCreator
 	{
-		ControlRepository getControlRepository();
+		ControlRepository getControlRepository(Driver driver);
 	}
 }

@@ -27,7 +27,7 @@
     <parameter id="lockSelectTypeToValue" value="ITEMS" />
   </extension>
   <extension plugin-id="com.tle.admin.collection.tool" point-id="extra" id="extra-cla">
-    <parameter id="name" value="com.tle.admin.cla.extensionname" />
+    <parameter id="name" value="com.tle.admin.cla.cla.extensionname" />
     <parameter id="enabledAttribute" value="com.tle.cla-Enabled" />
     <parameter id="configPanel" value="com.tle.admin.cla.CLAConfigPanel" />
   </extension>

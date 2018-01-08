@@ -24,13 +24,10 @@ import com.tle.admin.controls.repository.ControlRepository;
 
 public class ControlsPlugin extends Plugin implements ControlsRepositoryCreator
 {
-	private Driver driver;
-
 	@Override
 	protected void doStart() throws Exception
 	{
-		this.driver = Driver.instance();
-		driver.registerControlRepositoryCreator(this);
+		Driver.registerControlRepositoryCreator(this);
 	}
 
 	@Override
@@ -40,7 +37,7 @@ public class ControlsPlugin extends Plugin implements ControlsRepositoryCreator
 	}
 
 	@Override
-	public ControlRepository getControlRepository()
+	public ControlRepository getControlRepository(Driver driver)
 	{
 		return new ControlRepositoryImpl(driver.getPluginService());
 	}

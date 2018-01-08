@@ -123,5 +123,5 @@ mergeJPF := {
   val newPlugin = "com.equella.admin"
   val basePlugin = baseDirectory.value / "Source/Plugins/Core"
   val allPluginDirs = pluginAndLibs.all(ScopeFilter(inAggregates(allPlugins, includeRoot = false))).value
-  PluginRefactor.mergePlugins(allPluginDirs, basePlugin, newPlugin, modify = args.headOption.exists(_ == "commit"))
+  PluginRefactor.mergePlugins(allPluginDirs, basePlugin, newPlugin, adminConsole = true, modify = args.headOption.exists(_ == "commit"))
 }

@@ -32,7 +32,7 @@ object PluginRefactor {
 
   def getPluginId(e: Element): String = e.getAttributeValue("plugin-id")
 
-  def choosePlugins(allImports: Seq[PluginDeets]): Iterable[String] = {
+  def choosePlugins(allImports: Seq[PluginDeets], adminPlugins: Boolean): Iterable[String] = {
 
     val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
 
@@ -92,7 +92,7 @@ object PluginRefactor {
         _.getAttributeValue("id") == "type"
       }.exists(_.getAttributeValue("value") == "admin-console")
 
-      p.libs.isEmpty && adminConsole && r.getChildren("extension-point").isEmpty &&
+      p.libs.isEmpty && (adminConsole == adminPlugins) && r.getChildren("extension-point").isEmpty &&
         // r.getChildren("extension").isEmpty &&
         !keepPlugins(p.pId) && !(p.bd / "build.sbt").exists
     }
@@ -134,9 +134,9 @@ object PluginRefactor {
 
 
   def mergePlugins(allBaseDirs: Seq[(File, Classpath)],
-                   baseParentDir: File, pluginId: String, modify: Boolean): Unit = {
+                   baseParentDir: File, pluginId: String, adminConsole: Boolean, modify: Boolean): Unit = {
     val allPlugins = allBaseDirs.map(t => PluginDeets(t._1, t._2))
-    val toMerge = choosePlugins(allPlugins)
+    val toMerge = choosePlugins(allPlugins, adminConsole)
 
     val baseDir = baseParentDir / "merged_plugin"
 
@@ -161,6 +161,16 @@ object PluginRefactor {
     val plugElem = new Element("plugin")
     plugElem.setAttribute("id", pluginId)
     plugElem.setAttribute("version", "1")
+
+    if (adminConsole)
+    {
+      val attrsElem = new Element("attributes")
+      val attrElem = new Element("attribute")
+      attrElem.setAttribute("id", "type")
+      attrElem.setAttribute("value", "admin-console")
+      attrsElem.addContent(attrElem)
+      plugElem.addContent(attrsElem)
+    }
 
     val sortedImports = imports.map(e => (getPluginId(e), e))
       .filterNot(v => allowedIds(v._1))
@@ -255,13 +265,16 @@ object PluginRefactor {
         case _ => Seq(e)
       }
     }
-    guiceModules.distinct.sorted.foreach { m =>
-      val e = new Element("parameter")
-      e.setAttribute("id", "class")
-      e.setAttribute("value", m)
-      guiceExt.addContent(e)
+
+    if (guiceModules.nonEmpty) {
+      guiceModules.distinct.sorted.foreach { m =>
+        val e = new Element("parameter")
+        e.setAttribute("id", "class")
+        e.setAttribute("value", m)
+        guiceExt.addContent(e)
+      }
+      plugElem.addContent(guiceExt)
     }
-    plugElem.addContent(guiceExt)
 
     def containsId(el: List[Element])(e: Element) =
       el.exists(e2 => e2.getAttributeValue("id") == e.getAttributeValue("id"))

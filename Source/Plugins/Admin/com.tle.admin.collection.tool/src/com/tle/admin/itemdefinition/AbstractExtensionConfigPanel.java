@@ -20,9 +20,18 @@ import javax.swing.JPanel;
 
 import com.tle.beans.entity.itemdef.ItemDefinition;
 import com.tle.common.applet.client.ClientService;
+import com.tle.common.i18n.CurrentLocale;
+import com.tle.core.plugins.AbstractPluginService;
 
 public abstract class AbstractExtensionConfigPanel extends JPanel
 {
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(KEY_PFX+key);
+	}
+
 	protected ClientService clientService;
 
 	public void setClientService(ClientService clientService)

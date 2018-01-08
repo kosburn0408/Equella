@@ -92,15 +92,15 @@ public class CalConfigPanel extends AbstractExtensionConfigPanel
 
 	public CalConfigPanel()
 	{
-		JLabel actErrLabel = new JLabel(CurrentLocale.get("com.tle.admin.cal.activationerror"));
-		JLabel inactErrLabel = new JLabel(CurrentLocale.get("com.tle.admin.cal.inactiveerror"));
-		JLabel percentageLabel = new JLabel(CurrentLocale.get("com.tle.admin.cal.percentagerequirement"));
+		JLabel actErrLabel = new JLabel(getString("activationerror"));
+		JLabel inactErrLabel = new JLabel(getString("inactiveerror"));
+		JLabel percentageLabel = new JLabel(getString("percentagerequirement"));
 		JLabel percentageSign = new JLabel("%");
 		activationError = new I18nTextArea(BundleCache.getLanguages());
 		inactiveError = new I18nTextArea(BundleCache.getLanguages());
-		restrictiveValidation = new JCheckBox(CurrentLocale.get("com.tle.admin.cal.restrictiveValidation"));
-		useCitationAsName = new JCheckBox(CurrentLocale.get("com.tle.admin.cal.usecitationasname"));
-		perCourseValidation = new JCheckBox(CurrentLocale.get("com.tle.admin.cal.perCourseValidation"));
+		restrictiveValidation = new JCheckBox(getString("restrictiveValidation"));
+		useCitationAsName = new JCheckBox(getString("usecitationasname"));
+		perCourseValidation = new JCheckBox(getString("perCourseValidation"));
 		percentageField = new JSpinner(new SpinnerNumberModel(10.0d, 0d, 100.0d, 1d));
 
 		initUploadPanel();
@@ -139,9 +139,9 @@ public class CalConfigPanel extends AbstractExtensionConfigPanel
 
 	private void initUploadPanel()
 	{
-		JLabel titleLabel = new JLabel(CurrentLocale.get("com.tle.admin.cal.agreement.instructions")); //$NON-NLS-1$
+		JLabel titleLabel = new JLabel(getString("agreement.instructions")); //$NON-NLS-1$
 
-		final JButton upload = new JButton(CurrentLocale.get("com.tle.admin.cal.agreement.upload")); //$NON-NLS-1$
+		final JButton upload = new JButton(getString("agreement.upload")); //$NON-NLS-1$
 		upload.addActionListener(new ActionListener()
 		{
 			@Override
@@ -151,7 +151,7 @@ public class CalConfigPanel extends AbstractExtensionConfigPanel
 			}
 		});
 
-		final JButton remove = new JButton(CurrentLocale.get("com.tle.admin.cal.agreement.remove")); //$NON-NLS-1$
+		final JButton remove = new JButton(getString("agreement.remove")); //$NON-NLS-1$
 		remove.addActionListener(new ActionListener()
 		{
 			@Override
@@ -174,9 +174,9 @@ public class CalConfigPanel extends AbstractExtensionConfigPanel
 		uploadPanel.add(upload, new Rectangle(1, 1, 1, 1));
 		uploadPanel.add(remove, new Rectangle(2, 1, 1, 1));
 
-		restrictiveValidation = new JCheckBox(CurrentLocale.get("com.tle.admin.cal.restrictiveValidation"));
+		restrictiveValidation = new JCheckBox(getString("restrictiveValidation"));
 
-		agreementGroup = new JGroup(CurrentLocale.get("com.tle.admin.cal.cal.agreement.requires")); //$NON-NLS-1$
+		agreementGroup = new JGroup(getString("cal.agreement.requires")); //$NON-NLS-1$
 		agreementGroup.setInnerLayout(new BorderLayout());
 		agreementGroup.addInner(uploadPanel);
 		agreementGroup.addActionListener(new ActionListener()
@@ -279,7 +279,7 @@ public class CalConfigPanel extends AbstractExtensionConfigPanel
 			@Override
 			public String getDescription()
 			{
-				return CurrentLocale.get("com.tle.admin.cal.agreement.filefilter"); //$NON-NLS-1$
+				return getString("agreement.filefilter"); //$NON-NLS-1$
 			}
 
 			@Override

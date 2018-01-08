@@ -30,6 +30,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
+import com.tle.core.plugins.AbstractPluginService;
 import net.miginfocom.swing.MigLayout;
 
 import com.dytech.edge.admin.script.ScriptEditor;
@@ -71,6 +72,14 @@ public abstract class Editor extends JChangeDetectorPanel
 	private JButton scripting;
 	private JLabel errorMessage;
 	private ImageIcon errorIcon;
+
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(KEY_PFX+key);
+	}
+
 
 	/**
 	 * Constructs a new Editor.

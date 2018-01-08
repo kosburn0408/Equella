@@ -85,7 +85,7 @@ public class DetailsTab extends BaseEntityTab<CourseInfo> implements AbstractDet
 	@Override
 	public String getTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.courseinfo.detailstab.title"); //$NON-NLS-1$
+		return getString("detailstab.title"); //$NON-NLS-1$
 	}
 
 	private void setupGUI()
@@ -108,17 +108,17 @@ public class DetailsTab extends BaseEntityTab<CourseInfo> implements AbstractDet
 		departmentName = new JTextField();
 		archived = new JCheckBox();
 
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.name", name); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.desc", description); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.department", departmentName); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.owner", owner); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.code", code); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.startdate", startDate); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.enddate", endDate); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.students", students); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.citation", citations); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.coursetype", courseType); //$NON-NLS-1$
-		panel1.addTextAndComponent("com.tle.admin.courseinfo.detailstab.archived", archived); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("courses.detailstab.name"), name); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.desc"), description); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.department"), departmentName); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("courses.detailstab.owner"), owner); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.code"), code); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.startdate"), startDate); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.enddate"), endDate); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.students"), students); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.citation"), citations); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.coursetype"), courseType); //$NON-NLS-1$
+		panel1.addTextAndComponent(getKey("detailstab.archived"), archived); //$NON-NLS-1$
 
 		// Make sure things are readonly.
 		if( state.isReadonly() )
@@ -194,23 +194,23 @@ public class DetailsTab extends BaseEntityTab<CourseInfo> implements AbstractDet
 	{
 		if( name.isCompletelyEmpty() )
 		{
-			throw new EditorException(CurrentLocale.get("com.tle.admin.courseinfo.detailstab.supplyname")); //$NON-NLS-1$
+			throw new EditorException(getString("courses.detailstab.supplyname")); //$NON-NLS-1$
 		}
 
 		String code1 = code.getText();
 		if( code1.length() == 0 )
 		{
-			throw new EditorException(CurrentLocale.get("com.tle.admin.courseinfo.detailstab.supplycode")); //$NON-NLS-1$
+			throw new EditorException(getString("detailstab.supplycode")); //$NON-NLS-1$
 		}
 
 		if( startDate.getDate() != null && endDate.getDate() != null && !endDate.getDate().after(startDate.getDate()) )
 		{
-			throw new EditorException(CurrentLocale.get("com.tle.admin.courseinfo.detailstab.daterange")); //$NON-NLS-1$
+			throw new EditorException(getString("detailstab.daterange")); //$NON-NLS-1$
 		}
 
 		if( owner.getUser() == null )
 		{
-			throw new EditorException(CurrentLocale.get("com.tle.admin.courseinfo.detailstab.noowner")); //$NON-NLS-1$
+			throw new EditorException(getString("courses.detailstab.noowner")); //$NON-NLS-1$
 		}
 	}
 }

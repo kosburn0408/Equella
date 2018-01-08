@@ -23,7 +23,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.tools" point-id="tool" id="courseinfotool">
     <parameter id="displayorder" value="1000" />
-    <parameter id="name" value="com.tle.admin.gui.courseinfotool.title" />
+    <parameter id="name" value="com.tle.admin.courseinfo.tool.courses.title" />
     <parameter id="class" value="com.tle.admin.courseinfo.tool.CourseInfoTool" />
     <parameter id="privilege" value="CREATE_COURSE_INFO" />
     <parameter id="privilege" value="EDIT_COURSE_INFO" />

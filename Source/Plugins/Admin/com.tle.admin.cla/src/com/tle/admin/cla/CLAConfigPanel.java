@@ -79,8 +79,8 @@ public class CLAConfigPanel extends AbstractExtensionConfigPanel
 
 	public CLAConfigPanel()
 	{
-		JLabel actErrLabel = new JLabel(CurrentLocale.get("com.tle.admin.cla.activationerror")); //$NON-NLS-1$
-		JLabel inactErrLabel = new JLabel(CurrentLocale.get("com.tle.admin.cla.inactiveerror")); //$NON-NLS-1$
+		JLabel actErrLabel = new JLabel(getString("activationerror")); //$NON-NLS-1$
+		JLabel inactErrLabel = new JLabel(getString("inactiveerror")); //$NON-NLS-1$
 
 		activationError = new I18nTextArea(BundleCache.getLanguages());
 		inactiveError = new I18nTextArea(BundleCache.getLanguages());
@@ -103,9 +103,9 @@ public class CLAConfigPanel extends AbstractExtensionConfigPanel
 
 	private void initUploadPanel()
 	{
-		JLabel titleLabel = new JLabel(CurrentLocale.get("com.tle.admin.cla.agreement.instructions")); //$NON-NLS-1$
+		JLabel titleLabel = new JLabel(getString("agreement.instructions")); //$NON-NLS-1$
 
-		final JButton upload = new JButton(CurrentLocale.get("com.tle.admin.cla.agreement.upload")); //$NON-NLS-1$
+		final JButton upload = new JButton(getString("agreement.upload")); //$NON-NLS-1$
 		upload.addActionListener(new ActionListener()
 		{
 			@Override
@@ -115,7 +115,7 @@ public class CLAConfigPanel extends AbstractExtensionConfigPanel
 			}
 		});
 
-		final JButton remove = new JButton(CurrentLocale.get("com.tle.admin.cla.agreement.remove")); //$NON-NLS-1$
+		final JButton remove = new JButton(getString("agreement.remove")); //$NON-NLS-1$
 		remove.addActionListener(new ActionListener()
 		{
 			@Override
@@ -138,7 +138,7 @@ public class CLAConfigPanel extends AbstractExtensionConfigPanel
 		uploadPanel.add(upload, new Rectangle(1, 1, 1, 1));
 		uploadPanel.add(remove, new Rectangle(2, 1, 1, 1));
 
-		agreementGroup = new JGroup(CurrentLocale.get("com.tle.admin.cla.cla.agreement.requires")); //$NON-NLS-1$
+		agreementGroup = new JGroup(getString("cla.agreement.requires")); //$NON-NLS-1$
 		agreementGroup.setInnerLayout(new BorderLayout());
 		agreementGroup.addInner(uploadPanel);
 		agreementGroup.addActionListener(new ActionListener()
@@ -226,7 +226,7 @@ public class CLAConfigPanel extends AbstractExtensionConfigPanel
 			@Override
 			public String getDescription()
 			{
-				return CurrentLocale.get("com.tle.admin.cla.agreement.filefilter"); //$NON-NLS-1$
+				return getString("agreement.filefilter"); //$NON-NLS-1$
 			}
 
 			@Override

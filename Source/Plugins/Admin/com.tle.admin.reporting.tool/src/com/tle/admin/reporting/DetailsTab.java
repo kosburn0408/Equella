@@ -67,8 +67,7 @@ import com.tle.i18n.BundleCache;
 public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetailsTab<Report>, ActionListener
 {
 	@SuppressWarnings("nls")
-	private static final String KEYPFX = "com.tle.admin.reporting.tool.";
-	private static final String TITLE = CurrentLocale.get(KEYPFX + "detailstab.title"); //$NON-NLS-1$
+	private final String TITLE = getString("detailstab.title"); //$NON-NLS-1$
 
 	private JTextField identifier;
 	private I18nTextField name;
@@ -101,12 +100,12 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 
 	private void setupGUI()
 	{
-		JLabel identifierLabel = new JLabel(CurrentLocale.get(KEYPFX + "detailstab.identifier")); //$NON-NLS-1$
-		JLabel nameLabel = new JLabel(CurrentLocale.get(KEYPFX + "detailstab.name")); //$NON-NLS-1$
-		JLabel descriptionLabel = new JLabel(CurrentLocale.get(KEYPFX + "detailstab.desc")); //$NON-NLS-1$
-		JLabel ownerLabel = new JLabel(CurrentLocale.get(KEYPFX + "detailstab.owner")); //$NON-NLS-1$
-		JLabel uploadLabel = new JLabel(CurrentLocale.get(KEYPFX + "detailstab.design")); //$NON-NLS-1$
-		JLabel hideReportLabel = new JLabel(CurrentLocale.get(KEYPFX + "detailstab.hidereport")); //$NON-NLS-1$
+		JLabel identifierLabel = new JLabel(getString("detailstab.identifier")); //$NON-NLS-1$
+		JLabel nameLabel = new JLabel(getString("reports.detailstab.name")); //$NON-NLS-1$
+		JLabel descriptionLabel = new JLabel(getString("detailstab.desc")); //$NON-NLS-1$
+		JLabel ownerLabel = new JLabel(getString("reports.detailstab.owner")); //$NON-NLS-1$
+		JLabel uploadLabel = new JLabel(getString("detailstab.design")); //$NON-NLS-1$
+		JLabel hideReportLabel = new JLabel(getString("detailstab.hidereport")); //$NON-NLS-1$
 
 		descriptionLabel.setVerticalAlignment(SwingConstants.TOP);
 
@@ -149,10 +148,10 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 		initialReport.setEditable(false);
 		initialReport.setPreferredSize(new Dimension(230, 23));
 
-		upload = new JButton(CurrentLocale.get(KEYPFX + "detailstab.upload")); //$NON-NLS-1$
+		upload = new JButton(getString("detailstab.upload")); //$NON-NLS-1$
 		upload.addActionListener(this);
 
-		download = new JButton(CurrentLocale.get(KEYPFX + "detailstab.download")); //$NON-NLS-1$
+		download = new JButton(getString("detailstab.download")); //$NON-NLS-1$
 		download.addActionListener(this);
 
 		add(uploadLabel, new Rectangle(0, 4, 1, 1));
@@ -217,17 +216,17 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 	{
 		if( name.isCompletelyEmpty() )
 		{
-			throw new EditorException(CurrentLocale.get(KEYPFX + "detailstab.supplyname")); //$NON-NLS-1$
+			throw new EditorException(getString("reports.detailstab.supplyname")); //$NON-NLS-1$
 		}
 
 		if( owner.getUser() == null )
 		{
-			throw new EditorException(CurrentLocale.get(KEYPFX + "detailstab.noowner")); //$NON-NLS-1$
+			throw new EditorException(getString("reports.detailstab.noowner")); //$NON-NLS-1$
 		}
 
 		if( initialReport.getSelectedIndex() == -1 )
 		{
-			throw new EditorException(CurrentLocale.get(KEYPFX + "detailstab.noreport"));
+			throw new EditorException(getString("detailstab.noreport"));
 		}
 	}
 
@@ -244,12 +243,12 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 		}
 	}
 
-	public static final class RPTFileFilter extends FileFilter
+	public final class RPTFileFilter extends FileFilter
 	{
 		@Override
 		public String getDescription()
 		{
-			return CurrentLocale.get(KEYPFX + "detailstab.reportdesign"); //$NON-NLS-1$
+			return getString("detailstab.reportdesign"); //$NON-NLS-1$
 		}
 
 		@SuppressWarnings("nls")
@@ -268,12 +267,12 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 		}
 	}
 
-	public static final class RPTArchiveFileFilter extends FileFilter
+	public final class RPTArchiveFileFilter extends FileFilter
 	{
 		@Override
 		public String getDescription()
 		{
-			return CurrentLocale.get(KEYPFX + "detailstab.reportdowntype"); //$NON-NLS-1$
+			return getString("detailstab.reportdowntype"); //$NON-NLS-1$
 		}
 
 		@SuppressWarnings("nls")
@@ -298,7 +297,7 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 		File file;
 		FileFilter filter = new RPTFileFilter();
 		final DialogResult result = DialogUtils.openDialogStrictFilter(panel,
-			CurrentLocale.get(KEYPFX + "detailstab.selectreport"), //$NON-NLS-1$
+				getString("detailstab.selectreport"), //$NON-NLS-1$
 			filter, null);
 		if( result.isOkayed() )
 		{
@@ -326,7 +325,7 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 			{
 				if( re.getType() == Type.NODESIGNS )
 				{
-					Driver.displayInformation(description, CurrentLocale.get(KEYPFX + "uploaderr.noreports"));
+					Driver.displayInformation(description, getString("uploaderr.noreports"));
 					return false;
 				}
 				else
@@ -337,7 +336,7 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 		}
 		catch( Exception e )
 		{
-			Driver.displayError(description, KEYPFX + "uploaderr.title", KEYPFX + "uploaderr.msg", e);
+			Driver.displayError(description, getKey("uploaderr.title"), getKey("uploaderr.msg"), e);
 			return false;
 		}
 		return true;
@@ -348,7 +347,7 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 		final File file;
 		FileFilter filter = new RPTArchiveFileFilter();
 		final DialogResult result = DialogUtils.saveDialogStrictFilter(panel,
-			CurrentLocale.get(KEYPFX + "detailstab.selectfile"), //$NON-NLS-1$
+				getString("detailstab.selectfile"), //$NON-NLS-1$
 			filter, null);
 		if( result.isOkayed() )
 		{
@@ -384,13 +383,13 @@ public class DetailsTab extends BaseEntityTab<Report> implements AbstractDetails
 			@Override
 			public void finished()
 			{
-				Driver.displayInformation(parent, CurrentLocale.get(KEYPFX + "detailstab.complete")); //$NON-NLS-1$
+				Driver.displayInformation(parent, getString("detailstab.complete")); //$NON-NLS-1$
 			}
 
 			@Override
 			public void exception()
 			{
-				Driver.displayInformation(panel, CurrentLocale.get(KEYPFX + "detailstab.error")); //$NON-NLS-1$
+				Driver.displayInformation(panel, getString("detailstab.error")); //$NON-NLS-1$
 				LOGGER.error("Error downloading file", getException()); //$NON-NLS-1$
 			}
 		};

@@ -49,13 +49,13 @@ public class CourseInfoEditor extends BaseEntityEditor<CourseInfo>
 	@Override
 	public String getDocumentName()
 	{
-		return CurrentLocale.get("com.tle.admin.courseinfo.editor.docname"); //$NON-NLS-1$
+		return getString("editor.docname"); //$NON-NLS-1$
 	}
 
 	@Override
 	protected String getWindowTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.courseinfo.editor.title"); //$NON-NLS-1$
+		return getString("editor.title"); //$NON-NLS-1$
 	}
 
 	@Override

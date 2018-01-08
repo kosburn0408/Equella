@@ -67,28 +67,28 @@ public class FileUploadSettingsPanel extends UniversalControlSettingPanel
 	{
 		super();
 		packageHeading = new JLabel(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.subtitle.packages"));
+			getString("fileupload.settings.subtitle.packages"));
 		thumbHeading = new JLabel(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.subtitle.thumbnails"));
+			getString("fileupload.settings.subtitle.thumbnails"));
 		generalHeading = new JLabel(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.subtitle.general"));
-		mimeHeading = new JLabel(CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.subtitle.mime"));
-		noUnzip = new JCheckBox(CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.nounzip"));
+			getString("fileupload.settings.subtitle.general"));
+		mimeHeading = new JLabel(getString("fileupload.settings.subtitle.mime"));
+		noUnzip = new JCheckBox(getString("fileupload.settings.nounzip"));
 		packageOnly = new JCheckBox(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.packageonly"));
+			getString("fileupload.settings.packageonly"));
 		restrictionLabel = new JLabel(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.package.restriction"));
-		qtiPackage = new JCheckBox(CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.qti"));
-		scormPackage = new JCheckBox(CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.scorm"));
+			getString("fileupload.settings.package.restriction"));
+		qtiPackage = new JCheckBox(getString("fileupload.settings.qti"));
+		scormPackage = new JCheckBox(getString("fileupload.settings.scorm"));
 		suppressThumbnail = new JCheckBox(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.thumbnail"));
+			getString("fileupload.settings.thumbnail"));
 		showSuppressOption = new JCheckBox(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.forcethumboption"));
+			getString("fileupload.settings.forcethumboption"));
 		restrictMime = new JCheckBox(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.restrictbymime"));
+			getString("fileupload.settings.restrictbymime"));
 		restrictFileSize = new JCheckBox(
-			CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.restrictfilesize"));
-		fileSizeLabel = new JLabel(CurrentLocale.get("com.tle.admin.controls.standard.fileupload.settings.filesize"));
+			getString("fileupload.settings.restrictfilesize"));
+		fileSizeLabel = new JLabel(getString("fileupload.settings.filesize"));
 		mimeShuffle = new JShuffleBox<NameValue>();
 		fileSizeEditModel = new SpinnerNumberModel(0, 0, Integer.MAX_VALUE, 1);
 		fileSizeEdit = new JSpinner(fileSizeEditModel);

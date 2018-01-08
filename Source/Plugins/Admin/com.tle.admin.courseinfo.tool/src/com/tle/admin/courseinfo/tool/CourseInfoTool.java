@@ -52,7 +52,7 @@ public class CourseInfoTool extends BaseEntityTool<CourseInfo>
 	@Override
 	protected String getEntityName()
 	{
-		return CurrentLocale.get("com.tle.admin.gui.courseinfotool.name"); //$NON-NLS-1$
+		return getString("courses.name"); //$NON-NLS-1$
 	}
 
 	@Override

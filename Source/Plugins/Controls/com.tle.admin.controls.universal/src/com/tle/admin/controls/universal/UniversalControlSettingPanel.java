@@ -21,6 +21,7 @@ import java.awt.LayoutManager;
 
 import javax.swing.JLabel;
 
+import com.tle.core.plugins.AbstractPluginService;
 import net.miginfocom.swing.MigLayout;
 
 import com.tle.admin.gui.common.DynamicChoicePanel;
@@ -39,6 +40,13 @@ public abstract class UniversalControlSettingPanel extends DynamicChoicePanel<Un
 	private SchemaModel schemaModel;
 	private UniversalControl control;
 	private ClientService clientService;
+
+	private String KEY_PFX = AbstractPluginService.getMyPluginId(getClass()) + ".";
+
+	protected String getString(String key)
+	{
+		return CurrentLocale.get(KEY_PFX+key);
+	}
 
 	/**
 	 * Uses a MigLayout("wrap 2, insets 10 15 20 5", "[][fill, grow]")

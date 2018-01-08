@@ -43,7 +43,7 @@ public class VersionSelectionTab extends BaseEntityTab<CourseInfo>
 	@SuppressWarnings("nls")
 	public String getTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.courseinfo.versionstab.title");
+		return getString("versionstab.title");
 	}
 
 	@Override

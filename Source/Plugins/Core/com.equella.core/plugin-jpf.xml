@@ -3,7 +3,6 @@
 <plugin id="com.equella.core" version="1">
   <requires>
     <import plugin-id="com.tle.common.applet" />
-    <import plugin-id="com.tle.common.customlinks" />
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
@@ -141,6 +140,7 @@
     <import plugin-id="org.hibernate" />
     <import plugin-id="org.mozilla.rhino" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.admin" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

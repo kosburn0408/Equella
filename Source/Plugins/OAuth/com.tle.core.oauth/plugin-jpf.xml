@@ -2,7 +2,6 @@
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.tle.core.oauth" version="1">
   <requires>
-    <import plugin-id="com.tle.common.oauth" exported="true" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
@@ -21,6 +20,7 @@
     <import plugin-id="com.tle.core.filesystem" />
     <import plugin-id="com.tle.core.filesystem.staging" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.admin" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

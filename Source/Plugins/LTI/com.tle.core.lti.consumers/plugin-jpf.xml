@@ -3,7 +3,6 @@
 <plugin id="com.tle.core.lti.consumers" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.common.lti.consumers" exported="true" />
     <import plugin-id="com.tle.core.encryption" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
@@ -16,6 +15,7 @@
     <import plugin-id="com.tle.core.security.convert" />
     <import plugin-id="com.tle.core.filesystem" />
     <import plugin-id="com.tle.core.filesystem.staging" />
+    <import plugin-id="com.equella.admin" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

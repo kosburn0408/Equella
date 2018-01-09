@@ -35,7 +35,7 @@ public abstract class GroupWebControl<M extends WebControlModel> extends Abstrac
 	implements
 		WizardGroupListener
 {
-	@ViewFactory(fixed = false)
+	@ViewFactory(fixed = false, name="wizardFreemarkerFactory")
 	protected FreemarkerFactory viewFactory;
 
 	private final List<List<WebControl>> webGroups = new ArrayList<List<WebControl>>();

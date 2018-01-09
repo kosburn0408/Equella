@@ -43,7 +43,7 @@ import com.tle.web.wizard.controls.SimpleValueControl;
 @Bind
 public class EditBox extends AbstractSimpleWebControl implements SimpleValueControl
 {
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory viewFactory;
 	@Component(register = false, stateful = false)
 	private TextField field;

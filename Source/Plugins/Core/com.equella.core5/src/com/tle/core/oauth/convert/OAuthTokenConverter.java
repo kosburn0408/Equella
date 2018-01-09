@@ -47,6 +47,7 @@ import com.tle.core.institution.convert.DefaultMessageCallback;
 import com.tle.core.oauth.dao.OAuthTokenDao;
 import com.tle.core.oauth.service.OAuthService;
 
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.xml.service.impl.XmlServiceImpl;
 
 /**
@@ -57,7 +58,7 @@ import com.tle.core.xml.service.impl.XmlServiceImpl;
 @Singleton
 public class OAuthTokenConverter extends AbstractConverter<OAuthToken>
 {
-	private static final String PREFIX = "com.tle.core.oauth.";
+	private static final String PREFIX = AbstractPluginService.getMyPluginId(OAuthTokenConverter.class)+".";
 	private static final String OAUTHTOKENS = "oauthtoken";
 
 	@Inject

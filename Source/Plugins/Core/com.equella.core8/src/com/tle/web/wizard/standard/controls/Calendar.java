@@ -54,7 +54,7 @@ import com.tle.web.wizard.standard.controls.Calendar.CalendarWebControlModel;
 @Bind
 public class Calendar extends AbstractWebControl<CalendarWebControlModel>
 {
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory factory;
 	@EventFactory
 	private EventGenerator events;

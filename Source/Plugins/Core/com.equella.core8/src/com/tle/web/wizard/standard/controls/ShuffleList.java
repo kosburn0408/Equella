@@ -89,7 +89,7 @@ public class ShuffleList extends AbstractWebControl<WebControlModel> implements 
 	@PlugKey("shuffle.action.delete")
 	private static String DELETE;
 
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory viewFactory;
 	@Component
 	private Div div;

@@ -35,7 +35,7 @@ import com.tle.web.wizard.render.WizardFreemarkerFactory;
 @Bind
 public class MultiEditBoxWebControl extends AbstractSimpleWebControl
 {
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private WizardFreemarkerFactory viewFactory;
 
 	@Inject

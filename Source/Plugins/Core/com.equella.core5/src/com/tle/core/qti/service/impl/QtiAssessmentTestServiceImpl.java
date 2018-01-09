@@ -23,6 +23,8 @@ import java.util.UUID;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.tle.core.oauth.convert.OAuthTokenConverter;
+import com.tle.core.plugins.AbstractPluginService;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,6 +68,7 @@ import uk.ac.ed.ph.jqtiplus.resolution.RootNodeLookup;
 @Singleton
 public class QtiAssessmentTestServiceImpl implements QtiAssessmentTestService, ItemDeletedListener
 {
+	private static final String PREFIX = AbstractPluginService.getMyPluginId(OAuthTokenConverter.class)+".";
 	@Inject
 	private QtiAssessmentTestDao qtiTestDao;
 	@Inject
@@ -184,7 +187,7 @@ public class QtiAssessmentTestServiceImpl implements QtiAssessmentTestService, I
 		final List<ValidationError> errors = Lists.newArrayList();
 		if( test.getItem() == null )
 		{
-			errors.add(new ValidationError("item", CurrentLocale.get("com.tle.core.qti.test.validation.noitem")));
+			errors.add(new ValidationError("item", CurrentLocale.get(PREFIX + "test.validation.noitem")));
 		}
 		if( errors.size() > 0 )
 		{

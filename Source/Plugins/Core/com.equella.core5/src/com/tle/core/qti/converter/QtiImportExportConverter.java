@@ -46,6 +46,7 @@ import com.tle.core.institution.convert.AbstractConverter;
 import com.tle.core.institution.convert.ConverterParams;
 import com.tle.core.institution.convert.service.InstitutionImportService.ConvertType;
 import com.tle.core.institution.convert.service.impl.InstitutionImportServiceImpl.ConverterTasks;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.core.qti.converter.initialiser.QtiObjectInitialiserCallback;
 import com.tle.core.qti.converter.xstream.QtiAssessmentItemRefXmlConverter;
 import com.tle.core.qti.converter.xstream.QtiAssessmentItemXmlConverter;
@@ -64,7 +65,7 @@ import com.tle.core.qti.dao.QtiItemResultDao;
 @Singleton
 public class QtiImportExportConverter extends AbstractConverter<Object>
 {
-	private static final String PREFIX = "com.tle.core.qti.";
+	private static final String PREFIX = AbstractPluginService.getMyPluginId(QtiImportExportConverter.class)+".";
 	private static final String TEST_IMPORT_EXPORT_FOLDER = "qtitest";
 	private static final String QUESTION_IMPORT_EXPORT_FOLDER = "qtiquestion";
 	private static final String ASSESSMENT_RESULT_IMPORT_EXPORT_FOLDER = "qtiassessmentresult";

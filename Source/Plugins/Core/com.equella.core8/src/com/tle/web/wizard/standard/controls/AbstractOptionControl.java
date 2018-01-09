@@ -36,7 +36,7 @@ import com.tle.web.wizard.controls.OptionCtrl;
 
 public abstract class AbstractOptionControl extends AbstractSimpleWebControl
 {
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private FreemarkerFactory viewFactory;
 
 	protected OptionCtrl optionControl;

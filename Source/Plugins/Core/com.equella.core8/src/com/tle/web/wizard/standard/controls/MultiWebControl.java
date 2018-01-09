@@ -108,7 +108,7 @@ public class MultiWebControl extends AbstractWebControl<MultiWebControl.MultiWeb
 	@PlugKey("shuffle.mandatory")
 	private static Label MANDATORY_ALERT;
 
-	@ViewFactory
+	@ViewFactory(name="wizardFreemarkerFactory")
 	private WizardFreemarkerFactory viewFactory;
 	@Inject
 	private DialogTemplate template;

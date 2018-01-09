@@ -127,7 +127,7 @@ mergeJPF := {
     println(s"mergeJPF <ID> ${plugins.mkString(" ")}")
   } else {
     val newPlugin = args.head
-    val basePlugin = baseDirectory.value / "Source/Plugins/Core"
+    val basePlugin = baseDirectory.value / "Source/Plugins"
     PluginRefactor.mergePlugins(allPluginDirs, basePlugin, newPlugin, args.tail, adminConsole = true)
   }
 }

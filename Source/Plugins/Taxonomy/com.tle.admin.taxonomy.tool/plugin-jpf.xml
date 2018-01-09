@@ -50,7 +50,7 @@
   </extension>
   <extension plugin-id="com.tle.admin.tools" point-id="tool" id="taxonomytool">
     <parameter id="displayorder" value="450" />
-    <parameter id="name" value="com.tle.admin.taxonomy.tool.name" />
+    <parameter id="name" value="com.tle.admin.taxonomy.tool.taxonomy.name" />
     <parameter id="class" value="com.tle.admin.taxonomy.tool.TaxonomyTool" />
     <parameter id="privilege" value="CREATE_TAXONOMY" />
     <parameter id="privilege" value="EDIT_TAXONOMY" />

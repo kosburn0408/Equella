@@ -55,18 +55,18 @@ public class TaxonomyEditor extends BaseEntityEditor<Taxonomy>
 	@Override
 	protected String getEntityName()
 	{
-		return CurrentLocale.get("com.tle.admin.taxonomy.tool.entityname"); //$NON-NLS-1$
+		return getString("taxonomy.entityname"); //$NON-NLS-1$
 	}
 
 	@Override
 	protected String getWindowTitle()
 	{
-		return CurrentLocale.get("com.tle.admin.taxonomy.tool.windowtitle"); //$NON-NLS-1$
+		return getString("taxonomy.windowtitle"); //$NON-NLS-1$
 	}
 
 	@Override
 	public String getDocumentName()
 	{
-		return CurrentLocale.get("com.tle.admin.taxonomy.tool.entityname"); //$NON-NLS-1$
+		return getString("taxonomy.entityname"); //$NON-NLS-1$
 	}
 }

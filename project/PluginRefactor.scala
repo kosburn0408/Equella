@@ -81,7 +81,7 @@ object PluginRefactor {
 
     val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
 
-    val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat",
+    val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat", "com.equella.core-oldrhino",
       "com.tle.web.adminconsole", "com.tle.common.inplaceeditor") ++ platformPlugins
 
 
@@ -91,8 +91,9 @@ object PluginRefactor {
         _.getAttributeValue("id") == "type"
       }.exists(_.getAttributeValue("value") == "admin-console")
 
-      p.libs.isEmpty && (adminConsole == adminPlugins) && r.getChildren("extension-point").isEmpty &&
-        // r.getChildren("extension").isEmpty &&
+      p.libs.isEmpty && (adminConsole == adminPlugins) &&
+        r.getChild("requires") != null &&
+        // && r.getChildren("extension-point").isEmpty
         !keepPlugins(p.pId) && !(p.bd / "build.sbt").exists
     }
 
@@ -148,7 +149,7 @@ object PluginRefactor {
     }
     else {
 
-      val baseDir = baseParentDir / "merged_plugin"
+      val baseDir = baseParentDir / "Temporary" / "merged_plugin"
       println("Merging: " + toMerge.sorted.mkString(","))
       IO.delete(baseDir)
 
@@ -167,9 +168,24 @@ object PluginRefactor {
       val imports = imp_exts.map(_._1).reduce(_ ++ _)
       val exts = imp_exts.map(_._2).reduce(_ ++ _)
 
-      val plugElem = new Element("plugin")
-      plugElem.setAttribute("id", pluginId)
-      plugElem.setAttribute("version", "1")
+      def mkImport(impId: String) = {
+        val impElem = new Element("import")
+        impElem.setAttribute("plugin-id", impId)
+        impElem
+      }
+
+      def createNewPluginDoc(newId: String) : (Element, Document) = {
+        val plugElem = new Element("plugin")
+        plugElem.setAttribute("id", newId)
+        plugElem.setAttribute("version", "1")
+        val doc = new Document()
+        doc.setDocType(new DocType("plugin", "-//JPF//Java Plug-in Manifest 1.0",
+          "http://jpf.sourceforge.net/plugin_1_0.dtd"))
+        doc.setRootElement(plugElem)
+        (plugElem, doc)
+      }
+
+      val (plugElem,doc) = createNewPluginDoc(pluginId)
 
       if (adminConsole) {
         val attrsElem = new Element("attributes")
@@ -179,13 +195,6 @@ object PluginRefactor {
         attrsElem.addContent(attrElem)
         plugElem.addContent(attrsElem)
       }
-
-      val sortedImports = imports.map(e => (getPluginId(e), e))
-        .filterNot(v => allowedIds(v._1))
-        .toMap.values.toSeq.sortBy(getPluginId)
-      val req = new Element("requires")
-      req.addContent(sortedImports.map(_.clone).asJava)
-      plugElem.addContent(req)
 
       val guiceExt = new Element("extension")
       guiceExt.setAttribute("plugin-id", "com.tle.core.guice")
@@ -263,6 +272,10 @@ object PluginRefactor {
         case ("com.tle.admin.collection.tool", "extra") => (Set("name"), Set("configPanel"))
         case ("com.tle.admin.collection.tool", "summaryDisplay") => (Set("nameKey", "defaultNameKey"), Set("class"))
         case ("com.tle.admin.controls.universal", "universalvalidator") => (Set.empty, Set("id", "class"))
+        case ("com.tle.admin.search", "searchSetVirtualiserConfigs") => (Set("nameKey"), Set("configPanel"))
+        case ("com.tle.admin.taxonomy.tool", "dataSourceChoice") => (Set("nameKey"), Set("configPanel"))
+        case ("com.tle.admin.taxonomy.tool", "displayType") => (Set("nameKey"), Set())
+        case ("com.tle.admin.taxonomy.tool", "predefinedTermDataKey") => (Set("name", "description"), Set())
         case _ => (Set.empty, Set("class", "listenerClass"))
       }
 
@@ -274,6 +287,17 @@ object PluginRefactor {
           case _ => Seq(e)
         }
       }
+
+      val extIds = afterExt.map(getPluginId)
+      val allowedWithExt = allowedIds -- extIds
+      val extImports = extIds.map(mkImport)
+
+      val sortedImports = (imports ++ extImports).map(e => (getPluginId(e), e))
+        .filterNot(v => allowedWithExt(v._1))
+        .toMap.values.toSeq.sortBy(getPluginId)
+      val req = new Element("requires")
+      req.addContent(sortedImports.map(_.clone).asJava)
+      plugElem.addContent(req)
 
       if (guiceModules.nonEmpty) {
         guiceModules.distinct.sorted.foreach { m =>
@@ -290,11 +314,6 @@ object PluginRefactor {
 
       plugElem.addContent(Uniqueify.uniqueSeq[Element]((i, e) =>
         e.clone().setAttribute("id", e.getAttributeValue("id") + "_" + i), containsId)(afterExt ++ bundles).asJava)
-
-      val doc = new Document()
-      doc.setDocType(new DocType("plugin", "-//JPF//Java Plug-in Manifest 1.0",
-        "http://jpf.sourceforge.net/plugin_1_0.dtd"))
-      doc.setRootElement(plugElem)
 
       val pathsTo = imp_exts.flatMap { i =>
         val bd = i._3
@@ -338,37 +357,53 @@ object PluginRefactor {
         }
       }.foreach(println)
 
-      val needsReplacing = new ElementFilter({
-        e => allowedIds(getPluginId(e))
-      })
       val hasOldStyle = new ElementFilter({
         e => getPluginId(e).contains(":")
       })
-      val canCommit = !dupeKey && !dupeResource
-      allPlugins.foreach {
-        case p if !allowedIds(p.pId) => {
-          Option(p.rootElem.getChild("requires")).foreach { r =>
-            val removed = r.removeContent[Element](needsReplacing)
-            val removedOld = r.removeContent[Element](hasOldStyle)
-            if (!removed.isEmpty) {
-              val impElem = new Element("import")
-              impElem.setAttribute("plugin-id", pluginId)
-              r.addContent(impElem)
-            }
-            //          val allRemoved = (removed.asScala ++ removedOld.asScala).map(getPluginId)
-            //          if (allRemoved.nonEmpty) println(s"Removing from ${p.pId}: ${allRemoved.mkString(",")}")
-          }
-          val newManifest = new XMLOutputter(Format.getPrettyFormat).outputString(p.rootDoc)
-          if (canCommit) IO.write(p.bd / "plugin-jpf.xml", newManifest)
-        }
-        case p => if (canCommit) IO.delete(p.bd)
+      val canCommit = pluginId != "<ID>" && !dupeKey && !dupeResource
+      val manifestName = if (canCommit) "plugin-jpf.xml" else "plugin-jpf2.xml"
+
+      def writeManifest(fname: File, outDoc: Document): Unit = {
+        val pluginJpf = new XMLOutputter(Format.getPrettyFormat).outputString(outDoc)
+        IO.write(fname, pluginJpf)
       }
 
-      val pluginJpf = new XMLOutputter(Format.getPrettyFormat).outputString(doc)
-      val manifestName = if (canCommit) "plugin-jpf.xml" else "plugin-jpf2.xml"
-      IO.write(baseDir / manifestName, pluginJpf)
+      allPlugins.foreach {
+        case p if allowedIds(p.pId) => {
+          val extensions = p.rootElem.getChildren("extension-point").asScala
+          if (extensions.nonEmpty)
+          {
+            val (extPlugin, extDoc) = createNewPluginDoc(p.pId)
+            extensions.foreach(e => extPlugin.addContent(e.clone()))
+            val pareDir = baseParentDir / "Extensions" / p.pId
+            IO.delete(pareDir)
+            writeManifest(pareDir / manifestName, extDoc)
+          }
+          if (canCommit) {
+            IO.delete(p.bd)
+          }
+        }
+        case p => {
+          Option(p.rootElem.getChild("requires")).foreach { r =>
+            val needsReplacing = new ElementFilter({ e =>
+              val thisId = getPluginId(e)
+              allowedIds(thisId) && !p.rootElem.getChildren("extension").asScala.exists(getPluginId(_) == thisId)
+            })
+            val usedMerged = r.getChildren().asScala.exists(e => allowedIds(getPluginId(e)))
+            r.removeContent[Element](needsReplacing)
+            r.removeContent[Element](hasOldStyle)
+            if (usedMerged && !r.getChildren().asScala.exists(getPluginId(_) == pluginId)) {
+              r.addContent(mkImport(pluginId))
+            }
+          }
+          if (canCommit) {
+            writeManifest(p.bd / "plugin-jpf.xml", p.rootDoc)
+          }
+        }
+      }
+      writeManifest(baseDir / manifestName, doc)
       if (canCommit) {
-        baseDir.renameTo(baseParentDir / pluginId)
+        baseDir.renameTo(baseParentDir / "Core" / pluginId)
       }
     }
   }

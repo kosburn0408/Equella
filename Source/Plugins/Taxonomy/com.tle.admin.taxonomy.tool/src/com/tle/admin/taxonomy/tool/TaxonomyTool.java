@@ -52,6 +52,6 @@ public class TaxonomyTool extends BaseEntityTool<Taxonomy>
 	@Override
 	protected String getEntityName()
 	{
-		return CurrentLocale.get("com.tle.admin.taxonomy.tool.entityname"); //$NON-NLS-1$
+		return getString("taxonomy.entityname"); //$NON-NLS-1$
 	}
 }

@@ -32,11 +32,24 @@ object PluginRefactor {
 
   def getPluginId(e: Element): String = e.getAttributeValue("plugin-id")
 
+
+  val mutualExclusions = Map("com.equella.base" -> Set("com.tle.core.guice"),
+    "com.equella.serverbase" -> Set("com.tle.web.sections"),
+    "com.equella.core-oldrhino" -> Set("org.mozilla.rhino")
+  ).withDefaultValue(Set.empty)
+
+  val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
+
+  val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat", "com.tle.core.application",
+    "com.tle.web.sections", "com.tle.core.guice", "com.tle.web.adminconsole", "com.tle.common.inplaceeditor") ++ platformPlugins
+
+
   def cycleChecker(allImports: Iterable[PluginDeets]): Set[String] => Option[String] = {
     val deetMap = allImports.map(p => (p.pId, p)).toMap
 
     def wouldCauseCycle(toCheck: Set[String]): Option[String] = {
 
+      val withExclusions = toCheck ++ toCheck.toSeq.flatMap(mutualExclusions)
       def checkIter(parents: List[String], ids: Iterator[String], state: Set[String]): Either[Set[String], String] = {
 
         @tailrec
@@ -46,7 +59,7 @@ object PluginRefactor {
             val pId = ids.next()
             if (checked(pId)) tailRec(state)
             else {
-              if (toCheck(pId)) {
+              if (withExclusions(pId)) {
                 Right(parents.last)
               }
               else {
@@ -79,12 +92,6 @@ object PluginRefactor {
 
   def choosePlugins(allImports: Seq[PluginDeets], adminPlugins: Boolean): Iterable[String] = {
 
-    val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
-
-    val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat", "com.equella.core-oldrhino",
-      "com.tle.web.adminconsole", "com.tle.common.inplaceeditor") ++ platformPlugins
-
-
     val initialPlugins = allImports.filter { p =>
       val r = p.rootElem
       val adminConsole = r.getChildren("attributes").asScala.flatMap(_.getChildren("attribute").asScala).find {
@@ -107,7 +114,7 @@ object PluginRefactor {
       println(size)
       @tailrec
       def checkSubsets(iter: Iterator[Set[String]], soFar: Int, stats: Map[String, Int]): Either[Either[String, (Int, Map[String, Int])], Set[String]] = {
-        if (soFar > 500000) {
+        if (soFar > 10000) {
           println(stats)
           Left(Left(stats.toSeq.maxBy(_._2)._1))
         } else {
@@ -202,8 +209,8 @@ object PluginRefactor {
       guiceExt.setAttribute("id", "guiceModules")
 
       val guiceModules = exts.flatMap {
-        case (bd, pId, e) => getPluginId(e) match {
-          case "com.tle.core.guice" =>
+        case (bd, pId, e) => (getPluginId(e), e.getAttributeValue("point-id")) match {
+          case ("com.tle.core.guice", "module") =>
             e.getChildren("parameter").asScala.map(_.getAttributeValue("value"))
           case _ => Seq.empty
         }
@@ -276,12 +283,14 @@ object PluginRefactor {
         case ("com.tle.admin.taxonomy.tool", "dataSourceChoice") => (Set("nameKey"), Set("configPanel"))
         case ("com.tle.admin.taxonomy.tool", "displayType") => (Set("nameKey"), Set())
         case ("com.tle.admin.taxonomy.tool", "predefinedTermDataKey") => (Set("name", "description"), Set())
+        case ("com.tle.core.migration" ,"migration") => (Set(), Set("id", "obsoletedby"))
+        case ("com.tle.core.institution.convert", "xmlmigration") => (Set(), Set("id", "obsoletedby"))
         case _ => (Set.empty, Set("class", "listenerClass"))
       }
 
       val afterExt = exts.flatMap {
         case (bd, pId, e) => (getPluginId(e), e.getAttributeValue("point-id")) match {
-          case ("com.tle.core.guice", _) => Seq.empty
+          case ("com.tle.core.guice", "module") => Seq.empty
           case ("com.tle.common.i18n", "bundle") => Seq.empty
           case (extPlugin, ext) if keyParameters(extPlugin, ext)._1.nonEmpty => Seq(reprefix(pId, e.clone, keyParameters(extPlugin, ext)._1))
           case _ => Seq(e)
@@ -385,11 +394,14 @@ object PluginRefactor {
         }
         case p => {
           Option(p.rootElem.getChild("requires")).foreach { r =>
+            val usedMerged = r.getChildren().asScala.exists(e => allowedIds(getPluginId(e)))
+
             val needsReplacing = new ElementFilter({ e =>
               val thisId = getPluginId(e)
-              allowedIds(thisId) && !p.rootElem.getChildren("extension").asScala.exists(getPluginId(_) == thisId)
+              allowedIds(thisId) &&
+                !(usedMerged && thisId == pluginId) &&
+                !p.rootElem.getChildren("extension").asScala.exists(getPluginId(_) == thisId)
             })
-            val usedMerged = r.getChildren().asScala.exists(e => allowedIds(getPluginId(e)))
             r.removeContent[Element](needsReplacing)
             r.removeContent[Element](hasOldStyle)
             if (usedMerged && !r.getChildren().asScala.exists(getPluginId(_) == pluginId)) {

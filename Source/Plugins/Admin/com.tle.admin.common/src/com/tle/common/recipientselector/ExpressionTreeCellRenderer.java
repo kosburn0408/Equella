@@ -18,35 +18,41 @@ package com.tle.common.recipientselector;
 
 import java.awt.Component;
 
-import javax.swing.DefaultListCellRenderer;
-import javax.swing.JList;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultTreeCellRenderer;
 
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.core.remoting.RemoteUserService;
 
 /**
  * @author Nicholas Read
  */
-public class ExpressionListCellRenderer extends DefaultListCellRenderer
+public class ExpressionTreeCellRenderer extends DefaultTreeCellRenderer
 {
 	private static final long serialVersionUID = 1L;
 	private ExpressionFormatter formatter;
 
-	public ExpressionListCellRenderer(RemoteUserService userService)
+	public ExpressionTreeCellRenderer(RemoteUserService userService)
 	{
 		formatter = new ExpressionFormatter(userService);
 	}
 
 	@Override
-	public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
-		boolean cellHasFocus)
+	public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded,
+		boolean leaf, int row, boolean hasFocus)
 	{
-		super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-		setText(formatter.convertToInfix(getExpressionString(value)));
-		return this;
-	}
+		super.getTreeCellRendererComponent(tree, value, sel, expanded, leaf, row, hasFocus);
 
-	protected String getExpressionString(Object object)
-	{
-		return (String) object;
+		ExpressionTreeNode node = (ExpressionTreeNode) value;
+		if( node.isGrouping() )
+		{
+			setText(node.getGrouping().toString());
+		}
+		else
+		{
+			setText(formatter.convertToInfix(node.getExpression()));
+		}
+
+		return this;
 	}
 }

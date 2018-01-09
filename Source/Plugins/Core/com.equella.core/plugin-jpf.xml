@@ -34,7 +34,6 @@
     <import plugin-id="com.tle.core.portal" />
     <import plugin-id="com.tle.core.remoterepo.srw" />
     <import plugin-id="com.tle.core.replicatedcache" />
-    <import plugin-id="com.tle.core.reporting" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />
@@ -92,15 +91,16 @@
     <import plugin-id="com.tle.web.workflow.portal" />
     <import plugin-id="org.hibernate" />
     <import plugin-id="org.mozilla.rhino" />
-    <import plugin-id="com.equella.admin" exported="true" />
-    <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core2" exported="true" />
-    <import plugin-id="com.equella.core5" exported="true" />
-    <import plugin-id="com.equella.core7" exported="true" />
-    <import plugin-id="com.equella.core8" exported="true" />
-    <import plugin-id="com.equella.core6" exported="true" />
-    <import plugin-id="com.equella.core4" exported="true" />
-    <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.admin" />
+    <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core2" />
+    <import plugin-id="com.equella.core5" />
+    <import plugin-id="com.equella.core7" />
+    <import plugin-id="com.equella.core8" />
+    <import plugin-id="com.equella.core6" />
+    <import plugin-id="com.equella.core4" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">
@@ -1493,14 +1493,6 @@
     <parameter id="path" value="/access/portaladmin.do" />
     <parameter id="class" value="bean:freemarkerPortletEditorTabs" />
     <parameter id="parentid" value="freemarkerEditor" />
-  </extension>
-  <extension plugin-id="com.tle.core.reporting" point-id="queryDelegate" id="connectorQueryDelegate">
-    <parameter id="id" value="CONNECTOR" />
-    <parameter id="class" value="bean:com.tle.core.connectors.reporting.ConnectorQueryDelegate" />
-  </extension>
-  <extension plugin-id="com.tle.core.reporting" point-id="queryDelegate" id="connectorListQueryDelegate">
-    <parameter id="id" value="CONNECTORLIST" />
-    <parameter id="class" value="bean:com.tle.core.connectors.reporting.ConnectorListQueryDelegate" />
   </extension>
   <extension plugin-id="com.tle.core.scheduler" point-id="scheduledTask" id="removeAuditLogs">
     <parameter id="id" value="Remove Old Audit Logs" />

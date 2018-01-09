@@ -31,7 +31,7 @@ import com.tle.common.Pair;
 import com.tle.common.lti.consumers.LtiConsumerConstants;
 import com.tle.common.lti.consumers.LtiConsumerConstants.UnknownUser;
 import com.tle.common.lti.consumers.entity.LtiConsumer;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.common.security.SecurityConstants.Recipient;
 import com.tle.common.usermanagement.user.valuebean.GroupBean;
 import com.tle.common.usermanagement.user.valuebean.RoleBean;

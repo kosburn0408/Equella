@@ -36,7 +36,7 @@ import com.tle.common.i18n.LocaleUtils;
 import com.tle.common.i18n.beans.LanguageBundleBean;
 import com.tle.common.portal.PortletConstants;
 import com.tle.common.portal.entity.Portlet;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.common.security.SecurityConstants;
 import com.tle.common.security.SecurityConstants.Recipient;
 import com.tle.common.security.TargetList;

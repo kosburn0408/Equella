@@ -23,6 +23,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
 import com.tle.common.i18n.CurrentLocale;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.core.remoting.RemoteUserService;
 
 /**

@@ -25,7 +25,7 @@ import com.dytech.common.GeneralConstants;
 import com.google.common.collect.Maps;
 import com.tle.annotation.NonNullByDefault;
 import com.tle.common.Check;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.core.services.user.UserService;
 import com.tle.core.services.user.UserSessionService;
 import com.tle.web.contentrestrictions.dialog.SelectedQuota;

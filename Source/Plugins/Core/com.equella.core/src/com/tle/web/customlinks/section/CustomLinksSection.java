@@ -54,7 +54,7 @@ import com.tle.common.filesystem.handle.StagingFile;
 import com.tle.common.i18n.CurrentLocale;
 import com.tle.common.i18n.LangUtils;
 import com.tle.common.i18n.beans.LanguageBundleBean;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.common.security.TargetList;
 import com.tle.common.security.TargetListEntry;
 import com.tle.common.util.ByteLimitedInputStream;

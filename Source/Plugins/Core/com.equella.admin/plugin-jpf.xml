@@ -17,9 +17,8 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.remoterepo.z3950" />
     <import plugin-id="com.tle.common.wizard.controls.resource" />
-    <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core2" exported="true" />
-    <import plugin-id="com.equella.admin2" exported="true" />
+    <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.admin2" />
   </requires>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="htmleditor">
     <parameter id="id" value="htmleditor" />

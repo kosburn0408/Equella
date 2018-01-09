@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.tle.common.recipientselector;
+package com.tle.common.recipientselector.formatter;
 
 import com.tle.common.i18n.CurrentLocale;
 import com.tle.common.security.SecurityConstants;

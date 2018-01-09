@@ -2,7 +2,8 @@
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.equella.core2" version="1">
   <requires>
-    <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.applet" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.auditlog" />
@@ -26,9 +27,9 @@
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.sections.standard" />
     <import plugin-id="com.tle.web.services" />
-    <import plugin-id="com.equella.core7" exported="true" />
-    <import plugin-id="com.equella.core4" exported="true" />
-    <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.core7" />
+    <import plugin-id="com.equella.core4" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.hibernate.guice.TransactionModule" />

@@ -55,7 +55,7 @@ import com.tle.common.Pair;
 import com.tle.common.applet.gui.AppletGuiUtils;
 import com.tle.common.i18n.CurrentLocale;
 import com.tle.common.recipientselector.ExpressionBuilderFinder;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.common.recipientselector.RecipientFilter;
 import com.tle.common.recipientselector.RecipientUtils;
 import com.tle.common.recipientselector.SingleFinderDialog;

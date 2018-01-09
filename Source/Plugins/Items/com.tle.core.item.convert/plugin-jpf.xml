@@ -7,8 +7,9 @@
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.entity" />
-    <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core7" exported="true" />
+    <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core7" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

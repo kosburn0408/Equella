@@ -29,7 +29,7 @@ import com.tle.common.Utils;
 import com.tle.common.connectors.ConnectorConstants;
 import com.tle.common.connectors.entity.Connector;
 import com.tle.common.i18n.CurrentLocale;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.common.security.SecurityConstants.Recipient;
 import com.tle.common.security.TargetList;
 import com.tle.common.security.TargetListEntry;

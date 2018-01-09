@@ -29,7 +29,7 @@ import com.tle.common.Check;
 import com.tle.common.NameValue;
 import com.tle.common.Pair;
 import com.tle.common.i18n.CurrentLocale;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.common.security.SecurityConstants;
 import com.tle.common.security.SecurityConstants.Recipient;
 import com.tle.common.security.expressions.PostfixExpressionParser;

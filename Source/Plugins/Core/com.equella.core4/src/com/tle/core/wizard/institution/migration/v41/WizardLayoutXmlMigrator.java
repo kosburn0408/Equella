@@ -30,6 +30,7 @@ import com.tle.core.institution.convert.ConverterParams;
 import com.tle.core.institution.convert.InstitutionInfo;
 import com.tle.core.institution.convert.XmlMigrator;
 import com.tle.core.institution.convert.DefaultMessageCallback;
+import com.tle.core.plugins.AbstractPluginService;
 
 /**
  * @author aholland
@@ -39,6 +40,7 @@ import com.tle.core.institution.convert.DefaultMessageCallback;
 @SuppressWarnings("nls")
 public class WizardLayoutXmlMigrator extends XmlMigrator
 {
+	private static String KEY_PFX = AbstractPluginService.getMyPluginId(WizardLayoutXmlMigrator.class)+".";
 	@Override
 	public void execute(TemporaryFileHandle staging, InstitutionInfo instInfo, ConverterParams params)
 	{
@@ -46,9 +48,9 @@ public class WizardLayoutXmlMigrator extends XmlMigrator
 		final List<String> entries = xmlHelper.getXmlFileList(itemdefFolder);
 
 		DefaultMessageCallback message = new DefaultMessageCallback(
-			"com.tle.core.wizard.institution.migration.v41.layoutmigrator.progressmessage");
+				KEY_PFX+"institution.migration.v41.layoutmigrator.progressmessage");
 		params.setMessageCallback(message);
-		message.setType(CurrentLocale.get("com.tle.core.wizard.wizard"));
+		message.setType(CurrentLocale.get(KEY_PFX+"wizard"));
 		message.setTotal(entries.size());
 
 		for( String collection : entries )

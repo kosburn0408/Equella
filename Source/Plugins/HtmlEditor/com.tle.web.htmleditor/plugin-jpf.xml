@@ -12,9 +12,10 @@
     <import plugin-id="com.tle.web.freemarker" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.standard" />
-    <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core5" exported="true" />
-    <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.core5" />
+    <import plugin-id="com.equella.core3" />
+    <import plugin-id="com.equella.admin" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

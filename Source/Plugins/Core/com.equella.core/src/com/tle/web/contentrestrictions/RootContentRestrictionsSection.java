@@ -26,7 +26,7 @@ import com.google.common.collect.Lists;
 import com.tle.common.FileSizeUtils;
 import com.tle.common.quota.settings.QuotaSettings;
 import com.tle.common.quota.settings.QuotaSettings.UserQuota;
-import com.tle.common.recipientselector.ExpressionFormatter;
+import com.tle.common.recipientselector.formatter.ExpressionFormatter;
 import com.tle.core.services.user.UserService;
 import com.tle.core.settings.service.ConfigurationService;
 import com.tle.web.contentrestrictions.dialog.AddBannedExtDialog;

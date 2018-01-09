@@ -5,8 +5,7 @@
     <attribute id="type" value="admin-console" />
   </attributes>
   <requires>
-    <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.base" />
     <import plugin-id="com.tle.admin.common" />
     <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.tle.common.i18n" />

@@ -3,7 +3,7 @@
 <plugin id="com.tle.applet.filemanager" version="1">
   <requires>
     <import plugin-id="com.tle.common.applet" />
-    <import plugin-id="com.tle.common.i18n" />
+    <import plugin-id="com.equella.base" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

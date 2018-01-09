@@ -40,7 +40,7 @@ object PluginRefactor {
 
   val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
 
-  val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat", "com.tle.core.application",
+  val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat", "com.tle.core.application", "com.tle.core.security",
     "com.tle.web.sections", "com.tle.core.guice", "com.tle.web.adminconsole", "com.tle.common.inplaceeditor") ++ platformPlugins
 
 

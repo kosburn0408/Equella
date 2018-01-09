@@ -5,7 +5,6 @@
     <attribute id="type" value="admin-console" />
   </attributes>
   <requires>
-    <import plugin-id="com.tle.common.i18n" exported="true" />
     <import plugin-id="com.tle.platform.swing" exported="true" />
     <import plugin-id="com.tle.platform.common" exported="true" />
     <import plugin-id="com.tle.platform.equella" exported="true" />

@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.tle.common.i18n" version="1">
-  <requires>
-    <import plugin-id="org.hibernate" exported="true" optional="true" />
-    <import plugin-id="com.equella.base" exported="true" />
-  </requires>
-  <runtime>
-    <library type="code" path="classes/" id="core">
-      <export prefix="*" />
-    </library>
-  </runtime>
   <extension-point id="bundle">
     <parameter-def id="locale" type="string" multiplicity="none-or-one" />
     <parameter-def id="group" type="string" multiplicity="one-or-more">

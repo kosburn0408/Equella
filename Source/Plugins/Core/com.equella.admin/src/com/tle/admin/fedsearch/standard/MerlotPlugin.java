@@ -71,8 +71,8 @@ public class MerlotPlugin extends SearchPlugin<MerlotSettings>
 		}
 	}
 
-	private static String s(String keyPart)
+	private String s(String keyPart)
 	{
-		return CurrentLocale.get("com.tle.admin.fedsearch.standard.merlot." + keyPart);
+		return getString("merlot." + keyPart);
 	}
 }

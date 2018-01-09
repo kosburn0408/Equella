@@ -94,9 +94,9 @@ public class LearningEdgePlugin extends SearchPlugin<TLESettings> implements Act
 		}
 	}
 
-	private static String s(String keyPart)
+	private String s(String keyPart)
 	{
-		return CurrentLocale.get("com.tle.admin.fedsearch.standard.equella." + keyPart);
+		return getString("equella." + keyPart);
 	}
 
 	@Override

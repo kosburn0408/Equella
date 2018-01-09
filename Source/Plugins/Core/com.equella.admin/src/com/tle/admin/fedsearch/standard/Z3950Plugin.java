@@ -170,9 +170,9 @@ public class Z3950Plugin extends SearchPlugin<Z3950Settings>
 
 	}
 
-	private static String s(String keyPart)
+	private String s(String keyPart)
 	{
-		return CurrentLocale.get("com.tle.admin.fedsearch.standard.z3950plugin." + keyPart); //$NON-NLS-1$
+		return getString("z3950plugin." + keyPart); //$NON-NLS-1$
 	}
 
 	private void populateRecordSchema(JComboBox<NameValue> schemaCombo)

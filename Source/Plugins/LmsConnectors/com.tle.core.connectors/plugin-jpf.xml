@@ -16,11 +16,11 @@
     <import plugin-id="com.tle.core.entity" exported="true" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.equella.admin" exported="true" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.admin" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

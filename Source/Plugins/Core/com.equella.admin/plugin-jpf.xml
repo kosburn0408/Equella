@@ -5,21 +5,152 @@
     <attribute id="type" value="admin-console" />
   </attributes>
   <requires>
+    <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.tle.admin.collection.tool" />
-    <import plugin-id="com.tle.admin.common" />
     <import plugin-id="com.tle.admin.controls" />
     <import plugin-id="com.tle.admin.controls.universal" />
     <import plugin-id="com.tle.admin.fedsearch.tool" />
     <import plugin-id="com.tle.admin.search" />
+    <import plugin-id="com.tle.admin.taxonomy.tool" />
     <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.tle.admin.usermanagement.tool" />
+    <import plugin-id="com.tle.common.applet" exported="true" />
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.remoterepo.z3950" />
     <import plugin-id="com.tle.common.wizard.controls.resource" />
-    <import plugin-id="com.equella.base" />
-    <import plugin-id="com.equella.admin2" />
+    <import plugin-id="com.tle.platform.common" exported="true" />
+    <import plugin-id="com.tle.platform.equella" exported="true" />
+    <import plugin-id="com.tle.platform.swing" exported="true" />
+    <import plugin-id="com.tle.webstart.admin" exported="true" optional="true" />
   </requires>
+  <extension plugin-id="com.tle.admin.controls" point-id="control" id="universalControl">
+    <parameter id="id" value="universal" />
+    <parameter id="name" value="com.equella.admin.title" />
+    <parameter id="modelClass" value="com.tle.admin.controls.universal.UniversalControlModel" />
+    <parameter id="wrappedClass" value="com.tle.common.wizard.controls.universal.UniversalControl" />
+    <parameter id="editorClass" value="com.tle.admin.controls.universal.UniversalControlEditor" />
+    <parameter id="context" value="page" />
+  </extension>
+  <extension plugin-id="com.tle.admin.tools" point-id="tool" id="fedsearchtool">
+    <parameter id="displayorder" value="900" />
+    <parameter id="name" value="com.tle.admin.gui.searchtool.title" />
+    <parameter id="privilege" value="CREATE_FEDERATED_SEARCH" />
+    <parameter id="privilege" value="EDIT_FEDERATED_SEARCH" />
+    <parameter id="class" value="com.tle.admin.fedsearch.tool.SearchTool" />
+  </extension>
+  <extension plugin-id="com.tle.admin.tools" point-id="tool" id="taxonomytool">
+    <parameter id="displayorder" value="450" />
+    <parameter id="name" value="com.equella.admin.taxonomy.name" />
+    <parameter id="class" value="com.tle.admin.taxonomy.tool.TaxonomyTool" />
+    <parameter id="privilege" value="CREATE_TAXONOMY" />
+    <parameter id="privilege" value="EDIT_TAXONOMY" />
+  </extension>
+  <extension plugin-id="com.tle.admin.taxonomy.tool" point-id="dataSourceChoice" id="internalTaxonomyDataSource">
+    <parameter id="nameKey" value="com.equella.admin.internal.choicetitle" />
+    <parameter id="configPanel" value="com.tle.admin.taxonomy.tool.internal.InternalDataSourceChoice" />
+  </extension>
+  <extension plugin-id="com.tle.admin.taxonomy.tool" point-id="dataSourceChoice" id="sqlTaxonomyDataSource">
+    <parameter id="nameKey" value="com.equella.admin.sql.choicetitle" />
+    <parameter id="configPanel" value="com.tle.admin.taxonomy.tool.sql.SqlDataSourceChoice" />
+  </extension>
+  <extension plugin-id="com.tle.admin.controls" point-id="control" id="taxonomyControl">
+    <parameter id="id" value="termselector" />
+    <parameter id="name" value="com.equella.admin.wizard.termselector.title" />
+    <parameter id="modelClass" value="com.tle.admin.taxonomy.wizard.TermControlModel" />
+    <parameter id="wrappedClass" value="com.tle.common.taxonomy.wizard.TermSelectorControl" />
+    <parameter id="editorClass" value="com.tle.admin.taxonomy.wizard.TermSelectorEditor" />
+    <parameter id="context" value="page" />
+    <parameter id="context" value="powersearch" />
+  </extension>
+  <extension plugin-id="com.tle.admin.taxonomy.tool" point-id="displayType" id="popupBrowser">
+    <parameter id="nameKey" value="com.equella.admin.wizard.popupBrowser.title" />
+    <parameter id="configPanel" value="com.tle.admin.taxonomy.wizard.PopupBrowserConfig" />
+    <parameter id="supportsBrowsing" value="true" />
+    <parameter id="supportsSearching" value="true" />
+  </extension>
+  <extension plugin-id="com.tle.admin.taxonomy.tool" point-id="displayType" id="widePopupBrowser">
+    <parameter id="nameKey" value="com.equella.admin.wizard.widePopupBrowser.title" />
+    <parameter id="configPanel" value="com.tle.admin.taxonomy.wizard.WidePopupBrowserConfig" />
+    <parameter id="supportsBrowsing" value="true" />
+    <parameter id="supportsSearching" value="true" />
+  </extension>
+  <extension plugin-id="com.tle.admin.taxonomy.tool" point-id="displayType" id="autocompleteEditBox">
+    <parameter id="nameKey" value="com.equella.admin.wizard.autocompleteEditBox.title" />
+    <parameter id="configPanel" value="com.tle.admin.taxonomy.wizard.AutocompleteEditBoxConfig" />
+    <parameter id="supportsBrowsing" value="false" />
+    <parameter id="supportsSearching" value="true" />
+  </extension>
+  <extension plugin-id="com.tle.admin.taxonomy.tool" point-id="predefinedTermDataKey" id="longDataKey">
+    <parameter id="key" value="LONG_DATA" />
+    <parameter id="name" value="com.equella.admin.internal.tab.termeditor.newdata.longdata.name" />
+    <parameter id="description" value="com.equella.admin.internal.tab.termeditor.newdata.longdata.description" />
+  </extension>
+  <extension plugin-id="com.tle.admin.tools" point-id="tool" id="umptool">
+    <parameter id="displayorder" value="1200" />
+    <parameter id="name" value="com.tle.admin.gui.usermanagementtool.name" />
+    <parameter id="class" value="com.tle.admin.usermanagement.tool.UserManagementTool" />
+    <parameter id="privilege" value="EDIT_USER_MANAGEMENT" />
+  </extension>
+  <extension plugin-id="com.tle.admin.tools" point-id="tool" id="collectiontool">
+    <parameter id="displayorder" value="200" />
+    <parameter id="name" value="com.tle.admin.gui.itemdefinitiontool.title" />
+    <parameter id="class" value="com.tle.admin.collection.tool.ItemDefinitionTool" />
+    <parameter id="privilege" value="CREATE_COLLECTION" />
+    <parameter id="privilege" value="EDIT_COLLECTION" />
+  </extension>
+  <extension plugin-id="com.tle.admin.controls" point-id="control" id="wizard">
+    <parameter id="id" value="wizard" />
+    <parameter id="name" value="com.equella.admin.wizard.editor.title" />
+    <parameter id="modelClass" value="com.tle.admin.itemdefinition.PagedWizardModel" />
+    <parameter id="wrappedClass" value="com.tle.beans.entity.itemdef.Wizard" />
+    <parameter id="editorClass" value="com.tle.admin.collection.wizard.editor.WizardEditor" />
+    <parameter id="context" value="ROOT" />
+    <parameter id="icon" value="/icons/wizard.gif" />
+  </extension>
+  <extension plugin-id="com.tle.admin.collection.tool" point-id="summaryDisplay" id="basicSection">
+    <parameter id="id" value="basicSection" />
+    <parameter id="nameKey" value="com.equella.admin.summarysections.basic.title" />
+    <parameter id="defaultNameKey" value="com.equella.admin.summarysections.basic.defaultname" />
+    <parameter id="class" value="com.tle.admin.collection.summarydisplay.BasicConfig" />
+  </extension>
+  <extension plugin-id="com.tle.admin.collection.tool" point-id="summaryDisplay" id="displayNodes">
+    <parameter id="id" value="displayNodes" />
+    <parameter id="nameKey" value="com.equella.admin.summarysections.displayNodes.title" />
+    <parameter id="defaultNameKey" value="com.equella.admin.summarysections.displayNodes.defaultname" />
+    <parameter id="class" value="com.tle.admin.collection.summarydisplay.DisplayNodesConfig" />
+  </extension>
+  <extension plugin-id="com.tle.admin.collection.tool" point-id="summaryDisplay" id="attachmentsSection">
+    <parameter id="id" value="attachmentsSection" />
+    <parameter id="nameKey" value="com.equella.admin.summarysections.attachments.title" />
+    <parameter id="defaultNameKey" value="com.equella.admin.summarysections.attachments.defaultname" />
+    <parameter id="class" value="com.tle.admin.collection.summarydisplay.AttachmentsSectionConfig" />
+  </extension>
+  <extension plugin-id="com.tle.admin.collection.tool" point-id="summaryDisplay" id="xsltSection">
+    <parameter id="id" value="xsltSection" />
+    <parameter id="nameKey" value="com.equella.admin.summarysections.xslt.title" />
+    <parameter id="defaultNameKey" value="com.equella.admin.summarysections.xslt.defaultname" />
+    <parameter id="class" value="com.tle.admin.collection.summarydisplay.XsltConfig" />
+  </extension>
+  <extension plugin-id="com.tle.admin.collection.tool" point-id="summaryDisplay" id="commentsSection">
+    <parameter id="id" value="commentsSection" />
+    <parameter id="nameKey" value="com.equella.admin.summarysections.comments.title" />
+    <parameter id="defaultNameKey" value="com.equella.admin.summarysections.comments.defaultname" />
+    <parameter id="class" value="com.tle.admin.collection.summarydisplay.CommentsConfig" />
+  </extension>
+  <extension plugin-id="com.tle.admin.collection.tool" point-id="summaryDisplay" id="freemarkerSection">
+    <parameter id="id" value="freemarkerSection" />
+    <parameter id="nameKey" value="com.equella.admin.summarysections.freemarker.title" />
+    <parameter id="defaultNameKey" value="com.equella.admin.summarysections.freemarker.defaultname" />
+    <parameter id="class" value="com.tle.admin.collection.summarydisplay.FreemarkerConfig" />
+  </extension>
+  <extension plugin-id="com.tle.admin.tools" point-id="tool" id="securitytool">
+    <parameter id="displayorder" value="1300" />
+    <parameter id="name" value="com.tle.admin.gui.securitymanagertool.name" />
+    <parameter id="class" value="com.tle.admin.security.tool.SecurityManagerTool" />
+    <parameter id="privilege" value="EDIT_SECURITY_TREE" />
+    <parameter id="privilege" value="VIEW_SECURITY_TREE" />
+  </extension>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="htmleditor">
     <parameter id="id" value="htmleditor" />
     <parameter id="name" value="com.equella.admin.htmleditor.title" />
@@ -487,6 +618,17 @@
     <parameter id="class" value="com.tle.admin.powersearch.tool.PowerSearchTool" />
     <parameter id="privilege" value="CREATE_POWER_SEARCH" />
     <parameter id="privilege" value="EDIT_POWER_SEARCH" />
+  </extension>
+  <extension plugin-id="com.tle.common.dynacollection" point-id="usages" id="searchUsage">
+    <parameter id="nameKey" value="com.tle.web.search.admin.tool.usage" />
+  </extension>
+  <extension plugin-id="com.tle.admin.search" point-id="searchSetVirtualiserConfigs" id="contributedValuesVirtualiser">
+    <parameter id="nameKey" value="com.equella.admin.searchset.virtualisation.contributedvalues.title" />
+    <parameter id="configPanel" value="com.tle.admin.search.searchset.virtualisation.ContributedValuesVirtualiserConfigPanel" />
+  </extension>
+  <extension plugin-id="com.tle.admin.search" point-id="searchSetVirtualiserConfigs" id="manualListVirtualiser">
+    <parameter id="nameKey" value="com.equella.admin.searchset.virtualisation.manuallist.title" />
+    <parameter id="configPanel" value="com.tle.admin.search.searchset.virtualisation.ManualListVirtualiserConfigPanel" />
   </extension>
   <extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings_admin-console">
     <parameter id="group" value="admin-console" />

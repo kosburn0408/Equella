@@ -54,9 +54,9 @@ public class SRUPlugin extends SearchPlugin<SRUSettings>
 	 * @param keyPart
 	 * @return
 	 */
-	private static String s(String keyPart)
+	private String s(String keyPart)
 	{
-		return CurrentLocale.get("com.tle.admin.fedsearch.standard.srwplugin." + keyPart);
+		return getString("srwplugin." + keyPart);
 	}
 
 	@Override

@@ -5,14 +5,11 @@
     <attribute id="type" value="admin-console" />
   </attributes>
   <requires>
-    <import plugin-id="com.tle.admin.codeeditor" />
     <import plugin-id="com.tle.admin.collection.tool" />
     <import plugin-id="com.tle.admin.common" />
     <import plugin-id="com.tle.admin.controls" />
     <import plugin-id="com.tle.admin.controls.universal" />
     <import plugin-id="com.tle.admin.fedsearch.tool" />
-    <import plugin-id="com.tle.admin.schema.common" />
-    <import plugin-id="com.tle.admin.scripting" />
     <import plugin-id="com.tle.admin.search" />
     <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.tle.admin.usermanagement.tool" />
@@ -22,6 +19,7 @@
     <import plugin-id="com.tle.common.wizard.controls.resource" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.admin2" exported="true" />
   </requires>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="htmleditor">
     <parameter id="id" value="htmleditor" />

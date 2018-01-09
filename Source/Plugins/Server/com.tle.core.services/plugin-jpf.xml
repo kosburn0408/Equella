@@ -11,7 +11,6 @@
     <import plugin-id="com.tle.core.cluster" />
     <import plugin-id="com.tle.platform.equella" />
     <import plugin-id="com.tle.core.hibernate.equella" />
-
     <import plugin-id="com.equella.base" exported="true" />
   </requires>
   <runtime>

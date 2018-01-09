@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
-<plugin id="com.tle.admin.security.tool" version="1">
+<plugin id="com.equella.admin2" version="1">
   <attributes>
     <attribute id="type" value="admin-console" />
   </attributes>
   <requires>
-    <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.tle.admin.common" />
+    <import plugin-id="com.tle.admin.tools" />
+    <import plugin-id="com.tle.common.i18n" />
   </requires>
-  <runtime>
-    <library type="code" path="classes/" id="core">
-      <export prefix="*" />
-    </library>
-  </runtime>
   <extension plugin-id="com.tle.admin.tools" point-id="tool" id="securitytool">
     <parameter id="displayorder" value="1300" />
     <parameter id="name" value="com.tle.admin.gui.securitymanagertool.name" />

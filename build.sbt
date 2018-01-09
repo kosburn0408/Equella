@@ -123,11 +123,11 @@ mergeJPF := {
   val allPluginDirs = pluginAndLibs.all(ScopeFilter(inAggregates(allPlugins, includeRoot = false))).value
   if (args.isEmpty)
   {
-    val plugins = PluginRefactor.findPluginsToMerge(allPluginDirs, adminConsole =  false)
+    val plugins = PluginRefactor.findPluginsToMerge(allPluginDirs, adminConsole =  true)
     println(s"mergeJPF <ID> ${plugins.mkString(" ")}")
   } else {
     val newPlugin = args.head
     val basePlugin = baseDirectory.value / "Source/Plugins/Core"
-    PluginRefactor.mergePlugins(allPluginDirs, basePlugin, newPlugin, args.tail, adminConsole = false)
+    PluginRefactor.mergePlugins(allPluginDirs, basePlugin, newPlugin, args.tail, adminConsole = true)
   }
 }

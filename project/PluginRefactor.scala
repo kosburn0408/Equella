@@ -353,7 +353,6 @@ object PluginRefactor {
             if (!removed.isEmpty) {
               val impElem = new Element("import")
               impElem.setAttribute("plugin-id", pluginId)
-              impElem.setAttribute("exported", "true")
               r.addContent(impElem)
             }
             //          val allRemoved = (removed.asScala ++ removedOld.asScala).map(getPluginId)

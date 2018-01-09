@@ -8,5 +8,5 @@
     <import plugin-id="com.tle.platform.equella" />
     <import plugin-id="org.hibernate" exported="true" optional="true" />
   </requires>
-  <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules"/>
+  <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules" />
 </plugin>

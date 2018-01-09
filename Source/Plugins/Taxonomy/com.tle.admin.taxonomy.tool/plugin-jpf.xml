@@ -6,12 +6,12 @@
   </attributes>
   <requires>
     <import plugin-id="com.tle.admin.controls" />
-    <import plugin-id="com.tle.admin.schema.common" />
     <import plugin-id="com.tle.admin.tools" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.equella.admin" exported="true" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.admin2" exported="true" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core" />

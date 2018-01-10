@@ -139,7 +139,7 @@
 
 .selection.selectItems .item-title, .selection.selectItems .itemresult-title.selectable
 	{
-	background-image: url(../images/drag.png);
+	background-image: url(../images/course-drag.png);
 	background-repeat: no-repeat;
 	background-position: 2px 2px;
 	padding-left: 32px;
@@ -356,7 +356,7 @@
 	background-color: #FFFFFF;
 	cursor: move;
 	/*
-	background-image: url(../images/drag.png);
+	background-image: url(../images/course-drag.png);
 	background-repeat: no-repeat;
 	background-position: 6px 6px;*/
 }

@@ -12,7 +12,7 @@
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.base" />
-    <import plugin-id="com.equella.core6" />
+    <import plugin-id="com.equella.core5" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

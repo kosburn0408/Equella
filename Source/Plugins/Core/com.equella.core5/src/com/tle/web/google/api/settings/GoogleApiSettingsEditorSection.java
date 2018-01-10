@@ -45,9 +45,9 @@ import com.tle.web.template.Decorations;
 @Bind
 public class GoogleApiSettingsEditorSection extends OneColumnLayout<OneColumnLayout.OneColumnLayoutModel>
 {
-	@PlugKey("settings.title")
+	@PlugKey("google.settings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.save.receipt")
+	@PlugKey("google.settings.save.receipt")
 	private static Label SAVE_RECEIPT_LABEL;
 
 	@EventFactory

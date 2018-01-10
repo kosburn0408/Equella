@@ -4,13 +4,10 @@
   <requires>
     <import plugin-id="com.equella.admin" />
     <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core10" />
     <import plugin-id="com.equella.core2" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core5" exported="true" />
-    <import plugin-id="com.equella.core6" exported="true" />
-    <import plugin-id="com.equella.core8" exported="true" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.applet" />
     <import plugin-id="com.tle.common.i18n" />
@@ -42,7 +39,6 @@
     <import plugin-id="com.tle.core.workflow.thumbnail" />
     <import plugin-id="com.tle.core.workflow.video" />
     <import plugin-id="com.tle.ims" />
-    <import plugin-id="com.tle.mypages" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.web.activation" />
     <import plugin-id="com.tle.web.api.item.equella.serializer" />

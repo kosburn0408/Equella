@@ -57,7 +57,6 @@ public class ViewItemSummaryModule extends SectionsModule
 	protected void configure()
 	{
 		bind(Object.class).annotatedWith(Names.named("/viewitem/viewitem")).toProvider(viewItemTree());
-		bind(BasicFreemarkerFactory.class).in(Scopes.SINGLETON);
 		install(new ViewItemPropsModule());
 		install(new TrackerModule());
 	}

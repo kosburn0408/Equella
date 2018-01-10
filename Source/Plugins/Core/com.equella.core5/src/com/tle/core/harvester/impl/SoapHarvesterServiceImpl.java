@@ -28,6 +28,8 @@ import javax.inject.Singleton;
 import javax.servlet.http.HttpServletRequest;
 import javax.xml.ws.WebServiceContext;
 
+import com.tle.core.harvester.tasks.RunHarvestersTask;
+import com.tle.core.plugins.AbstractPluginService;
 import org.apache.cxf.transport.http.AbstractHTTPDestination;
 
 import com.dytech.devlib.PropBagEx;
@@ -77,7 +79,7 @@ import com.tle.web.viewurl.ViewItemUrlFactory;
 public class SoapHarvesterServiceImpl implements PrivateSoapHarvesterService, SoapHarvesterService
 {
 	private static final String HARVESTER_USAGE = "harvesterUsage";
-
+	protected static final String KEY_PFX = AbstractPluginService.getMyPluginId(SoapHarvesterServiceImpl.class)+".";
 	@Inject
 	private ItemDefinitionService collectionService;
 	@Inject

@@ -86,7 +86,7 @@ public class IntegrationModule extends SectionsModule
 
 		bind(Object.class).annotatedWith(Names.named("/signon")).toProvider(node(SingleSignonAction.class));
 
-		bind(SectionTree.class).toProvider(tree(node(IntegrationSection.class)));
+		bind(SectionTree.class).annotatedWith(Names.named("integrationTree")).toProvider(tree(node(IntegrationSection.class)));
 
 		install(new TrackerModule());
 	}

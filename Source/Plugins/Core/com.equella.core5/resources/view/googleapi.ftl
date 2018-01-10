@@ -4,7 +4,7 @@
 <#include "/com.tle.web.sections.equella@/component/button.ftl" >
 
 <div class="area">
-	<h2>${b.key("settings.title")}</h2>		
+	<h2>${b.key("google.settings.title")}</h2>
 	
 	<@setting label=b.key("settings.apikey.label") help=b.key("settings.apikey.help") >
 		<@textfield section=s.apiKey maxlength=512 />

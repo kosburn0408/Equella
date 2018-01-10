@@ -39,7 +39,7 @@ public class SelectionModule extends SectionsModule
 	{
 		bind(Object.class).annotatedWith(Names.named("/access/selection/checkout")).toProvider(
 			node(SelectionCheckoutSection.class));
-		bind(SectionTree.class).toProvider(tree(selectionTree()));
+		bind(SectionTree.class).annotatedWith(Names.named("selectionTree")).toProvider(tree(selectionTree()));
 
 		install(new TrackerModule());
 	}

@@ -11,7 +11,6 @@
     <import plugin-id="com.tle.common.applet" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
-    <import plugin-id="com.tle.core.auditlog" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.freetext" />
@@ -108,12 +107,12 @@
     <parameter id="class" value="com.tle.web.viewitem.guice.ViewItemModule" />
     <parameter id="class" value="com.tle.web.viewitem.summary.module.ViewItemSummaryModule" />
     <parameter id="class" value="com.tle.web.wizard.guice.WizardBindBothModule" />
-    <parameter id="class" value="com.tle.web.wizard.guice.WizardModule" />
     <parameter id="class" value="com.tle.web.workflow.guice.CurrentTaskModule" />
     <parameter id="class" value="com.tle.web.workflow.guice.ManageTaskSearchModule" />
     <parameter id="class" value="com.tle.web.workflow.guice.StaticServices" />
     <parameter id="class" value="com.tle.web.workflow.guice.TaskSearchModule" />
     <parameter id="class" value="com.tle.web.workflow.portal.TaskListModule" />
+    <parameter id="class" value="com.tle.web.wizard.guice.WizardModule" />
   </extension>
   <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="runwizTree">
     <parameter id="path" value="/access/mypagesedit.do" />
@@ -1308,18 +1307,6 @@
   <extension plugin-id="com.tle.web.workflow.portal" point-id="filter" id="taskFilters_2">
     <parameter id="bean" value="bean:com.tle.web.workflow.tasks.portal.TaskListPortalExtension" />
     <parameter id="order" value="100" />
-  </extension>
-  <extension plugin-id="com.tle.web.sections" point-id="section" id="workflowFilter">
-    <parameter id="path" value="/access/itemadmin.do" />
-    <parameter id="class" value="bean:com.tle.web.workflow.manage.FilterByWorkflowSection" />
-    <parameter id="parentid" value="SEARCH_RESULTS_ACTIONS" />
-    <parameter id="afterid" value="com.tle.web.search.filter.FilterByBadUrlSection" />
-  </extension>
-  <extension plugin-id="com.tle.web.sections" point-id="section" id="workflowTaskFilter">
-    <parameter id="path" value="/access/itemadmin.do" />
-    <parameter id="class" value="bean:com.tle.web.workflow.manage.FilterByWorkflowTaskSection" />
-    <parameter id="parentid" value="SEARCH_RESULTS_ACTIONS" />
-    <parameter id="afterid" value="com.tle.web.workflow.manage.FilterByWorkflowSection" />
   </extension>
   <extension plugin-id="com.tle.web.sections" point-id="section" id="workflowProgress">
     <parameter id="path" value="/viewitem/viewitem.do" />

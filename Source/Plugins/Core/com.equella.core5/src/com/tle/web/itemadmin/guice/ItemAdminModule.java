@@ -32,6 +32,8 @@ import com.tle.web.search.guice.AbstractSearchModule;
 import com.tle.web.search.sort.SortOptionsSection;
 import com.tle.web.sections.Section;
 import com.tle.web.sections.equella.search.PagingSection;
+import com.tle.web.workflow.manage.FilterByWorkflowSection;
+import com.tle.web.workflow.manage.FilterByWorkflowTaskSection;
 
 @SuppressWarnings("nls")
 public class ItemAdminModule extends AbstractSearchModule
@@ -80,6 +82,8 @@ public class ItemAdminModule extends AbstractSearchModule
 		node.child(FilterByMimeTypeSection.class);
 		node.child(StandardShareSearchQuerySection.class);
 		node.child(FilterByBadUrlSection.class);
+		node.child(FilterByWorkflowSection.class);
+		node.child(FilterByWorkflowTaskSection.class);
 	}
 
 	@Override

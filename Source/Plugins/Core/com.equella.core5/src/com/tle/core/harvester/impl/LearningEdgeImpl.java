@@ -25,6 +25,8 @@ import java.util.UUID;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.tle.core.harvester.AbstractHarvesterProtocol;
+import com.tle.core.plugins.AbstractPluginService;
 import org.apache.log4j.Logger;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -66,6 +68,7 @@ import com.tle.web.viewurl.ViewItemUrlFactory;
 public class LearningEdgeImpl implements LearningEdge
 {
 	private static final Logger LOGGER = Logger.getLogger(LearningEdgeImpl.class);
+	protected static final String KEY_PFX = AbstractPluginService.getMyPluginId(LearningEdgeImpl.class)+".";
 
 	@Inject
 	private ItemService itemService;

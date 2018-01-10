@@ -26,6 +26,7 @@ import java.util.List;
 import java.util.Set;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import org.java.plugin.registry.Extension;
@@ -105,6 +106,7 @@ public class SelectionServiceImpl extends AbstractModalSessionServiceImpl<Select
 	@Inject
 	private AttachmentResourceService attachmentResourceService;
 	@Inject
+	@Named("selectionTree")
 	private SectionTree selectionTree;
 	@Inject
 	private ObjectMapperService objectMapperService;

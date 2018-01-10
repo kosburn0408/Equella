@@ -6,7 +6,6 @@
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.auditlog" exported="true" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.tle.core.events" />
@@ -22,7 +21,6 @@
     <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.platform.equella" />
     <import plugin-id="com.tle.web.core" />

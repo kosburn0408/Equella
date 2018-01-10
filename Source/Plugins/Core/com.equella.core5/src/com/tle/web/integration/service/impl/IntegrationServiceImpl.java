@@ -28,6 +28,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import com.google.common.base.Strings;
@@ -92,6 +93,7 @@ public class IntegrationServiceImpl extends AbstractSectionFilter implements Int
 	@Inject
 	private PluginTracker<Integration<? extends IntegrationSessionData>> integrationTracker;
 	@Inject
+	@Named("integrationTree")
 	private SectionTree tree;
 	@Inject
 	private PluginTracker<IntegrationActionInfo> actionInfoTracker;

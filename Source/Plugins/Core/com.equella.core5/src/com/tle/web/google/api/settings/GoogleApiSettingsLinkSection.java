@@ -31,9 +31,9 @@ import com.tle.web.settings.AbstractParentSettingsSection;
 @Bind
 public class GoogleApiSettingsLinkSection extends AbstractParentSettingsSection<Object>
 {
-	@PlugKey("settings.title")
+	@PlugKey("google.settings.title")
 	private static Label TITLE_LABEL;
-	@PlugKey("settings.description")
+	@PlugKey("google.settings.description")
 	private static Label DESCRIPTION_LABEL;
 
 	@Inject

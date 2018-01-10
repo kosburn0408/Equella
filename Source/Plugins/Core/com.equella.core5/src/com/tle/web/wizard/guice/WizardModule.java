@@ -63,7 +63,6 @@ public class WizardModule extends SectionsModule
 		bind(new TypeLiteral<List<SectionId>>()
 		{
 		}).toProvider(additional);
-		bind(ExtendedFreemarkerFactory.class).asEagerSingleton();
 		bind(WizardExtendedFactory.class).annotatedWith(Names.named("TitleFactory")).to(NamedTitleFactory.class)
 			.asEagerSingleton();
 		install(new WizardTracker());

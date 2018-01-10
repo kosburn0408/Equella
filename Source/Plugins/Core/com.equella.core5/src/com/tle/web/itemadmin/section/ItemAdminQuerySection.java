@@ -92,7 +92,7 @@ public class ItemAdminQuerySection
 	private static final String ALL_KEY = "all";
 	private static final String DIV_QUERY = "searchform";
 
-	@PlugKey("iteadmin.query.collection.all")
+	@PlugKey("itemadmin.query.collection.all")
 	private static String KEY_QUERY_ALL;
 
 	@PlugKey("query.addquery")

@@ -146,7 +146,6 @@
     <parameter id="class" value="com.tle.web.userscripts.service.UserScriptsModule" />
     <parameter id="class" value="com.tle.web.viewitem.largeimageviewer.guice.LargeImageViewerModule" />
     <parameter id="class" value="com.tle.web.wizard.guice.WizardBindBothModule" />
-    <parameter id="class" value="com.tle.web.wizard.guice.WizardControlModule" />
   </extension>
   <extension plugin-id="com.tle.core.connectors" point-id="connectorImplementation" id="equella">
     <parameter id="type" value="equella" />

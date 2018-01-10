@@ -19,6 +19,8 @@ package com.tle.core.harvester.tasks;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.tle.core.harvester.impl.LearningEdgeImpl;
+import com.tle.core.plugins.AbstractPluginService;
 import org.apache.log4j.Logger;
 
 import com.tle.common.harvester.HarvesterProfile;
@@ -33,6 +35,7 @@ import com.tle.core.scheduler.ScheduledTask;
 public class RunHarvestersTask implements ScheduledTask
 {
 	private static final Logger LOGGER = Logger.getLogger(RunHarvestersTask.class);
+	protected static final String KEY_PFX = AbstractPluginService.getMyPluginId(RunHarvestersTask.class)+".";
 
 	@Inject
 	private HarvesterProfileService harvesterProfileService;

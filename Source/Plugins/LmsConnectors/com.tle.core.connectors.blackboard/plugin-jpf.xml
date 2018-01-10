@@ -8,13 +8,12 @@
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.web.integration" />
     <import plugin-id="com.tle.web.sections" />
-    <import plugin-id="com.tle.web.selection" />
     <import plugin-id="com.tle.web.viewurl" />
-    <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.core6" />
     <import plugin-id="com.equella.core4" />
+    <import plugin-id="com.equella.core5" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

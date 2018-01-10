@@ -5,13 +5,11 @@
     <import plugin-id="com.equella.admin" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core10" />
-    <import plugin-id="com.equella.core11" />
     <import plugin-id="com.equella.core2" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core5" exported="true" />
     <import plugin-id="com.equella.core6" exported="true" />
-    <import plugin-id="com.equella.core7" />
     <import plugin-id="com.equella.core8" exported="true" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.applet" />
@@ -19,7 +17,6 @@
     <import plugin-id="com.tle.common.inplaceeditor" />
     <import plugin-id="com.tle.common.remoterepo.z3950" exported="true" />
     <import plugin-id="com.tle.core.activation" />
-    <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.connectors" />
     <import plugin-id="com.tle.core.connectors.blackboard" />
     <import plugin-id="com.tle.core.entity" />
@@ -33,16 +30,13 @@
     <import plugin-id="com.tle.core.metadata" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.mimetypes" />
-    <import plugin-id="com.tle.core.notification" />
     <import plugin-id="com.tle.core.portal" />
     <import plugin-id="com.tle.core.remoterepo.srw" />
     <import plugin-id="com.tle.core.scheduler" />
-    <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services.item.relation" />
     <import plugin-id="com.tle.core.settings.convert" />
-    <import plugin-id="com.tle.core.taxonomy" />
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.tle.core.workflow" />
     <import plugin-id="com.tle.core.workflow.thumbnail" />
@@ -57,8 +51,6 @@
     <import plugin-id="com.tle.web.endpoint.srw" />
     <import plugin-id="com.tle.web.fedsearch" />
     <import plugin-id="com.tle.web.filemanager.applet" />
-    <import plugin-id="com.tle.web.freemarker" />
-    <import plugin-id="com.tle.web.htmleditor" />
     <import plugin-id="com.tle.web.htmleditor.tinymce" />
     <import plugin-id="com.tle.web.integration" />
     <import plugin-id="com.tle.web.itemadmin" />
@@ -84,11 +76,8 @@
     <import plugin-id="com.tle.web.wizard" />
     <import plugin-id="com.tle.web.wizard.controls.universal" />
     <import plugin-id="com.tle.web.workflow" />
-    <import plugin-id="com.tle.web.workflow.portal" />
     <import plugin-id="org.hibernate" />
     <import plugin-id="org.mozilla.rhino" />
-    <import plugin-id="com.equella.core13" />
-    <import plugin-id="com.equella.core14" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.connectors.brightspace.guice.BrightspaceConnectorModule" />

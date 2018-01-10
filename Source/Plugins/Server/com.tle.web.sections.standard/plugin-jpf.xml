@@ -5,7 +5,6 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.javascript" exported="true" />
-    <import plugin-id="com.tle.web.freemarker" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.equella.base" exported="true" />

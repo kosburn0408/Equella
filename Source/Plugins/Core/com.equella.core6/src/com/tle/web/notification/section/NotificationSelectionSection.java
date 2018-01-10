@@ -58,21 +58,21 @@ public class NotificationSelectionSection extends AbstractBulkSelectionSection<I
 {
 	private static final String KEY_SELECTIONS = "notificationSelections"; //$NON-NLS-1$
 
-	@PlugKey("selectionsbox.selectall")
+	@PlugKey("notifications.selectionsbox.selectall")
 	private static Label LABEL_SELECTALL;
-	@PlugKey("selectionsbox.unselect")
+	@PlugKey("notifications.selectionsbox.unselect")
 	private static Label LABEL_UNSELECTALL;
-	@PlugKey("selectionsbox.viewselected")
+	@PlugKey("notifications.selectionsbox.viewselected")
 	private static Label LABEL_VIEWSELECTED;
-	@PlugKey("selectionsbox.count")
+	@PlugKey("notifications.selectionsbox.count")
 	private static String LABEL_COUNT;
-	@PlugKey("selectionsbox.clearselected")
+	@PlugKey("notifications.selectionsbox.clearselected")
 	private static Label LABEL_CLEAR_SELECTED;
-	@PlugKey("selectionsbox.pleaseselect")
+	@PlugKey("notifications.selectionsbox.pleaseselect")
 	private static Label LABEL_PLEASE_SELECT;
 	@PlugKey("selection.clear.receipt")
 	private static String LABEL_RECEIPT;
-	@PlugKey("selectionsbox.clearselected.confirm")
+	@PlugKey("notifications.selectionsbox.clearselected.confirm")
 	private static String LABEL_CONFIRM;
 
 	@PlugURL("css/notification.css")

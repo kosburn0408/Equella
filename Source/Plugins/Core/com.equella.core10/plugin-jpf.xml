@@ -7,26 +7,21 @@
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core5" exported="true" />
     <import plugin-id="com.equella.core6" exported="true" />
-    <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.core8" exported="true" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
-    <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.harvester" />
     <import plugin-id="com.tle.core.hibernate" />
-    <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.scheduler" />
-    <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.workflow.thumbnail" />
-    <import plugin-id="com.tle.core.workflow.video" />
     <import plugin-id="com.tle.mets" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.htmleditor" />
@@ -36,15 +31,12 @@
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.sections.standard" />
-    <import plugin-id="com.tle.web.selection" />
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewitem.summary" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.wizard" />
     <import plugin-id="com.tle.web.wizard.controls.universal" />
-    <import plugin-id="com.equella.core11" />
-    <import plugin-id="com.equella.core13" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.metadata.guice.MetadataHandlerTrackerModule" />

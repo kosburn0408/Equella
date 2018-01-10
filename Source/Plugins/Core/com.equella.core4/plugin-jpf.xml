@@ -4,9 +4,9 @@
   <requires>
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
-    <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.i18n" />
+    <import plugin-id="com.tle.core.auditlog" exported="true" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.tle.core.events" />
@@ -18,10 +18,8 @@
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.convert" />
     <import plugin-id="com.tle.core.migration" />
-    <import plugin-id="com.tle.core.notification" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.schema" />
-    <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.usermanagement" />
@@ -32,14 +30,23 @@
     <import plugin-id="com.tle.web.remoting.soap" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.services" />
+    <import plugin-id="org.mozilla.rhino" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
+    <parameter id="class" value="com.tle.core.collection.guice.CollectionTrackerModule" />
+    <parameter id="class" value="com.tle.core.entity.guice.EntityTrackerModule" />
     <parameter id="class" value="com.tle.core.freetext.guice.FreetextModule" />
     <parameter id="class" value="com.tle.core.hibernate.guice.TransactionModule" />
+    <parameter id="class" value="com.tle.core.item.guice.ItemModule" />
     <parameter id="class" value="com.tle.core.item.standard.guice.ItemStandardModule" />
+    <parameter id="class" value="com.tle.core.schema.guice.SchemaModule" />
+    <parameter id="class" value="com.tle.core.security.guice.SecurityModule" />
     <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />
+    <parameter id="class" value="com.tle.core.url.guice.URLModule" />
     <parameter id="class" value="com.tle.core.workflow.guice.WorkflowModule" />
+    <parameter id="class" value="com.tle.core.xslt.guice.XsltModule" />
     <parameter id="class" value="com.tle.web.core.guice.WebCoreModule" />
+    <parameter id="class" value="com.tle.web.freemarker.guice.FreemarkerModule" />
     <parameter id="class" value="com.tle.web.remoting.soap.Module" />
     <parameter id="class" value="com.tle.web.resources.ResourcesModule" />
     <parameter id="class" value="com.tle.web.spellcheck.DictionaryTrackerModule" />
@@ -99,7 +106,7 @@
     <parameter id="bean" value="bean:com.tle.core.wizard.institution.migration.v41.WizardLayoutXmlMigrator" />
     <parameter id="date" value="1970-01-17" />
   </extension>
-  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_3">
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_3_2">
     <parameter id="class" value="com.dytech.edge.wizard.beans.DefaultWizardPage" />
     <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage" />
     <parameter id="class" value="com.dytech.edge.wizard.beans.DRMPage$NetworkSet" />
@@ -210,7 +217,7 @@
   <extension plugin-id="com.tle.core.security" point-id="privilegeTreeProviders" id="searchPrivilegeTreeProvider">
     <parameter id="provider" value="bean:com.tle.core.search.service.impl.SearchPrivilegeTreeProvider" />
   </extension>
-  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_2">
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_2_2">
     <parameter id="class" value="com.tle.beans.item.cal.request.CourseInfo" />
     <parameter id="class" value="com.tle.beans.activation.ActivateRequest" />
   </extension>
@@ -252,7 +259,7 @@
     <parameter id="class" value="com.tle.core.remoting.RemoteCourseInfoService" />
     <parameter id="bean" value="bean:com.tle.core.activation.service.CourseInfoService" />
   </extension>
-  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_3">
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_3_2">
     <parameter id="listenerClass" value="com.tle.core.events.listeners.UserChangeListener" />
   </extension>
   <extension plugin-id="com.tle.web.core" point-id="webServlet" id="cxfServlet">
@@ -362,7 +369,7 @@
     <parameter id="class" value="com.tle.common.workflow.node.ScriptNode" />
     <parameter id="class" value="com.tle.beans.TaskHistory" />
   </extension>
-  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="initialSchema">
+  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="initialSchema_2">
     <parameter id="class" value="com.tle.common.workflow.WorkflowMessage" />
     <parameter id="class" value="com.tle.beans.TaskHistory" />
   </extension>
@@ -440,7 +447,7 @@
     <parameter id="id" value="item" />
     <parameter id="class" value="bean:com.tle.core.freetext.index.NormalItemIndex" />
   </extension>
-  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2_2">
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2_2_2">
     <parameter id="listenerClass" value="com.tle.core.freetext.event.listener.ItemReindexListener" />
     <parameter id="listenerClass" value="com.tle.core.item.event.listener.UnindexItemListener" />
     <parameter id="listenerClass" value="com.tle.core.item.event.listener.IndexItemNowListener" />
@@ -471,7 +478,7 @@
   <extension plugin-id="com.tle.core.security" point-id="securityPostProcessor" id="indexingSecurity">
     <parameter id="bean" value="bean:com.tle.core.freetext.SecurityExtension" />
   </extension>
-  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2">
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2_2">
     <parameter id="listenerClass" value="com.tle.core.events.listeners.UserSessionLogoutListener" />
   </extension>
   <extension plugin-id="com.tle.web.core" point-id="webFilter" id="threadLocalFilter">
@@ -582,7 +589,7 @@
     <parameter id="bean" value="bean:com.tle.web.core.servlet.SessionServlet" />
     <parameter id="url-pattern" value="/session" />
   </extension>
-  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects">
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_6">
     <parameter id="class" value="com.tle.beans.entity.FederatedSearch" />
   </extension>
   <extension plugin-id="com.tle.core.entity" point-id="entityService" id="federatedSearch">
@@ -623,11 +630,531 @@
     <parameter id="bean" value="bean:com.tle.core.fedsearch.migrations.RemoveGoogleAndEdnaAndDSMFedSearchMigrationXml" />
     <parameter id="date" value="1970-01-21" />
   </extension>
-  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners">
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_3">
     <parameter id="listenerClass" value="com.tle.core.events.listeners.UserChangeListener" />
   </extension>
-  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="schemaObjects">
+  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="schemaObjects_3">
     <parameter id="class" value="com.tle.beans.entity.FederatedSearch" />
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_5">
+    <parameter id="class" value="com.tle.beans.item.Comment" />
+    <parameter id="class" value="com.tle.beans.item.DrmAcceptance" />
+    <parameter id="class" value="com.tle.beans.item.HistoryEvent" />
+    <parameter id="class" value="com.tle.beans.item.Item" />
+    <parameter id="class" value="com.tle.beans.item.VersionSelection" />
+    <parameter id="class" value="com.tle.beans.item.ItemIdKey" />
+    <parameter id="class" value="com.tle.beans.item.ItemXml" />
+    <parameter id="class" value="com.tle.beans.item.DrmSettings" />
+    <parameter id="class" value="com.tle.beans.item.DrmSettings$Party" />
+    <parameter id="class" value="com.tle.beans.item.ItemLock" />
+    <parameter id="class" value="com.tle.beans.security.SharePass" />
+    <parameter id="class" value="com.tle.beans.item.attachments.Attachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.IMSResourceAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.FileAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.HtmlAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.ImsAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.CustomAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.LinkAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.ZipAttachment" />
+    <parameter id="class" value="com.tle.beans.item.attachments.ItemNavigationNode" />
+    <parameter id="class" value="com.tle.beans.item.attachments.ItemNavigationTab" />
+    <parameter id="class" value="com.tle.beans.item.attachments.NavigationSettings" />
+    <parameter id="class" value="com.tle.beans.item.Relation" />
+    <parameter id="class" value="com.tle.beans.item.Bookmark" />
+    <parameter id="class" value="com.tle.beans.item.ItemId" />
+    <parameter id="class" value="com.dytech.edge.common.valuebean.ItemIndexDate" />
+  </extension>
+  <extension plugin-id="com.tle.core.security" point-id="securityTargetHandler" id="simpleItemTargetHandler">
+    <parameter id="handlesLabellingFor" value="com.tle.core.item.security.SimpleItemSecurity" />
+    <parameter id="handlesOwnershipFor" value="com.tle.core.item.security.SimpleItemSecurity" />
+    <parameter id="handler" value="bean:com.tle.core.item.security.SimpleItemSecurityTargetHandler" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="itemServiceListener">
+    <parameter id="listener" value="bean:com.tle.core.item.service.ItemService" />
+    <parameter id="listenerClass" value="com.tle.core.item.event.listener.ItemOperationListener" />
+    <parameter id="listenerClass" value="com.tle.core.item.event.listener.ItemOperationBatchListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="itemFileListener">
+    <parameter id="listener" value="bean:com.tle.core.item.service.ItemFileService" />
+    <parameter id="listenerClass" value="com.tle.core.item.event.listener.ItemMovedCollectionEventListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="drmListener">
+    <parameter id="listener" value="bean:com.tle.core.item.service.DrmService" />
+    <parameter id="listenerClass" value="com.tle.core.events.listeners.UserChangeListener" />
+    <parameter id="listenerClass" value="com.tle.core.item.event.listener.ItemDeletedListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.item" point-id="itemResolver" id="standard">
+    <parameter id="id" value="standard" />
+    <parameter id="bean" value="bean:com.tle.core.item.service.ItemService" />
+  </extension>
+  <extension plugin-id="com.tle.core.item" point-id="scriptObjects" id="defaultScriptObjects">
+    <parameter id="id" value="defaultScriptObjects" />
+    <parameter id="class" value="bean:com.tle.core.item.service.ItemService" />
+  </extension>
+  <extension plugin-id="com.tle.core.security" point-id="securityTargetHandler" id="itemTargetHandler">
+    <parameter id="handlesLabellingFor" value="com.tle.beans.item.Item" />
+    <parameter id="handlesLabellingFor" value="com.tle.core.security.impl.ItemDynamicMetadataTarget" />
+    <parameter id="handlesOwnershipFor" value="com.tle.beans.item.Item" />
+    <parameter id="handlesTransformationOf" value="com.tle.beans.item.ItemPack" />
+    <parameter id="handler" value="bean:com.tle.core.item.service.impl.ItemSecurityTargetHandler" />
+  </extension>
+  <extension plugin-id="com.tle.core.security" point-id="securityTargetHandler" id="itemStatusAndMetadataTargetHandler">
+    <parameter id="handlesLabellingFor" value="com.tle.common.security.ItemStatusTarget" />
+    <parameter id="handlesLabellingFor" value="com.tle.common.security.ItemMetadataTarget" />
+    <parameter id="handlesTransformationOf" value="com.tle.common.security.ItemMetadataTarget" />
+    <parameter id="handler" value="bean:com.tle.core.item.service.impl.ItemStatusAndMetadataSecurityTargetHandler" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2">
+    <parameter id="listener" value="bean:com.tle.core.schema.service.SchemaService" />
+    <parameter id="listenerClass" value="com.tle.core.events.listeners.UserChangeListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.entity" point-id="entityService" id="schema">
+    <parameter id="serviceClass" value="bean:com.tle.core.schema.service.SchemaService" />
+    <parameter id="order" value="300" />
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_4">
+    <parameter id="class" value="com.tle.beans.entity.Schema" />
+    <parameter id="class" value="com.tle.beans.entity.schema.Citation" />
+    <parameter id="class" value="com.tle.beans.entity.SchemaTransform" />
+    <parameter id="class" value="com.tle.beans.SchemaScript" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="schemaObjects_2">
+    <parameter id="class" value="com.tle.beans.entity.Schema" />
+    <parameter id="class" value="com.tle.beans.entity.schema.Citation" />
+    <parameter id="class" value="com.tle.beans.entity.SchemaTransform" />
+    <parameter id="index">
+      <parameter id="table" value="schema_exp_transforms" />
+      <parameter id="name" value="set_schema" />
+      <parameter id="column" value="schema_id" />
+    </parameter>
+    <parameter id="index">
+      <parameter id="table" value="schema_imp_transforms" />
+      <parameter id="name" value="sit_schema" />
+      <parameter id="column" value="schema_id" />
+    </parameter>
+    <parameter id="index">
+      <parameter id="table" value="schema_citations" />
+      <parameter id="name" value="sc_schema" />
+      <parameter id="column" value="schema_id" />
+    </parameter>
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_3">
+    <parameter id="class" value="com.tle.beans.ReferencedURL" />
+  </extension>
+  <extension plugin-id="com.tle.core.scheduler" point-id="scheduledTask" id="checkUrls">
+    <parameter id="id" value="Check-URLs" />
+    <parameter id="bean" value="bean:com.tle.core.url.CheckURLsScheduledTask" />
+    <parameter id="frequency" value="daily" />
+    <parameter id="scope" value="server" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="badUrlToReferencedUrlMigration">
+    <parameter id="id" value="com.tle.core.url.migration.BadUrlsToReferencedUrlsMigration" />
+    <parameter id="bean" value="bean:com.tle.core.url.migration.BadUrlsToReferencedUrlsMigration" />
+    <parameter id="date" value="2013-02-19" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addReferencedUrlIndexes">
+    <parameter id="id" value="com.tle.core.url.migration.AddReferencedUrlIndexes" />
+    <parameter id="bean" value="bean:com.tle.core.url.migration.AddReferencedUrlIndexes" />
+    <parameter id="date" value="2013-05-08" />
+    <parameter id="obsoletedby" value="com.tle.core.url.migration.BadUrlsToReferencedUrlsMigration" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="schemaObjects">
+    <parameter id="class" value="com.tle.beans.ReferencedURL" />
+    <parameter id="index">
+      <parameter id="table" value="item_referenced_urls" />
+      <parameter id="name" value="iruitemidindex" />
+      <parameter id="column" value="item_id" />
+    </parameter>
+    <parameter id="index">
+      <parameter id="table" value="item_referenced_urls" />
+      <parameter id="name" value="irurefurlsindex" />
+      <parameter id="column" value="referenced_urls_id" />
+    </parameter>
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="removeNonHttpUrlsMigration">
+    <parameter id="id" value="com.tle.core.url.migration.RemoveNonHttpUrlsMigration" />
+    <parameter id="bean" value="bean:com.tle.core.url.migration.RemoveNonHttpUrlsMigration" />
+    <parameter id="date" value="2014-03-14" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="institutionInfoInitialiser" id="legacyMigrationInit">
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.LegacyMigrationInstitutionInfoInitialiser" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="disallowCal">
+    <parameter id="id" value="com.tle.core.institution.migration.DisallowOldStyleCalItems" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.DisallowOldStyleCalItems" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="removeItemParts">
+    <parameter id="id" value="com.tle.core.institution.migration.RemoveDeprecatedItemParts" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.RemoveDeprecatedItemParts" />
+    <parameter id="date" value="1970-01-02" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="navTree">
+    <parameter id="id" value="com.tle.core.institution.migration.v32.UpdateItemNavigationTree" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v32.UpdateItemNavigationTree" />
+    <parameter id="date" value="1970-01-04" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="historyEvent">
+    <parameter id="id" value="com.tle.core.institution.migration.v32.UpdateHistoryEventMigrator" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v32.UpdateHistoryEventMigrator" />
+    <parameter id="date" value="1970-01-05" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="deleteBadUrls">
+    <parameter id="id" value="com.tle.core.institution.migration.v61.DeleteBadUrlsXmlMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v61.DeleteBadUrlsXmlMigration" />
+    <parameter id="date" value="2013-03-28" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="deleteKeyResourcesBadUrls">
+    <parameter id="id" value="com.tle.core.institution.migration.v61.DeleteBadUrlsInKeyResourcesMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v61.DeleteBadUrlsInKeyResourcesMigration" />
+    <parameter id="date" value="2013-04-05" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="itemNavigationIndexMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.ItemNavigationIndexMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.ItemNavigationIndexMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="badUrlFieldSizeMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.BadUrlFieldSizeMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.BadUrlFieldSizeMigration" />
+    <parameter id="date" value="1970-01-01" />
+    <parameter id="obsoletedby" value="com.tle.core.url.migration.BadUrlsToReferencedUrlsMigration" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="convertNtextMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v52.ConvertNtextDatabaseMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v52.ConvertNtextDatabaseMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="attachmentPreviewMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v60.AttachmentPreviewMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v60.AttachmentPreviewMigration" />
+    <parameter id="date" value="2012-09-05" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="entityDisabledMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v60.EntityDisabledFieldMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v60.EntityDisabledFieldMigration" />
+    <parameter id="date" value="2012-09-09" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="entityDisabledMigration2">
+    <parameter id="id" value="com.tle.core.institution.migration.v60.EntityDisabledFieldMigrationPart2" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v60.EntityDisabledFieldMigrationPart2" />
+    <parameter id="date" value="2012-09-27" />
+    <parameter id="depends" value="com.tle.core.institution.migration.v60.EntityDisabledFieldMigration" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="convertVarcharMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v52.ConvertVarcharDatabaseMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v52.ConvertVarcharDatabaseMigration" />
+    <parameter id="depends" value="com.tle.core.scheduler.impl.RemoveQuartzMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addBaseEntitySystemTypeIndex">
+    <parameter id="id" value="com.tle.core.institution.migration.v60.AddBaseEntitySystemTypeIndex" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v60.AddBaseEntitySystemTypeIndex" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="removeObsoleteJavascriptLibraries">
+    <parameter id="id" value="com.tle.core.institution.migration.v60.RemoveObsoleteJavascriptLibraries" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v60.RemoveObsoleteJavascriptLibraries" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addDynamicMetadataRules">
+    <parameter id="id" value="com.tle.core.institution.migration.v61.AddDynamicMetadataRules" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v61.AddDynamicMetadataRules" />
+    <parameter id="date" value="2013-01-16" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addItemDateForIndexIndex">
+    <parameter id="id" value="com.tle.core.institution.migration.v62.AddItemDateForIndexIndex" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v62.AddItemDateForIndexIndex" />
+    <parameter id="date" value="2013-08-21" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="attachmentRestrictMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v63.AttachmentRestrictMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v63.AttachmentRestrictMigration" />
+    <parameter id="date" value="2014-03-05" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addThumbColumnMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v63.AddThumbColumnMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v63.AddThumbColumnMigration" />
+    <parameter id="date" value="2014-05-23" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="increaseThumbnailColumnMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v64.IncreaseThumbnailLength" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v64.IncreaseThumbnailLength" />
+    <parameter id="date" value="2015-03-03" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addInstitutionFileWarningColumn">
+    <parameter id="id" value="com.tle.core.institution.migration.v64.AddInstitutionFileWarningColumn" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v64.AddInstitutionFileWarningColumn" />
+    <parameter id="date" value="2015-04-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="displayTemplate">
+    <parameter id="id" value="com.tle.core.migration.initial.DisplayTemplateMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.DisplayTemplateMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="removeDeprecatedFedSearches">
+    <parameter id="id" value="com.tle.core.institution.migration.RemoveDeprecatedFedSearches" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.RemoveDeprecatedFedSearches" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="tleUserSuspendedRemover">
+    <parameter id="id" value="com.tle.core.institution.migration.TleUserSuspendedRemover" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.TleUserSuspendedRemover" />
+    <parameter id="date" value="1970-01-02" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="setEmailTemplateUuidsChange">
+    <parameter id="id" value="com.tle.core.institution.migration.SetEmailTemplateUuidsChange" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.SetEmailTemplateUuidsChange" />
+    <parameter id="date" value="1970-01-03" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="removeDeprecatedItemDefinitionParts">
+    <parameter id="id" value="com.tle.core.institution.migration.RemoveDeprecatedItemDefinitionParts" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.RemoveDeprecatedItemDefinitionParts" />
+    <parameter id="date" value="1970-01-04" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="languageBundleMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.LanguageBundleMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.LanguageBundleMigration" />
+    <parameter id="date" value="1970-01-05" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="convertFedSearchAttributesToBaseEntityAttributes">
+    <parameter id="id" value="com.tle.core.institution.migration.v32.ConvertFedSearchAttributesToBaseEntityAttributes" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v32.ConvertFedSearchAttributesToBaseEntityAttributes" />
+    <parameter id="date" value="1970-01-06" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="renameSchemaTransformations">
+    <parameter id="id" value="com.tle.core.institution.migration.v32.RenameSchemaTransformations" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v32.RenameSchemaTransformations" />
+    <parameter id="date" value="1970-01-07" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="changeBlackZ3950UsernameToGuest">
+    <parameter id="id" value="com.tle.core.institution.migration.v32.ChangeBlackZ3950UsernameToGuest" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v32.ChangeBlackZ3950UsernameToGuest" />
+    <parameter id="date" value="1970-01-10" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="migrateSystemField">
+    <parameter id="id" value="com.tle.core.institution.migration.v40.MigrateSystemField" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v40.MigrateSystemField" />
+    <parameter id="date" value="1970-01-11" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="xmlDisplayTemplate">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.DisplayTemplateXmlMigrator" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.DisplayTemplateXmlMigrator" />
+    <parameter id="date" value="1970-01-15" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="ensureItemFolder">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.EnsureItemFolder" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.EnsureItemFolder" />
+    <parameter id="date" value="1970-01-14" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="courseInfoVersionSelection">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.CourseInfoMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.CourseInfoMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="attachmentMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.AttachmentMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.AttachmentMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="commentUuidMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.CommentUuidMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.CommentUuidMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="commentUuidXmlMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.CommentUuidXmlMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.CommentUuidXmlMigration" />
+    <parameter id="date" value="1970-01-14" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="itemXmlTwoWayRelationshipMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.ItemXmlTwoWayMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.ItemXmlTwoWayMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="localeFieldNotNullMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.MakeLocaleFieldNotNullable" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.MakeLocaleFieldNotNullable" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="fixSavedSearchesMigrator">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.FixSavedSearches" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.FixSavedSearches" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="postreadmigration" id="configPropertyChange">
+    <parameter id="id" value="com.tle.core.institution.migration.ConfigPropertyChange" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.ConfigPropertyChange" />
+    <parameter id="forconverter" value="configuration" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addTimestampToBadUrl">
+    <parameter id="id" value="com.tle.core.institution.migration.v50.AddTimestampToBadUrl" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v50.AddTimestampToBadUrl" />
+    <parameter id="date" value="1970-01-01" />
+    <parameter id="obsoletedby" value="com.tle.core.url.migration.BadUrlsToReferencedUrlsMigration" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addManualNavigationFlag">
+    <parameter id="id" value="com.tle.core.institution.migration.v50.AddManualNavigationFlag" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v50.AddManualNavigationFlag" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="displayTempateTitleMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v64.DisplayTempateTitleMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v64.DisplayTempateTitleMigration" />
+    <parameter id="date" value="2014-11-03" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="displayTempateTitleXmlMigrator">
+    <parameter id="id" value="com.tle.core.institution.migration.v64.DisplayTempateTitleXmlMigrator" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v64.DisplayTempateTitleXmlMigrator" />
+    <parameter id="date" value="2014-11-04" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="displayTemplateLocationMigration">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.DisplayTemplateLocationMigration" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.DisplayTemplateLocationMigration" />
+    <parameter id="depends" value="com.tle.core.migration.initial.DisplayTemplateMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="displayTemplateLocationXmlMigrator">
+    <parameter id="id" value="com.tle.core.institution.migration.v41.DisplayTemplateLocationXmlMigrator" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v41.DisplayTemplateLocationXmlMigrator" />
+    <parameter id="date" value="1970-01-20" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="xmlmigration" id="removeObsoleteJavascriptLibrariesXml">
+    <parameter id="id" value="com.tle.core.institution.migration.v60.RemoveObsoleteJavascriptLibrariesXml" />
+    <parameter id="bean" value="bean:com.tle.core.institution.migration.v60.RemoveObsoleteJavascriptLibrariesXml" />
+  </extension>
+  <extension plugin-id="com.tle.core.security" point-id="securityTargetHandler" id="baseEntityTargetHandler">
+    <parameter id="handlesLabellingFor" value="com.tle.beans.entity.BaseEntity" />
+    <parameter id="handlesLabellingFor" value="com.tle.beans.entity.BaseEntityLabel" />
+    <parameter id="handlesOwnershipFor" value="com.tle.beans.entity.BaseEntity" />
+    <parameter id="handlesOwnershipFor" value="com.tle.beans.entity.BaseEntityLabel" />
+    <parameter id="handlesTransformationOf" value="com.tle.common.EntityPack" />
+    <parameter id="handler" value="bean:com.tle.core.entity.security.BaseEntitySecurityTargetHandler" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="converter" id="languageConverter">
+    <parameter id="id" value="LANGUAGES" />
+    <parameter id="class" value="bean:com.tle.core.i18n.convert.LanguagesConverter" />
+    <parameter id="order" value="1300" />
+    <parameter id="selections">
+      <parameter id="id" value="LANGUAGES" />
+      <parameter id="nameKey" value="institutions.tasks.languages" />
+    </parameter>
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="converter" id="itemConverter">
+    <parameter id="id" value="ITEMSATTACHMENTS" />
+    <parameter id="id" value="ITEMS" />
+    <parameter id="class" value="bean:com.tle.core.item.convert.ItemConverter" />
+    <parameter id="order" value="800" />
+    <parameter id="selections">
+      <parameter id="id" value="ITEMS" />
+      <parameter id="nameKey" value="institutions.tasks.items" />
+    </parameter>
+    <parameter id="selections">
+      <parameter id="id" value="ITEMSATTACHMENTS" />
+      <parameter id="nameKey" value="institutions.tasks.itemsattachments" />
+    </parameter>
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="postreadmigration" id="updateReferencedUrlsOnImport">
+    <parameter id="id" value="com.tle.core.institution.migration.UpdateReferencedUrlsOnImport" />
+    <parameter id="bean" value="bean:com.tle.core.item.convert.migration.UpdateReferencedUrlsOnImport" />
+    <parameter id="forconverter" value="items" />
+    <parameter id="alwaysRun" value="true" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="postreadmigration" id="ensureAttachmentUUID">
+    <parameter id="id" value="com.tle.core.institution.migration.EnsureAttachmentUUID" />
+    <parameter id="bean" value="bean:com.tle.core.item.convert.migration.EnsureAttachmentUUID" />
+    <parameter id="forconverter" value="items" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="postreadmigration" id="searchDetailsUpdate">
+    <parameter id="id" value="com.tle.core.institution.migration.SearchDetailsUpdate" />
+    <parameter id="bean" value="bean:com.tle.core.item.convert.migration.SearchDetailsUpdate" />
+    <parameter id="forconverter" value="items" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="itemxmlmigration" id="languageBundle">
+    <parameter id="id" value="com.tle.core.institution.migration.LanguageBundleMigration" />
+    <parameter id="bean" value="bean:com.tle.core.item.convert.migration.LanguageBundleMigration" />
+    <parameter id="date" value="1970-01-03" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners">
+    <parameter id="listener" value="bean:com.tle.core.entity.service.EntityLockingService" />
+    <parameter id="listenerClass" value="com.tle.core.events.listeners.UserChangeListener" />
+    <parameter id="listenerClass" value="com.tle.core.events.listeners.UserSessionLogoutListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.institution.convert" point-id="converter" id="entitiesConverter">
+    <parameter id="id" value="ENTITIES" />
+    <parameter id="class" value="bean:com.tle.core.entity.convert.EntityConverter" />
+    <parameter id="order" value="600" />
+    <parameter id="selections">
+      <parameter id="id" value="ENTITIES" />
+      <parameter id="nameKey" value="institutions.tasks.entities" />
+    </parameter>
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects_2">
+    <parameter id="class" value="com.tle.beans.entity.BaseEntity" />
+    <parameter id="class" value="com.tle.beans.entity.BaseEntity$Attribute" />
+    <parameter id="class" value="com.tle.beans.entity.EntityLock" />
+    <parameter id="class" value="com.tle.beans.entity.BaseEntityLabel" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="registrationHandler" id="viewFactory">
+    <parameter id="class" value="bean:com.tle.web.freemarker.annotations.FreemarkerFactoryHandler" />
+    <parameter id="order" value="1000" />
+  </extension>
+  <extension plugin-id="com.tle.core.entity" point-id="entityService" id="itemDefinition">
+    <parameter id="serviceClass" value="bean:com.tle.core.collection.service.ItemDefinitionService" />
+    <parameter id="order" value="400" />
+  </extension>
+  <extension plugin-id="com.tle.core.schema" point-id="schemaRefs" id="tempRefs">
+    <parameter id="bean" value="bean:com.tle.core.collection.service.ItemDefinitionService" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="itemDefListener">
+    <parameter id="listener" value="bean:com.tle.core.collection.service.ItemDefinitionService" />
+    <parameter id="listenerClass" value="com.tle.core.schema.event.listener.SchemaReferencesListener" />
+    <parameter id="listenerClass" value="com.tle.core.events.listeners.UserChangeListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects">
+    <parameter id="class" value="com.tle.beans.entity.itemdef.ItemDefinition" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.ItemdefBlobs" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.DisplayNode" />
+    <parameter id="class" value="com.tle.beans.ItemDefinitionScript" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.SummaryDisplayTemplate" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.ItemMetadataRule" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.DynamicMetadataRule" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.Wizard" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.SearchDetails" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.MetadataMapping" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.SummarySectionsConfig" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.mapping.IMSMapping" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.mapping.HTMLMapping" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.mapping.Literal" />
+    <parameter id="class" value="com.tle.beans.entity.itemdef.mapping.LiteralMapping" />
+  </extension>
+  <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="domainObjects">
+    <parameter id="class" value="com.tle.core.notification.beans.Notification" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="initialSchema" id="initialSchema">
+    <parameter id="class" value="com.tle.core.notification.beans.Notification" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="migrateNotifications">
+    <parameter id="id" value="com.tle.core.notification.migrate.MigrateNotifications" />
+    <parameter id="bean" value="bean:com.tle.core.notification.migrate.MigrateNotifications" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="migrateNotifications2">
+    <parameter id="id" value="com.tle.core.notification.migrate.MigrateNotifications2" />
+    <parameter id="bean" value="bean:com.tle.core.notification.migrate.MigrateNotifications2" />
+    <parameter id="depends" value="com.tle.core.notification.migrate.MigrateNotifications" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="addLastAttempt">
+    <parameter id="id" value="com.tle.core.notification.migrate.AddLastAttempt" />
+    <parameter id="bean" value="bean:com.tle.core.notification.migrate.AddLastAttempt" />
+    <parameter id="depends" value="com.tle.core.notification.migrate.MigrateNotifications2" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="constraintToAvoidDuplicateNotificationsMigration">
+    <parameter id="id" value="com.tle.core.notification.migrate.ConstraintToAvoidDuplicateNotificationsMigration" />
+    <parameter id="bean" value="bean:com.tle.core.notification.migrate.ConstraintToAvoidDuplicateNotificationsMigration" />
+    <parameter id="date" value="2013-04-08" />
   </extension>
   <extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings_resource-centre">
     <parameter id="group" value="resource-centre" />

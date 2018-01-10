@@ -10,6 +10,7 @@
     <import plugin-id="com.tle.common.dynacollection" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.admin" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core" />

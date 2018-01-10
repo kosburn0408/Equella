@@ -26,6 +26,12 @@ import com.tle.core.guice.PluginTrackerModule;
 public class CollectionTrackerModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.collection";
+	}
+
+	@Override
 	protected void configure()
 	{
 		bindTracker(CollectionSaveExtension.class, "collectionSave", "bean");

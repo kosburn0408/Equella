@@ -61,6 +61,12 @@ public class SelectionModule extends SectionsModule
 	private static class TrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.selection";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(SelectionNavAction.class, "selectionNavActions", "class").setIdParam("type");

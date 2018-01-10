@@ -27,6 +27,12 @@ import com.tle.core.item.serializer.ItemSerializerProvider;
 public class ItemSerializerModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.api.item.equella.serializer";
+	}
+
+	@Override
 	@SuppressWarnings("nls")
 	protected void configure()
 	{

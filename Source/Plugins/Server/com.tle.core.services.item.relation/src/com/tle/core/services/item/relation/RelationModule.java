@@ -32,6 +32,12 @@ public class RelationModule extends AbstractModule
 	public static class RelationTrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.core.services.item.relation";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(RelationListener.class, "relationListener", "bean");

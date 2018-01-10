@@ -8,10 +8,10 @@
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.hibernate" />
-    <import plugin-id="com.tle.core.hibernate.equella" exported="true" />
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

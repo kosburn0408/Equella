@@ -21,6 +21,12 @@ import com.tle.web.spellcheck.dictionary.TLEDictionary;
 
 public class DictionaryTrackerModule extends PluginTrackerModule
 {
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.spellcheck";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

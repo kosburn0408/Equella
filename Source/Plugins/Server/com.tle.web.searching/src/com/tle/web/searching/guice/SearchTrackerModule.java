@@ -27,6 +27,12 @@ import com.tle.web.searching.VideoPreviewRenderer;
 public class SearchTrackerModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.searching";
+	}
+
+	@Override
 	protected void configure()
 	{
 		final TrackerProvider<SearchTab> tabTracker = bindTracker(SearchTab.class, "searchTab", "bean");

@@ -26,6 +26,12 @@ import com.tle.core.workflow.extension.WorkflowNodesSaveExtension;
 public class WorkflowModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.workflow";
+	}
+
+	@Override
 	protected void configure()
 	{
 		bindTracker(WorkflowNodesSaveExtension.class, "workflowNodesSave", "bean");

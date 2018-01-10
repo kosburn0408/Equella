@@ -22,6 +22,12 @@ import com.tle.core.plugins.PluginTracker;
 public class UniversalModule extends PluginTrackerModule
 {
 
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.wizard.controls.universal";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

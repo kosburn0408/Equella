@@ -9,8 +9,6 @@
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
-    <import plugin-id="com.tle.core.hibernate.equella" />
-    <import plugin-id="com.tle.core.jackson" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services" />

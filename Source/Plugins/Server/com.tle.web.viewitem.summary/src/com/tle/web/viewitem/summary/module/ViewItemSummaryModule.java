@@ -130,6 +130,12 @@ public class ViewItemSummaryModule extends SectionsModule
 	private static class TrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.viewitem.summary";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(AttachmentViewFilter.class, "attachmentViewFilter", "class");

@@ -25,6 +25,12 @@ import com.tle.core.workflow.thumbnail.ThumbnailGenerator;
  */
 public class ThumbnailModule extends PluginTrackerModule
 {
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.workflow.thumbnail";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

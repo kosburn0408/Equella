@@ -20,6 +20,12 @@ import com.tle.core.guice.PluginTrackerModule;
 
 public class TaskListModule extends PluginTrackerModule
 {
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.workflow.portal";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

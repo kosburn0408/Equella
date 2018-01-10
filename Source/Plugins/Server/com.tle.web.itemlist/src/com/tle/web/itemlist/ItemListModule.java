@@ -32,6 +32,12 @@ public class ItemListModule extends SectionsModule
 	private static class Trackers extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.itemlist";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(ItemlikeListEntryExtension.class, "itemListExtension", "bean").orderByParameter("order");

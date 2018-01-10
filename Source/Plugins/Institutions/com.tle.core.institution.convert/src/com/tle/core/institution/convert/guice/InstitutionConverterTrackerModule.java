@@ -30,6 +30,12 @@ import com.tle.core.institution.convert.extension.InstitutionInfoInitialiser;
 public class InstitutionConverterTrackerModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.institution.convert";
+	}
+
+	@Override
 	protected void configure()
 	{
 		bindTracker(Migrator.class, "xmlmigration", "bean").setIdParam("id").orderByParameter("date", false, true);

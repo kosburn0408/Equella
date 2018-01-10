@@ -19,10 +19,10 @@
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.wizard" />
-    <import plugin-id="com.tle.core.hibernate.equella" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

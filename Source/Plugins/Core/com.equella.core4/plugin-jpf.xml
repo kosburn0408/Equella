@@ -10,7 +10,6 @@
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
-    <import plugin-id="com.tle.core.hibernate.equella" />
     <import plugin-id="com.tle.core.i18n" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />

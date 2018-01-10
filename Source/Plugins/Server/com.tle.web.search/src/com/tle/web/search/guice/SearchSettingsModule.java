@@ -35,6 +35,12 @@ public class SearchSettingsModule extends SectionsModule
 	public static class TrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.search";
+		}
+
+		@Override
 		protected void configure()
 		{
 			final TrackerProvider<SearchSettingsExtension> tracker = bindTracker(SearchSettingsExtension.class,

@@ -5,7 +5,6 @@
     <import plugin-id="com.equella.base" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.equella.core2" />
-    <import plugin-id="com.tle.common.dynacollection" exported="true" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.entity" exported="true" />
@@ -13,12 +12,10 @@
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
-    <import plugin-id="com.tle.core.hibernate.equella" />
     <import plugin-id="com.tle.core.i18n" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.standard" />
-    <import plugin-id="com.tle.core.jackson" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />

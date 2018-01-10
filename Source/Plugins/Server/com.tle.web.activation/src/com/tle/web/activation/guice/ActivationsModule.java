@@ -82,6 +82,12 @@ public class ActivationsModule extends AbstractSearchModule
 	public static class TrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.activation";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(ActivationResultsModifier.class, "resultsModifier", "bean");

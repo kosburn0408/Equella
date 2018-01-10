@@ -23,6 +23,12 @@ import com.tle.core.guice.PluginTrackerModule;
 
 public class EntityTrackerModule extends PluginTrackerModule
 {
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.entity";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

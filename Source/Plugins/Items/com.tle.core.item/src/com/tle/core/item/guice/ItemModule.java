@@ -39,6 +39,12 @@ public class ItemModule extends AbstractModule
 	public static class TrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.core.item";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(ItemResolverExtension.class, "itemResolver", "bean").setIdParam("id");

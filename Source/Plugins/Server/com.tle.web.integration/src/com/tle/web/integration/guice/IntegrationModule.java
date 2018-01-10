@@ -123,6 +123,12 @@ public class IntegrationModule extends SectionsModule
 	public static class TrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.integration";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(IntegrationSessionExtension.class, "integrationSession", "class");

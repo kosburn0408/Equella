@@ -24,6 +24,12 @@ import com.tle.core.schema.extension.SchemaSaveExtension;
 public class SchemaModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.schema";
+	}
+
+	@Override
 	protected void configure()
 	{
 		bindTracker(SchemaReferences.class, "schemaRefs", "bean");

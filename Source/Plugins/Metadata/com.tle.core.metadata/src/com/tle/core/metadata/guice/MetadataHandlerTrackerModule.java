@@ -21,6 +21,12 @@ import com.tle.core.metadata.MetadataHandler;
 
 public class MetadataHandlerTrackerModule extends PluginTrackerModule
 {
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.core.metadata";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

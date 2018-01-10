@@ -4,8 +4,8 @@
   <requires>
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
-    <import plugin-id="com.tle.core.hibernate.equella" exported="true" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

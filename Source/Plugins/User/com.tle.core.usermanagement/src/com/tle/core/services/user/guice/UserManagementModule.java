@@ -34,6 +34,12 @@ public class UserManagementModule extends OptionalConfigModule
 	public static class UserManagementTrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.core.usermanagement";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(UserDirectory.class, "userManager", null).setIdParam("settingsClass").orderByParameter("order",

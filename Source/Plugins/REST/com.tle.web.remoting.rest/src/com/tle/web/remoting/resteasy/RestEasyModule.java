@@ -22,6 +22,12 @@ import com.tle.core.guice.PluginTrackerModule;
 public class RestEasyModule extends PluginTrackerModule
 {
 	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.remoting.rest";
+	}
+
+	@Override
 	protected void configure()
 	{
 		bindTracker(Object.class, "resource", null);

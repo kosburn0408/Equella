@@ -7,7 +7,7 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.migration" />
-    <import plugin-id="com.tle.core.entity" exported="true" />
+    <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.web.freemarker" />
@@ -19,10 +19,11 @@
     <import plugin-id="com.tle.web.wizard.page" />
     <import plugin-id="old.rhino" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.equella.base" exported="true" />
-    <import plugin-id="com.equella.core7" exported="true" />
-    <import plugin-id="com.equella.core4" exported="true" />
-    <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.core7" />
+    <import plugin-id="com.equella.core4" />
+    <import plugin-id="com.equella.core3" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

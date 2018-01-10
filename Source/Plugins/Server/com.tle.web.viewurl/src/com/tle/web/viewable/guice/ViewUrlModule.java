@@ -25,6 +25,13 @@ import com.tle.web.viewurl.attachments.AttachmentTreeExtension;
 
 public class ViewUrlModule extends PluginTrackerModule
 {
+
+	@Override
+	protected String getPluginId()
+	{
+		return "com.tle.web.viewurl";
+	}
+
 	@SuppressWarnings("nls")
 	@Override
 	protected void configure()

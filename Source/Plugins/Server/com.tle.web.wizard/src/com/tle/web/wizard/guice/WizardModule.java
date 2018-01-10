@@ -91,6 +91,12 @@ public class WizardModule extends SectionsModule
 	private static class WizardTracker extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.wizard";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(PackageTreeBuilder.class, "packagetreebuilder", "class").setIdParam("id");

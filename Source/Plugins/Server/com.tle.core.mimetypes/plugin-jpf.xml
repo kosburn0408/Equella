@@ -12,6 +12,7 @@
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

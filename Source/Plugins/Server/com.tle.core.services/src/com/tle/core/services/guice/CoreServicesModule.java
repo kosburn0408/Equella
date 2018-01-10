@@ -61,11 +61,16 @@ public class CoreServicesModule extends MandatoryConfigModule
 
 	public static class CoreServicesTrackerModule extends PluginTrackerModule
 	{
+
+		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.core.services";
+		}
+
 		@Override
 		protected void configure()
 		{
-			bindTracker(ApplicationListener.class, "applicationEventListener", null);
-			bindTracker(EventExecutor.class, "eventExecutor", "bean");
 			bindTracker(Object.class, "coreTasks", null).setIdParam("id");
 		}
 	}

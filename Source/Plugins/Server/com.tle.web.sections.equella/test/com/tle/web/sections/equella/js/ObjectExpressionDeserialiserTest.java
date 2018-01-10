@@ -75,7 +75,7 @@ public class ObjectExpressionDeserialiserTest extends TestCase
 				arg0.bind(PluginService.class).toInstance(new FakePluginService());
 				ParameterizedType type = Types.newParameterizedType(PluginTracker.class, SectionsConverter.class);
 				TrackerProvider<SectionsConverter> trackerProvider = new TrackerProvider<SectionsConverter>(
-					ObjectExpressionDeserialiserTest.class, "", "")
+					"", "", "")
 				{
 					@Override
 					public PluginTracker<SectionsConverter> get()

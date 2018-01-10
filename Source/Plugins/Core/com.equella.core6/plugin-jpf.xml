@@ -40,6 +40,7 @@
     <import plugin-id="com.tle.web.workflow.portal" />
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />

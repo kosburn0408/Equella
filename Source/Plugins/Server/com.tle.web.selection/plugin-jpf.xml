@@ -3,7 +3,6 @@
 <plugin id="com.tle.web.selection" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.jackson" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.web.freemarker" />
@@ -15,6 +14,7 @@
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

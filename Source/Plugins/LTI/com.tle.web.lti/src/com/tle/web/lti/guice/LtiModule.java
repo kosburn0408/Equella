@@ -31,6 +31,12 @@ public class LtiModule extends SectionsModule
 	private static class LtiTrackerModule extends PluginTrackerModule
 	{
 		@Override
+		protected String getPluginId()
+		{
+			return "com.tle.web.lti";
+		}
+
+		@Override
 		protected void configure()
 		{
 			bindTracker(LtiWrapperExtension.class, "ltiWrapperExtension", "bean").orderByParameter("order");

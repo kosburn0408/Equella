@@ -7,7 +7,6 @@
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.sections.equella" />

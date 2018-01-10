@@ -5,7 +5,6 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.portal" exported="true" />
     <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
@@ -18,6 +17,7 @@
     <import plugin-id="com.equella.core2" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

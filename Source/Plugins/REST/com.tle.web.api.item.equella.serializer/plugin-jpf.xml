@@ -6,7 +6,6 @@
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.core.i18n" />
     <import plugin-id="com.tle.web.remoting.rest" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.workflow" />

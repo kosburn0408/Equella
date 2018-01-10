@@ -6,6 +6,7 @@
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.application" />
+    <import plugin-id="com.tle.core.cluster" />
     <import plugin-id="com.tle.core.events" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
@@ -15,15 +16,57 @@
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.zookeeper" />
     <import plugin-id="com.tle.platform.common" exported="true" />
+    <import plugin-id="com.tle.platform.equella" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.filesystem.guice.FilesystemModule" />
     <parameter id="class" value="com.tle.core.imagemagick.guice.ImageMagickModule" />
     <parameter id="class" value="com.tle.core.institution.convert.guice.InstitutionConverterTrackerModule" />
     <parameter id="class" value="com.tle.core.libav.guice.LibAvModule" />
+    <parameter id="class" value="com.tle.core.scheduler.impl.SchedulerModule" />
+    <parameter id="class" value="com.tle.core.services.guice.CoreServicesModule" />
     <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />
     <parameter id="class" value="com.tle.core.settings.guice.ConfigModule" />
     <parameter id="class" value="com.tle.core.system.guice.DatabaseSchemaModule" />
+  </extension>
+  <extension plugin-id="com.tle.core.cluster" point-id="clusterMessageHandler" id="taskMessageHandler">
+    <parameter id="bean" value="bean:com.tle.core.services.TaskService" />
+  </extension>
+  <extension plugin-id="com.tle.core.application" point-id="onStartup" id="checkMigrations">
+    <parameter id="bean" value="bean:com.tle.core.migration.MigrationService" />
+    <parameter id="type" value="core" />
+    <parameter id="order" value="100" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_6">
+    <parameter id="listenerClass" value="com.tle.core.hibernate.event.SchemaListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="initialSchema">
+    <parameter id="id" value="com.tle.core.migration.initial.InitialSchema" />
+    <parameter id="bean" value="bean:com.tle.core.migration.initial.InitialSchema" />
+    <parameter id="initial" value="true" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="itemsWithNullDateCreatedMigration">
+    <parameter id="id" value="com.tle.core.migration.initial.ItemsWithNullDateCreatedMigration" />
+    <parameter id="bean" value="bean:com.tle.core.migration.initial.ItemsWithNullDateCreatedMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="ensureUniqueGroupAndListPositionsMigration">
+    <parameter id="id" value="com.tle.core.migration.initial.EnsureUniqueGroupAndListPositionsMigration" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.migration" point-id="migration" id="couseListIndex">
+    <parameter id="id" value="com.tle.core.migration.initial.AddCourseListIndex" />
+    <parameter id="date" value="1970-01-01" />
+  </extension>
+  <extension plugin-id="com.tle.core.services" point-id="coreTasks" id="migrationGlobalTask">
+    <parameter id="id" value="CheckSystemSchema" />
+    <parameter id="essential" value="true" />
+  </extension>
+  <extension plugin-id="com.tle.core.services" point-id="coreTasks" id="schemaMigrationTask">
+    <parameter id="id" value="MigrationTask*" />
+    <parameter id="dependency" value="CheckSystemSchema" />
+    <parameter id="essential" value="false" />
   </extension>
   <extension plugin-id="com.tle.core.institution.convert" point-id="converter" id="configurationConverter">
     <parameter id="id" value="CONFIGURATION" />
@@ -93,10 +136,10 @@
   <extension plugin-id="com.tle.core.events" point-id="eventExecutor" id="eventImpl">
     <parameter id="bean" value="bean:com.tle.core.events.EventExecutor" />
   </extension>
-  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2">
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2_2">
     <parameter id="listenerClass" value="com.tle.core.healthcheck.listeners.ServiceCheckRequestListener" />
   </extension>
-  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners">
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners_2">
     <parameter id="listenerClass" value="com.tle.core.healthcheck.listeners.ServiceCheckRequestListener" />
   </extension>
   <extension plugin-id="com.tle.core.hibernate" point-id="domainObjects" id="objects">
@@ -111,6 +154,19 @@
     <parameter id="id" value="ZIPFILES" />
     <parameter id="class" value="bean:com.tle.core.institution.convert.ZippingConverter" />
     <parameter id="order" value="20000" />
+  </extension>
+  <extension plugin-id="com.tle.core.events" point-id="applicationEventListener" id="listeners">
+    <parameter id="listenerClass" value="com.tle.core.hibernate.event.SchemaListener" />
+    <parameter id="listenerClass" value="com.tle.core.institution.events.listeners.InstitutionListener" />
+  </extension>
+  <extension plugin-id="com.tle.core.zookeeper" point-id="appServerExtension" id="schedulerTaskStarter">
+    <parameter id="bean" value="bean:com.tle.core.scheduler.SchedulerService" />
+    <parameter id="order" value="1000" />
+  </extension>
+  <extension plugin-id="com.tle.core.services" point-id="coreTasks" id="schedulerTask">
+    <parameter id="id" value="Scheduler-Supervisor" />
+    <parameter id="dependency" value="CheckSystemSchema" />
+    <parameter id="essential" value="false" />
   </extension>
   <extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings_resource-centre">
     <parameter id="group" value="resource-centre" />

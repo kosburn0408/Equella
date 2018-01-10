@@ -15,7 +15,6 @@
     <import plugin-id="com.tle.platform.common" exported="true" />
     <import plugin-id="com.tle.core.i18n" exported="true" />
     <import plugin-id="com.tle.core.usermanagement" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.auditlog" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />

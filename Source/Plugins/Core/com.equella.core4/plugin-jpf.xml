@@ -19,7 +19,6 @@
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.sections" />

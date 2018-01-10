@@ -10,7 +10,6 @@
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.web.remoting" />
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.equella.base" exported="true" />

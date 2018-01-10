@@ -7,7 +7,6 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.migration" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.core.institution.convert" />

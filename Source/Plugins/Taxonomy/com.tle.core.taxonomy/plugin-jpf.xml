@@ -11,7 +11,6 @@
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.web.remoting" />
     <import plugin-id="com.tle.web.remoting.soap" />
     <import plugin-id="com.tle.web.sections" />

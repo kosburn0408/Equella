@@ -3,10 +3,10 @@
 <plugin id="com.tle.core.scripting" version="1">
   <requires>
     <import plugin-id="com.tle.common.i18n" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="org.mozilla.rhino" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

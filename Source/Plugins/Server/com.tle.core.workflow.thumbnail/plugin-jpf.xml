@@ -10,10 +10,8 @@
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.migration" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.zookeeper" />
     <import plugin-id="com.tle.core.freetext" />
-    <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />

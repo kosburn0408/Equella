@@ -8,7 +8,6 @@
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.web.services" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.web.integration" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.selection" />

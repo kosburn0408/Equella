@@ -8,7 +8,6 @@
     <import plugin-id="com.tle.web.sections" exported="true" />
     <import plugin-id="com.tle.web.sections.standard" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.item.standard" />

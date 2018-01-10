@@ -13,7 +13,6 @@
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.notification" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.item.convert" />

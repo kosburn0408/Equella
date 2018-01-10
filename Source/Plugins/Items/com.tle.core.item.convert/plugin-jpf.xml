@@ -4,7 +4,6 @@
   <requires>
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.equella.base" />

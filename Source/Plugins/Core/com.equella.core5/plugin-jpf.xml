@@ -20,7 +20,6 @@
     <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.usermanagement" />
     <import plugin-id="com.tle.platform.common" />
     <import plugin-id="com.tle.web.api.item.equella.serializer" />

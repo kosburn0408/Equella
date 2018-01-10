@@ -61,7 +61,7 @@ class MetsPackageAttachmentHandlerNew extends PackageAttachmentExtension {
   }
 
   val r = ResourcesService.getResourceHelper(getClass)
-  val treatAsLabel = new KeyLabel(r.key("handlers.file.packageoptions.aspackage"))
+  val treatAsLabel = new KeyLabel(r.key("mets.packageoptions.aspackage"))
 
   override def delete(ctx: ControlContext, a: Attachment): AttachmentDelete = AttachmentDelete(
     Seq(a), { stg =>

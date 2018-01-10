@@ -6,16 +6,16 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.integration" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewurl" />
-    <import plugin-id="com.tle.core.item.standard" />
     <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.base" />
+    <import plugin-id="com.equella.core12" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

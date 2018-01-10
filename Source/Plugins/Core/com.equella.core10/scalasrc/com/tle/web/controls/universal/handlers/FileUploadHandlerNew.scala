@@ -31,6 +31,7 @@ import com.tle.core.filesystem.staging.service.StagingService
 import com.tle.core.guice.Bind
 import com.tle.core.item.service.{ItemFileService, ItemService}
 import com.tle.core.mimetypes.MimeTypeService
+import com.tle.core.plugins.AbstractPluginService
 import com.tle.core.security.TLEAclManager
 import com.tle.core.services.{FileSystemService, ZipProgress}
 import com.tle.core.workflow.thumbnail.service.ThumbnailService
@@ -329,6 +330,7 @@ class FileUploadHandlerNew extends AbstractAttachmentHandler[FileUploadHandlerMo
         tableState.addRow(labelCell, detail.getDescription)
       }
 
+      def getCommonIncludePath = AbstractDetailsAttachmentHandler.COMMON_INCLUDE_PATH
       def getDetailTable = detailTable
 
       val getThumbnail = resource.createStandardThumbnailRenderer(new TextLabel(resource.getDescription))

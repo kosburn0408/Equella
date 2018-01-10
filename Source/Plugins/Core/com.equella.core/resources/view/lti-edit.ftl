@@ -1,4 +1,4 @@
-<#include "/com.tle.web.wizard.controls.universal@/common-edit-handler.ftl" />
+<#include m.commonIncludePath />
 <#include "lti-controls.ftl"/>
 
 <@detailArea>

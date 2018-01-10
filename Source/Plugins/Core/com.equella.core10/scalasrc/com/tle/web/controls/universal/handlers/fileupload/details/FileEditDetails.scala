@@ -25,7 +25,7 @@ import com.tle.common.filesystem.FileEntry
 import com.tle.common.{Check, NameValue}
 import com.tle.web.controls.universal.handlers.fileupload.details.FileEditDetails._
 import com.tle.web.controls.universal.handlers.fileupload.{AttachmentDelete, WebFileUploads}
-import com.tle.web.controls.universal.{ControlContext, DialogRenderOptions, RenderHelper}
+import com.tle.web.controls.universal.{AbstractDetailsAttachmentHandler, ControlContext, DialogRenderOptions, RenderHelper}
 import com.tle.web.freemarker.FreemarkerFactory
 import com.tle.web.freemarker.annotations.ViewFactory
 import com.tle.web.inplaceeditor.service.InPlaceEditorWebService
@@ -171,6 +171,10 @@ class FileEditDetails(parentId: String, tree: SectionTree, ctx: ControlContext, 
     var appletMode: String = _
 
     lazy val a = editingAttachment(info)
+
+    def getCommonIncludePath = AbstractDetailsAttachmentHandler.COMMON_INCLUDE_PATH
+
+    def getCommonPrefix = AbstractDetailsAttachmentHandler.COMMON_PREFIX
 
     def inplaceFilepath = a.getUrl
 

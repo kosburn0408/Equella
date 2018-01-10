@@ -5,7 +5,6 @@
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.portal" />
-    <import plugin-id="com.tle.core.workflow" />
     <import plugin-id="com.tle.web.portal" />
     <import plugin-id="com.tle.web.remoting.soap" />
     <import plugin-id="com.tle.web.sections.equella" />

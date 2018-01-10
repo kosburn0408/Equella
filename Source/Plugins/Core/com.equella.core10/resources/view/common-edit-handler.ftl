@@ -10,9 +10,9 @@
 <#macro editArea>
 	<hr>
 	<div>
-		<h3>${b.gkey("com.tle.web.wizard.controls.universal.handlers.abstract.edit.attachment")}</h3>
+		<h3>${b.gkey(m.commonPrefix+"handlers.abstract.edit.attachment")}</h3>
 		<@settingContainer mandatory=true>
-			<@setting mandatory=true label=b.gkey('com.tle.web.wizard.controls.universal.handlers.abstract.displayname.label') labelFor=s.displayName error=m.errors["displayName"]>
+			<@setting mandatory=true label=b.gkey(m.commonPrefix+"handlers.abstract.displayname.label") labelFor=s.displayName error=m.errors["displayName"]>
 				 <@render section=s.displayName class="focus" />
 			</@setting>				
 			<#nested />
@@ -25,19 +25,19 @@
 
 <#macro viewerList >
 	<#if m.showViewers >
-		<@setting label=b.gkey('com.tle.web.wizard.controls.universal.handlers.abstract.viewer.label') section=s.viewers />
+		<@setting label=b.gkey(m.commonPrefix+'handlers.abstract.viewer.label') section=s.viewers />
 	</#if>
 </#macro>
 
 <#macro previewCheckBox >
 	<#if m.showPreview >
-		<@setting label=b.gkey('com.tle.web.wizard.controls.universal.handlers.abstract.preview') section=s.previewCheckBox />
+		<@setting label=b.gkey(m.commonPrefix+'handlers.abstract.preview') section=s.previewCheckBox />
 	</#if>
 </#macro>
 
 <#macro restrictCheckbox >
 	<#if m.showRestrict >
-		<@setting label=b.gkey('com.tle.web.wizard.controls.universal.handlers.abstract.restrict') section=s.restrictCheckbox />
+		<@setting label=b.gkey(m.commonPrefix+'handlers.abstract.restrict') section=s.restrictCheckbox />
 	</#if>
 </#macro>
 

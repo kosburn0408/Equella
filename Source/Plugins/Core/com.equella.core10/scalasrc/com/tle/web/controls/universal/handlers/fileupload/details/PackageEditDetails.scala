@@ -22,7 +22,7 @@ import com.tle.common.collection.AttachmentConfigConstants
 import com.tle.common.filesystem.FileSystemConstants
 import com.tle.core.plugins.PluginTracker
 import com.tle.web.controls.universal.handlers.fileupload.{AttachmentDelete, WebFileUploads}
-import com.tle.web.controls.universal.{ControlContext, DialogRenderOptions, RenderHelper}
+import com.tle.web.controls.universal.{AbstractDetailsAttachmentHandler, ControlContext, DialogRenderOptions, RenderHelper}
 import com.tle.web.freemarker.FreemarkerFactory
 import com.tle.web.freemarker.annotations.ViewFactory
 import com.tle.web.sections.equella.AbstractScalaSection
@@ -82,6 +82,10 @@ class PackageEditDetails(parentId: String, tree: SectionTree, ctx: ControlContex
   class PackageEditDetailsModel(info: SectionInfo) {
     lazy val a = editingAttachment(info)
     var validate = false
+
+    def getCommonIncludePath = AbstractDetailsAttachmentHandler.COMMON_INCLUDE_PATH
+
+    def getCommonPrefix = AbstractDetailsAttachmentHandler.COMMON_PREFIX
 
     def getEditTitle = new TextLabel(displayName.getValue(info))
 

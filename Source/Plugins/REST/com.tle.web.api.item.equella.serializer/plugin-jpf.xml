@@ -8,11 +8,9 @@
     <import plugin-id="com.tle.web.remoting.rest" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.item" />
-    <import plugin-id="com.tle.core.workflow" />
     <import plugin-id="com.tle.core.workflow.thumbnail" />
     <import plugin-id="com.tle.core.jackson" exported="true" />
     <import plugin-id="com.tle.core.workflow.video" />
-    <import plugin-id="com.tle.core.item.standard" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core2" exported="true" />
@@ -20,6 +18,7 @@
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="classes">

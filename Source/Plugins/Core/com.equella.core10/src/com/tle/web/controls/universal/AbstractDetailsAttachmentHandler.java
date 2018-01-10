@@ -34,6 +34,7 @@ import com.tle.common.NameValue;
 import com.tle.common.Pair;
 import com.tle.common.wizard.controls.universal.UniversalSettings;
 import com.tle.core.i18n.BundleNameValue;
+import com.tle.core.plugins.AbstractPluginService;
 import com.tle.web.mimetypes.section.FakeMimeTypeResource;
 import com.tle.web.sections.SectionInfo;
 import com.tle.web.sections.SectionTree;
@@ -79,6 +80,11 @@ public abstract class AbstractDetailsAttachmentHandler<M extends AbstractDetails
 	extends
 		AbstractAttachmentHandler<M>
 {
+	public static final String THIS_PID = AbstractPluginService.getMyPluginId(AbstractAttachmentHandler.class);
+	public static final String COMMON_PREFIX = THIS_PID+".";
+	public static final String COMMON_INCLUDE_PATH =
+			"/"+THIS_PID+"@/common-edit-handler.ftl";
+
 	private static final String KEY_FIELD_DISPLAYNAME = "displayName";
 
 	@PlugKey("handlers.abstract.error.blank")
@@ -599,6 +605,16 @@ public abstract class AbstractDetailsAttachmentHandler<M extends AbstractDetails
 		public void setShowRestrict(boolean showRestrict)
 		{
 			this.showRestrict = showRestrict;
+		}
+
+		public String getCommonIncludePath()
+		{
+			return COMMON_INCLUDE_PATH;
+		}
+
+		public String getCommonPrefix()
+		{
+			return COMMON_PREFIX;
 		}
 	}
 

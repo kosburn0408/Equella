@@ -6,7 +6,6 @@
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.collection" />
-    <import plugin-id="com.tle.core.fedsearch" />
     <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
@@ -14,7 +13,6 @@
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.migration" />
-    <import plugin-id="com.tle.core.mimetypes" exported="true" />
     <import plugin-id="com.tle.core.notification" exported="true" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.scripting" />
@@ -23,6 +21,7 @@
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.core12" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />

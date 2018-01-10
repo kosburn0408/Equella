@@ -184,8 +184,7 @@ public class MyContentServiceImpl implements MyContentService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		String pluginId = pluginService.getPluginIdForObject(getClass());
-		handlerTracker = new PluginTracker<ContentHandler>(pluginService, pluginId, "contentHandler", "id",
+		handlerTracker = new PluginTracker<ContentHandler>(pluginService, "com.tle.mycontent", "contentHandler", "id",
 			new PluginTracker.ExtensionParamComparator("order"));
 		handlerTracker.setBeanKey("contributeBean");
 	}

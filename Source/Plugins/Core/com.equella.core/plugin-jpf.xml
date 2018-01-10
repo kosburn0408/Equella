@@ -12,23 +12,18 @@
     <import plugin-id="com.tle.core.connectors.blackboard" />
     <import plugin-id="com.tle.core.entity" />
     <import plugin-id="com.tle.core.events" />
-    <import plugin-id="com.tle.core.fedsearch" />
-    <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.hibernate" />
     <import plugin-id="com.tle.core.i18n" />
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.item.convert" />
-    <import plugin-id="com.tle.core.item.standard" />
-    <import plugin-id="com.tle.core.javascript" />
     <import plugin-id="com.tle.core.metadata" />
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.core.notification" />
     <import plugin-id="com.tle.core.portal" />
     <import plugin-id="com.tle.core.remoterepo.srw" />
-    <import plugin-id="com.tle.core.replicatedcache" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />
@@ -59,7 +54,6 @@
     <import plugin-id="com.tle.web.lti" />
     <import plugin-id="com.tle.web.mimetypes" />
     <import plugin-id="com.tle.web.portal" />
-    <import plugin-id="com.tle.web.remoting" />
     <import plugin-id="com.tle.web.remoting.rest" />
     <import plugin-id="com.tle.web.remoting.soap" />
     <import plugin-id="com.tle.web.search" />
@@ -94,6 +88,7 @@
     <import plugin-id="com.equella.core9" />
     <import plugin-id="com.equella.core10" />
     <import plugin-id="com.equella.core11" />
+    <import plugin-id="com.equella.core12" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

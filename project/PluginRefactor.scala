@@ -38,18 +38,25 @@ object PluginRefactor {
     "com.equella.core-oldrhino" -> Set("org.mozilla.rhino")
   ).withDefaultValue(Set.empty)
 
+  val mutualKeys = mutualExclusions.keySet
+
   val platformPlugins = Set("com.tle.platform.common", "com.tle.platform.swing", "com.tle.platform.equella")
 
   val keepPlugins = Set("com.tle.log4j", "com.tle.webstart.admin", "com.tle.tomcat", "com.tle.core.application", "com.tle.core.security",
     "com.tle.web.sections", "com.tle.core.guice", "com.tle.web.adminconsole", "com.tle.common.inplaceeditor") ++ platformPlugins
 
 
-  def cycleChecker(allImports: Iterable[PluginDeets]): Set[String] => Option[String] = {
+  def cycleChecker(allImports: Iterable[PluginDeets]): Set[String] => Either[String, Set[String]] = {
     val deetMap = allImports.map(p => (p.pId, p)).toMap
 
-    def wouldCauseCycle(toCheck: Set[String]): Option[String] = {
+    def wouldCauseCycle(_toCheck: Set[String]): Either[String, Set[String]] = {
 
-      val withExclusions = toCheck ++ toCheck.toSeq.flatMap(mutualExclusions)
+      val randomCheck = scala.util.Random.shuffle(_toCheck.toList)
+      val (actualCheck, toCheck, withExclusions) = randomCheck.find(mutualKeys).map {
+        firstMutual => val withOutFirst = mutualKeys - firstMutual
+          (randomCheck.filterNot(withOutFirst), _toCheck -- withOutFirst, _toCheck ++ mutualExclusions(firstMutual))
+      }.getOrElse(randomCheck, _toCheck, _toCheck)
+
       def checkIter(parents: List[String], ids: Iterator[String], state: Set[String]): Either[Set[String], String] = {
 
         @tailrec
@@ -85,7 +92,10 @@ object PluginRefactor {
         }
       }
 
-      topLevel(scala.util.Random.shuffle(toCheck.toList), Set.empty)
+      topLevel(actualCheck, Set.empty) match {
+        case None => Right(actualCheck.toSet)
+        case Some(bad) => Left(bad)
+      }
     }
     wouldCauseCycle
   }
@@ -121,8 +131,8 @@ object PluginRefactor {
           if (!iter.hasNext) Left(Right(soFar, stats)) else {
             val nextSet = iter.next()
             wouldCauseCycle(nextSet) match {
-              case None => Right(nextSet)
-              case Some(bad) => checkSubsets(iter, soFar + 1, stats.updated(bad, stats.getOrElse(bad, 0) + 1))
+              case Right(correct) => Right(correct)
+              case Left(bad) => checkSubsets(iter, soFar + 1, stats.updated(bad, stats.getOrElse(bad, 0) + 1))
             }
           }
         }
@@ -150,7 +160,7 @@ object PluginRefactor {
                    baseParentDir: File, pluginId: String, toMerge: Seq[String], adminConsole: Boolean): Unit = {
     val allPlugins = allBaseDirs.map(t => PluginDeets(t._1, t._2))
 
-    if (cycleChecker(allPlugins)(toMerge.toSet).isDefined)
+    if (cycleChecker(allPlugins)(toMerge.toSet).isLeft)
     {
       println("Sorry that would cause a cycle")
     }

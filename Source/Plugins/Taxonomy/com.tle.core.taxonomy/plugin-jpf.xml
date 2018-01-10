@@ -11,7 +11,6 @@
     <import plugin-id="com.tle.core.migration" />
     <import plugin-id="com.tle.core.scripting" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.web.remoting" />
     <import plugin-id="com.tle.web.remoting.soap" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
@@ -23,6 +22,7 @@
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.equella.core9" />
+    <import plugin-id="com.equella.core12" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

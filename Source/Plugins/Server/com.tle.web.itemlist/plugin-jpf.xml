@@ -4,13 +4,13 @@
   <requires>
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.freetext" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.htmleditor" exported="true" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core12" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

@@ -2,7 +2,7 @@
 <#include "/com.tle.web.sections.equella@/macro/settings.ftl" />
 <#include "/com.tle.web.sections.standard@/list.ftl" />
 <#include "/com.tle.web.sections.standard@/radio.ftl"/>
-<#include "/com.tle.web.wizard.controls.universal@/common-edit-handler.ftl" />
+<#include m.commonIncludePath />
 
 <#--<@settingContainer mandatory=false>
 	<@setting label=b.key('handlers.file.label.displayname') section=s.displayName />

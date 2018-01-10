@@ -6,7 +6,6 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.platform.common" />
-    <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.web.freemarker" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.standard" />
@@ -15,6 +14,7 @@
     <import plugin-id="com.equella.core3" />
     <import plugin-id="com.equella.admin" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core12" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

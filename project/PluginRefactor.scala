@@ -92,9 +92,12 @@ object PluginRefactor {
         }
       }
 
-      topLevel(actualCheck, Set.empty) match {
-        case None => Right(actualCheck.toSet)
-        case Some(bad) => Left(bad)
+      actualCheck match {
+        case singlePlugin :: Nil => Left(singlePlugin)
+        case _ => topLevel(actualCheck, Set.empty) match {
+          case None => Right(actualCheck.toSet)
+          case Some(bad) => Left(bad)
+        }
       }
     }
     wouldCauseCycle
@@ -138,13 +141,13 @@ object PluginRefactor {
         }
       }
       checkSubsets(allSubsets, soFar, stats) match {
-        case Left(Left(failed)) => findSubset(baseSet.size - 2, baseSet - failed, 0, Map.empty)
+        case Left(Left(failed)) => findSubset(Math.min(baseSet.size - 1, 10), baseSet - failed, 0, Map.empty)
         case Left(Right((sf, s))) => findSubset(size-1, baseSet, sf, s)
         case Right(success) => Right(success)
       }
     }
 
-    findSubset(onlyAllowed.size - 1, onlyAllowed.toSet, 0, Map.empty) match {
+    findSubset(Math.min(onlyAllowed.size - 1, 10), onlyAllowed.toSet, 0, Map.empty) match {
       case Right(ok) => ok
       case Left(f) => Seq.empty
     }
@@ -277,7 +280,7 @@ object PluginRefactor {
       }
 
       def keyParameters(extPlugin: String, ext: String): (Set[String], Set[String]) = (extPlugin, ext) match {
-        case (_, "portletRenderer" | "resourceViewer" | "connectorType" | "portletType") => (Set("nameKey", "descriptionKey"), Set())
+        case (_, "portletRenderer" | "resourceViewer" | "connectorType" | "portletType") => (Set("nameKey", "linkKey", "descriptionKey"), Set())
         case ("com.tle.mycontent", "contentHandler") => (Set("nameKey"), Set.empty)
         case ("com.tle.admin.tools", "tool") => (Set("name"), Set("class"))
         case ("com.tle.admin.controls", "control") => (Set("name"), Set("wrappedClass", "editorClass", "modelClass"))
@@ -296,6 +299,7 @@ object PluginRefactor {
         case ("com.tle.core.migration" ,"migration") => (Set(), Set("id", "obsoletedby"))
         case ("com.tle.core.institution.convert", "xmlmigration") => (Set(), Set("id", "obsoletedby"))
         case ("com.tle.core.scheduler", "scheduledTask") => (Set(), Set("id"))
+        case ("com.tle.web.settings", "settingsGroupingExtension") => (Set("nameKey"), Set())
         case _ => (Set.empty, Set("class", "listenerClass"))
       }
 

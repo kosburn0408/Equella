@@ -8,14 +8,12 @@
     <import plugin-id="com.tle.mycontent" />
     <import plugin-id="com.tle.web.htmleditor" />
     <import plugin-id="com.tle.web.ims" />
-    <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.selection" />
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewitem.treeviewer" />
     <import plugin-id="com.tle.web.viewurl" />
-    <import plugin-id="com.tle.web.wizard" />
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.web.api.item.equella.serializer" />
@@ -28,7 +26,8 @@
     <import plugin-id="com.equella.core3" />
     <import plugin-id="com.equella.core10" />
     <import plugin-id="com.equella.core11" />
-    <import plugin-id="com.equella.core9" />
+    <import plugin-id="com.equella.core13" />
+    <import plugin-id="com.equella.core14" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

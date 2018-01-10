@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<plugin id="com.equella.core13" version="1">
+  <requires>
+    <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core11" />
+    <import plugin-id="com.equella.core2" exported="true" />
+    <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core6" exported="true" />
+    <import plugin-id="com.tle.common.i18n" />
+    <import plugin-id="com.tle.core.collection" />
+    <import plugin-id="com.tle.core.guice" />
+    <import plugin-id="com.tle.core.i18n" />
+    <import plugin-id="com.tle.core.item" />
+    <import plugin-id="com.tle.core.notification" />
+    <import plugin-id="com.tle.core.portal" />
+    <import plugin-id="com.tle.core.scripting" />
+    <import plugin-id="com.tle.core.workflow.thumbnail" />
+    <import plugin-id="com.tle.web.core" />
+    <import plugin-id="com.tle.web.freemarker" />
+    <import plugin-id="com.tle.web.htmleditor" />
+    <import plugin-id="com.tle.web.integration" />
+    <import plugin-id="com.tle.web.itemadmin" />
+    <import plugin-id="com.tle.web.itemlist" />
+    <import plugin-id="com.tle.web.myresources" />
+    <import plugin-id="com.tle.web.portal" />
+    <import plugin-id="com.tle.web.sections" />
+    <import plugin-id="com.tle.web.sections.equella" />
+    <import plugin-id="com.tle.web.sections.standard" />
+    <import plugin-id="com.tle.web.selection" />
+    <import plugin-id="com.tle.web.viewitem" />
+    <import plugin-id="com.tle.web.viewitem.summary" />
+    <import plugin-id="com.tle.web.viewurl" />
+    <import plugin-id="com.tle.web.wizard" />
+    <import plugin-id="com.tle.web.wizard.page" />
+    <import plugin-id="com.tle.web.workflow" />
+    <import plugin-id="com.tle.web.workflow.portal" />
+    <import plugin-id="com.equella.core14" />
+  </requires>
+  <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
+    <parameter id="class" value="com.tle.web.sections.equella.guice.EquellaModule" />
+    <parameter id="class" value="com.tle.web.wizard.guice.WizardModule" />
+    <parameter id="class" value="com.tle.web.workflow.guice.CurrentTaskModule" />
+    <parameter id="class" value="com.tle.web.workflow.guice.ManageTaskSearchModule" />
+    <parameter id="class" value="com.tle.web.workflow.guice.StaticServices" />
+    <parameter id="class" value="com.tle.web.workflow.guice.TaskSearchModule" />
+  </extension>
+  <extension plugin-id="com.tle.web.myresources" point-id="subsearch" id="moderationQueue">
+    <parameter id="bean" value="bean:com.tle.web.workflow.myresources.ModerationQueueSearch" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="taskList">
+    <parameter id="path" value="/access/tasklist.do" />
+    <parameter id="root" value="bean:/access/tasklist" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="taskManage">
+    <parameter id="path" value="/access/managetasks.do" />
+    <parameter id="root" value="bean:/access/managetasks" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionFilter" id="integrationFilter">
+    <parameter id="id" value="task" />
+    <parameter id="class" value="bean:com.tle.web.workflow.tasks.ModerationService" />
+    <parameter id="order" value="500" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="currentTask">
+    <parameter id="path" value="$CURRENTTASK$" />
+    <parameter id="root" value="bean:$CURRENTTASK$" />
+    <parameter id="url" value="false" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections.equella" point-id="menuContributor" id="taskManageMenuContributor">
+    <parameter id="menuContributorClass" value="bean:com.tle.web.workflow.manage.TaskManagementMenuContributor" />
+    <parameter id="enabledFor" value="loggedIn" />
+  </extension>
+  <extension plugin-id="com.tle.core.notification" point-id="notificationExtension" id="taskNotifications">
+    <parameter id="type" value="moderate" />
+    <parameter id="type" value="overdue" />
+    <parameter id="bean" value="bean:com.tle.web.workflow.notification.TaskNotifications" />
+  </extension>
+  <extension plugin-id="com.tle.core.notification" point-id="notificationExtension" id="scriptTaskNotifications">
+    <parameter id="type" value="error" />
+    <parameter id="type" value="executed" />
+    <parameter id="bean" value="bean:com.tle.web.workflow.notification.ScriptTaskNotification" />
+  </extension>
+  <extension plugin-id="com.tle.core.notification" point-id="notificationExtension" id="stdNotifications">
+    <parameter id="type" value="wentlive" />
+    <parameter id="type" value="wentliv2" />
+    <parameter id="type" value="mylive" />
+    <parameter id="bean" value="bean:com.tle.web.workflow.notification.StandardNotifications" />
+  </extension>
+  <extension plugin-id="com.tle.core.notification" point-id="notificationExtension" id="badUrlNotifications">
+    <parameter id="type" value="badurl" />
+    <parameter id="bean" value="bean:com.tle.web.workflow.notification.BadURLNotifications" />
+  </extension>
+  <extension plugin-id="com.tle.core.notification" point-id="notificationExtension" id="rejectNotifications">
+    <parameter id="type" value="rejected" />
+    <parameter id="bean" value="bean:com.tle.web.workflow.notification.RejectNotification" />
+  </extension>
+  <extension plugin-id="com.tle.core.notification" point-id="notificationExtension" id="reassignNotifications">
+    <parameter id="type" value="reassign" />
+    <parameter id="bean" value="bean:com.tle.web.workflow.notification.ReassignNotification" />
+  </extension>
+  <extension plugin-id="com.tle.web.workflow.portal" point-id="filter" id="taskFilters">
+    <parameter id="bean" value="bean:com.tle.web.workflow.tasks.portal.TaskListPortalExtension" />
+    <parameter id="order" value="100" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="section" id="workflowFilter">
+    <parameter id="path" value="/access/itemadmin.do" />
+    <parameter id="class" value="bean:com.tle.web.workflow.manage.FilterByWorkflowSection" />
+    <parameter id="parentid" value="SEARCH_RESULTS_ACTIONS" />
+    <parameter id="afterid" value="com.tle.web.search.filter.FilterByBadUrlSection" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="section" id="workflowTaskFilter">
+    <parameter id="path" value="/access/itemadmin.do" />
+    <parameter id="class" value="bean:com.tle.web.workflow.manage.FilterByWorkflowTaskSection" />
+    <parameter id="parentid" value="SEARCH_RESULTS_ACTIONS" />
+    <parameter id="afterid" value="com.tle.web.workflow.manage.FilterByWorkflowSection" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="section" id="workflowProgress">
+    <parameter id="path" value="/viewitem/viewitem.do" />
+    <parameter id="class" value="bean:com.tle.web.workflow.view.CurrentModerationContentSection" />
+    <parameter id="parentid" value="com.tle.web.viewitem.summary.SUMMARY_CONTENT" />
+  </extension>
+  <extension plugin-id="com.tle.web.portal" point-id="portletRenderer" id="taskStatisticsPortletRenderer">
+    <parameter id="id" value="taskstatistics" />
+    <parameter id="class" value="bean:com.tle.web.workflow.portal.TaskStatisticsPortletRenderer" />
+    <parameter id="nameKey" value="com.equella.core13.portal.taskstats.name" />
+    <parameter id="descriptionKey" value="com.equella.core13.portal.taskstats.description" />
+  </extension>
+  <extension plugin-id="com.tle.web.portal" point-id="portletEditor" id="taskStatisticsPortletEditor">
+    <parameter id="id" value="taskstatistics" />
+    <parameter id="class" value="bean:com.tle.web.workflow.portal.TaskStatisticsPortletEditor" />
+  </extension>
+  <extension plugin-id="com.tle.core.portal" point-id="portletType" id="taskStatisticsPortlet">
+    <parameter id="id" value="taskstatistics" />
+    <parameter id="nameKey" value="com.equella.core13.portal.taskstats.name" />
+    <parameter id="descriptionKey" value="com.equella.core13.portal.taskstats.description" />
+    <parameter id="node" value="PORTLET_TASKSTATISTICS" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections.equella" point-id="topbarLink" id="tasksLink">
+    <parameter id="class" value="bean:com.tle.web.workflow.tasks.TasksTopbarLink" />
+    <parameter id="order" value="100" />
+  </extension>
+  <extension plugin-id="com.tle.web.core" point-id="webServlet" id="workflowMessageFileServlet">
+    <parameter id="bean" value="bean:com.tle.web.workflow.servlet.WorkflowMessageFileServlet" />
+    <parameter id="url-pattern" value="/workflow/message/*" />
+  </extension>
+  <extension plugin-id="com.tle.web.wizard" point-id="scriptObjects" id="wizardScriptObjects">
+    <parameter id="id" value="wizardScriptObjects" />
+    <parameter id="class" value="bean:com.tle.web.wizard.WizardService" />
+  </extension>
+  <extension plugin-id="com.tle.web.wizard.page" point-id="pageFactory" id="pageFactory">
+    <parameter id="bean" value="bean:com.tle.web.wizard.WizardService" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="wizardAction">
+    <parameter id="path" value="/access/runwizard.do" />
+    <parameter id="root" value="bean:/access/runwizard" />
+  </extension>
+  <extension plugin-id="com.tle.web.viewitem.summary" point-id="minorAction" id="newInSameCollection">
+    <parameter id="id" value="newInSameCollection" />
+    <parameter id="class" value="bean:com.tle.web.wizard.viewitem.actions.NewInSameCollectionSection" />
+    <parameter id="order" value="9000" />
+  </extension>
+  <extension plugin-id="com.tle.web.viewitem.summary" point-id="minorAction" id="redraft">
+    <parameter id="id" value="redraft" />
+    <parameter id="class" value="bean:com.tle.web.wizard.viewitem.actions.RedraftSection" />
+    <parameter id="order" value="9100" />
+  </extension>
+  <extension plugin-id="com.tle.web.viewitem.summary" point-id="minorAction" id="newVersion">
+    <parameter id="id" value="newVersion" />
+    <parameter id="class" value="bean:com.tle.web.wizard.viewitem.actions.NewVersionSection" />
+    <parameter id="order" value="9200" />
+  </extension>
+  <extension plugin-id="com.tle.web.viewitem.summary" point-id="minorAction" id="editItem">
+    <parameter id="id" value="editItem" />
+    <parameter id="class" value="bean:com.tle.web.wizard.viewitem.actions.EditSection" />
+    <parameter id="order" value="9300" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="exceptionHandler" id="wizardExceptionHandler">
+    <parameter id="class" value="bean:com.tle.web.wizard.section.WizardErrorHandler" />
+    <parameter id="order" value="0" />
+    <parameter id="exceptionClass" value="com.dytech.edge.wizard.WizardException" />
+  </extension>
+  <extension plugin-id="com.tle.web.workflow" point-id="moderationView" id="moderationView">
+    <parameter id="id" value="metadata" />
+    <parameter id="bean" value="bean:com.tle.web.wizard.WebWizardService" />
+  </extension>
+  <extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings_resource-centre">
+    <parameter id="group" value="resource-centre" />
+    <parameter id="file" value="lang/i18n-resource-centre.properties" />
+  </extension>
+</plugin>

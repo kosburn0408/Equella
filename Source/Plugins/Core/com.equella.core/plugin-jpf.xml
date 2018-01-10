@@ -2,6 +2,18 @@
 <!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
 <plugin id="com.equella.core" version="1">
   <requires>
+    <import plugin-id="com.equella.admin" />
+    <import plugin-id="com.equella.base" exported="true" />
+    <import plugin-id="com.equella.core10" />
+    <import plugin-id="com.equella.core11" />
+    <import plugin-id="com.equella.core2" />
+    <import plugin-id="com.equella.core3" exported="true" />
+    <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core6" exported="true" />
+    <import plugin-id="com.equella.core7" />
+    <import plugin-id="com.equella.core8" exported="true" />
+    <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.applet" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
@@ -75,26 +87,9 @@
     <import plugin-id="com.tle.web.workflow.portal" />
     <import plugin-id="org.hibernate" />
     <import plugin-id="org.mozilla.rhino" />
-    <import plugin-id="com.equella.base" />
-    <import plugin-id="com.equella.serverbase" />
-    <import plugin-id="com.equella.core2" />
-    <import plugin-id="com.equella.core5" />
-    <import plugin-id="com.equella.core7" />
-    <import plugin-id="com.equella.core8" />
-    <import plugin-id="com.equella.core6" />
-    <import plugin-id="com.equella.core4" />
-    <import plugin-id="com.equella.core3" />
-    <import plugin-id="com.equella.admin" />
-    <import plugin-id="com.equella.core9" />
-    <import plugin-id="com.equella.core10" />
-    <import plugin-id="com.equella.core11" />
-    <import plugin-id="com.equella.core12" />
+    <import plugin-id="com.equella.core13" />
+    <import plugin-id="com.equella.core14" />
   </requires>
-  <runtime>
-    <library type="code" path="classes/" id="core">
-      <export prefix="*" />
-    </library>
-  </runtime>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.connectors.brightspace.guice.BrightspaceConnectorModule" />
     <parameter id="class" value="com.tle.core.hibernate.guice.TransactionModule" />
@@ -155,12 +150,18 @@
     <parameter id="class" value="com.tle.web.remoterepo.z3950.Z3950Module" />
     <parameter id="class" value="com.tle.web.scheduler.SchedulerModule" />
     <parameter id="class" value="com.tle.web.scripting.advanced.guice.AscGuiceModule" />
+    <parameter id="class" value="com.tle.web.searching.guice.CourseSearchModule" />
+    <parameter id="class" value="com.tle.web.searching.guice.SearchTrackerModule" />
+    <parameter id="class" value="com.tle.web.searching.guice.SkinnySearchModule" />
+    <parameter id="class" value="com.tle.web.searching.guice.StandardSearchModule" />
+    <parameter id="class" value="com.tle.web.sections.equella.guice.EquellaModule" />
     <parameter id="class" value="com.tle.web.selection.home.guice.SelectionHomeModule" />
     <parameter id="class" value="com.tle.web.shortcuturls.ShortcutUrlsSettingsModule" />
     <parameter id="class" value="com.tle.web.userdetails.guice.UserDetailsModule" />
     <parameter id="class" value="com.tle.web.userscripts.service.UserScriptsModule" />
     <parameter id="class" value="com.tle.web.viewitem.largeimageviewer.guice.LargeImageViewerModule" />
     <parameter id="class" value="com.tle.web.wizard.guice.WizardBindBothModule" />
+    <parameter id="class" value="com.tle.web.wizard.guice.WizardControlModule" />
   </extension>
   <extension plugin-id="com.tle.core.connectors" point-id="connectorImplementation" id="equella">
     <parameter id="type" value="equella" />
@@ -2084,7 +2085,7 @@
     <parameter id="path" value="/viewitem/viewitem" />
     <parameter id="parentid" value="" />
   </extension>
-  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="searching_2">
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="searching_2_2">
     <parameter id="path" value="/access/contentrestrictions.do" />
     <parameter id="root" value="bean:/access/contentrestrictions" />
   </extension>
@@ -2466,7 +2467,7 @@
   <extension plugin-id="com.tle.core.security" point-id="privilegeTreeProviders" id="ltiConsumersPrivilegeTreeProvider">
     <parameter id="provider" value="bean:com.tle.web.lti.consumers.security.LtiConsumersPrivilegeTreeProvider" />
   </extension>
-  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="searching">
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="searching_2">
     <parameter id="path" value="/access/mailsettings.do" />
     <parameter id="root" value="bean:/access/mailsettings" />
   </extension>
@@ -2582,6 +2583,80 @@
     <parameter id="class" value="bean:com.tle.qti.QTIViewerSection" />
     <parameter id="path" value="/viewitem/viewitem" />
     <parameter id="parentid" value="" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections.equella" point-id="breadcrumb" id="searchCollection">
+    <parameter id="type" value="searchCollection" />
+    <parameter id="class" value="bean:com.tle.web.searching.navigation.SearchCollectionBreadcrumbProvider" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="searching">
+    <parameter id="path" value="/searching.do" />
+    <parameter id="root" value="bean:/searching" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="skinny-searching">
+    <parameter id="path" value="/access/skinny/searching.do" />
+    <parameter id="root" value="bean:/access/skinny/search" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections" point-id="sectionTree" id="course-searching">
+    <parameter id="path" value="/access/course/searching.do" />
+    <parameter id="root" value="bean:/access/course/search" />
+  </extension>
+  <extension plugin-id="com.tle.web.sections.equella" point-id="menuContributor" id="searchMenuContributor">
+    <parameter id="menuContributorClass" value="bean:com.tle.web.searching.SearchMenuContributor" />
+    <parameter id="enabledFor" value="loggedIn" />
+    <parameter id="enabledFor" value="guest" />
+  </extension>
+  <extension plugin-id="com.tle.web.selection" point-id="selectable" id="searchSelectable">
+    <parameter id="id" value="search" />
+    <parameter id="selectBean" value="bean:com.tle.web.searching.selection.SearchSelectable" />
+  </extension>
+  <extension plugin-id="com.tle.web.selection" point-id="selectionNavActions" id="searchNavAction">
+    <parameter id="type" value="search" />
+    <parameter id="class" value="bean:com.tle.web.searching.selection.SearchSelectable" />
+  </extension>
+  <extension plugin-id="com.tle.web.selection" point-id="selectable" id="skinnySearchSelectable">
+    <parameter id="id" value="skinnysearch" />
+    <parameter id="selectBean" value="bean:com.tle.web.searching.selection.SkinnySearchSelectable" />
+  </extension>
+  <extension plugin-id="com.tle.web.selection" point-id="selectionNavActions" id="skinnySearchNavAction">
+    <parameter id="type" value="skinnysearch" />
+    <parameter id="class" value="bean:com.tle.web.searching.selection.SkinnySearchSelectable" />
+  </extension>
+  <extension plugin-id="com.tle.web.selection" point-id="selectable" id="courseSearchSelectable">
+    <parameter id="id" value="coursesearch" />
+    <parameter id="selectBean" value="bean:com.tle.web.searching.selection.CourseSearchSelectable" />
+  </extension>
+  <extension plugin-id="com.tle.web.selection" point-id="selectionNavActions" id="courseSearchNavAction">
+    <parameter id="type" value="coursesearch" />
+    <parameter id="class" value="bean:com.tle.web.searching.selection.CourseSearchSelectable" />
+  </extension>
+  <extension plugin-id="com.tle.web.searching" point-id="searchTab" id="standardResultsTab">
+    <parameter id="bean" value="bean:com.tle.web.searching.StandardResultsTab" />
+    <parameter id="order" value="100" />
+  </extension>
+  <extension plugin-id="com.tle.web.itemlist" point-id="itemListExtension" id="commentCountGalleryDisplay">
+    <parameter id="bean" value="bean:com.tle.web.searching.itemlist.CommentCountGalleryDisplay" />
+    <parameter id="applies" value="gallery" />
+    <parameter id="applies" value="video" />
+  </extension>
+  <extension plugin-id="com.tle.web.itemlist" point-id="itemListExtension" id="galleryThumbnailAndPreviewDisplay">
+    <parameter id="bean" value="bean:com.tle.web.searching.itemlist.GalleryThumbnailAndPreviewDisplay" />
+    <parameter id="applies" value="gallery" />
+  </extension>
+  <extension plugin-id="com.tle.web.itemlist" point-id="itemListExtension" id="videoItemListDisplay">
+    <parameter id="bean" value="bean:com.tle.web.searching.itemlist.VideoItemListDisplay" />
+    <parameter id="applies" value="video" />
+  </extension>
+  <extension plugin-id="com.tle.web.itemlist" point-id="itemListExtension" id="imageCount">
+    <parameter id="bean" value="bean:com.tle.web.searching.itemlist.ItemListImageCountDisplaySection" />
+    <parameter id="applies" value="gallery" />
+  </extension>
+  <extension plugin-id="com.tle.web.itemlist" point-id="itemListExtension" id="videoCount">
+    <parameter id="bean" value="bean:com.tle.web.searching.itemlist.ItemListVideoCountDisplaySection" />
+    <parameter id="applies" value="video" />
+  </extension>
+  <extension plugin-id="com.tle.web.wizard" point-id="webControl" id="htmleditmce">
+    <parameter id="class" value="bean:com.tle.web.controls.htmleditor.HtmlEditMceWebControl" />
+    <parameter id="type" value="htmleditor" />
   </extension>
   <extension plugin-id="com.tle.common.i18n" point-id="bundle" id="strings_inplaceeditor-applet">
     <parameter id="group" value="inplaceeditor-applet" />

@@ -13,7 +13,6 @@
     <import plugin-id="com.tle.web.htmleditor" />
     <import plugin-id="com.tle.web.inplaceeditor" />
     <import plugin-id="com.tle.web.itemlist" />
-    <import plugin-id="com.tle.web.search" />
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.selection" />
@@ -21,11 +20,11 @@
     <import plugin-id="com.tle.web.viewitem" />
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.web.wizard" />
-    <import plugin-id="com.tle.web.wizard.page" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.core11" />
-    <import plugin-id="com.equella.core12" />
-    <import plugin-id="com.equella.core9" />
+    <import plugin-id="com.equella.core13" />
+    <import plugin-id="com.equella.core4" />
+    <import plugin-id="com.equella.core14" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />

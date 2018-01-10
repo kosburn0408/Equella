@@ -9,7 +9,6 @@
     <import plugin-id="com.equella.core6" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.core8" exported="true" />
-    <import plugin-id="com.equella.core9" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.common.inplaceeditor" />
@@ -45,7 +44,7 @@
     <import plugin-id="com.tle.web.wizard" />
     <import plugin-id="com.tle.web.wizard.controls.universal" />
     <import plugin-id="com.equella.core11" />
-    <import plugin-id="com.equella.core12" />
+    <import plugin-id="com.equella.core13" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.metadata.guice.MetadataHandlerTrackerModule" />

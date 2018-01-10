@@ -9,6 +9,7 @@
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core5" exported="true" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

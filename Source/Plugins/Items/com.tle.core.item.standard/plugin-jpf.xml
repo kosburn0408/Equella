@@ -9,7 +9,6 @@
     <import plugin-id="com.tle.core.notification" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.core.security" />
-    <import plugin-id="com.tle.ims" />
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.workflow" />
     <import plugin-id="com.tle.core.freetext" />

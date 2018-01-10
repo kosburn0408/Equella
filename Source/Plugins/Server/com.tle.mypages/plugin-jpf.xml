@@ -25,6 +25,7 @@
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core2" exported="true" />
     <import plugin-id="com.equella.core4" exported="true" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

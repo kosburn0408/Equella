@@ -20,7 +20,6 @@
     <import plugin-id="com.tle.core.workflow.video" />
     <import plugin-id="com.tle.core.item" />
     <!-- FIXME: used for ZippingProgess.  Needs removing -->
-    <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />

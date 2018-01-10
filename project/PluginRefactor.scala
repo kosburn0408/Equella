@@ -114,7 +114,7 @@ object PluginRefactor {
       println(size)
       @tailrec
       def checkSubsets(iter: Iterator[Set[String]], soFar: Int, stats: Map[String, Int]): Either[Either[String, (Int, Map[String, Int])], Set[String]] = {
-        if (soFar > 10000) {
+        if (soFar > 100000) {
           println(stats)
           Left(Left(stats.toSeq.maxBy(_._2)._1))
         } else {

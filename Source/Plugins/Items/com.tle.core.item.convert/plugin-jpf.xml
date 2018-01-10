@@ -10,6 +10,7 @@
     <import plugin-id="com.equella.base" />
     <import plugin-id="com.equella.serverbase" />
     <import plugin-id="com.equella.core7" />
+    <import plugin-id="com.equella.core3" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

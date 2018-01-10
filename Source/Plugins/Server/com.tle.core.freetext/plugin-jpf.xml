@@ -13,7 +13,6 @@
     <import plugin-id="com.tle.core.institution.convert" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.tle.core.collection" />
-    <import plugin-id="com.tle.ims" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core7" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />

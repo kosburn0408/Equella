@@ -12,7 +12,6 @@
     <import plugin-id="com.tle.web.viewurl" />
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.web.sections.equella" />
-    <import plugin-id="com.tle.ims" />
     <import plugin-id="com.tle.core.item" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.base" />

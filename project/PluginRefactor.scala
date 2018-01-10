@@ -285,6 +285,7 @@ object PluginRefactor {
         case ("com.tle.admin.taxonomy.tool", "predefinedTermDataKey") => (Set("name", "description"), Set())
         case ("com.tle.core.migration" ,"migration") => (Set(), Set("id", "obsoletedby"))
         case ("com.tle.core.institution.convert", "xmlmigration") => (Set(), Set("id", "obsoletedby"))
+        case ("com.tle.core.scheduler", "scheduledTask") => (Set(), Set("id"))
         case _ => (Set.empty, Set("class", "listenerClass"))
       }
 

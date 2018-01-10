@@ -71,7 +71,7 @@ public class ThreadLocalFilter extends OncePerRequestFilter
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<ThreadLocalExtension>(pluginService, ThreadLocalFilter.class, "threadLocal", "id");
+		tracker = new PluginTracker<ThreadLocalExtension>(pluginService, "com.tle.web.core", "threadLocal", "id");
 		tracker.setBeanKey("bean");
 	}
 }

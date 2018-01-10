@@ -106,7 +106,7 @@ public class ModerationService extends AbstractSectionFilter
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<ModerationView>(pluginService, getClass(), "moderationView", "id")
+		tracker = new PluginTracker<ModerationView>(pluginService, "com.tle.web.workflow", "moderationView", "id")
 			.setBeanKey("bean");
 	}
 

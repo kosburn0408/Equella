@@ -140,10 +140,10 @@ public class ViewItemServiceImpl implements ViewItemService, ItemDefinitionDelet
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		viewerPlugins = new PluginTracker<ResourceViewer>(pluginService, getClass(), "resourceViewer", "id",
+		viewerPlugins = new PluginTracker<ResourceViewer>(pluginService, "com.tle.web.viewurl", "resourceViewer", "id",
 			new PluginTracker.ExtensionParamComparator("order", false));
 		viewerPlugins.setBeanKey("class");
-		filterTracker = new PluginTracker<ResourceViewerFilter>(pluginService, getClass(), "resourceViewerFilter",
+		filterTracker = new PluginTracker<ResourceViewerFilter>(pluginService, "com.tle.web.viewurl", "resourceViewerFilter",
 			"id");
 		filterTracker.setBeanKey("class");
 	}

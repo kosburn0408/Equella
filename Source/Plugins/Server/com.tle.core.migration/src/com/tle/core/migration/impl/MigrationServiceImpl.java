@@ -298,7 +298,7 @@ public class MigrationServiceImpl implements MigrationService, StartupBean, Task
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		migrateTracker = new PluginTracker<Migration>(pluginService, getClass(), "migration", "id").setBeanKey("bean");
+		migrateTracker = new PluginTracker<Migration>(pluginService, "com.tle.core.migration", "migration", "id").setBeanKey("bean");
 	}
 
 	@Override

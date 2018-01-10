@@ -105,7 +105,7 @@ public class VideoServiceImpl implements VideoService
 	public void setPluginService(PluginService pluginService)
 	{
 		supportedVideoAttachments = new PluginTracker<SupportedVideoMimeTypeExtension>(pluginService,
-			VideoService.class, "supportedVideoMimeType", null);
+			"com.tle.core.workflow.video", "supportedVideoMimeType", null);
 		supportedVideoAttachments.setBeanKey("bean");
 	}
 }

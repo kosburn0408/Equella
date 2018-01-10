@@ -37,7 +37,7 @@ public class MenuService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		contributors = new PluginTracker<MenuContributor>(pluginService, getClass(), "menuContributor",
+		contributors = new PluginTracker<MenuContributor>(pluginService, "com.tle.web.sections.equella", "menuContributor",
 			"menuContributorClass");
 		contributors.setBeanKey("menuContributorClass");
 	}

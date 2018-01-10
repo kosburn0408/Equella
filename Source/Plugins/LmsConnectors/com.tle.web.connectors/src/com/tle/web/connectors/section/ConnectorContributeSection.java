@@ -269,7 +269,7 @@ public class ConnectorContributeSection
 	public void setPluginService(PluginService pluginService)
 	{
 		editorTracker = new PluginTracker<EntityEditor<ConnectorEditingBean, Connector>>(pluginService,
-			ConnectorContributeSection.class, "connectorEditor", "id");
+			"com.tle.web.connectors", "connectorEditor", "id");
 		editorTracker.setBeanKey("class");
 	}
 

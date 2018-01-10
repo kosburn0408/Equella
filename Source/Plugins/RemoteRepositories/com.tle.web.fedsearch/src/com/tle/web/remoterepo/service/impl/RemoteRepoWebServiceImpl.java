@@ -176,7 +176,7 @@ public class RemoteRepoWebServiceImpl implements RemoteRepoWebService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		remoteRepoSearches = new PluginTracker<RemoteRepoSearch>(pluginService, RemoteRepoWebService.class,
+		remoteRepoSearches = new PluginTracker<RemoteRepoSearch>(pluginService, "com.tle.web.fedsearch",
 			"remoteRepoSearch", "type");
 		remoteRepoSearches.setBeanKey("class");
 	}

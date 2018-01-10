@@ -34,7 +34,7 @@ import scala.collection.JavaConverters._
 object NotificationEmailer {
   val MAX_EMAIL_NOTIFICATIONS = 30
 
-  lazy val tracker: PluginTracker[NotificationExtension] = new PluginTracker(AbstractPluginService.get(), getClass,
+  lazy val tracker: PluginTracker[NotificationExtension] = new PluginTracker(AbstractPluginService.get(), "com.tle.core.notification",
     "notificationExtension", "type").setBeanKey("bean")
 
   def extensionForType(str: String): Option[NotificationExtension] =

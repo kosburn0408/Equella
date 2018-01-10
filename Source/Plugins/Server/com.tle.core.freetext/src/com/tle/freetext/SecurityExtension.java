@@ -57,7 +57,7 @@ public class SecurityExtension implements SecurityPostProcessor
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		reindexHandlers = new PluginTracker<ReindexHandler>(pluginService, getClass(), "securityReindexHandler", null)
+		reindexHandlers = new PluginTracker<ReindexHandler>(pluginService, "com.tle.core.freetext", "securityReindexHandler", null)
 			.setBeanKey("bean");
 	}
 

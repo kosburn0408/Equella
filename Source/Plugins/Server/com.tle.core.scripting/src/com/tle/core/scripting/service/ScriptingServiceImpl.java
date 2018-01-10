@@ -282,12 +282,12 @@ public class ScriptingServiceImpl implements ScriptingService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		scriptObjectTracker = new PluginTracker<ScriptObjectContributor>(pluginService, ScriptingServiceImpl.class,
+		scriptObjectTracker = new PluginTracker<ScriptObjectContributor>(pluginService, "com.tle.core.scripting",
 			"scriptObjects", "id");
 		scriptObjectTracker.setBeanKey("class");
 
 		userScriptObjectTracker = new PluginTracker<UserScriptObjectContributor>(pluginService,
-			ScriptingServiceImpl.class, "userScriptObjects", "id");
+				"com.tle.core.scripting", "userScriptObjects", "id");
 		userScriptObjectTracker.setBeanKey("class");
 	}
 

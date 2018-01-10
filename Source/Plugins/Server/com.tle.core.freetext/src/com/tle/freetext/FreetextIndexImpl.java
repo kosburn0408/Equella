@@ -316,9 +316,9 @@ public class FreetextIndexImpl implements FreetextIndex, InstitutionListener, Se
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		indexingTracker = new PluginTracker<IndexingExtension>(pluginService, getClass(), "indexingExtension", null); //$NON-NLS-1$
+		indexingTracker = new PluginTracker<IndexingExtension>(pluginService, "com.tle.core.freetext", "indexingExtension", null); //$NON-NLS-1$
 		indexingTracker.setBeanKey("class"); //$NON-NLS-1$
-		indexTracker = new PluginTracker<ItemIndex<?>>(pluginService, getClass(), "freetextIndex", "id"); //$NON-NLS-1$ //$NON-NLS-2$
+		indexTracker = new PluginTracker<ItemIndex<?>>(pluginService, "com.tle.core.freetext", "freetextIndex", "id"); //$NON-NLS-1$ //$NON-NLS-2$
 		indexTracker.setBeanKey("class"); //$NON-NLS-1$
 	}
 

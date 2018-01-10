@@ -1244,7 +1244,7 @@ public class WizardServiceImpl implements WizardService, WizardScriptObjectContr
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		scriptObjectTracker = new PluginTracker<WizardScriptObjectContributor>(pluginService, WizardService.class,
+		scriptObjectTracker = new PluginTracker<WizardScriptObjectContributor>(pluginService, "com.tle.web.wizard",
 			"scriptObjects", "id");
 		scriptObjectTracker.setBeanKey("class");
 	}

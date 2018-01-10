@@ -96,10 +96,10 @@ public class SettingsSection extends AbstractPrototypeSection<Object> implements
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		settingsExtensions = new PluginTracker<AbstractParentSettingsSection<?>>(pluginService, getClass(),
+		settingsExtensions = new PluginTracker<AbstractParentSettingsSection<?>>(pluginService, "com.tle.web.settings",
 			"settingsExtension", null);
 		settingsExtensions.setBeanKey("class");
-		settingsGroupExtensions = new PluginTracker<Object>(pluginService, getClass(), "settingsGroupingExtension",
+		settingsGroupExtensions = new PluginTracker<Object>(pluginService, "com.tle.web.settings", "settingsGroupingExtension",
 			PluginTracker.LOCAL_ID_FOR_KEY);
 	}
 

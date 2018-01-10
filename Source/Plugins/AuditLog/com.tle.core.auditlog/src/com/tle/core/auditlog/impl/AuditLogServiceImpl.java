@@ -256,7 +256,7 @@ public class AuditLogServiceImpl implements AuditLogService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		extensionTracker = new PluginTracker<AuditLogExtension>(pluginService, getClass(), "auditTable", null)
+		extensionTracker = new PluginTracker<AuditLogExtension>(pluginService, "com.tle.core.auditlog", "auditTable", null)
 			.setBeanKey("bean");
 	}
 

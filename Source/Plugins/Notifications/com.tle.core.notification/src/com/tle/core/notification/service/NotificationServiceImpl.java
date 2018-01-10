@@ -351,7 +351,7 @@ public class NotificationServiceImpl implements NotificationService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		extensionTracker = new PluginTracker<NotificationExtension>(pluginService, getClass(), "notificationExtension",
+		extensionTracker = new PluginTracker<NotificationExtension>(pluginService, "com.tle.core.notification", "notificationExtension",
 			"type").setBeanKey("bean");
 	}
 

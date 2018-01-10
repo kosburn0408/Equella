@@ -6,7 +6,6 @@
     <import plugin-id="com.tle.core.guice" />
     <import plugin-id="com.tle.core.replicatedcache" />
     <import plugin-id="com.tle.core.schema" />
-    <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.web.core" />
     <import plugin-id="com.tle.core.collection" />
     <import plugin-id="com.tle.core.item" />
@@ -14,6 +13,7 @@
     <import plugin-id="com.equella.core5" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

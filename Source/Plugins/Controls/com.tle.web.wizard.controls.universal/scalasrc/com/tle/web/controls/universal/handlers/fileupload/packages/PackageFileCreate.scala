@@ -48,7 +48,7 @@ trait PackageAttachmentExtension {
 object PackageFileCreate {
 
   lazy val tracker = new PluginTracker[PackageAttachmentExtension](AbstractPluginService.get(),
-    classOf[PackageAttachmentExtension], "packageAttachmentHandler", "type").setBeanKey("class")
+    "com.tle.web.wizard.controls.universal", "packageAttachmentHandler", "type").setBeanKey("class")
 
   lazy val packageCreateById: Map[String, PackageAttachmentExtension] = tracker.getBeanMap.asScala.toMap
   lazy val packageTypes: Seq[PackageAttachmentExtension] = packageCreateById.values.toSeq.sortBy(_.order)

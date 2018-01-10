@@ -116,7 +116,7 @@ public class InstitutionImportServiceImpl implements InstitutionImportService
 	public void setPluginService(PluginService pluginService)
 	{
 		postReadMigTracker = new PluginTracker<PostReadMigrator<?>>(pluginService,
-			pluginService.getPluginIdForObject(this), "postreadmigration", "id").setBeanKey("bean");
+			"com.tle.core.institution.convert", "postreadmigration", "id").setBeanKey("bean");
 	}
 
 	@Override

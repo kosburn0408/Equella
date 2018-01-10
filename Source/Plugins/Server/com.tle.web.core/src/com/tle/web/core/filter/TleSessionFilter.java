@@ -172,7 +172,7 @@ public class TleSessionFilter extends AbstractWebFilter
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		userStateHooks = new PluginTracker<UserStateHook>(pluginService, TleSessionFilter.class, "userStateHook", "id",
+		userStateHooks = new PluginTracker<UserStateHook>(pluginService, "com.tle.web.core", "userStateHook", "id",
 			new ExtensionParamComparator("order"));
 		userStateHooks.setBeanKey("bean");
 	}

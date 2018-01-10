@@ -468,14 +468,14 @@ public class IMSExporter extends AbstractPrototypeSection<IMSExporterModel> impl
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		fileExporters = new PluginTracker<IMSFileExporter>(pluginService, IMSExporter.class, "imsFileExporter", "id");
+		fileExporters = new PluginTracker<IMSFileExporter>(pluginService, "com.tle.web.ims", "imsFileExporter", "id");
 		fileExporters.setBeanKey("class");
 
-		manifestExporters = new PluginTracker<IMSManifestExporter>(pluginService, IMSNavigationHelper.class,
+		manifestExporters = new PluginTracker<IMSManifestExporter>(pluginService, "com.tle.ims",
 			"imsManifestExporter", "id");
 		manifestExporters.setBeanKey("class");
 
-		attachmentExporters = new PluginTracker<IMSAttachmentExporter>(pluginService, IMSNavigationHelper.class,
+		attachmentExporters = new PluginTracker<IMSAttachmentExporter>(pluginService, "com.tle.ims",
 			"imsAttachmentExporter", "id");
 		attachmentExporters.setBeanKey("class");
 	}

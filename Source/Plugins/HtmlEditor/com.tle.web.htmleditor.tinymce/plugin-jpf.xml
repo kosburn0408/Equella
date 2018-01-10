@@ -10,11 +10,11 @@
     <import plugin-id="com.tle.web.sections" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.selection" />
-    <import plugin-id="com.tle.web.spellcheck" />
     <import plugin-id="com.equella.base" exported="true" />
     <import plugin-id="com.equella.core5" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

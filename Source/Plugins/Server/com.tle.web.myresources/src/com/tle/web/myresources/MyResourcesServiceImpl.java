@@ -58,7 +58,7 @@ public class MyResourcesServiceImpl implements MyResourcesService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<MyResourcesSubSearch>(pluginService, getClass(), "subsearch", null)
+		tracker = new PluginTracker<MyResourcesSubSearch>(pluginService, "com.tle.web.myresources", "subsearch", null)
 			.setBeanKey("bean");
 	}
 }

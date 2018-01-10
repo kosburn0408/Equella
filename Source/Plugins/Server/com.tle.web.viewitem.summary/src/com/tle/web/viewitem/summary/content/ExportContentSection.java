@@ -115,7 +115,7 @@ public class ExportContentSection extends AbstractContentSection<ExportContentSe
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		exporterTracker = new PluginTracker<SectionId>(pluginService, getClass(), "itemExporter", "id",
+		exporterTracker = new PluginTracker<SectionId>(pluginService, "com.tle.web.viewitem.summary", "itemExporter", "id",
 			new ExtensionParamComparator());
 		exporterTracker.setBeanKey("class");
 	}

@@ -556,10 +556,10 @@ public class PortletWebServiceImpl implements PortletWebService, PortletsUpdated
 	@SuppressWarnings("nls")
 	public void setPluginService(PluginService pluginService)
 	{
-		editorTracker = new PluginTracker<PortletEditor>(pluginService, PortletWebService.class, "portletEditor", "id");
+		editorTracker = new PluginTracker<PortletEditor>(pluginService, "com.tle.web.portal", "portletEditor", "id");
 		editorTracker.setBeanKey("class");
 
-		rendererTracker = new PluginTracker<PortletContentRenderer<?>>(pluginService, PortletWebService.class,
+		rendererTracker = new PluginTracker<PortletContentRenderer<?>>(pluginService, "com.tle.web.portal",
 			"portletRenderer", "id");
 		rendererTracker.setBeanKey("class");
 	}

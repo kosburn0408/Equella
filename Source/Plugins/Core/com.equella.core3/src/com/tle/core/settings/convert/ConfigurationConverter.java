@@ -88,7 +88,7 @@ public class ConfigurationConverter extends AbstractConverter<Map<String, String
 	@Inject
 	public void setPluginService2(PluginService pluginService)
 	{
-		extensions = new PluginTracker<ConfigurationConverterExtension<?>>(pluginService, getClass(),
+		extensions = new PluginTracker<ConfigurationConverterExtension<?>>(pluginService, "com.tle.core.settings.convert",
 			"configurationConverterExtension", null);
 	}
 }

@@ -696,7 +696,7 @@ public class PortletServiceImpl extends AbstractEntityServiceImpl<PortletEditing
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		typesTracker = new PluginTracker<PortletServiceExtension>(pluginService, PortletService.class, "portletType",
+		typesTracker = new PluginTracker<PortletServiceExtension>(pluginService, "com.tle.core.portal", "portletType",
 			"id");
 		typesTracker.setBeanKey("serviceClass");
 	}

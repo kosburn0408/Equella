@@ -5,7 +5,6 @@
     <import plugin-id="com.tle.web.wizard.page" />
     <import plugin-id="com.tle.core.fedsearch" />
     <import plugin-id="com.tle.core.guice" />
-    <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.common.i18n" />
     <import plugin-id="com.tle.web.sections.equella" />
     <import plugin-id="com.tle.web.itemlist" />
@@ -22,6 +21,7 @@
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

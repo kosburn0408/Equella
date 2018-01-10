@@ -33,7 +33,6 @@
     <import plugin-id="com.tle.core.scheduler" />
     <import plugin-id="com.tle.core.schema" />
     <import plugin-id="com.tle.core.scripting" />
-    <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.services.item.relation" />
@@ -96,6 +95,7 @@
     <import plugin-id="com.equella.core4" />
     <import plugin-id="com.equella.core3" />
     <import plugin-id="com.equella.admin" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <runtime>
     <library type="code" path="classes/" id="core">

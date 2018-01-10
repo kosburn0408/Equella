@@ -67,7 +67,7 @@ public class TaskResultsDialog extends AbstractBulkResultsDialog<ItemTaskId>
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<BulkOperationExtension>(pluginService, getClass(), "bulkExtension", null)
+		tracker = new PluginTracker<BulkOperationExtension>(pluginService, "com.tle.web.workflow", "bulkExtension", null)
 			.setBeanKey("bean");
 	}
 

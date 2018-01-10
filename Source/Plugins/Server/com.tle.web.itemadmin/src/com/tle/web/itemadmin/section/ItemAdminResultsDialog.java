@@ -94,7 +94,7 @@ public class ItemAdminResultsDialog extends AbstractBulkResultsDialog<ItemIdKey>
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<BulkOperationExtension>(pluginService, getClass(), "bulkExtension", null)
+		tracker = new PluginTracker<BulkOperationExtension>(pluginService, "com.tle.web.itemadmin", "bulkExtension", null)
 			.setBeanKey("bean");
 	}
 

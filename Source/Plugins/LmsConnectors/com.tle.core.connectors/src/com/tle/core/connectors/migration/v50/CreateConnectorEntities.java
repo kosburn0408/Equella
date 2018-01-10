@@ -98,6 +98,6 @@ public class CreateConnectorEntities extends AbstractCreateMigration
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		connectorTracker = new PluginTracker<Object>(pluginService, getClass(), "connectorSchema", null);
+		connectorTracker = new PluginTracker<Object>(pluginService, "com.tle.core.connectors", "connectorSchema", null);
 	}
 }

@@ -106,7 +106,7 @@ public class SchedulerServiceImpl implements SchedulerService, SchemaListener
 	{
 		this.pluginService = pluginService;
 
-		taskTracker = new PluginTracker<ScheduledTask>(pluginService, getClass(), "scheduledTask", "id");
+		taskTracker = new PluginTracker<ScheduledTask>(pluginService, "com.tle.core.scheduler", "scheduledTask", "id");
 		taskTracker.setBeanKey("bean");
 	}
 

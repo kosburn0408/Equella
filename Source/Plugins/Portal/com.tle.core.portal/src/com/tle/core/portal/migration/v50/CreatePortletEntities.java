@@ -110,6 +110,6 @@ public class CreatePortletEntities extends AbstractCreateMigration
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		portletTracker = new PluginTracker<Object>(pluginService, getClass(), "portletSchema", null); //$NON-NLS-1$
+		portletTracker = new PluginTracker<Object>(pluginService, "com.tle.core.portal", "portletSchema", null); //$NON-NLS-1$
 	}
 }

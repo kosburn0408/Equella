@@ -120,7 +120,7 @@ public abstract class AbstractRemoteHandler<T> extends HttpServlet
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<T>(pluginService, getClass(), getExtensionPointName(), null).setBeanKey("bean");
+		tracker = new PluginTracker<T>(pluginService, "com.tle.web.remoting", getExtensionPointName(), null).setBeanKey("bean");
 	}
 
 	protected abstract String getExtensionPointName();

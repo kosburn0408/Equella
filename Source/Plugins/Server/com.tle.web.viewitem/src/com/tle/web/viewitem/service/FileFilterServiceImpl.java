@@ -42,7 +42,7 @@ public class FileFilterServiceImpl implements FileFilterService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		filters = new PluginTracker<FilestoreContentFilter>(pluginService, getClass(), "contentFilter", null,
+		filters = new PluginTracker<FilestoreContentFilter>(pluginService, "com.tle.web.viewitem", "contentFilter", null,
 			new PluginTracker.ExtensionParamComparator("order")).setBeanKey("bean");
 	}
 }

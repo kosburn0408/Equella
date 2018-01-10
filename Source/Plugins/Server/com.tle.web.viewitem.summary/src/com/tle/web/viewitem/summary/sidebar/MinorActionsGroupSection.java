@@ -119,7 +119,7 @@ public class MinorActionsGroupSection
 	public void setPluginService(PluginService pluginService)
 	{
 		minorActionsTracker = new PluginTracker<GenericMinorActionSection>(pluginService,
-			MinorActionsGroupSection.class, "minorAction", "id", new ExtensionParamComparator());
+			"com.tle.web.viewitem.summary", "minorAction", "id", new ExtensionParamComparator());
 		minorActionsTracker.setBeanKey("class");
 	}
 

@@ -444,7 +444,7 @@ public class ConnectorRepositoryServiceImpl implements ConnectorRepositoryServic
 	public void setPluginService(PluginService pluginService)
 	{
 		implTracker = new PluginTracker<ConnectorRepositoryImplementation>(pluginService,
-			ConnectorRepositoryService.class, "connectorImplementation", "type");
+			"com.tle.core.connectors", "connectorImplementation", "type");
 		implTracker.setBeanKey("class");
 	}
 

@@ -194,7 +194,7 @@ public class IMSTreeBuilder implements PackageTreeBuilder
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		fileImporters = new PluginTracker<IMSFileExporter>(pluginService, IMSTreeBuilder.class, "imsFileExporter", "id");
+		fileImporters = new PluginTracker<IMSFileExporter>(pluginService, "com.tle.web.ims", "imsFileExporter", "id");
 		fileImporters.setBeanKey("class");
 	}
 }

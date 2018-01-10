@@ -21,7 +21,6 @@
     <import plugin-id="com.tle.core.mimetypes" />
     <import plugin-id="com.tle.core.notification" />
     <import plugin-id="com.tle.core.schema" />
-    <import plugin-id="com.tle.core.search" />
     <import plugin-id="com.tle.core.security" />
     <import plugin-id="com.tle.core.services" />
     <import plugin-id="com.tle.core.services.item.relation" />
@@ -41,6 +40,7 @@
     <import plugin-id="com.equella.core4" exported="true" />
     <import plugin-id="com.equella.core3" exported="true" />
     <import plugin-id="com.equella.serverbase" />
+    <import plugin-id="com.equella.core9" />
   </requires>
   <extension plugin-id="com.tle.core.guice" point-id="module" id="guiceModules">
     <parameter id="class" value="com.tle.core.services.guice.ServicesModule" />

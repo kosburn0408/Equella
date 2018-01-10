@@ -163,7 +163,7 @@ public class MainItemContentSection extends AbstractContentSection<MainItemConte
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		extensionTracker = new PluginTracker<DisplaySectionConfiguration>(pluginService, getClass(),
+		extensionTracker = new PluginTracker<DisplaySectionConfiguration>(pluginService, "com.tle.web.viewitem.summary",
 			"summaryTabExtension", "id").setBeanKey("class");
 	}
 }

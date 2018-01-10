@@ -135,7 +135,7 @@ public class ItemAdminQuerySection
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<WithinExtension>(pluginService, getClass(), "withinExtension", "id")
+		tracker = new PluginTracker<WithinExtension>(pluginService, "com.tle.web.itemadmin", "withinExtension", "id")
 			.setBeanKey("bean");
 	}
 

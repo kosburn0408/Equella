@@ -141,7 +141,7 @@ public class InitialSchema extends AbstractCreateMigration
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		initialTracker = new PluginTracker<Object>(pluginService, getClass(), "initialSchema", null); //$NON-NLS-1$
+		initialTracker = new PluginTracker<Object>(pluginService, "com.tle.core.migration", "initialSchema", null); //$NON-NLS-1$
 	}
 
 	@SuppressWarnings("nls")

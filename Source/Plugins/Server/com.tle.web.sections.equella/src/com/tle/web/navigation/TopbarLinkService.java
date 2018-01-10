@@ -34,7 +34,7 @@ public class TopbarLinkService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		links = new PluginTracker<TopbarLink>(pluginService, getClass(), "topbarLink", "class",
+		links = new PluginTracker<TopbarLink>(pluginService, "com.tle.web.sections.equella", "topbarLink", "class",
 			new PluginTracker.ExtensionParamComparator("order"));
 		links.setBeanKey("class");
 

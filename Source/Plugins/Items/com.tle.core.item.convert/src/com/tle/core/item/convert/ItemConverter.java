@@ -673,7 +673,7 @@ public class ItemConverter extends AbstractConverter<ItemConverter.ItemConverter
 	{
 		super.setPluginService(pluginService);
 
-		itemExtrasTracker = new PluginTracker<ItemExtrasConverter>(pluginService, ItemConverter.class,
+		itemExtrasTracker = new PluginTracker<ItemExtrasConverter>(pluginService, "com.tle.core.item.convert",
 				"itemExtrasConverter", null, new PluginTracker.ExtensionParamComparator("order"));
 		itemExtrasTracker.setBeanKey("class");
 	}

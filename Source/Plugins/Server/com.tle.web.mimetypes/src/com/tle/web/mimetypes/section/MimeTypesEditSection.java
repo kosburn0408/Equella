@@ -252,7 +252,7 @@ public class MimeTypesEditSection extends AbstractPrototypeSection<MimeTypesEdit
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		extensions = new PluginTracker<MimeEditExtension>(pluginService, MimeTypesEditSection.class, "editExtension",
+		extensions = new PluginTracker<MimeEditExtension>(pluginService, "com.tle.web.mimetypes", "editExtension",
 			"id", new ExtensionParamComparator("order"));
 		extensions.setBeanKey("class");
 	}

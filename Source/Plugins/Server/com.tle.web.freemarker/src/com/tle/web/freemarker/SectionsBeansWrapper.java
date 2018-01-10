@@ -64,7 +64,7 @@ public class SectionsBeansWrapper extends BeansWrapper
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<SectionsTemplateModelProvider>(pluginService, SectionsBeansWrapper.class,
+		tracker = new PluginTracker<SectionsTemplateModelProvider>(pluginService, "com.tle.web.freemarker",
 			"templateModelProvider", "modelClass");
 		tracker.setBeanKey("class");
 	}

@@ -108,7 +108,7 @@ public class JavascriptServiceImpl implements JavascriptService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<JavascriptLibrary>(pluginService, JavascriptService.class,
+		tracker = new PluginTracker<JavascriptLibrary>(pluginService, "com.tle.core.javascript",
 			"javascriptLibrary", "id"); //$NON-NLS-1$ //$NON-NLS-2$
 		tracker.setBeanKey("class"); //$NON-NLS-1$
 	}

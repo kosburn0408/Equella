@@ -53,7 +53,7 @@ public class SettingsMenuContributor implements MenuContributor
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		extensionTracker = new PluginTracker<ViewableChildInterface>(pluginService, getClass(), "settingsExtension",
+		extensionTracker = new PluginTracker<ViewableChildInterface>(pluginService, "com.tle.web.settings", "settingsExtension",
 			null);
 		extensionTracker.setBeanKey("class");
 	}

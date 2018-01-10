@@ -333,7 +333,7 @@ public class VersionSelectionSection
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		versionChoiceDeciders = new PluginTracker<VersionChoiceDecider>(pluginService, getClass(),
+		versionChoiceDeciders = new PluginTracker<VersionChoiceDecider>(pluginService, "com.tle.web.selection",
 			"versionChoiceDecider", null);
 		versionChoiceDeciders.setBeanKey("class");
 	}

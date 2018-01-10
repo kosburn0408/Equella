@@ -323,7 +323,7 @@ public class ConnectorServiceImpl extends AbstractEntityServiceImpl<ConnectorEdi
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		typesTracker = new PluginTracker<ConnectorServiceExtension>(pluginService, ConnectorService.class,
+		typesTracker = new PluginTracker<ConnectorServiceExtension>(pluginService, "com.tle.core.connectors",
 			"connectorType", "id");
 		typesTracker.setBeanKey("serviceClass");
 	}

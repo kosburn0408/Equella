@@ -54,7 +54,7 @@ public class WizardPageServiceImpl implements WizardPageService
 	@Inject
 	public void setPluginService(PluginService pluginService)
 	{
-		tracker = new PluginTracker<WizardPageFactory>(pluginService, getClass(), "pageFactory", null)
+		tracker = new PluginTracker<WizardPageFactory>(pluginService, "com.tle.web.wizard.page", "pageFactory", null)
 			.setBeanKey("bean");
 	}
 }

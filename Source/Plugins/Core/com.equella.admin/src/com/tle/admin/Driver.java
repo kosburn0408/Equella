@@ -23,6 +23,7 @@ import java.awt.Frame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import com.tle.admin.controls.ControlRepositoryImpl;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.java.plugin.JpfException;
@@ -56,7 +57,6 @@ public final class Driver
 
 	private final ClientService clientService;
 
-	private static ControlsRepositoryCreator controlsRepositoryCreator;
 	private ControlRepository controlRepository;
 	private final PluginServiceImpl pluginService;
 
@@ -198,18 +198,8 @@ public final class Driver
 	{
 		if( controlRepository == null )
 		{
-			controlRepository = controlsRepositoryCreator.getControlRepository(this);
+			controlRepository = new ControlRepositoryImpl(pluginService);
 		}
 		return controlRepository;
-	}
-
-	public static void registerControlRepositoryCreator(ControlsRepositoryCreator creator)
-	{
-		controlsRepositoryCreator = creator;
-	}
-
-	public interface ControlsRepositoryCreator
-	{
-		ControlRepository getControlRepository(Driver driver);
 	}
 }

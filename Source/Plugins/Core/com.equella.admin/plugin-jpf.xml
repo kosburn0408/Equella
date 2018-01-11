@@ -23,7 +23,6 @@
     <import plugin-id="com.tle.platform.equella" exported="true" />
     <import plugin-id="com.tle.platform.swing" exported="true" />
     <import plugin-id="com.tle.webstart.admin" exported="true" optional="true" />
-    <import plugin-id="com.equella.serverbase" />
   </requires>
   <extension plugin-id="com.tle.admin.controls" point-id="control" id="universalControl">
     <parameter id="id" value="universal" />

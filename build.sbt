@@ -119,7 +119,7 @@ val pluginAndLibs = Def.task {
 }
 
 mergeJPF := {
-  val adminConsole = true
+  val adminConsole = false
   val args = spaceDelimited("<arg>").parsed
   val _allPluginDirs = pluginAndLibs.all(ScopeFilter(inAggregates(allPlugins, includeRoot = false))).value
   val extensionsOnly = (baseDirectory.value / "Source/Plugins/Extensions" * "*" / "plugin-jpf.xml").get
